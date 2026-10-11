@@ -1070,3 +1070,49 @@ cite, .ref {
   .layout { grid-template-columns: 1fr; }
   aside.toc { position: static; max-height: none; }
 }
+
+/* ===== Oefentoets (knop bij Overzicht/Toetsinhoud) — OEFENTOETS:CSS ===== */
+.oefentoets .ot-vraag {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px 14px;
+  margin: 0 0 14px;
+  min-width: 0;
+  background: var(--panel);
+}
+.oefentoets legend { padding: 0 6px; font-weight: 700; }
+.oefentoets .ot-hfd { font-weight: 400; font-size: 14px; color: var(--muted); }
+.oefentoets .ot-casus { margin: 4px 0 8px; }
+.oefentoets .ot-stelling { margin: 4px 0 8px; font-weight: 600; }
+.oefentoets .ot-optie {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.oefentoets .ot-optie:hover { background: var(--page); }
+.oefentoets .ot-optie input { margin-top: 6px; flex-shrink: 0; }
+.oefentoets .ot-letter { font-weight: 700; color: var(--muted); min-width: 1.4em; }
+.oefentoets .ot-vraag.ot-goed { border-color: var(--green); background: var(--green-soft); }
+.oefentoets .ot-vraag.ot-fout { border-color: var(--red); background: var(--red-soft); }
+.oefentoets .ot-vraag.ot-open { border-color: var(--orange); background: var(--orange-soft); }
+.oefentoets .ot-optie.ot-juist { outline: 2px solid var(--green); background: #ffffff; }
+.oefentoets .ot-uitleg { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 15px; }
+.oefentoets .ot-uitleg p { margin: 6px 0; }
+.oefentoets .ot-oordeel { font-weight: 700; }
+.oefentoets .ot-acties { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.oefentoets .ot-knop {
+  background: var(--avans-rood);
+  color: #ffffff;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.oefentoets .ot-knop:hover { background: #a30022; }
+.oefentoets .ot-knop.ot-reset { background: var(--slate); }
+.oefentoets .ot-score { font-weight: 700; font-size: 17px; margin: 12px 0 0; }
