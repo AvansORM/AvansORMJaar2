@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reader Vakkennis P2, ORM jaar 2, Avans Hogeschool</title>
+    <meta name="description" content="Reader voor Vakkennis in blok 2 Rendabel maken (ORM jaar 2). Zes hoofdstukken over marketing, sales, juridisch en financieel, gekoppeld aan het SBMC en Business Challenge II." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:ital,wght@0,800;1,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../reader/assets/reader.css" />
+    <style>
+      /* Aanvullingen voor reader P2; de basisstijl komt uit reader P1. */
+      .sbmc-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: auto auto auto; gap: 6px; margin: 8px 0; font-size: 13px; }
+      .sbmc-grid > div { min-width: 0; overflow-wrap: anywhere; hyphens: auto; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 8px; }
+      .sbmc-grid strong { display: block; font-size: 14px; margin-bottom: 4px; }
+      .sbmc-grid .hfd { display: inline-block; margin: 2px 4px 0 0; padding: 1px 7px; border-radius: 999px; background: var(--blue-soft); color: var(--blue); font-weight: 700; font-size: 12px; }
+      .sbmc-grid .leeg { color: var(--muted); font-style: italic; }
+      .sbmc-kp { grid-column: 1; grid-row: 1 / span 2; }
+      .sbmc-ka { grid-column: 2; grid-row: 1; }
+      .sbmc-kr { grid-column: 2; grid-row: 2; }
+      .sbmc-vp { grid-column: 3; grid-row: 1 / span 2; }
+      .sbmc-cr { grid-column: 4; grid-row: 1; }
+      .sbmc-ch { grid-column: 4; grid-row: 2; }
+      .sbmc-cs { grid-column: 5; grid-row: 1 / span 2; }
+      .sbmc-cost { grid-column: 1 / span 3; grid-row: 3; }
+      .sbmc-rev { grid-column: 4 / span 2; grid-row: 3; }
+      @media (max-width: 640px) {
+        .sbmc-grid { grid-template-columns: 1fr; }
+        .sbmc-grid > div { grid-column: auto !important; grid-row: auto !important; }
+      }
+      .formule { background: var(--blue-soft); border-radius: 10px; padding: 12px 16px; margin: 12px 0; font-weight: 700; color: var(--ink); }
+      .formule span { display: block; font-weight: 400; font-size: 14px; color: var(--muted); margin-top: 4px; }
+      .volgt { background: var(--yellow-soft); border-left: 4px solid var(--yellow); border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+      .boekstof { background: #eef3ff; border-left: 4px solid var(--blue); border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+      .boekstof .label { font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin: 0 0 8px; }
+      table.werkblad td:last-child { min-width: 120px; }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="toc">
+        <ul class="toc-quicklinks">
+          <li><a href="#overzicht">Overzicht</a></li>
+          <li><a href="#toetsinhoud">Toetsinhoud</a></li>
+          <li><a href="#sbmc">Het SBMC als kaart</a></li>
+        </ul>
+        <h2>Inhoud</h2>
+        <ol>
+          <li><a href="#h1">Marketing: een belofte die je waarmaakt</a></li>
+          <li><a href="#h2">Sales: online vinden, offline binden</a></li>
+          <li><a href="#h3">Juridisch 1: afspraken en aansprakelijkheid</a></li>
+          <li><a href="#h4">Juridisch 2: product, consument en concurrent</a></li>
+          <li><a href="#h5">Financieel 1: kosten, prijs en break-even</a></li>
+          <li><a href="#h6">Financieel 2: financiering en kengetallen</a></li>
+        </ol>
+        <ul class="toc-quicklinks">
+          <li><a href="#werkbladen">Werkbladen</a></li>
+        </ul>
+      </aside>
+
+      <main>
+        <section class="cover">
+          <span class="eyebrow">Reader · ORM Jaar 2, blok 2 Rendabel maken</span>
+          <h1>Van belofte tot rendabel businessmodel</h1>
+          <p class="lead">
+            In blok 1 heb je geleerd hoe je een probleem onderzoekt, een oplossing bedenkt en die test. In dit blok draait alles om de vraag hoe je dat idee <em>rendabel</em> maakt. Daarvoor heb je kennis nodig uit vier vakgebieden: marketing, sales, juridisch en financieel. Deze reader bundelt die kennis in zes hoofdstukken, in dezelfde volgorde als de kennisblokken op maandag en woensdag. Elk hoofdstuk vult een deel van het Simplified Business Model Canvas (SBMC) dat je in Business Challenge II valideert. Zo is wat je hier leest meteen bruikbaar voor je challenge, en tegelijk de stof voor de kennistoets Vakkennis. Waar het past, zie je hoe Spark, het bedrijf uit de reader van blok 1, dezelfde vraagstukken in de praktijk aanpakte.
+          </p>
+
+          <div class="meta-nav">
+          <details class="meta" id="overzicht">
+            <summary><span class="meta-text"><span class="meta-title">Overzicht</span><span class="meta-sub">hoe deze reader werkt</span></span></summary>
+            <div class="meta-content">
+            <p style="margin-top:0;">Voor de kennistoets Vakkennis gebruik je deze bronnen:</p>
+            <ol>
+              <li><strong>Deze reader</strong>, alle zes hoofdstukken. Voor marketing en sales is de reader je belangrijkste bron.</li>
+              <li><strong>Het boek <em>Praktisch bedrijfsrecht</em></strong> (Fiers en Van Oosterhout, 6e editie, Boom), hoofdstuk 4, 6, 7 en 9. Je kunt het e-book gratis inzien via de Libguide op Brightspace (link naar Xplora). Hoofdstuk 3 en 4 van deze reader vertellen je wat je in welk boekhoofdstuk leest en hoe je het gebruikt in je challenge.</li>
+              <li><strong>Het <em>KVK Geldboek voor ondernemers</em></strong> (KVK, 16e druk, 2024), de paragrafen die in hoofdstuk 6 genoemd worden.</li>
+              <li><strong>Ondernemersplein: <em>Digitaal ondernemen, dit zijn de regels</em></strong> (online), bij Juridisch.</li>
+              <li><strong>De dia's en verwerkingsopdrachten per kennisblok</strong> op Brightspace. Ook die horen bij de toetsstof.</li>
+            </ol>
+            <p>Elk hoofdstuk heeft dezelfde opbouw: een korte aanleiding, de theorie, waar het past een Spark-voorbeeld (warm gekleurd), veelgemaakte fouten, een samenvatting met checklist, oefenvragen in de stijl van de kennistoets en een toetswijzer. Achterin vind je werkbladen die je direct kunt gebruiken in je challenge.</p>
+            <p style="margin-bottom:0;">In de tekst kom je drie soorten kaders tegen. <strong>Waarom werkt het?</strong> geeft een korte verklaring uit de psychologie; handig om te begrijpen, maar je hoeft de onderzoeken niet uit je hoofd te kennen. <strong>In de praktijk</strong> laat een uitgewerkt voorbeeld zien; je kent de redenering, niet de feiten van het voorbeeld. <strong>Let op</strong> beschrijft een veelgemaakte fout of een grens; dat is wel toetsstof.</p>
+            </div>
+          </details>
+
+          <details class="meta" id="toetsinhoud">
+            <summary><span class="meta-text"><span class="meta-title">Toetsinhoud</span><span class="meta-sub">wat moet je kennen voor de toets?</span></span></summary>
+          <div class="toetsmatrix">
+            <div class="meta-content">
+              <p style="margin-top:0;">De kennistoets Vakkennis is een meerkeuzetoets met inzichtvragen in week 18, AI-vrij. De vier vakgebieden wegen even zwaar: elk 25%, elk 12 vragen, 48 vragen in totaal. Inzage is in week 19, de herkansing in week 20.</p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Vakgebied</th>
+                  <th>Kennisblok</th>
+                  <th>Bronnen voor de toets</th>
+                  <th>Reader</th>
+                  <th>SBMC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Vakgebied"><strong>Marketing</strong> (12 vragen)</td>
+                  <td data-label="Kennisblok">Week 12, maandag en woensdag</td>
+                  <td data-label="Bronnen">Reader hoofdstuk 1 en de dia's</td>
+                  <td data-label="Reader"><a href="#h1">Hoofdstuk 1</a></td>
+                  <td data-label="SBMC">Klantsegmenten, waardepropositie, kanalen, klantrelaties</td>
+                </tr>
+                <tr>
+                  <td data-label="Vakgebied"><strong>Sales</strong> (12 vragen)</td>
+                  <td data-label="Kennisblok">Week 13, maandag (woensdag werkcollege in je klas)</td>
+                  <td data-label="Bronnen">Reader hoofdstuk 2, de dia's en het werkcollege</td>
+                  <td data-label="Reader"><a href="#h2">Hoofdstuk 2</a></td>
+                  <td data-label="SBMC">Klantrelaties, kanalen</td>
+                </tr>
+                <tr>
+                  <td data-label="Vakgebied"><strong>Juridisch</strong> (12 vragen)</td>
+                  <td data-label="Kennisblok">Week 14 en 15, maandag en woensdag</td>
+                  <td data-label="Bronnen"><em>Praktisch bedrijfsrecht</em> H4, H6, H7 en H9; Ondernemersplein <em>Digitaal ondernemen</em>; de dia's en verwerkingsopdrachten</td>
+                  <td data-label="Reader"><a href="#h3">Hoofdstuk 3</a> en <a href="#h4">4</a></td>
+                  <td data-label="SBMC">Key partners, klantrelaties, randvoorwaarden en risico's</td>
+                </tr>
+                <tr>
+                  <td data-label="Vakgebied"><strong>Financieel</strong> (12 vragen)</td>
+                  <td data-label="Kennisblok">Week 16 en 17, maandag en woensdag</td>
+                  <td data-label="Bronnen"><em>KVK Geldboek voor ondernemers</em> (zie hoofdstuk 6); de dia's</td>
+                  <td data-label="Reader"><a href="#h5">Hoofdstuk 5</a> en <a href="#h6">6</a></td>
+                  <td data-label="SBMC">Kostenstructuur, inkomstenstromen, key partners</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </details>
+          </div>
+        </section>
+
+        <!-- Inleiding: het SBMC als kaart -->
+        <section id="sbmc" class="chapter">
+          <span class="chapter-number">Inleiding</span>
+          <h2>Het SBMC als kaart</h2>
+          <p class="subtitle">Waarom vier vakgebieden, en hoe ze samen één businessmodel vormen</p>
+
+          <h3>Van werkend idee naar rendabel idee</h3>
+          <p>
+            Aan het eind van blok 1 had je een oplossing die je had getest. Misschien werkte die zelfs al bij een paar klanten. Maar een oplossing die werkt, is nog geen onderneming die werkt. Daarvoor moet je kunnen uitleggen wie je klant is en waarom die juist voor jou kiest (marketing), hoe je van een geïnteresseerde naar een getekende deal komt (sales), welke afspraken en regels je daarbij beschermen of beperken (juridisch) en of je er uiteindelijk geld aan overhoudt en hoe je de groei betaalt (financieel).
+          </p>
+          <p>
+            Die vier vragen zijn geen losse vakken. Ze zijn vier kanten van hetzelfde businessmodel. Daarom gebruiken we in dit blok het <strong>Simplified Business Model Canvas (SBMC)</strong> als kaart. Je kent het canvas uit jaar 1 en uit blok 1: negen bouwstenen, met rechts de kant van de klant (hoe creëer je waarde voor wie?) en links de kant van de organisatie (hoe lever je die waarde, met wie en tegen welke kosten?). In blok 1 ging je vooral de diepte in op één deel van het canvas. In Business Challenge II lever je een <strong>gevalideerd SBMC van de hele onderneming</strong>, waarin alle vakgebieden uit deze reader terugkomen, ook de onderdelen buiten je eigen scope. Zo laat je zien dat je het complete businessmodel overziet.
+          </p>
+
+          <figure>
+            <div class="sbmc-grid" aria-label="SBMC met de hoofdstukken van deze reader per bouwsteen">
+              <div class="sbmc-kp"><strong>Key partners</strong>Contracten met leveranciers en partners; inkoop<br><span class="hfd">H3</span><span class="hfd">H5</span></div>
+              <div class="sbmc-ka"><strong>Key activiteiten</strong><span class="leeg">Komt aan bod in je challenge, niet als apart kennisblok</span></div>
+              <div class="sbmc-kr"><strong>Key resources</strong><span class="leeg">Komt aan bod in je challenge, niet als apart kennisblok</span></div>
+              <div class="sbmc-vp"><strong>Waardepropositie</strong>Inzicht, belofte en bewijs; wat je wel en niet mag claimen<br><span class="hfd">H1</span><span class="hfd">H4</span></div>
+              <div class="sbmc-cr"><strong>Klantrelaties</strong>Contactmomenten na de aankoop; van lead tot deal; voorwaarden en privacy<br><span class="hfd">H1</span><span class="hfd">H2</span><span class="hfd">H3</span><span class="hfd">H4</span></div>
+              <div class="sbmc-ch"><strong>Kanalen</strong>Waar de klant je belofte tegenkomt; de O2O-salesfunnel<br><span class="hfd">H1</span><span class="hfd">H2</span></div>
+              <div class="sbmc-cs"><strong>Klantsegmenten</strong>Buyer persona en conflict; ICP en beslisser<br><span class="hfd">H1</span><span class="hfd">H2</span></div>
+              <div class="sbmc-cost"><strong>Kostenstructuur</strong>Kostprijs, break-even; aansprakelijkheid als risico en kostenpost<br><span class="hfd">H3</span><span class="hfd">H5</span></div>
+              <div class="sbmc-rev"><strong>Inkomstenstromen</strong>Pricing en verdienmodel; financiering van de groei<br><span class="hfd">H5</span><span class="hfd">H6</span></div>
+            </div>
+            <figcaption>Het SBMC met per bouwsteen het hoofdstuk van deze reader dat je helpt die bouwsteen in te vullen en te onderbouwen. Juridische randvoorwaarden en risico's hebben geen eigen vak in het canvas, maar raken bijna elke bouwsteen.</figcaption>
+          </figure>
+
+          <h3>Zo gebruik je deze reader in je challenge</h3>
+          <p>
+            De kennisblokken lopen van week 12 tot en met week 17. Na elk kennisblok ga je met je klas aan de slag: ongeveer een uur pas je de stof toe op je eigen challenge, ongeveer een uur krijg je coaching. Lees het hoofdstuk daarom vóór het kennisblok. Dan gebruik je het half uur met de docent om vragen te stellen en verbanden te leggen, en heb je in het uur daarna al een begin.
+          </p>
+          <ul>
+            <li><strong>Week 12, Marketing.</strong> Je bouwt een buyer persona, zoekt het conflict van je klant en formuleert een belofte met bewijs. Dat vult de rechterkant van je SBMC.</li>
+            <li><strong>Week 13, Sales.</strong> Je bepaalt wie je ideale klant is (ICP), hoe je die vindt en hoe je een geïnteresseerde omzet in een afspraak en een deal.</li>
+            <li><strong>Week 14 en 15, Juridisch.</strong> Je controleert of je afspraken met klanten en partners deugen, waar je aansprakelijk voor bent en wat je wel en niet mag in je marketing.</li>
+            <li><strong>Week 16 en 17, Financieel.</strong> Je rekent uit wat je product kost, wat het moet opbrengen en hoe je de start of groei financiert.</li>
+          </ul>
+          <p>
+            Het portfolio dat je in week 17 inlevert, bevat iteraties van je SBMC en per onderdeel je onderzoeksbevindingen, validaties en tests. Wat je per hoofdstuk uitwerkt, is dus direct bewijs voor je portfolio. Gebruik je AI om te sparren of te schrijven, leg dan vast hoe en waarvoor: de AI-verantwoording is een randvoorwaarde voor het CGI.
+          </p>
+
+          <div class="callout spark">
+            <p>
+              Spark, het bedrijf uit de reader van blok 1, laat zien hoe de vier vakgebieden in elkaar grijpen. Spark verkoopt zonne-energiekits niet aan huishoudens, maar aan <strong>distributiepartners</strong> in Afrika: een B2B-klant met een eigen beslisser (sales). Die partners kozen voor Spark omdat het als enige product én financiering combineerde (marketing: een belofte met bewijs). Daarvoor waren afspraken nodig met de Nederlandse overheid en exportkredietverzekeraar Atradius (juridisch: key partners en contracten). En de hele groei werd betaald met een mix van eigen en vreemd vermogen, van een convertible lening tot een Series A (financieel). In elk hoofdstuk zie je een stukje van dat verhaal terug.
+            </p>
+          </div>
+        </section>
+
+        <!-- Hoofdstuk 1, Marketing (input Ronald Nijveldt) -->
+        <section id="h1" class="chapter">
+          <span class="chapter-number">Hoofdstuk 1 · Week 12</span>
+          <h2>Marketing: een belofte die je waarmaakt</h2>
+          <p class="subtitle">Wat beloof jij je klant, waarom gelooft die je, en merkt de klant in alles dat je die belofte waarmaakt?</p>
+
+          <h3>Waarom dit hoofdstuk?</h3>
+          <p>
+            Je weet uit blok 1 hoe je een klantprobleem onderzoekt en wie je klant is: welke jobs, pains en gains die heeft en welke waardepropositie daarbij past. Marketing voegt daar in dit blok één centrale vraag aan toe: <em>wat beloof jij je klant, waarom gelooft die je, en merkt de klant in alles dat je die belofte waarmaakt?</em>
+          </p>
+          <p>
+            Die vraag klinkt eenvoudig, maar in de praktijk gaat het hier vaak mis. Kijk naar de websites van vijf installatiebedrijven, vijf fietsenwinkels of vijf webshops in dezelfde categorie. Grote kans dat je overal dezelfde woorden leest: kwaliteit, service, persoonlijk, betrouwbaar, scherp geprijsd. Voor de klant zijn die bedrijven daardoor <strong>inwisselbaar</strong>. En als alles hetzelfde lijkt, kiest de klant op het enige wat nog verschilt: de prijs. Een onderscheidende belofte geeft de klant een andere reden om voor jou te kiezen. Dat is precies waarom marketing in een blok over rendabel maken hoort: klanten die kiezen voor wat je belooft, zijn minder prijsgevoelig en komen vaker terug.
+          </p>
+
+          <div class="callout tip">
+            <p style="margin-top:0;"><strong>Wat je al weet, en hier gebruikt.</strong> Het Value Proposition Canvas met customer jobs (functioneel, sociaal en emotioneel), pains en gains; de persona en de empathy map; de Mom Test (vraag naar concreet gedrag in het verleden, niet naar meningen over de toekomst); de customer journey met fasen, touchpoints en pijnpunten; positionering op basisniveau en de 4 P's.</p>
+            <p style="margin-bottom:0;"><strong>Wat hier bewust niet in staat.</strong> Salesfunnel, leadkwalificatie en CRM vind je in hoofdstuk 2. Prijs en marge in hoofdstuk 5. De juridische regels rond reclame en beïnvloeding in hoofdstuk 4. Een marketingplan met budget en KPI's komt in jaar 3.</p>
+          </div>
+
+          <h3>1 · Merk, positionering, propositie en campagne</h3>
+          <p>Vier begrippen worden in de praktijk vaak door elkaar gebruikt. Zet ze voor jezelf scherp:</p>
+          <table>
+            <thead><tr><th>Begrip</th><th>Betekenis</th><th>Voorbeeld</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Merk</strong></td><td>Het geheel van beelden, gevoelens en verwachtingen dat mensen bij een bedrijf of product hebben. Een merk bestaat in het hoofd van klanten en medewerkers, niet in het logo.</td><td>Wat je denkt en voelt als je "HEMA" hoort.</td></tr>
+              <tr><td><strong>Positionering</strong></td><td>De plek die je in het hoofd van de klant wilt innemen, ten opzichte van alternatieven. Een keuze: waar wil je om bekendstaan, en waar niet?</td><td>Interpolis wil bekendstaan als de verzekeraar die het helder maakt.</td></tr>
+              <tr><td><strong>Propositie</strong></td><td>Een concreet aanbod aan een specifieke klantgroep: wat krijg je, voor wie is het en waarom is het de moeite waard? De waardepropositie uit het VPC is een propositie.</td><td>Een onderhoudsabonnement van een fietsenwinkel voor forenzen.</td></tr>
+              <tr><td><strong>Campagne</strong></td><td>Een tijdelijke reeks uitingen rond één boodschap.</td><td>Bever: "Bever laat je niet zitten".</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Een sterke positionering gaat dus verder dan een logo of een slogan. Het is de optelsom van alles wat klanten van je meemaken. Een belofte op een website is pas het begin.
+          </p>
+
+          <h3>2 · Het kernmodel: inzicht, belofte, bewijs en waarmaken</h3>
+          <p>
+            In dit hoofdstuk werk je met één model. Het is gebaseerd op de merkenaanpak van Oosterhout en Stut (2013), die de kern samenvatten als behoefte, belofte en bewijs. Wij noemen de eerste stap <strong>inzicht</strong>, omdat het om meer gaat dan een behoefte: het gaat om een spanning die de klant ervaart. Een vierde stap, <strong>waarmaken</strong>, maakt het model af.
+          </p>
+          <table>
+            <thead><tr><th>Stap</th><th>Kernvraag</th><th>Kernbegrip</th><th>Waar in het SBMC?</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1. Inzicht</strong></td><td>Welk conflict raakt mijn klant het meest, en waarom?</td><td>Het scherpste conflict (vrees tegenover wens), met waarom het de klant raakt</td><td>Klantsegmenten</td></tr>
+              <tr><td><strong>2. Belofte</strong></td><td>Welke ene belofte lost dat conflict op?</td><td>De merkmissie: de belofte aan de gebruiker</td><td>Waardepropositie</td></tr>
+              <tr><td><strong>3. Bewijs</strong></td><td>Welk concreet bewijs maakt de belofte geloofwaardig?</td><td>De keiharde USP</td><td>Waardepropositie (onderbouwing) en kanalen</td></tr>
+              <tr><td><strong>4. Waarmaken</strong></td><td>Ervaart de klant de belofte in elk contactmoment?</td><td>Consistentie in alles wat je doet</td><td>Kanalen en klantrelaties</td></tr>
+            </tbody>
+          </table>
+          <p>
+            De logica: een aanbod wordt relevant als het een probleem oplost dat de klant echt voelt. De kern van dat probleem is een <strong>conflict</strong>: aan de ene kant de situatie die de klant vreest (vaak de huidige situatie), aan de andere kant de situatie die de klant wenst. Je <strong>belofte</strong> lost dat conflict op. Omdat klanten beloftes niet zomaar geloven, heb je <strong>bewijs</strong> nodig. En omdat de klant je beoordeelt op alles wat hij meemaakt, moet je de belofte <strong>waarmaken</strong> in elk contactmoment. Wat je daar over je klant leert, levert weer nieuw inzicht op. Zo is het een cirkel.
+          </p>
+          <div class="callout tip">
+            <p style="margin:0;"><strong>In de praktijk: Nike.</strong> <em>Inzicht:</em> bijna iedereen wil erkend worden voor wat hij presteert, maar de meeste mensen voelen dat topsport alleen voor een paar uitverkorenen is ("topsport is niet voor mij" tegenover "ik ben een topsporter"). <em>Belofte:</em> "If you have a body, you are an athlete". De klant is de held, niet het merk. <em>Bewijs:</em> topsporters in vrijwel alle uitingen, zodat je je met de held vereenzelvigt, met daaronder concrete eigenschappen per product en diensten als trainingsapps. <em>Waarmaken:</em> winkels die aanvoelen als een professionele sportomgeving.</p>
+          </div>
+
+          <h4>Twee niveaus: merk en propositie</h4>
+          <p>Het model werkt op twee niveaus. De structuur is gelijk; de reikwijdte en houdbaarheid verschillen.</p>
+          <table>
+            <thead><tr><th></th><th>Merkniveau</th><th>Propositieniveau</th></tr></thead>
+            <tbody>
+              <tr><td>Wat formuleer je?</td><td>Een merkbelofte (merkmissie)</td><td>Een propositiebelofte of campagneboodschap</td></tr>
+              <tr><td>Waarvoor?</td><td>Alles wat het merk doet</td><td>Eén aanbod, één doelgroep of één periode</td></tr>
+              <tr><td>Houdbaarheid</td><td>Lang, vaak jaren</td><td>Korter, past zich aan het aanbod aan</td></tr>
+              <tr><td>Functioneel of emotioneel</td><td>Vooral emotioneel, de eindwaarde staat centraal</td><td>Vaak meer functioneel, altijd passend binnen de merkbelofte</td></tr>
+              <tr><td>Voorbeeld</td><td>Bever: "Niemand is een binnenmens"</td><td>Menzis Topzorg: sneller duidelijkheid en de beste behandeling bij een ernstige diagnose</td></tr>
+              <tr><td>In je challenge</td><td>Je (her)positioneert een bedrijf als geheel</td><td>Je ontwikkelt een nieuwe dienst of verbetering voor een bedrijf</td></tr>
+            </tbody>
+          </table>
+          <p>Een propositie past altijd binnen de merkbelofte; anders maakt ze het merk onscherp. Benoem in je challenge expliciet op welk niveau je werkt.</p>
+
+          <h4>Hoe klanten kiezen: systeem 1 en systeem 2</h4>
+          <p>
+            Probeer het zelf: een knuppel en een bal kosten samen 1,10 euro. De knuppel kost 1 euro meer dan de bal. Hoeveel kost de bal? Grote kans dat "10 cent" in je opkwam. Dat voelt goed, maar dan kost de knuppel 1,10 en samen 1,20. Het juiste antwoord is 5 cent (Frederick, 2005). Wat je hier ervaart, is het verschil tussen twee manieren van denken, die Stanovich en West (2000) <strong>systeem 1</strong> en <strong>systeem 2</strong> noemden en die Kahneman (2011) wereldberoemd maakte.
+          </p>
+          <table>
+            <thead><tr><th></th><th>Systeem 1</th><th>Systeem 2</th></tr></thead>
+            <tbody>
+              <tr><td>Hoe werkt het?</td><td>Snel, automatisch, intuïtief, emotioneel. Kost geen moeite.</td><td>Langzaam, bewust, rationeel, analytisch. Kost moeite en aandacht.</td></tr>
+              <tr><td>Voorbeeld</td><td>Je pakt een bekend merk uit het schap zonder na te denken.</td><td>Je vergelijkt drie verzekeringen op dekking en premie.</td></tr>
+              <tr><td>Wat het nodig heeft</td><td>Herkenning, een goed gevoel, een eenvoudige boodschap, signalen van anderen</td><td>Argumenten, feiten, een reden om de keuze te rechtvaardigen</td></tr>
+              <tr><td>Rol in het model</td><td>Geraakt door het conflict en de belofte</td><td>Overtuigd door het bewijs</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Systeem 1 werkt met associaties, maakt een kloppend verhaal van wat er op dat moment is (<em>what you see is all there is</em>), houdt van gemak (<strong>verwerkingsgemak</strong>: wat bekend en makkelijk voelt, vinden we eerder waar) en gebruikt vuistregels (<strong>heuristieken</strong>). Systeem 2 kan corrigeren, maar is lui: het zoekt vaak alleen een reden om de keuze van systeem 1 goed te keuren. Pas bij grote of nieuwe beslissingen gaat het echt aan het werk. Psycholoog Jonathan Haidt (2006) vergelijkt dit met een <strong>berijder op een olifant</strong>: de berijder (systeem 2) denkt dat hij stuurt, maar wil de olifant (systeem 1) iets anders, dan verliest de berijder bijna altijd. In populaire boeken heet systeem 1 ook wel het oerbrein; dat is een metafoor.
+          </p>
+          <p>
+            Dit verklaart waarom je zowel een belofte als bewijs nodig hebt. De belofte raakt het gevoel (systeem 1). Het bewijs geeft systeem 2 een rationele rechtvaardiging om te kiezen; consumentenpsycholoog Fred van Raaij noemt dat het <strong>alibi</strong>. En een concreet bewijs is tegelijk makkelijk te verwerken voor systeem 1.
+          </p>
+
+          <h3>3 · Stap 1. Inzicht: van buyer persona via conflict naar inzicht</h3>
+          <p>
+            Het inzicht is de eerste pijler. Alles wat daarna komt, bouwt erop voort; een zwak inzicht levert een zwakke belofte op, hoe mooi die ook geformuleerd is. Je loopt daarvoor een trap op: <strong>klantonderzoek</strong> (gesprekken volgens de Mom Test) → <strong>buyer persona</strong> → drie tot vijf <strong>conflicten</strong> → het <strong>scherpste conflict</strong> → één <strong>inzicht</strong>. Vergelijk het met een onderzoek: de conflicten zijn je bevindingen, het inzicht is je conclusie.
+          </p>
+
+          <h4>De buyer persona</h4>
+          <p>
+            Een <strong>buyer persona</strong> is een op onderzoek gebaseerde beschrijving van een representatieve klant, met de nadruk op koopinzichten: niet alleen wie de klant is, maar wat hem in beweging zet, wat hij wil bereiken, wat hem tegenhoudt en hoe hij kiest (Revella, 2015). Daarin verschilt hij van de persona die je kent: veel teams weten na een persona-sessie dat hun klant blond haar heeft en van wandelen houdt, maar nog steeds niet waarom die klant iets koopt of juist niet.
+          </p>
+          <table>
+            <thead><tr><th></th><th>Persona (profiel)</th><th>Buyer persona</th></tr></thead>
+            <tbody>
+              <tr><td>Kernvraag</td><td>Wie is de klant?</td><td>Waarom en hoe kiest de klant (niet) voor ons?</td></tr>
+              <tr><td>Inhoud</td><td>Demografie, dagindeling, interesses, gedrag</td><td>Aanleiding, gewenst resultaat, drempels, beslissingscriteria en beslisproces, plus een kort profiel</td></tr>
+              <tr><td>Bron</td><td>Vaak een mix van onderzoek en aannames</td><td>Interviews met echte (recente) klanten en niet-klanten</td></tr>
+              <tr><td>Bruikbaar voor</td><td>Productontwerp, empathie</td><td>Positionering, belofte, bewijs en communicatie</td></tr>
+            </tbody>
+          </table>
+          <p>
+            In dit hoofdstuk is de buyer persona geen doel op zich, maar grondstof voor conflicten. Je bouwt hem daarom op uit tien onderdelen die bewust zoeken naar spanning: (1) wie en context, alleen wat het gedrag verklaart; (2) aanleiding: wanneer gaat de klant zoeken?; (3) huidig gedrag en alternatieven; (4) wensen en doelen; (5) vrees en drempels; (6) overtuigingen, zoals "dat is niets voor mij"; (7) dilemma's: tussen welke twee dingen zit de klant in?; (8) beslisgedrag: waarop kiest de klant en wie beslist mee?; (9) letterlijke citaten; (10) conflictkandidaten. Onderdeel 4, 5 en 7 zijn het hart: wensen, vrees en dilemma's zijn letterlijk de bouwstenen van een conflict. Let ook op het verschil tussen zeggen en doen; die afwijking is vaak zelf een inzicht. Een leeg werkblad vind je achterin (<a href="#werkbladen">werkblad A</a>).
+          </p>
+          <div class="callout tip">
+            <p style="margin:0;"><strong>In de praktijk (fictief): Esther, 38.</strong> Werkt vier dagen, twee kinderen van 6 en 9, woont in de stad, groeide op in Drenthe, "altijd buiten". <em>Aanleiding:</em> in de herfstvakantie zaten de kinderen drie regenachtige dagen achter een scherm: "Toen dacht ik: dit wil ik niet." <em>Huidig gedrag:</em> wandelt alleen als het droog is; oude jassen die niet meer waterdicht zijn; plant uitstapjes maar zegt ze vaak af. <em>Wens:</em> "Ik wil dat mijn kinderen opgroeien zoals ik: vies worden, ontdekken." <em>Vrees:</em> "Bij slecht weer wordt het gewoon zeuren." <em>Overtuiging:</em> "Outdoorwinkels zijn voor mensen die de Mont Blanc op gaan." <em>Dilemma:</em> wil goede spullen, maar niet overdreven of te duur. <em>Citaat:</em> "Ik ben eerlijk gezegd een binnenmens geworden."</p>
+          </div>
+          <div class="callout warning">
+            <p style="margin:0;"><strong>Let op: B2B-klanten zijn ook mensen.</strong> Bij een zakelijke klant beslist vaak een groep mee en tellen kosten, risico en rendement zwaar. Toch kopen ook zakelijke klanten om persoonlijke redenen: ze willen geen fout maken, serieus genomen worden of er goed op staan bij hun leidinggevende. Maak bij B2B een buyer persona van de belangrijkste beslisser of beïnvloeder. Hoe je die beslisser vindt en kwalificeert, lees je in hoofdstuk 2.</p>
+          </div>
+
+          <h4>Het conflict: de spanning tussen vrees en wens</h4>
+          <p>
+            Het belangrijkste begrip van dit hoofdstuk komt van Oosterhout en Stut (2013). Een <strong>conflict</strong> is de spanning tussen de gewenste situatie (de <strong>wens</strong>) en de ongewenste of gevreesde situatie (de <strong>vrees</strong>) die een klant ervaart. In elke markt zijn meerdere conflicten. Sommige zijn al opgelost door bestaande merken, andere niet. Daar ligt je kans: wie een onopgelost conflict oplost, wordt relevant en zelfs onmisbaar.
+          </p>
+          <p>
+            Je legt een conflict vast in het <strong>conflictschema</strong>: vrees en wens als twee tegengestelde uitspraken naast elkaar, met daaronder de belofte die het oplost. Regels: schrijf beide kanten als ik-uitspraak vanuit de klant ("Ik ben bang dat ...", "Ik wil ..."); gebruik de taal van de klant uit je citaten; maak de vrees concreet ("Ik sta op zaterdag zonder brood" in plaats van "leveringsproblemen"); maak de wens positief en menselijk, niet een beschrijving van jouw product; en zorg voor echte spanning. Is de wens alleen de ontkenning van de vrees ("ik heb geen tijd" tegenover "ik wil tijd"), zoek dan verder naar de emotie eronder.
+          </p>
+          <p>
+            Je kunt op twee manieren naar een conflict kijken. <strong>Van vrees naar wens</strong>: de klant zit in een situatie die hij niet wil en het merk helpt hem naar de andere kant (Google: overvloed aan informatie tegenover snel precies vinden wat je zoekt). Of <strong>onverenigbare werelden verenigen</strong>: de klant wil twee dingen die niet samen lijken te kunnen (HEMA: een leuk leven en een kleine portemonnee; Nespresso: exclusieve koffie en gemak thuis).
+          </p>
+          <table>
+            <thead><tr><th>Merk</th><th>Vrees</th><th>Wens</th><th>Belofte</th></tr></thead>
+            <tbody>
+              <tr><td>Nike</td><td>Topsport is niet voor mij weggelegd</td><td>Ik ben een topsporter</td><td>If you have a body, you are an athlete</td></tr>
+              <tr><td>Dove</td><td>Mooi zijn is voor topmodellen</td><td>Ik ben mooi</td><td>Tijd voor echte schoonheid</td></tr>
+              <tr><td>HEMA</td><td>Mijn dagelijks leven is saai</td><td>Ik wil elke dag een leuk leven</td><td>Een leuk leven hoeft niet duur te zijn</td></tr>
+              <tr><td>Monuta</td><td>Ik moet allerlei beslissingen nemen rond de uitvaart</td><td>Ik wil mijn verdriet verwerken</td><td>Alle aandacht voor de nabestaanden</td></tr>
+              <tr><td>Bever</td><td>Ik zit te veel binnen</td><td>Ik ben een buitenmens</td><td>Niemand is een binnenmens</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Je probleemonderzoek uit blok 1 is hier geen overbodig werk, maar grondstof. Het conflict kijkt naar hetzelfde probleem door de ogen van de klant. Daarvoor vraag je ook "waarom", maar in een andere richting: de <strong>5-why's</strong> gaan omlaag naar de oorzaak van het probleem; <strong>laddering</strong> gaat omhoog naar de betekenis van het probleem voor de klant ("waarom is dat erg voor je?").
+          </p>
+
+          <h4>Vier lagen van conflicten</h4>
+          <p>
+            Een goede buyer persona levert meerdere conflicten op. Zoek ze systematisch op vier lagen. De eerste drie ken je van de customer jobs in het VPC en uit de jobs-to-be-done-theorie (Christensen e.a., 2016); de vierde, het zelfbeeld, voegt dit model toe. Denk aan een ijsberg: alleen de functionele laag steekt boven water.
+          </p>
+          <table>
+            <thead><tr><th>Laag</th><th>Waar gaat het over?</th><th>Vraag in het interview</th><th>Voorbeeld</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Functioneel</strong> (instrumenteel)</td><td>Het product of de taak: tijd, geld, moeite, kwaliteit</td><td>"Wat kost je dit nu aan tijd of moeite?"</td><td>"Zeep droogt mijn huid uit" (Dove, vroeger)</td></tr>
+              <tr><td><strong>Emotioneel</strong></td><td>Hoe de klant zich voelt: angst, schuld, ergernis, trots</td><td>"Hoe voelde dat? Wat deed dat met je?"</td><td>"Ik voel me schuldig als de kinderen de hele dag achter een scherm zitten"</td></tr>
+              <tr><td><strong>Sociaal</strong></td><td>Hoe anderen de klant zien: erbij horen, status, erkenning</td><td>"Wat zeggen anderen daarvan?"</td><td>"Bij de groothandel ben ik een klein klantje"</td></tr>
+              <tr><td><strong>Zelfbeeld</strong></td><td>Het verschil tussen wie de klant is en wie die wil zijn</td><td>"Past dit bij hoe je jezelf ziet?"</td><td>"Ik ben een binnenmens geworden" tegenover "Ik ben een buitenmens"</td></tr>
+            </tbody>
+          </table>
+          <p>
+            De sterkste conflicten raken <strong>basale behoeften</strong> zoals erbij horen, bezit, status en erkenning. De laag zelfbeeld verdient extra aandacht: het verschil tussen het <strong>actual self</strong> (wie ik nu ben) en het <strong>ideal self</strong> (wie ik wil zijn) roept onprettige gevoelens op, en hoe groter dat verschil, hoe sterker (Higgins, 1987). Een merk dat helpt worden wie je wilt zijn, raakt een krachtig mechanisme.
+          </p>
+
+          <h4>Van instrumenteel naar emotioneel conflict: laddering</h4>
+          <p>
+            Wie conflicten zoekt, vindt er snel een paar, maar dat zijn meestal <strong>instrumentele conflicten</strong> (gemaksconflicten): iets kost te veel tijd, moeite of geld. Daar is niets mis mee, maar ze zijn relevant én makkelijk te kopiëren. De sterkste merken lossen een <strong>emotioneel conflict</strong> op, dat de persoon zelf raakt: gevoel, identiteit, relaties. Dat is moeilijk te kopiëren en bouwt een band. Dove is het schoolvoorbeeld: van "zeep droogt mijn huid uit" naar "mooi zijn is voor topmodellen" tegenover "ik ben mooi". Een pain uit je VPC is vaak een instrumenteel conflict. De vaardigheid die je hier leert, is doorvragen naar het emotionele conflict dat eronder ligt.
+          </p>
+          <p>
+            Daarvoor gebruik je de <strong>means-end chain</strong> (Gutman, 1982): klanten zien een product als middel om een doel te bereiken. Ze kopen geen kenmerken, maar wat die voor hen doen. De interviewtechniek heet <strong>laddering</strong> (Reynolds en Gutman, 1988): je begint bij een kenmerk of een concrete ervaring en vraagt steeds door met een variant van "waarom is dat belangrijk voor je?". Je stopt als de klant een waarde noemt die hij niet verder kan uitleggen. Dat is de <strong>eindwaarde</strong>, een begrip van Rokeach (1973): een levensdoel zoals vrijheid, zelfrespect, veiligheid voor het gezin of erkenning.
+          </p>
+          <table>
+            <thead><tr><th>Trede</th><th>Betekenis</th><th>Voorbeeld: regenjas voor kinderen</th></tr></thead>
+            <tbody>
+              <tr><td>Kenmerk (attribuut)</td><td>Een eigenschap van het product</td><td>Waterdicht, stoer model, felle kleur</td></tr>
+              <tr><td>Functioneel voordeel</td><td>Wat het kenmerk concreet oplevert</td><td>Kinderen blijven droog; we gaan ook bij regen naar buiten</td></tr>
+              <tr><td>Emotioneel voordeel</td><td>Hoe de klant zich voelt en hoe anderen hem zien</td><td>Geen schuldgevoel meer; trots na een dag buiten</td></tr>
+              <tr><td>Eindwaarde</td><td>Het levensdoel waar het om gaat</td><td>Ik doe het goed als ouder; mijn kinderen groeien vrij op</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Waarom is dit zo krachtig? Je vindt het echte waarom: mensen willen geen boor van zes millimeter, maar een gat van zes millimeter (Levitt), en uiteindelijk het gevoel dat hun leven op orde is. Eindwaarden zijn stabiel en worden door veel mensen gedeeld, dus een belofte op dat niveau gaat lang mee. Hoe hoger op de ladder, hoe moeilijker te kopiëren: een kenmerk is in maanden na te maken, een plek in het hoofd van de klant niet. Campagnes die vooral op emotie bouwen, leiden op lange termijn bijna twee keer zo vaak tot sterke winstgroei als rationele campagnes (Binet en Field, 2013). En één ladder geeft je hele verhaal: de bovenste treden leveren de belofte, het functionele voordeel het bewijs.
+          </p>
+          <div class="callout tip">
+            <p style="margin-top:0;"><strong>In de praktijk (fictief): een ladder in een interview.</strong></p>
+            <p><em>Interviewer:</em> Je vertelde dat jullie vorig weekend toch niet zijn gaan wandelen. Hoe kwam dat?<br><em>Esther:</em> Het regende, en de kinderen hebben geen goede jassen. <span style="color:var(--muted)">(kenmerk)</span><br><em>Interviewer:</em> En wat gebeurde er toen?<br><em>Esther:</em> Dan zitten ze weer de hele middag op een tablet. <span style="color:var(--muted)">(functioneel voordeel dat ontbreekt)</span><br><em>Interviewer:</em> Wat vind je daarvan?<br><em>Esther:</em> Ik voel me er eerlijk gezegd schuldig over. <span style="color:var(--muted)">(emotioneel voordeel dat ontbreekt)</span><br><em>Interviewer:</em> Waarom is dat belangrijk voor je?<br><em>Esther:</em> Ik wil dat ze opgroeien zoals ik. Dan heb ik het gevoel dat ik het goed doe als moeder. <span style="color:var(--muted)">(eindwaarde)</span></p>
+            <p style="margin-bottom:0;">Het instrumentele conflict (geen goede regenkleding) is waar, maar het emotionele conflict ligt dieper. Dat maakt een belofte sterk; de regenkleding wordt het bewijs.</p>
+          </div>
+          <p>
+            Tips: ladder op een echte ervaring ("vertel eens over de laatste keer dat ...") en niet op een idee van jezelf, zoals de Mom Test voorschrijft. Varieer je waarom-vraag ("wat levert dat je op?", "wat gebeurt er als dat niet lukt?"). Geef stiltes de ruimte. Noem zelf geen waarden, laat de klant de woorden kiezen. En ladder in twee richtingen: "waarom?" brengt je omhoog naar de belofte, "hoe?" omlaag naar het bewijs.
+          </p>
+          <div class="callout warning">
+            <p style="margin:0;"><strong>Let op: emotie zonder bewijs is lucht.</strong> Een belofte die alleen over een eindwaarde gaat ("vrijheid", "geluk") zonder concreet bewijs eronder, is inwisselbaar: elk merk kan vrijheid beloven. Pas als de eindwaarde verbonden is met een concreet functioneel voordeel en een echt kenmerk, wordt de belofte geloofwaardig en onderscheidend.</p>
+          </div>
+          <div class="callout dt">
+            <p style="margin:0;"><strong>Waarom werkt het? Verliesaversie.</strong> Kahneman en Tversky (1979) toonden aan dat verliezen psychologisch zwaarder wegen dan even grote winsten; 100 euro verliezen doet ongeveer twee keer zoveel pijn als 100 euro winnen plezier geeft. Daarom is de vreeskant van het conflict zo'n sterke drijfveer, en is het belangrijk om de vrees scherp en concreet te formuleren.</p>
+          </div>
+
+          <h4>Het scherpste conflict kiezen</h4>
+          <p>
+            Je kiest pas als je er meerdere hebt. Verzamel eerst breed: lees je interviews opnieuw met een conflictbril, formuleer minstens één conflict per laag, ladder elk functioneel conflict omhoog, zoek de onverenigbare werelden in de dilemma's, betrek mensen die dicht bij de klant staan (bij Monuta kwam het beslissende conflict van een uitvaartbegeleidster, niet uit marktonderzoek) en kijk welke conflicten concurrenten laten liggen. Doel: drie tot vijf goed geformuleerde conflicten. Daarna kies je met de <strong>conflictchecklist</strong>, een trechter van vijf vragen:
+          </p>
+          <ol>
+            <li><strong>Emotioneel relevant:</strong> raakt het de klant echt?</li>
+            <li><strong>Empowert:</strong> kan de klant er zelf sterker van worden?</li>
+            <li><strong>Groot genoeg:</strong> ervaren genoeg klanten dit conflict?</li>
+            <li><strong>Uniek:</strong> lost nog geen ander merk het op?</li>
+            <li><strong>Geloofwaardig op te lossen:</strong> kun jij het echt oplossen? Dit is een <em>harde eis</em>. Een conflict dat je niet geloofwaardig kunt oplossen, levert een belofte op die je niet waarmaakt, en dat is erger dan geen belofte.</li>
+          </ol>
+          <p>Geef elk conflict per vraag een score van 1 tot 5 en onderbouw elke score met een bevinding uit je onderzoek. De onderbouwing is belangrijker dan het totaal.</p>
+          <div class="callout warning">
+            <p style="margin:0;"><strong>Let op: vier veelgemaakte fouten bij conflicten.</strong> (1) <em>Het gemaksconflict:</em> je blijft hangen in tijd, geld en moeite; ladder verder omhoog. (2) <em>Het productconflict:</em> de wens beschrijft je eigen product ("ik wil een app die ..."). (3) <em>Het verzonnen conflict:</em> je kunt geen enkel letterlijk citaat noemen dat het ondersteunt. (4) <em>Het conflict zonder spanning:</em> de wens is alleen de ontkenning van de vrees.</p>
+          </div>
+
+          <h4>Van conflict naar inzicht</h4>
+          <p>
+            Het conflict is de kern: twee korte ik-uitspraken. Een <strong>inzicht</strong> maakt daar een herkenbaar verhaal van, met vooral waarom het de klant raakt. Dat waarom haal je uit de laddering: het emotionele voordeel of de eindwaarde die op het spel staat. Gebruik de <strong>inzichtformule</strong>:
+          </p>
+          <div class="formule">"Ik wil [de wens], maar [de vrees of drempel]. Dat raakt me, want [waarom het ertoe doet]."<span>De wens komt uit je conflictschema en persona (onderdeel 4); de vrees uit onderdeel 3 en 5; het want-deel uit de bovenste treden van je ladder.</span></div>
+          <p>
+            Voorbeeld Bever: <em>"Ik wil graag buiten zijn, maar door werk, gezin en slecht weer zit ik bijna altijd binnen. Dat schuurt, want zo ben ik niet wie ik wil zijn."</em> Kijk naar het want-deel: daar zit de eindwaarde, de brug naar de belofte. Een goed inzicht is herkenbaar maar niet vanzelfsprekend, staat in de ik-vorm en de taal van de klant, bevat een "maar" en een "want", gaat over de klant en niet over je product, en is te herleiden tot je interviews. Toets het met de <strong>herkenningstest</strong>: leg het voor aan mensen die op je buyer persona lijken en vraag niet "vind je dit goed?" maar "herken je dit, wanneer had je dit voor het laatst?". "Ja, zo is het precies" betekent dat je goed zit; "ja, dat zal wel" betekent dat het te algemeen is.
+          </p>
+          <div class="callout warning">
+            <p style="margin:0;"><strong>Let op: valkuilen bij een inzicht.</strong> Een feit als inzicht ("90 procent van de tijd zitten mensen binnen" zegt niet wat het met de klant doet). Een productwens als inzicht ("klanten willen betere regenjassen"). Een inzicht zonder spanning ("ouders vinden veiligheid belangrijk"). Een inzicht zonder waarom ("ik wil naar buiten, maar het regent vaak").</p>
+          </div>
+
+          <h3>4 · Stap 2. Belofte: het conflict oplossen</h3>
+          <p>
+            Met je inzicht weet je welk conflict je klant het meest raakt. Nu moet je het oplossen, met de <strong>belofte</strong>. Oosterhout en Stut noemen dit de <strong>merkmissie</strong>: het antwoord op de vraag waarom het merk voor de klant bestaat. De harde eis is dat de belofte het gekozen conflict oplost. Dat klinkt vanzelfsprekend, maar het gaat vaak mis: er is een sterk conflict en de belofte gaat over iets anders, meestal over het eigen product. Leg daarom altijd conflict en belofte naast elkaar en vraag: als de klant deze belofte gelooft, is het conflict dan opgelost? En onthoud: belofte maakt schuld. Wat je belooft, moet je kunnen bewijzen en waarmaken.
+          </p>
+          <p>Sterke beloftes hebben vaak deze kenmerken gemeen. Zie ze als inspiratie, niet als afvinklijst:</p>
+          <ul>
+            <li><strong>Positief.</strong> Een conflict roept negatieve gevoelens op. Een sterke belofte lost die angst op in plaats van haar aan te wakkeren, zodat de negativiteit niet aan het merk blijft kleven.</li>
+            <li><strong>Eindwaarde.</strong> Sterke beloftes verwijzen naar een emotionele eindwaarde (zelfvertrouwen bij Dove, erkenning bij Nike, plezier bij HEMA), vaak zonder die letterlijk te noemen. De klant voelt haar zelf.</li>
+            <li><strong>Empowerment.</strong> De klant is de held, niet het merk. Test: staat er "wij zijn de beste", dan is het merk de held; staat er wat de klant kan worden of bereiken, dan is de klant de held.</li>
+            <li><strong>Eenvoud en één woord.</strong> Het krachtigste concept in marketing is dat je één woord bezit in het hoofd van de klant (Ries en Trout, 1993): Interpolis = helder, HEMA = leuk, Google = eenvoud.</li>
+          </ul>
+          <p>
+            Stel daarnaast drie praktische vragen: is de belofte zonder uitleg te begrijpen, kun je haar waarmaken, en krijgen klanten én medewerkers er zin van om in beweging te komen? Een merkbelofte is meestal vooral emotioneel; een propositiebelofte bevat een duidelijker functioneel deel ("morgen in huis"), dat het best werkt als het verwijst naar een emotionele waarde (gemak, zorgeloosheid).
+          </p>
+          <p>
+            Werkwijze: (A) neem je inzicht als vertrekpunt; de "maar" laat zien wat de belofte moet wegnemen, de "want" waar ze naartoe moet. (B) Maak de eindwaarde scherp. (C) Schrijf minstens vijf varianten vanuit verschillende invalshoeken: vanuit de wens, vanuit het opheffen van de vrees, vanuit de eindwaarde, als uitnodiging. (D) Toets en kies: lost hij het conflict op, is hij positief, is de klant de held, is hij eenvoudig, kun je hem waarmaken?
+          </p>
+          <div class="callout tip">
+            <p style="margin:0;"><strong>In de praktijk: Bever.</strong> Onderzoek van Wageningen University in opdracht van Bever liet zien dat twee derde van de Nederlanders zichzelf als buitenmens ziet, maar zo'n 90 procent van de dag binnen doorbrengt. Bever, lang een merk voor fanatieke liefhebbers, wilde toegankelijker worden. Het conflict (onze lezing): "ik ben eigenlijk een binnenmens geworden" tegenover "ik ben een buitenmens", op de laag van het zelfbeeld. De belofte: <em>"Niemand is een binnenmens"</em>. Positief, eenvoudig, en de klant is de held: jij bent in de kern een buitenmens. Het aandeel Nederlanders dat Bever avontuurlijk vond, steeg van 51 naar 72 procent.</p>
+          </div>
+          <table>
+            <thead><tr><th>Veelgemaakte fout</th><th>Voorbeeld</th><th>Beter</th></tr></thead>
+            <tbody>
+              <tr><td>De belofte beschrijft het product</td><td>"Wij verkopen duurzame outdoorkleding"</td><td>Ladder omhoog: wat levert het de klant op?</td></tr>
+              <tr><td>De belofte lost een ander conflict op</td><td>Conflict over schuldgevoel, belofte over lage prijzen</td><td>Leg conflict en belofte naast elkaar</td></tr>
+              <tr><td>Het merk is de held</td><td>"De beste buitensportwinkel van Nederland"</td><td>Maak de klant de held</td></tr>
+              <tr><td>Containerbegrippen</td><td>"Kwaliteit, service en betrouwbaarheid"</td><td>Kies een punt van verschil, geen punt van gelijkheid</td></tr>
+              <tr><td>Te veel beloftes tegelijk</td><td>"Snel, goedkoop, duurzaam en persoonlijk"</td><td>Eén belofte; de rest kan bewijs zijn</td></tr>
+              <tr><td>Niet waar te maken</td><td>"Altijd binnen een uur geleverd" zonder de logistiek</td><td>Beloof alleen wat je kunt bewijzen</td></tr>
+              <tr><td>De vrees uitvergroten</td><td>"Zonder ons gaat het mis"</td><td>Positief formuleren</td></tr>
+            </tbody>
+          </table>
+
+          <h3>5 · Stap 3. Bewijs: de keiharde USP</h3>
+          <p>
+            Een belofte zonder bewijs is een claim. Bewijs doet drie dingen: het geeft systeem 2 een reden (het alibi), het is door zijn concreetheid makkelijk voor systeem 1, en het wekt vertrouwen, omdat de klant het kan controleren. Oosterhout en Stut noemen het bewijs de <strong>keiharde USP</strong>. USP staat voor <em>unique selling proposition</em> (Reeves, 1961): een concreet voorstel aan de klant, uniek ten opzichte van de concurrentie en sterk genoeg om veel klanten in beweging te brengen. In dit model is de keiharde USP het concrete, overtuigende verkoopargument dat de belofte bewijst. Twee regels: <strong>de belofte is leidend</strong> (elke USP is terug te voeren op de belofte) en <strong>de USP is concreet</strong> (geen vage benefit).
+          </p>
+          <h4>Kenmerk, voordeel en belofte</h4>
+          <p>
+            Twee fouten komen vaak voor: een kale specificatie als bewijs ("Gore-Tex membraan") of een vage benefit ("comfortabel"). Een goede USP zit daartussen: een concreet voordeel dat de belofte bewijst. In verkooptrainingen heet dit het <strong>kenmerk-voordeel-baat</strong>-principe. Het past precies op de ladder:
+          </p>
+          <table>
+            <thead><tr><th>Trede</th><th>In het model</th><th>Vraag</th><th>Voorbeeld Coolblue</th></tr></thead>
+            <tbody>
+              <tr><td>Waarde</td><td>Belofte</td><td>Waarom is dat belangrijk?</td><td>Zorgeloos kopen ("Alles voor een glimlach")</td></tr>
+              <tr><td>Concreet voordeel</td><td>USP, het bewijs</td><td>Wat heeft de klant eraan?</td><td>Vandaag besteld, morgen in huis; bezorgers die installeren en het oude apparaat meenemen</td></tr>
+              <tr><td>Kenmerk</td><td>Onderbouwing van de USP</td><td>Hoe doen we dat?</td><td>Eigen distributiecentra en eigen bezorgdienst</td></tr>
+            </tbody>
+          </table>
+          <p>
+            De USP is dus de middelste trede. Een concreet getal, beeld of demonstratie werkt beter dan een bijvoeglijk naamwoord, omdat het makkelijker te verwerken is (verwerkingsgemak). En één sterke reden is genoeg: mensen hebben vaak weinig informatie nodig om goed te kiezen (Dijksterhuis, 2007), en te veel USP's maken een merk onscherp. Google begon met een ongekend eenvoudige zoekpagina, en raakte die eenvoud uit beeld toen het in hoog tempo tientallen diensten lanceerde.
+          </p>
+          <h4>Samenhang en soorten bewijs</h4>
+          <p>
+            Bewijs moet kloppen met de belofte. Mensen zoeken van nature naar <strong>coherentie</strong> en naar bevestiging in plaats van tegenbewijs (<strong>confirmation bias</strong>). Bewijs dat past, versterkt de belofte; bewijs dat niet past, ondermijnt haar, ook als het op zichzelf een goed argument is. Een merk dat eenvoud belooft met een website vol tarieven en voorwaarden, klopt niet.
+          </p>
+          <table>
+            <thead><tr><th>Soort bewijs</th><th>Voorbeeld</th><th>Aandachtspunt</th></tr></thead>
+            <tbody>
+              <tr><td>Productkenmerk of dienst</td><td>Technische eigenschappen per schoen</td><td>Vertaal het kenmerk naar een voordeel</td></tr>
+              <tr><td>Werkwijze of proces</td><td>Samen met ouder en kind de schoolroute fietsen</td><td>Maak het zichtbaar</td></tr>
+              <tr><td>Garantie</td><td>"Niet goed, geld terug"</td><td>Moet je ook echt nakomen</td></tr>
+              <tr><td>Demonstratie</td><td>Proefrit, proefperiode</td><td>Werkt sterk voor systeem 1</td></tr>
+              <tr><td>Cijfers en data</td><td>Levertijd, besparing in euro's per jaar</td><td>Moet waar en controleerbaar zijn</td></tr>
+              <tr><td>Keurmerk of certificaat</td><td>Branchekeurmerk</td><td>Alleen erkende keurmerken</td></tr>
+              <tr><td>Ervaringen van klanten</td><td>Reviews, klantverhalen</td><td>Moeten echt zijn (zie hoofdstuk 4)</td></tr>
+              <tr><td>Expert of autoriteit</td><td>Advies van een fysiotherapeut</td><td>Moet bij de belofte passen</td></tr>
+              <tr><td>Gedrag van het bedrijf</td><td>Eigen medewerkers als model in de campagne</td><td>Moeilijk te faken, dus krachtig</td></tr>
+              <tr><td>Symbolisch bewijs</td><td>De ongelijk verdeelde reep van Tony's Chocolonely</td><td>Moet direct begrijpelijk zijn</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Toets elke USP met de <strong>USP-checklist</strong>: is hij <strong>relevant</strong> (lost hij een conflict op?), <strong>onderscheidend</strong> (kan de concurrent niet hetzelfde zeggen?), <strong>samenhangend</strong> (versterkt hij de belofte?) en <strong>vernieuwend</strong> (klanten raken gewend aan bewijs)? En test bewijs met experimenten, niet met meningen: wat mensen zeggen, is vaak niet wat ze doen. Twee varianten van een landingspagina of advertentie, en meten welke meer aanvragen oplevert, zegt meer dan een interview. Dat sluit aan op de manier van testen die je kent uit blok 1.
+          </p>
+          <div class="callout spark">
+            <p>
+              Spark verkocht aan distributiepartners in Afrika, en die partners hadden veel keus in zonne-energiekits. Wat Spark onderscheidde, was niet de kit alleen, maar de combinatie van product én financiering: via het Access to Finance-programma konden partners grotere orders financieren tegen Nederlandse in plaats van lokale rente. Malango Washikala, CEO van distributiepartner Altech in Congo, zei het zo: "They are a pioneer as far as combining both product supply and financing." Dat is bewijs van het type werkwijze en dienst: concreet, controleerbaar en moeilijk te kopiëren, omdat concurrenten dat netwerk niet hadden.
+            </p>
+          </div>
+
+          <h3>6 · Het beslismoment: gedragspsychologie</h3>
+          <p>
+            Tussen een goed verhaal en een aankoop zit het moment waarop de klant beslist. Dan werkt vooral systeem 1: weinig tijd, afleiding, vuistregels. Gedragspsychologie helpt je de bestaande belofte en het bewijs op dat moment geloofwaardig en aantrekkelijk te maken. Het gaat dus niet om een nieuwe belofte. Een principe dat niet bij de belofte past, ondermijnt haar.
+          </p>
+          <h4>De zeven principes van Cialdini</h4>
+          <p>Robert Cialdini beschreef in <em>Influence</em> zes principes van beïnvloeding en voegde in <em>Pre-suasion</em> (2016) een zevende toe: eenheid. We delen ze in naar wat ze in het model doen.</p>
+          <table>
+            <thead><tr><th>Principe</th><th>De vuistregel</th><th>Voorbeeld</th></tr></thead>
+            <tbody>
+              <tr><td colspan="3"><strong>De belofte geloofwaardig maken</strong></td></tr>
+              <tr><td>Sociale bewijskracht</td><td>Als veel anderen (die op mij lijken) het doen, is het waarschijnlijk goed. Werkt vooral bij onzekerheid.</td><td>Reviewscores; echte klanten in beeld</td></tr>
+              <tr><td>Autoriteit</td><td>Als een deskundige het zegt, zal het kloppen.</td><td>Keurmerk, vakprijs, de expert in de winkel</td></tr>
+              <tr><td>Sympathie</td><td>We zeggen eerder ja tegen mensen die we aardig vinden of die op ons lijken.</td><td>Herkenbare medewerkers in plaats van modellen</td></tr>
+              <tr><td>Eenheid</td><td>We volgen het liefst mensen die we als "een van ons" zien.</td><td>"Wij buitenmensen"; hardloopclubs van sportmerken</td></tr>
+              <tr><td colspan="3"><strong>De drempel om nu te beslissen verlagen</strong></td></tr>
+              <tr><td>Wederkerigheid</td><td>Als iemand mij iets geeft, wil ik iets terugdoen.</td><td>Gratis fietscheck, een handige gids</td></tr>
+              <tr><td>Commitment en consistentie</td><td>Wie ergens ja tegen zei, wil daar consistent mee handelen.</td><td>Gratis proefles, waarna inschrijven logisch is</td></tr>
+              <tr><td>Schaarste</td><td>Wat schaars is, is waardevol; wat ik dreig te missen, wil ik hebben.</td><td>Een gelimiteerde collectie die kort te koop is</td></tr>
+            </tbody>
+          </table>
+          <h4>Framing en keuzearchitectuur</h4>
+          <p>
+            <strong>Framing</strong> betekent dat dezelfde informatie, anders gepresenteerd, tot een andere keuze leidt (Tversky en Kahneman, 1981). Een <strong>winstframe</strong> benadrukt wat de klant wint ("met zonnepanelen bespaar je 400 euro per jaar"), een <strong>verliesframe</strong> wat de klant verliest als hij niet kiest ("zonder zonnepanelen gooi je elk jaar 400 euro weg"). Door verliesaversie zet een verliesframe vaak sterker aan tot actie, maar het botst met de regel dat een belofte positief is. Vuistregel: formuleer de belofte positief en gebruik een verliesframe hooguit spaarzaam op het beslismoment, nooit om angst aan te jagen.
+          </p>
+          <p>
+            <strong>Keuzearchitectuur</strong>: kleine veranderingen in hoe een keuze is ingericht, hebben grote invloed. Thaler en Sunstein (2008) noemen zo'n kleine duw een <strong>nudge</strong>; een bekend voorbeeld is de standaardoptie (default). Het Behavioural Insights Team vatte de lessen samen als <strong>EAST</strong>: maak gewenst gedrag Easy, Attractive, Social en Timely. Een nudge moet wel transparant zijn, de klant moet er makkelijk onderuit kunnen en het moet de klant zelf beter maken.
+          </p>
+          <h4>Principes kiezen per contactmoment</h4>
+          <p>
+            Gebruik niet alles tegelijk; dat voelt opdringerig. Kies per contactmoment twee of drie principes: (A) kies het contactmoment, (B) bepaal de twijfel van de klant daar (uit de drempels in je buyer persona), (C) kies principes die die twijfel wegnemen én bij de belofte passen, (D) toets op de grens. Een kinderopvang die "met een gerust hart naar je werk" belooft, past niet bij een aftelklok ("nog 2 plekken, reageer binnen 24 uur!"): die veroorzaakt juist onrust. Sociale bewijskracht (ervaringen van andere ouders) en commitment (een kennismakingsbezoek) passen wel.
+          </p>
+          <div class="callout warning">
+            <p style="margin:0;"><strong>Let op: beïnvloeden of misleiden?</strong> Beïnvloeden mag; elke winkel doet het. Het wordt een probleem als je de klant misleidt of onder druk zet om iets te kiezen wat hij anders niet had gekozen. Online heten zulke trucs <strong>dark patterns</strong>. De Autoriteit Consument &amp; Markt (ACM) noemt voorbeelden: een aftelklok die na afloop opnieuw begint, nepvoorraadmeldingen, gekochte of verzonnen reviews, voorgevinkte extra's die geld kosten en kosten die pas aan het eind van het bestelproces verschijnen. Praktische test: zou je de techniek de klant recht in het gezicht durven uitleggen? De juridische kant lees je in hoofdstuk 4.</p>
+          </div>
+
+          <h3>7 · Stap 4. Waarmaken: de belofte in de contactmomenten</h3>
+          <p>
+            Een belofte bestaat pas in de ervaring van de klant. Als de klant in de winkel, aan de telefoon of bij de levering iets anders meemaakt, gelooft hij de belofte niet meer. Het <strong>gap-model</strong> van Parasuraman, Zeithaml en Berry (1985) verklaart waarom: klanten vergelijken hun verwachting met hun ervaring. Hoe hoger de belofte, hoe hoger de verwachting, en hoe pijnlijker het als de ervaring tegenvalt.
+          </p>
+          <p>
+            Lemon en Verhoef (2016) delen de klantreis in drie fasen: <strong>voor</strong> de aankoop (oriënteren en vergelijken: reclame, zoekresultaten, reviews, etalage), <strong>tijdens</strong> de aankoop (kiezen, bestellen, betalen: winkelvloer, adviesgesprek, bestelproces, offerte) en <strong>na</strong> de aankoop (gebruiken en beoordelen: levering, installatie, factuur, klantenservice, retour). Ze maken ook onderscheid naar wie een contactmoment beheert: <strong>eigen</strong> (website, winkel, personeel; veel invloed), <strong>partner</strong> (bezorgdienst, verkooppunten van anderen; gedeeltelijk), <strong>klant</strong> (hoe de klant het product gebruikt; weinig, maar je kunt het ondersteunen) en <strong>sociaal of extern</strong> (reviews, vrienden, vergelijkingssites; alleen indirect). Voor de klant is de bezorger van een pakketdienst gewoon "jouw" bezorger.
+          </p>
+          <p>Niet elk moment weegt even zwaar:</p>
+          <ul>
+            <li><strong>Moments of truth</strong> (Carlzon, 1987): korte momenten waarop de klant in een paar seconden een oordeel vormt over het hele bedrijf, zoals een klacht.</li>
+            <li><strong>Zero Moment of Truth</strong> (Lecinski, 2011): wat de klant online leest voordat hij jou spreekt. Reviews vormen al een beeld van je belofte.</li>
+            <li><strong>Piek-eindregel</strong> (Kahneman e.a., 1993): mensen beoordelen een ervaring vooral op het intensiefste moment en op het einde, veel minder op het gemiddelde of de duur.</li>
+          </ul>
+          <p>
+            Met de <strong>contactmomentencheck</strong> zie je waar de belofte breekt: (A) zet belofte, conflict en belangrijkste bewijs bovenaan; (B) maak een lijst van contactmomenten in alle fasen en van alle soorten; (C) beoordeel per moment of de belofte daar versterkt wordt, neutraal is of breekt; (D) weeg de momenten (pieken, einde, momenten van de waarheid); (E) kies verbeteracties, te beginnen bij de zwaarst wegende momenten waar de belofte breekt. Verbeter de uitvoering vóór de communicatie: sterkere communicatie verhoogt de verwachting, en zonder betere uitvoering wordt de kloof alleen groter.
+          </p>
+          <p>
+            De belofte stopt niet bij de kassa. Na de aankoop ervaart de klant pas echt of ze klopt, en daar breken beloftes vaak. Gebruik wat je na de aankoop leert (vragen, klachten, reviews) als nieuw inzicht; zo sluit de cirkel. En waarmaken begint binnen: medewerkers moeten de belofte kennen en erachter staan. Bever werft medewerkers op liefde voor buiten en liet 38 eigen medewerkers model staan in de campagne. Hoe je klanten na de aankoop systematisch opvolgt, lees je in hoofdstuk 2.
+          </p>
+
+          <h3>8 · Van het model naar je SBMC</h3>
+          <table>
+            <thead><tr><th>Bouwsteen SBMC</th><th>Wat dit hoofdstuk oplevert</th></tr></thead>
+            <tbody>
+              <tr><td>Klantsegmenten</td><td>De buyer persona en het gekozen conflict</td></tr>
+              <tr><td>Waardepropositie</td><td>De belofte (wat los je op?) en het bewijs (waarom kan de klant je geloven?)</td></tr>
+              <tr><td>Kanalen</td><td>De contactmomenten voor en tijdens de aankoop, met de beïnvloedingsprincipes die je daar inzet</td></tr>
+              <tr><td>Klantrelaties</td><td>De contactmomenten na de aankoop: gebruik, service, klachtafhandeling</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Veelgemaakte fouten in deze fase (samengevat)</h3>
+          <div class="callout warning">
+            <ul>
+              <li><strong>Een verzonnen of demografische persona.</strong> Zonder letterlijke citaten en zonder drempels heb je niet goed geluisterd.</li>
+              <li><strong>Blijven hangen in het gemaksconflict.</strong> Tijd, geld en moeite zijn relevant, maar inwisselbaar. Ladder door.</li>
+              <li><strong>Een belofte over je product in plaats van over de klant.</strong> De klant is de held.</li>
+              <li><strong>Containerbegrippen als belofte.</strong> Kwaliteit en service zijn punten van gelijkheid.</li>
+              <li><strong>Bewijs dat geen bewijs is.</strong> "Wij staan altijd voor u klaar" is een nieuwe belofte, niet controleerbaar.</li>
+              <li><strong>Beïnvloeding die botst met de belofte</strong>, of die over de grens van misleiding gaat.</li>
+              <li><strong>Eerst de communicatie verbeteren</strong> terwijl de belofte in de uitvoering breekt.</li>
+            </ul>
+          </div>
+
+          <div class="samenvatting">
+            <h3>Samenvatting + checklist</h3>
+            <p>Wat moet je na dit hoofdstuk kunnen?</p>
+            <ul class="checklist">
+              <li>Merk, positionering, propositie en campagne onderscheiden, en het merkniveau van het propositieniveau</li>
+              <li>Uitleggen hoe inzicht, belofte, bewijs en waarmaken samenhangen en wat belofte en bewijs doen voor systeem 1 en systeem 2</li>
+              <li>Een buyer persona opbouwen op basis van klantonderzoek, zo dat die uitmondt in conflicten</li>
+              <li>Een conflict formuleren in het conflictschema en conflicten zoeken op vier lagen (functioneel, emotioneel, sociaal, zelfbeeld)</li>
+              <li>Een instrumenteel conflict onderscheiden van een emotioneel conflict en met laddering doorvragen naar de eindwaarde</li>
+              <li>Met de conflictchecklist het scherpste conflict kiezen, en weten welke vraag een harde eis is</li>
+              <li>Het gekozen conflict uitschrijven tot een inzicht met de inzichtformule en het toetsen met de herkenningstest</li>
+              <li>Beoordelen of een belofte het conflict oplost, en de eindwaarde achter een belofte benoemen</li>
+              <li>Een kenmerk vertalen naar een concrete USP en die toetsen met de USP-checklist</li>
+              <li>De zeven principes van Cialdini en winst- en verliesframes herkennen in een uiting, en beoordelen of ze passen bij de belofte</li>
+              <li>Het verschil uitleggen tussen beïnvloeden en misleiden</li>
+              <li>Contactmomenten indelen naar fase en beheerder en met de contactmomentencheck aanwijzen waar een belofte breekt</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Oefenvragen voor de kennistoets</h3>
+            <p>12 vragen in MC-vorm, vergelijkbaar met wat je op de toets kunt verwachten. Klik op een vraag om het antwoord met uitleg te zien.</p>
+
+            <details>
+              <summary>1. Een fietsenwinkel ontwikkelt een onderhoudsabonnement voor forenzen met een e-bike. Op welk niveau werkt de winkel met het model?</summary>
+              <ul class="opties">
+                <li data-letter="A">Merkniveau, want het gaat om de hele winkel.</li>
+                <li data-letter="B">Propositieniveau, want het gaat om één aanbod voor één doelgroep.</li>
+                <li data-letter="C">Campagneniveau, want een abonnement is tijdelijk.</li>
+                <li data-letter="D">Geen van beide, want een abonnement is een prijsmodel.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Een concreet aanbod voor een specifieke groep is een propositie. De propositiebelofte moet wel passen binnen de merkbelofte van de winkel.</div>
+            </details>
+
+            <details>
+              <summary>2. Welke stap van het model spreekt volgens Kahneman vooral systeem 2 aan?</summary>
+              <ul class="opties">
+                <li data-letter="A">Het conflict</li>
+                <li data-letter="B">De belofte</li>
+                <li data-letter="C">Het bewijs</li>
+                <li data-letter="D">Het waarmaken</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Het bewijs geeft systeem 2 een rationele rechtvaardiging voor de keuze, het alibi. Conflict en belofte raken vooral systeem 1.</div>
+            </details>
+
+            <details>
+              <summary>3. Een ouder zegt over de kinderopvang: "Ik ben bang dat ik als moeder tekortschiet als ik fulltime werk." Op welke laag ligt dit conflict vooral?</summary>
+              <ul class="opties">
+                <li data-letter="A">Functioneel</li>
+                <li data-letter="B">Emotioneel en zelfbeeld</li>
+                <li data-letter="C">Sociaal</li>
+                <li data-letter="D">Instrumenteel</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Het gaat om een gevoel (bang, tekortschieten) en om het beeld van zichzelf als moeder. Functioneel en instrumenteel zijn hetzelfde en gaan over tijd, geld of moeite.</div>
+            </details>
+
+            <details>
+              <summary>4. Wat is de juiste volgorde van de means-end chain? (a) "Dan voel ik me een goede vader." (b) "De fietsstoel klikt in één beweging vast." (c) "Ik ben 's ochtends sneller de deur uit."</summary>
+              <ul class="opties">
+                <li data-letter="A">a, c, b</li>
+                <li data-letter="B">b, a, c</li>
+                <li data-letter="C">b, c, a</li>
+                <li data-letter="D">c, b, a</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Eerst het kenmerk (b), dan het functionele voordeel (c), dan het emotionele voordeel of de eindwaarde (a).</div>
+            </details>
+
+            <details>
+              <summary>5. Een student formuleert: "Ik heb geen app om mijn boodschappen te plannen" tegenover "Ik wil een app om mijn boodschappen te plannen." Wat is hier mis?</summary>
+              <ul class="opties">
+                <li data-letter="A">Het conflict staat niet in de ik-vorm.</li>
+                <li data-letter="B">Het is een productconflict zonder echte spanning: de wens beschrijft een product en is alleen de ontkenning van de vrees.</li>
+                <li data-letter="C">Het conflict is te emotioneel voor een propositie.</li>
+                <li data-letter="D">Er is niets mis; vrees en wens staan netjes tegenover elkaar.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> De wens hoort in de wereld van de klant te liggen, niet bij jouw product, en er moet echte spanning in zitten. Vraag door: wat gebeurt er nu, en wat betekent dat voor de klant?</div>
+            </details>
+
+            <details>
+              <summary>6. Welke vraag uit de conflictchecklist is een harde eis?</summary>
+              <ul class="opties">
+                <li data-letter="A">Is het conflict emotioneel relevant?</li>
+                <li data-letter="B">Is het conflict uniek?</li>
+                <li data-letter="C">Is het conflict groot genoeg?</li>
+                <li data-letter="D">Kun je het conflict geloofwaardig oplossen?</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: D.</strong> Een conflict dat je niet geloofwaardig kunt oplossen, leidt tot een belofte die je niet kunt waarmaken. Dat schaadt het vertrouwen meer dan geen belofte.</div>
+            </details>
+
+            <details>
+              <summary>7. Wat is het verschil tussen de waarom-vraag bij de 5-why's en bij laddering?</summary>
+              <ul class="opties">
+                <li data-letter="A">De 5-why's zoeken de oorzaak van een probleem; laddering zoekt de betekenis van het probleem voor de klant.</li>
+                <li data-letter="B">De 5-why's gebruik je bij B2B, laddering bij B2C.</li>
+                <li data-letter="C">Laddering stelt precies vijf keer de waarom-vraag, de 5-why's net zo vaak als nodig.</li>
+                <li data-letter="D">Er is geen verschil; het zijn twee namen voor dezelfde techniek.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: A.</strong> De 5-why's gaan omlaag naar de oorzaak (en leveren de oplossing en het bewijs); laddering gaat omhoog naar de betekenis (en levert het conflict en de belofte).</div>
+            </details>
+
+            <details>
+              <summary>8. Een zwemschool kiest het conflict "Ik ben bang dat mijn kind niet veilig is bij water" tegenover "Ik wil dat mijn kind onbezorgd kan spelen". Welke belofte lost dit conflict het best op?</summary>
+              <ul class="opties">
+                <li data-letter="A">"De grootste zwemschool van de regio."</li>
+                <li data-letter="B">"10 procent korting voor het tweede kind."</li>
+                <li data-letter="C">"Onbezorgd spelen bij elk water."</li>
+                <li data-letter="D">"Al 40 jaar ervaring."</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Die lost het conflict op en maakt het kind en de ouder de held. A en D gaan over de zwemschool zelf (het merk is de held), B over prijs.</div>
+            </details>
+
+            <details>
+              <summary>9. Dezelfde zwemschool zoekt bewijs. Welk bewijs is het sterkst?</summary>
+              <ul class="opties">
+                <li data-letter="A">"Wij zijn de meest betrouwbare zwemschool van de stad."</li>
+                <li data-letter="B">"Elk kind oefent ook in kleding en in open water, onder begeleiding van een gecertificeerde instructeur."</li>
+                <li data-letter="C">"Ons zwembad is 25 meter lang."</li>
+                <li data-letter="D">"Wij hebben de beste service."</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Concreet, controleerbaar, relevant voor het conflict en passend bij de belofte. A en D zijn eigenlijk nieuwe beloftes, C is een kale specificatie zonder verband met de belofte.</div>
+            </details>
+
+            <details>
+              <summary>10. Een webwinkel toont bij elke jas: "Deze week 214 keer gekocht door wandelaars zoals jij." Welk principe van Cialdini wordt vooral ingezet?</summary>
+              <ul class="opties">
+                <li data-letter="A">Autoriteit</li>
+                <li data-letter="B">Schaarste</li>
+                <li data-letter="C">Sociale bewijskracht</li>
+                <li data-letter="D">Wederkerigheid</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Veel anderen die op mij lijken kopen het, dus het zal goed zijn. "Wandelaars zoals jij" voegt een element van eenheid toe.</div>
+            </details>
+
+            <details>
+              <summary>11. Een energiebedrijf schrijft: "Zonder isolatie verlies je elk jaar 350 euro aan warmte." Welk frame is dit, en op welk mechanisme speelt het in?</summary>
+              <ul class="opties">
+                <li data-letter="A">Winstframe; verwerkingsgemak</li>
+                <li data-letter="B">Verliesframe; verliesaversie</li>
+                <li data-letter="C">Verliesframe; confirmation bias</li>
+                <li data-letter="D">Winstframe; sociale bewijskracht</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Het benadrukt wat je verliest als je niet kiest. Verliezen wegen zwaarder dan even grote winsten (verliesaversie), daarom zet dit frame vaak sterker aan tot actie.</div>
+            </details>
+
+            <details>
+              <summary>12. Een fietsenwinkel belooft "Altijd binnen 24 uur weer op de fiets". De reparatie gaat snel, maar bij het ophalen wacht de klant twintig minuten omdat de rekening niet klaar is. Waarom is dat extra schadelijk?</summary>
+              <ul class="opties">
+                <li data-letter="A">Omdat het ophalen een contactmoment van een partner is.</li>
+                <li data-letter="B">Omdat klanten een ervaring vooral beoordelen op de piek en het einde, en het einde hier haaks staat op de belofte.</li>
+                <li data-letter="C">Omdat het Zero Moment of Truth hierdoor verloren gaat.</li>
+                <li data-letter="D">Omdat twintig minuten langer is dan de gemiddelde wachttijd.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> De piek-eindregel: het einde kleurt de hele ervaring, ook al ging de reparatie zelf snel. Het ophalen is bovendien een eigen contactmoment, geen partnermoment.</div>
+            </details>
+          </div>
+
+          <div class="samenvatting" style="background: var(--yellow-soft);">
+            <h3 style="color: #6c5114;">Toetswijzer voor dit hoofdstuk</h3>
+            <p>Voor de kennistoets ken je de inhoud van dit hoofdstuk: de begrippen, het kernmodel met de vier stappen, de lagen van conflicten, de means-end chain, de checklists, de principes van Cialdini, framing en de indeling van contactmomenten. Ook de dia's van het kennisblok Marketing horen bij de toetsstof. Onderzoeken en voorbeelden (Bever, Nike, Dove) hoef je niet uit je hoofd te kennen; de redenering erachter wel. Er is geen boekstof voor marketing.</p>
+          </div>
+
+          <h3>Bronnen</h3>
+          <h4>Basis van dit hoofdstuk</h4>
+          <ul style="font-size:15px;">
+            <li>Nijveldt, R. (2026). <em>Kennisdocument Marketing: een onderscheidende belofte die je kunt waarmaken</em> (versie 3.0). Avans Hogeschool, ORM jaar 2.</li>
+            <li>Oosterhout, M., &amp; Stut, M. (2013). <em>Power brands</em>. Lias.</li>
+          </ul>
+          <h4>Verder lezen, voor wie zich verder wil verdiepen</h4>
+          <ul style="font-size:15px;">
+            <li>ACM. (2020). <em>Leidraad bescherming online consument: grenzen aan online beïnvloeding</em>. Autoriteit Consument &amp; Markt.</li>
+            <li>Binet, L., &amp; Field, P. (2013). <em>The long and the short of it</em>. IPA.</li>
+            <li>Cialdini, R. B. (2021). <em>Influence: The psychology of persuasion</em> (herziene ed.). Harper Business. Nederlandse vertaling: <em>Invloed</em>.</li>
+            <li>Cialdini, R. B. (2016). <em>Pre-suasion</em>. Simon &amp; Schuster.</li>
+            <li>Christensen, C. M., Hall, T., Dillon, K., &amp; Duncan, D. S. (2016). <em>Competing against luck</em>. Harper Business.</li>
+            <li>Gutman, J. (1982). A means-end chain model based on consumer categorization processes. <em>Journal of Marketing, 46</em>(2), 60-72.</li>
+            <li>Haidt, J. (2006). <em>The happiness hypothesis</em>. Basic Books.</li>
+            <li>Kahneman, D. (2011). <em>Thinking, fast and slow</em>. Farrar, Straus and Giroux. Nederlandse vertaling: <em>Ons feilbare denkvermogen</em>.</li>
+            <li>Lemon, K. N., &amp; Verhoef, P. C. (2016). Understanding customer experience throughout the customer journey. <em>Journal of Marketing, 80</em>(6), 69-96.</li>
+            <li>Parasuraman, A., Zeithaml, V. A., &amp; Berry, L. L. (1985). A conceptual model of service quality. <em>Journal of Marketing, 49</em>(4), 41-50.</li>
+            <li>Revella, A. (2015). <em>Buyer personas</em>. Wiley.</li>
+            <li>Reynolds, T. J., &amp; Gutman, J. (1988). Laddering theory, method, analysis, and interpretation. <em>Journal of Advertising Research, 28</em>(1), 11-31.</li>
+            <li>Ries, A., &amp; Trout, J. (1993). <em>The 22 immutable laws of marketing</em>. HarperBusiness.</li>
+            <li>Rokeach, M. (1973). <em>The nature of human values</em>. Free Press.</li>
+            <li>Thaler, R. H., &amp; Sunstein, C. R. (2008). <em>Nudge</em>. Yale University Press.</li>
+          </ul>
+        </section>
+
+        <!-- Hoofdstuk 2, Sales (input Rosemarijn Willems) -->
+        <section id="h2" class="chapter">
+          <span class="chapter-number">Hoofdstuk 2 · Week 13</span>
+          <h2>Sales: online vinden, offline binden</h2>
+          <p class="subtitle">Hoe bouw je een meetbare salesfunnel die online bereik omzet in een getekende deal?</p>
+
+          <h3>Waarom dit hoofdstuk?</h3>
+          <p>
+            In hoofdstuk 1 heb je bepaald wat je belooft en waarom de klant je kan geloven. Maar een sterke belofte levert nog geen omzet op. Iemand moet die belofte bij de juiste klant krijgen, de interesse vasthouden en het gesprek omzetten in een handtekening. Dat is sales. In dit hoofdstuk leer je een <strong>salesfunnel</strong> (verkooptrechter) bouwen die je kunt meten: hoeveel mensen bereik je, hoeveel worden er serieus geïnteresseerd, hoeveel zitten er uiteindelijk aan tafel, en hoeveel tekenen er?
+          </p>
+          <p>
+            Dat is direct bruikbaar in je challenge. Of je nu klanten werft voor je eigen bedrijf of een verkoopproces verbetert bij een organisatie: met de stof uit dit hoofdstuk kun je uitrekenen hoeveel inspanning nodig is om een doel te halen, en kun je laten zien waar in de trechter het lekt. In je SBMC vult dit hoofdstuk vooral de bouwstenen <strong>klantrelaties</strong> (hoe krijg en houd je de klant?) en <strong>kanalen</strong> (via welke weg bereik je de klant?).
+          </p>
+
+          <h3>1 · De hybride paradox</h3>
+          <p>
+            Elk bedrijf zit tegenwoordig in een spanningsveld tussen de schaalbaarheid van digitale kanalen en de diepgang van menselijk contact. Dat noemen we de <strong>hybride paradox</strong>.
+          </p>
+          <ul>
+            <li><strong>Online: schaalbaar, maar vluchtig.</strong> Met e-mailcampagnes, advertenties op sociale media en directe berichten bereik je in korte tijd veel potentiële klanten. Maar online is de concurrentie om aandacht moordend. Mensen worden overspoeld met informatie en negeren een commerciële boodschap in een fractie van een seconde. Het gevolg: lage conversie.</li>
+            <li><strong>Offline: diep, maar duur.</strong> Een gesprek aan tafel, een bedrijfsbezoek of een afspraak in de showroom kost veel tijd per contact. Maar fysiek contact bouwt veel dieper vertrouwen op. Je ziet non-verbale signalen, je kunt direct inspelen op bezwaren en je kunt toewerken naar een afspraak. De conversie aan tafel ligt daardoor veel hoger.</li>
+          </ul>
+          <p>
+            Een <strong>O2O-salesfunnel</strong> (online-to-offline, <em>online vinden, offline binden</em>) overbrugt die paradox. Je gebruikt het bereik en de snelheid van online kanalen voor de vroege fasen van klantwerving, en de kracht van persoonlijk contact om de deal te sluiten. Dat werkt vooral bij complexe of waardevolle aankopen, zoals B2B-diensten, een keuken, een opleiding of een investering, waar weinig klanten volledig online kopen.
+          </p>
+
+          <h3>2 · AIDA in een O2O-wereld</h3>
+          <p>
+            Het klassieke model <strong>AIDA</strong> (Attention, Interest, Desire, Action) beschrijft de stadia die een klant doorloopt van eerste kennismaking tot aankoop. In een O2O-strategie krijgt elke fase een eigen plek online of offline:
+          </p>
+          <table>
+            <thead><tr><th>Fase</th><th>Waar?</th><th>Wat doe je?</th><th>Doel</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Attention</strong></td><td>Online</td><td>Je doorbreekt de digitale ruis met gerichte advertenties, vindbaarheid in zoekmachines (SEO) of persoonlijke berichten, bijvoorbeeld op LinkedIn.</td><td>Zichtbaar worden bij de juiste doelgroep, zonder meteen te verkopen.</td></tr>
+              <tr><td><strong>Interest</strong></td><td>Online</td><td>Je raakt de specifieke pijn of behoefte met sterke teksten, een whitepaper, een video of een klantcase.</td><td>De klant laten zien dat jij zijn uitdaging begrijpt.</td></tr>
+              <tr><td><strong>Desire: de brug</strong></td><td>Van online naar offline</td><td>Je verleidt de lead met een tastbaar voordeel om de stap naar fysiek contact te zetten: een demonstratie, een proef op locatie, een exclusieve ontmoeting.</td><td>De lead van het scherm naar de tafel krijgen.</td></tr>
+              <tr><td><strong>Action</strong></td><td>Offline</td><td>Je laat het product in het echt zien, bouwt een persoonlijke klik op, neemt bezwaren weg en tekent aan tafel.</td><td>De deal sluiten.</td></tr>
+            </tbody>
+          </table>
+          <p>
+            De <strong>brug</strong> (Desire) is de cruciale schakel. Online interesse leidt bij complexe producten zelden direct tot een online aankoop. In plaats van te proberen de deal achter het scherm te sluiten, geef je de lead een reden om naar je toe te komen.
+          </p>
+          <div class="callout warning">
+            <p style="margin:0;"><strong>Let op: de gouden regel van O2O-sales.</strong> Een lead verlaat het scherm alleen als de fysieke ontmoeting <em>direct en tastbaar voordeel</em> oplevert. Een vage of vrijblijvende uitnodiging zoals "even koffie drinken om kennis te maken" werkt niet. "Kom langs en zie in twintig minuten hoe uw voorraad er na de koppeling uitziet, met uw eigen cijfers" werkt wel.</p>
+          </div>
+          <p>
+            Zie je de link met hoofdstuk 1? Attention en Interest zijn contactmomenten vóór de aankoop, waar je belofte en bewijs moeten terugkomen. De brug is een moment waarop principes als wederkerigheid (je geeft eerst iets waardevols) en commitment (een kleine eerste stap) je helpen. En Action is een moment van de waarheid: daar moet de belofte voelbaar zijn.
+          </p>
+
+          <h3>3 · Doelgroep bepalen: het Ideal Customer Profile (ICP)</h3>
+          <p>
+            Voordat je online gaat werven, moet helder zijn welke klanten het best passen bij je product of dienst. Niet elke organisatie is een geschikte klant. Een <strong>Ideal Customer Profile (ICP)</strong> is een gedetailleerde beschrijving van het type bedrijf (in B2B) dat het meeste profijt haalt uit jouw oplossing en de hoogste waarde voor jou vertegenwoordigt. Met een strak ICP voorkom je dat je energie steekt in leads die nooit klant worden.
+          </p>
+          <p>Een ICP bouw je op uit vier pijlers:</p>
+          <table>
+            <thead><tr><th>Pijler</th><th>Wat beschrijf je?</th><th>Voorbeeld</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Firmographics</strong> (bedrijfskenmerken)</td><td>Harde gegevens: branche, aantal medewerkers, jaaromzet, locatie</td><td>Horecabedrijven met 2 tot 10 vestigingen in Noord-Brabant</td></tr>
+              <tr><td><strong>Technographics</strong></td><td>Welke software, tools of technologie het bedrijf al gebruikt</td><td>Verkoop je een plug-in voor een bepaald kassasysteem, dan horen alleen bedrijven met dat kassasysteem bij je ICP</td></tr>
+              <tr><td><strong>Context en timing</strong> (triggers)</td><td>Gebeurtenissen die een bedrijf op dit moment een goede fit maken</td><td>Net groeigeld opgehaald, een nieuwe directeur, een nieuwe vestiging</td></tr>
+              <tr><td><strong>Pijnpunten</strong> (pains)</td><td>Welk probleem dit type bedrijf ervaart, en of dat aansluit op wat jij oplost</td><td>Elke week uren kwijt aan handmatig bestellen bij leveranciers</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Het ICP is de B2B-variant van het klantsegment in je SBMC. In B2C werk je niet met een ICP, maar met een scherp afgebakend klantsegment en een buyer persona.
+          </p>
+
+          <h3>4 · De menselijke maat: de buyer persona</h3>
+          <p>
+            Een ICP beschrijft welk <em>bedrijf</em> je wilt bereiken. Maar bedrijven kopen niet zelf; mensen in die bedrijven beslissen. De <strong>buyer persona</strong> zoomt in op de individuele beslisser. Je kent hem uit hoofdstuk 1, waar je hem gebruikte om conflicten te vinden. In sales gebruik je dezelfde persona om te bepalen wie je benadert, waar die persoon informatie zoekt en welke bezwaren je kunt verwachten. Belangrijke onderdelen voor sales zijn:
+          </p>
+          <ul>
+            <li><strong>Professionele achtergrond:</strong> functie (bijvoorbeeld financieel directeur of inkoopmanager), verantwoordelijkheden en positie in de organisatie.</li>
+            <li><strong>Doelen en ambities:</strong> wat wil deze persoon bereiken in de eigen rol, zoals kosten besparen of processen verbeteren?</li>
+            <li><strong>Frustraties en uitdagingen:</strong> wat houdt deze persoon 's nachts wakker?</li>
+            <li><strong>Informatieconsumptie:</strong> waar zoekt deze persoon informatie (vakbladen, LinkedIn, zoekmachines)? Dat bepaalt je online kanalen in de fase Attention.</li>
+            <li><strong>Bezwaren tegen aankoop:</strong> welke argumenten om niet met jou in zee te gaan kun je verwachten (te duur, te complex)? Die bereid je voor op de offline fase Action.</li>
+          </ul>
+          <div class="callout tip">
+            <p style="margin:0;"><strong>ICP en buyer persona samen.</strong> Het ICP zegt: "horecabedrijven met 2 tot 10 vestigingen die net een nieuwe vestiging openen". De buyer persona zegt: "de operationeel manager, die zondagavond twee uur kwijt is aan bestellen en bang is op zaterdag zonder verse producten te staan". Het eerste bepaalt <em>welke deur</em> je kiest, het tweede <em>wat je zegt</em> als die opengaat.</p>
+          </div>
+
+          <h3>5 · Kwalificatie: het BANT-framework</h3>
+          <p>
+            Zodra je online de aandacht hebt van een ICP-bedrijf en de juiste persoon, moet je beoordelen of deze lead levensvatbaar is. Anders steek je maandenlang energie in een deal die strandt op een ontbrekend budget of een verkeerde gesprekspartner. Een veelgebruikte methode in B2B-sales is <strong>BANT</strong>, oorspronkelijk ontwikkeld door IBM. Je toetst vier criteria:
+          </p>
+          <table>
+            <thead><tr><th>Criterium</th><th>Kernvraag</th><th>In de praktijk</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Budget</strong></td><td>Heeft de prospect het geld om jouw oplossing aan te schaffen?</td><td>Budgetten worden vaak per jaar vastgesteld. Zit jouw oplossing niet in de begroting, onderzoek dan of er projectbudget vrij kan komen vanwege de urgentie. Vraag het vroeg: "Welk budget reserveren jullie meestal voor dit type vraagstuk?"</td></tr>
+              <tr><td><strong>Authority</strong></td><td>Spreek je de echte beslisser, of een poortwachter of beïnvloeder zonder mandaat?</td><td>In grotere organisaties ligt de beslissing bij een <strong>buying center</strong> (in blok 1: de DMU). Zoek uit wie de budgetverantwoordelijke is, de <strong>economic buyer</strong>. Zorg dat de fysieke afspraak plaatsvindt met degene die mag tekenen.</td></tr>
+              <tr><td><strong>Need</strong></td><td>Heeft de prospect een echte pijn die jouw oplossing structureel oplost?</td><td>Een prospect komt pas in beweging als de pijn van het huidige probleem groter is dan de moeite van verandering. Je brug naar offline moet precies op die pijn inspelen. Is de pijn te licht, dan heeft een afspraak geen zin.</td></tr>
+              <tr><td><strong>Timeline</strong></td><td>Is er urgentie? Welke deadline dwingt de prospect om nu te handelen?</td><td>Tijd is de grootste vijand van een deal. Zonder haast ("misschien volgend jaar") verwatert de prioriteit. Je creëert urgentie door te wijzen op de <strong>kosten van uitstel</strong> (<em>cost of inaction</em>): wat kost het de klant om niets te doen?</td></tr>
+            </tbody>
+          </table>
+          <div class="callout spark">
+            <p>
+              Spark verkocht aan distributiepartners in Afrika, bedrijven die de kits doorverkochten aan huishoudens. Kijk je met BANT naar die partners, dan zie je waar de deals vastliepen. <em>Need</em> was er: de partners wilden goede zonne-energieproducten in grotere aantallen. <em>Authority</em> lag bij de inkoopverantwoordelijke van de partner, niet bij de huishoudens die de kit gebruikten. Maar <em>Budget</em> ontbrak. Met een lokale rente van zo'n 15 procent konden partners grotere orders niet financieren. In plaats van die leads af te schrijven, loste Spark het budgetprobleem zelf op met het Access to Finance-programma. Daarmee werd de stap van een kleine pilot van 100 tot 250 kits naar een eerste grote order van 1.500 kits of meer haalbaar. De les: BANT vertelt je niet alleen <em>of</em> een lead levensvatbaar is, maar ook <em>wat</em> je moet oplossen om hem levensvatbaar te maken.
+            </p>
+          </div>
+
+          <h3>6 · De wiskunde van sales: conversie en sales velocity</h3>
+          <p>
+            Sales is geen onderbuikgevoel, maar een voorspelbare kansberekening die steunt op de wet van de grote getallen. Twee berekeningen helpen je om een salesproces voorspelbaar te maken.
+          </p>
+          <h4>De conversieberekening</h4>
+          <p>
+            Omdat online werven vluchtig is, zijn de conversiepercentages aan de bovenkant van een O2O-trechter laag; 1 procent is een gangbare benchmark van online lead naar fysieke afspraak. Weet je dat percentage, dan kun je terugrekenen hoeveel volume er bovenin de trechter nodig is om je doel te halen:
+          </p>
+          <div class="formule">Benodigde leads = gewenst aantal afspraken ÷ conversiepercentage<span>Het conversiepercentage schrijf je als decimaal getal: 1% = 0,01.</span></div>
+          <p>
+            <em>Rekenvoorbeeld.</em> Een keukenzaak wil elke week 5 afspraken in de showroom. De conversie van online lead naar afspraak is 1 procent. Benodigde leads = 5 ÷ 0,01 = <strong>500 leads per week</strong>. De marketing- en salesinspanningen bovenin de trechter moeten dus zo zijn ingericht dat er elke week 500 gerichte leads binnenkomen.
+          </p>
+          <p>
+            Dezelfde logica kun je over meerdere stappen toepassen. Tekent 1 op de 4 afspraken een contract (25 procent), dan levert 500 leads per week 5 afspraken en ongeveer 1,25 deal op. Wil je meer deals, dan kun je aan de bovenkant meer leads binnenhalen, of de conversie in een van de stappen verbeteren. Dat laatste is vaak goedkoper.
+          </p>
+          <h4>De sales velocity</h4>
+          <p>
+            De conversieberekening vertelt je hoeveel leads je nodig hebt. De <strong>sales velocity</strong> (verkoopsnelheid) vertelt je hoeveel omzet er per dag, week of maand door je pijplijn stroomt. Zo kun je voorspellen hoe snel een investering in sales zich vertaalt in omzet.
+          </p>
+          <div class="formule">Sales velocity = (aantal kansen × winrate × gemiddelde dealwaarde) ÷ lengte van de salescyclus<span>Uitkomst in euro's per dag als je de salescyclus in dagen uitdrukt.</span></div>
+          <ul>
+            <li><strong>Aantal kansen</strong> (opportunities): het aantal gekwalificeerde potentiële deals in de pijplijn in een periode.</li>
+            <li><strong>Winrate</strong>: het percentage van die kansen dat je wint, als decimaal (20% = 0,20).</li>
+            <li><strong>Gemiddelde dealwaarde</strong> (average deal size): de waarde in euro's van een gemiddelde gewonnen deal.</li>
+            <li><strong>Lengte van de salescyclus</strong>: het gemiddelde aantal dagen van eerste contact tot getekende deal.</li>
+          </ul>
+          <p>
+            <em>Rekenvoorbeeld.</em> Een IT-bedrijf heeft in een kwartaal 100 kansen, wint er 20 procent van, een gemiddeld contract is 5.000 euro waard en een deal duurt gemiddeld 30 dagen. Sales velocity = (100 × 0,20 × 5.000) ÷ 30 = 100.000 ÷ 30 = <strong>ongeveer 3.333 euro per dag</strong>.
+          </p>
+          <p>Uit de formule volgt direct hoe je de omzetgroei versnelt. Er zijn vier knoppen:</p>
+          <ul>
+            <li><strong>Meer kansen</strong>, door meer leads te genereren aan de online bovenkant van de trechter.</li>
+            <li><strong>Een hogere winrate</strong>, door betere targeting met ICP en buyer persona en betere kwalificatie met BANT.</li>
+            <li><strong>Een hogere dealwaarde</strong>, door je te richten op klanten met meer waarde (ICP).</li>
+            <li><strong>Een kortere salescyclus</strong>, onder andere met een sterke O2O-brug die de beslissing versnelt, en door urgentie (Timeline).</li>
+          </ul>
+          <div class="callout spark">
+            <p>
+              Toen Spark investeerders vroeg om de groei te financieren, onderbouwde het team de verwachte omzet met een concrete pijplijn: zo'n 80.000 kits met een waarde van ongeveer 14 miljoen euro, verdeeld over 18 distributiepartners. Een pijplijn op die manier opbouwen, per partner met een kans, een waarde en een verwachte doorlooptijd, is precies de logica van de sales velocity. Investeerders kijken dan niet alleen naar het totaal, maar ook naar de winrate en de lengte van de cyclus: hoe zeker en hoe snel wordt die pijplijn omzet?
+            </p>
+          </div>
+
+          <h3>7 · Van funnel naar SBMC</h3>
+          <table>
+            <thead><tr><th>Bouwsteen SBMC</th><th>Wat dit hoofdstuk oplevert</th></tr></thead>
+            <tbody>
+              <tr><td>Klantsegmenten</td><td>Het ICP (welke bedrijven) en de buyer persona van de beslisser (welke persoon)</td></tr>
+              <tr><td>Kanalen</td><td>De online kanalen voor Attention en Interest en de offline plek voor Action</td></tr>
+              <tr><td>Klantrelaties</td><td>De brug van online naar offline, de kwalificatie met BANT en de manier waarop je de deal sluit</td></tr>
+              <tr><td>Inkomstenstromen</td><td>Een onderbouwde verwachting van het aantal deals en de omzet per periode (conversie en sales velocity)</td></tr>
+            </tbody>
+          </table>
+          <p>
+            In je portfolio maak je je funnel meetbaar: hoeveel mensen heb je bereikt, hoeveel reageerden er, hoeveel afspraken volgden en hoeveel deals? Dat zijn precies de ruwe data die je als bewijs bewaart.
+          </p>
+
+          <h3>Veelgemaakte fouten in deze fase (samengevat)</h3>
+          <div class="callout warning">
+            <ul>
+              <li><strong>Iedereen is je klant.</strong> Zonder ICP benader je iedereen en win je bijna niemand.</li>
+              <li><strong>Alleen online willen sluiten.</strong> Bij complexe aankopen haal je de deal zelden achter het scherm binnen.</li>
+              <li><strong>Een vage brug.</strong> "Even kennismaken" is geen reden om het scherm te verlaten.</li>
+              <li><strong>Praten met de verkeerde persoon.</strong> Een enthousiaste gebruiker zonder mandaat is geen beslisser.</li>
+              <li><strong>Leads niet kwalificeren.</strong> Wie BANT overslaat, vult de pijplijn met deals die nooit sluiten.</li>
+              <li><strong>Rekenen op gevoel.</strong> Zonder conversiecijfers weet je niet hoeveel leads je nodig hebt, en zie je niet waar de trechter lekt.</li>
+            </ul>
+          </div>
+
+          <div class="samenvatting">
+            <h3>Samenvatting + checklist</h3>
+            <p>Wat moet je na dit hoofdstuk kunnen?</p>
+            <ul class="checklist">
+              <li>De hybride paradox uitleggen: online schaalbaar maar vluchtig, offline diep maar duur</li>
+              <li>Uitleggen wat een O2O-salesfunnel is en waarom die vooral werkt bij complexe of waardevolle aankopen</li>
+              <li>De vier fasen van AIDA plaatsen in een O2O-funnel en de functie van de brug (Desire) uitleggen</li>
+              <li>De gouden regel van O2O-sales toepassen op een uitnodiging</li>
+              <li>Een ICP opstellen met firmographics, technographics, context en timing en pijnpunten</li>
+              <li>Het verschil tussen ICP en buyer persona uitleggen</li>
+              <li>Een lead kwalificeren met BANT, inclusief begrippen als buying center, economic buyer en kosten van uitstel</li>
+              <li>Het benodigde aantal leads berekenen met de conversieberekening</li>
+              <li>De sales velocity berekenen en uitleggen met welke vier knoppen je die verhoogt</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Oefenvragen voor de kennistoets</h3>
+            <p>12 vragen in MC-vorm, vergelijkbaar met wat je op de toets kunt verwachten. Klik op een vraag om het antwoord met uitleg te zien.</p>
+
+            <details>
+              <summary>1. Wat is de kern van de hybride paradox in sales?</summary>
+              <ul class="opties">
+                <li data-letter="A">Online kanalen zijn goedkoper, maar offline kanalen bereiken meer mensen.</li>
+                <li data-letter="B">Online bereik je veel mensen snel maar met lage conversie; offline bouw je dieper vertrouwen met hogere conversie, maar duurder per contact.</li>
+                <li data-letter="C">B2B-klanten kopen alleen online, B2C-klanten alleen offline.</li>
+                <li data-letter="D">Klanten willen tegelijk persoonlijk contact en anoniem blijven.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Schaalbaarheid tegenover diepgang. Een O2O-funnel combineert de sterke kanten van beide.</div>
+            </details>
+
+            <details>
+              <summary>2. In welke fase van AIDA vindt in een O2O-funnel de overstap van online naar offline plaats?</summary>
+              <ul class="opties">
+                <li data-letter="A">Attention</li>
+                <li data-letter="B">Interest</li>
+                <li data-letter="C">Desire</li>
+                <li data-letter="D">Action</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Desire is de brug: je verleidt de lead met een tastbaar voordeel om de stap naar fysiek contact te zetten. Action vindt daarna offline plaats.</div>
+            </details>
+
+            <details>
+              <summary>3. Een adviesbureau mailt leads: "Zullen we binnenkort eens koffie drinken om kennis te maken?" Er komen nauwelijks afspraken. Wat is volgens de gouden regel van O2O-sales de beste verbetering?</summary>
+              <ul class="opties">
+                <li data-letter="A">De mail vaker versturen, zodat meer leads hem zien.</li>
+                <li data-letter="B">Een korte sessie aanbieden waarin de lead met eigen cijfers ziet hoeveel hij kan besparen.</li>
+                <li data-letter="C">De afspraak online laten plaatsvinden in plaats van op kantoor.</li>
+                <li data-letter="D">Een korting aanbieden op het eerste project.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Een lead verlaat het scherm alleen als de ontmoeting direct en tastbaar voordeel oplevert. Een vrijblijvende kop koffie doet dat niet.</div>
+            </details>
+
+            <details>
+              <summary>4. Een softwarebedrijf richt zich op bedrijven die net een nieuwe vestiging hebben geopend. Welke pijler van het ICP is dit?</summary>
+              <ul class="opties">
+                <li data-letter="A">Firmographics</li>
+                <li data-letter="B">Technographics</li>
+                <li data-letter="C">Context en timing (triggers)</li>
+                <li data-letter="D">Pijnpunten</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Een gebeurtenis die een bedrijf op dit moment een goede fit maakt, is een trigger. Firmographics zijn vaste kenmerken zoals branche en omvang.</div>
+            </details>
+
+            <details>
+              <summary>5. Je verkoopt een koppeling die alleen werkt met één specifiek boekhoudpakket. Welke pijler van het ICP bepaalt vooral wie bij je doelgroep hoort?</summary>
+              <ul class="opties">
+                <li data-letter="A">Technographics</li>
+                <li data-letter="B">Firmographics</li>
+                <li data-letter="C">Pijnpunten</li>
+                <li data-letter="D">Context en timing</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: A.</strong> Technographics beschrijven welke technologie een bedrijf al gebruikt. Alleen bedrijven met dat pakket kunnen je product gebruiken.</div>
+            </details>
+
+            <details>
+              <summary>6. Wat is het belangrijkste verschil tussen een ICP en een buyer persona?</summary>
+              <ul class="opties">
+                <li data-letter="A">Een ICP is voor B2C, een buyer persona voor B2B.</li>
+                <li data-letter="B">Een ICP beschrijft het ideale type bedrijf; een buyer persona de individuele beslisser binnen dat bedrijf.</li>
+                <li data-letter="C">Een ICP is gebaseerd op interviews, een buyer persona op omzetcijfers.</li>
+                <li data-letter="D">Er is geen verschil; het zijn synoniemen.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Bedrijven kopen niet zelf, mensen in bedrijven beslissen. Het ICP kiest de deur, de buyer persona bepaalt wat je zegt als die opengaat.</div>
+            </details>
+
+            <details>
+              <summary>7. Een salesmedewerker heeft drie enthousiaste gesprekken gevoerd met een stagiair op de inkoopafdeling. Op welk BANT-criterium loopt deze lead vooral risico?</summary>
+              <ul class="opties">
+                <li data-letter="A">Budget</li>
+                <li data-letter="B">Authority</li>
+                <li data-letter="C">Need</li>
+                <li data-letter="D">Timeline</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> De stagiair heeft geen mandaat om te beslissen. Zoek de economic buyer en zorg dat de afspraak met die persoon plaatsvindt.</div>
+            </details>
+
+            <details>
+              <summary>8. Een prospect heeft budget en een duidelijke behoefte, maar zegt: "Misschien volgend jaar." Wat past het best bij BANT?</summary>
+              <ul class="opties">
+                <li data-letter="A">De lead afschrijven, want er is geen behoefte.</li>
+                <li data-letter="B">Urgentie creëren door de kosten van uitstel zichtbaar te maken.</li>
+                <li data-letter="C">Een andere contactpersoon zoeken met meer budget.</li>
+                <li data-letter="D">De prijs verlagen, zodat de prospect nu tekent.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Het knelpunt is Timeline. Goede salesprofessionals maken de cost of inaction zichtbaar: wat kost het om niets te doen?</div>
+            </details>
+
+            <details>
+              <summary>9. Een installatiebedrijf wil 8 afspraken per week. De conversie van online lead naar afspraak is 2%. Hoeveel leads per week zijn nodig?</summary>
+              <ul class="opties">
+                <li data-letter="A">16</li>
+                <li data-letter="B">160</li>
+                <li data-letter="C">400</li>
+                <li data-letter="D">800</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Benodigde leads = 8 ÷ 0,02 = 400.</div>
+            </details>
+
+            <details>
+              <summary>10. Een bedrijf heeft 50 kansen, een winrate van 30%, een gemiddelde dealwaarde van 2.000 euro en een salescyclus van 60 dagen. Wat is de sales velocity?</summary>
+              <ul class="opties">
+                <li data-letter="A">250 euro per dag</li>
+                <li data-letter="B">500 euro per dag</li>
+                <li data-letter="C">1.000 euro per dag</li>
+                <li data-letter="D">30.000 euro per dag</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> (50 × 0,30 × 2.000) ÷ 60 = 30.000 ÷ 60 = 500 euro per dag. D is de totale gewonnen waarde, zonder te delen door de cycluslengte.</div>
+            </details>
+
+            <details>
+              <summary>11. Een bedrijf halveert de lengte van zijn salescyclus en houdt alle andere factoren gelijk. Wat gebeurt er met de sales velocity?</summary>
+              <ul class="opties">
+                <li data-letter="A">Die halveert.</li>
+                <li data-letter="B">Die blijft gelijk.</li>
+                <li data-letter="C">Die verdubbelt.</li>
+                <li data-letter="D">Dat hangt af van de winrate.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> De cycluslengte staat in de noemer. Een twee keer zo korte cyclus geeft een twee keer zo hoge verkoopsnelheid.</div>
+            </details>
+
+            <details>
+              <summary>12. Een bedrijf richt zijn ICP scherper af, waardoor het minder maar betere leads krijgt. Welke variabele van de sales velocity wil het daarmee vooral verhogen?</summary>
+              <ul class="opties">
+                <li data-letter="A">Het aantal kansen</li>
+                <li data-letter="B">De winrate (en eventueel de dealwaarde)</li>
+                <li data-letter="C">De lengte van de salescyclus</li>
+                <li data-letter="D">Het conversiepercentage van offline naar online</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Betere targeting met ICP en buyer persona verhoogt de kans dat een kans gewonnen wordt, en vaak ook de waarde per deal. Het aantal kansen daalt juist.</div>
+            </details>
+          </div>
+
+          <div class="samenvatting" style="background: var(--yellow-soft);">
+            <h3 style="color: #6c5114;">Toetswijzer voor dit hoofdstuk</h3>
+            <p>Voor de kennistoets ken je de inhoud van dit hoofdstuk: de hybride paradox, de O2O-funnel en AIDA, de gouden regel, de vier pijlers van het ICP, het verschil met de buyer persona, de vier BANT-criteria en de twee berekeningen. Zorg dat je de conversieberekening en de sales velocity zelf kunt uitrekenen en kunt uitleggen wat er gebeurt als één variabele verandert. Ook de dia's van het kennisblok Sales en het werkcollege horen bij de toetsstof. Er is geen boekstof voor sales.</p>
+          </div>
+
+          <h3>Bronnen</h3>
+          <h4>Basis van dit hoofdstuk</h4>
+          <ul style="font-size:15px;">
+            <li>Willems, R. (2026). <em>Reader O2O-salesfunnel: online vinden, offline binden</em>. Avans Hogeschool, ORM jaar 2.</li>
+          </ul>
+          <h4>Verder lezen, voor wie zich verder wil verdiepen</h4>
+          <ul style="font-size:15px;">
+            <li>Revella, A. (2015). <em>Buyer personas</em>. Wiley.</li>
+            <li>Ross, A., &amp; Tyler, M. (2011). <em>Predictable revenue</em>. PebbleStorm.</li>
+          </ul>
+        </section>
+
+        <!-- Hoofdstuk 3, Juridisch 1 (input Miriam Braak) -->
+        <section id="h3" class="chapter">
+          <span class="chapter-number">Hoofdstuk 3 · Week 14</span>
+          <h2>Juridisch 1: afspraken en aansprakelijkheid</h2>
+          <p class="subtitle">Wanneer is een afspraak bindend, hoe kom je er nog onderuit, en wie betaalt als er iets misgaat?</p>
+
+          <div class="boekstof">
+            <p class="label">📖 Toetsstof uit je boek</p>
+            <p style="margin-top:0;">Juridisch is vooral boekstof. Voor dit hoofdstuk bestudeer je uit <em>Praktisch bedrijfsrecht</em> (Mr. J.W.J. Fiers en Mr. L. van Oosterhout, 6e editie, Boom):</p>
+            <ul style="margin-bottom:8px;">
+              <li><strong>Hoofdstuk 4, Overeenkomst</strong>: hoe een overeenkomst ontstaat, wanneer ze geldig is, wanneer je er nog onderuit kunt en wat er gebeurt als een partij niet nakomt.</li>
+              <li><strong>Hoofdstuk 6, Onrechtmatige daad</strong>: wanneer je moet betalen voor schade die je een ander toebrengt, ook zonder dat je een afspraak met die ander had.</li>
+            </ul>
+            <p style="margin-bottom:0;">Het e-book kun je gratis inzien via de Libguide op Brightspace (link naar Xplora). Ook de dia's en verwerkingsopdrachten van de kennisblokken horen bij de toetsstof. Deze reader vervangt het boek niet: hij laat zien waar het over gaat, welke begrippen je zeker moet beheersen en hoe je de stof gebruikt in je challenge.</p>
+          </div>
+
+          <h3>Waarom dit hoofdstuk?</h3>
+          <p>
+            Als ondernemer of professional krijg je gegarandeerd te maken met contracten, schadeclaims en regels. Je spreekt met een leverancier een prijs af, je klant tekent een offerte, een medewerker maakt een fout bij een klant, je product veroorzaakt schade. In al die situaties is de vraag dezelfde: wat hebben we eigenlijk afgesproken, en wie draait op voor de gevolgen? Wie dat niet weet, loopt risico's die een rendabel businessmodel in één keer onrendabel kunnen maken.
+          </p>
+          <p>
+            In je SBMC raakt dit vooral twee bouwstenen. Bij <strong>key partners</strong> gaat het om de afspraken met leveranciers en samenwerkingspartners. Bij <strong>klantrelaties</strong> om de afspraken met je klanten: offertes, opdrachtbevestigingen en algemene voorwaarden. Daarnaast vormen aansprakelijkheid en de risico's die daarbij horen een randvoorwaarde voor je hele businessmodel; een goede verzekering staat bijvoorbeeld in je kostenstructuur.
+          </p>
+
+          <h3>1 · Hoe ontstaat een overeenkomst?</h3>
+          <p>
+            Een <strong>overeenkomst</strong> is een afspraak tussen twee of meer partijen waarmee ze zich tegenover elkaar verbinden; het is een meerzijdige rechtshandeling. Een overeenkomst komt tot stand door <strong>aanbod en aanvaarding</strong>: de ene partij doet een aanbod, de andere partij aanvaardt dat aanbod. Op dat moment is er <strong>wilsovereenstemming</strong> en ben je allebei gebonden.
+          </p>
+          <p>Drie dingen zijn voor de praktijk belangrijk:</p>
+          <ul>
+            <li><strong>Een overeenkomst is in principe vormvrij.</strong> Een mondelinge afspraak, een handdruk of een "akkoord" in een appje kan een geldige overeenkomst opleveren. Schriftelijk vastleggen is vooral belangrijk voor het <em>bewijs</em>. Voor sommige overeenkomsten schrijft de wet wel een vorm voor; welke dat zijn, lees je in het boek.</li>
+            <li><strong>Niet alles is een aanbod.</strong> Er is een verschil tussen een aanbod, dat je met één "ja" kunt aanvaarden, en een <strong>uitnodiging tot onderhandelen</strong>, waarbij de andere partij nog vrij is om te beslissen. Bij een offerte, een prijs op een website of een advertentie is het belangrijk te weten welke van de twee het is.</li>
+            <li><strong>Wat telt is wat partijen verklaarden en mochten begrijpen.</strong> Als iemand iets anders bedoelt dan hij zegt, kan de ander er in bepaalde gevallen op vertrouwen dat de verklaring klopt. Het boek legt uit wanneer dat <strong>gerechtvaardigd vertrouwen</strong> beschermd wordt.</li>
+          </ul>
+
+          <h3>2 · Wanneer is een overeenkomst (niet) geldig?</h3>
+          <p>
+            Een overeenkomst die tot stand gekomen is, is niet altijd geldig. Het boek onderscheidt twee gevolgen die je goed uit elkaar moet houden:
+          </p>
+          <table>
+            <thead><tr><th></th><th>Nietig</th><th>Vernietigbaar</th></tr></thead>
+            <tbody>
+              <tr><td>Wat betekent het?</td><td>De overeenkomst heeft nooit rechtsgevolg gehad; het is alsof ze niet bestaat.</td><td>De overeenkomst is geldig, totdat een partij haar met een beroep op een vernietigingsgrond vernietigt. Dan vervalt ze met terugwerkende kracht.</td></tr>
+              <tr><td>Wanneer?</td><td>Bijvoorbeeld als de inhoud of strekking in strijd is met de wet, de openbare orde of de goede zeden.</td><td>Bijvoorbeeld bij een <strong>wilsgebrek</strong>, of als een partij handelingsonbekwaam was (zoals een minderjarige zonder toestemming).</td></tr>
+              <tr><td>Wie moet iets doen?</td><td>Niemand; nietigheid geldt van rechtswege.</td><td>De partij die zich erop beroept, moet zelf actie ondernemen.</td></tr>
+            </tbody>
+          </table>
+          <p>
+            De <strong>wilsgebreken</strong> zijn de bekendste manieren om onder een overeenkomst uit te komen. Het gaat om situaties waarin je wel "ja" zei, maar je wil niet zuiver tot stand kwam:
+          </p>
+          <ul>
+            <li><strong>Dwaling</strong>: je hebt de overeenkomst gesloten op basis van een onjuiste voorstelling van zaken, bijvoorbeeld omdat de andere partij je verkeerd informeerde of informatie verzweeg die ze had moeten geven.</li>
+            <li><strong>Bedrog</strong>: de andere partij heeft je opzettelijk misleid om je over te halen.</li>
+            <li><strong>Bedreiging</strong>: je werd onder druk gezet met een onrechtmatige bedreiging.</li>
+            <li><strong>Misbruik van omstandigheden</strong>: de andere partij maakte misbruik van een bijzondere situatie waarin jij verkeerde, zoals nood, afhankelijkheid of onervarenheid.</li>
+          </ul>
+          <p>
+            Voor de challenge is dit vooral een waarschuwing aan jezelf als verkoper. Overtuigen mag, maar wie een klant onjuist informeert, belangrijke informatie achterhoudt of de klant onder druk zet, loopt het risico dat de klant de overeenkomst later vernietigt. Zie het verband met de grens tussen beïnvloeden en misleiden uit hoofdstuk 1.
+          </p>
+
+          <h3>3 · Algemene voorwaarden</h3>
+          <p>
+            Bijna elk bedrijf werkt met <strong>algemene voorwaarden</strong>: standaardbepalingen die je in een groot aantal overeenkomsten gebruikt, zoals betalingstermijnen, levering, garantie en de beperking van je aansprakelijkheid. Ze besparen je werk, maar ze gelden niet zomaar. De wet stelt eisen:
+          </p>
+          <ul>
+            <li><strong>De voorwaarden moeten van toepassing zijn verklaard</strong> en de wederpartij moet ze hebben aanvaard, bijvoorbeeld via een verwijzing in de offerte.</li>
+            <li><strong>Je moet de wederpartij een redelijke mogelijkheid geven om ervan kennis te nemen</strong>, in beginsel door ze vóór of bij het sluiten van de overeenkomst te geven. Bij online contracten gelden daarvoor eigen regels. Doe je dit niet, dan kan de wederpartij een beding vernietigen.</li>
+            <li><strong>Een beding mag niet onredelijk bezwarend zijn.</strong> Voor overeenkomsten met consumenten heeft de wet een <strong>zwarte lijst</strong> (bedingen die altijd onredelijk bezwarend zijn) en een <strong>grijze lijst</strong> (bedingen waarvan vermoed wordt dat ze onredelijk bezwarend zijn, tenzij de ondernemer het tegendeel bewijst).</li>
+          </ul>
+          <p>Lees in hoofdstuk 4 van het boek hoe dit precies werkt, en wat het verschil is tussen een consument en een zakelijke wederpartij.</p>
+
+          <h3>4 · Als een partij niet nakomt</h3>
+          <p>
+            Een geldige overeenkomst moet je nakomen. Doet een partij dat niet, niet op tijd of niet goed, dan is er sprake van een <strong>tekortkoming</strong> (in de praktijk vaak wanprestatie genoemd). De andere partij heeft dan verschillende mogelijkheden: alsnog <strong>nakoming</strong> eisen, <strong>schadevergoeding</strong> vorderen of de overeenkomst <strong>ontbinden</strong>. Vaak moet de schuldenaar eerst <strong>in gebreke worden gesteld</strong>: een schriftelijke aanmaning met een redelijke termijn om alsnog na te komen. Pas als die termijn ongebruikt verstrijkt, is de schuldenaar <strong>in verzuim</strong>. Het boek legt uit wanneer een ingebrekestelling nodig is en wanneer niet, en wanneer een tekortkoming niet aan de schuldenaar kan worden toegerekend (overmacht).
+          </p>
+          <div class="callout tip">
+            <p style="margin:0;"><strong>In je challenge.</strong> Zet op een rij welke overeenkomsten je businessmodel nodig heeft: met klanten (offerte, opdrachtbevestiging, algemene voorwaarden), met leveranciers en met partners. Ga per overeenkomst na: wanneer is ze gesloten, wat staat erin over levering, betaling en aansprakelijkheid, en wat gebeurt er als een partij niet nakomt? Dat is je juridische onderbouwing bij key partners en klantrelaties.</p>
+          </div>
+
+          <h3>5 · De onrechtmatige daad</h3>
+          <p>
+            Niet alle aansprakelijkheid komt uit een overeenkomst. Je kunt ook verplicht zijn schade te vergoeden aan iemand met wie je helemaal niets hebt afgesproken: een voorbijganger die struikelt over je reclamebord, een concurrent wiens reputatie je schaadt, een bedrijf waarvan je de rechten schendt. Dan gaat het om een <strong>onrechtmatige daad</strong>. Wie een onrechtmatige daad pleegt die hem kan worden toegerekend, moet de schade die de ander daardoor lijdt vergoeden.
+          </p>
+          <p>Voor aansprakelijkheid op grond van een onrechtmatige daad moet aan vijf vereisten zijn voldaan:</p>
+          <table>
+            <thead><tr><th>Vereiste</th><th>Wat betekent het?</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1. Onrechtmatigheid</strong></td><td>Er is een inbreuk op een recht van een ander, een handelen of nalaten in strijd met een wettelijke plicht, of een handelen in strijd met wat volgens ongeschreven recht in het maatschappelijk verkeer betaamt (de <strong>maatschappelijke zorgvuldigheid</strong>). Soms is er een rechtvaardigingsgrond.</td></tr>
+              <tr><td><strong>2. Toerekenbaarheid</strong></td><td>De daad is te wijten aan de schuld van de dader, of komt voor zijn rekening krachtens de wet of de in het verkeer geldende opvattingen.</td></tr>
+              <tr><td><strong>3. Schade</strong></td><td>De benadeelde heeft schade geleden, zoals materiële schade, letselschade of in bepaalde gevallen immateriële schade.</td></tr>
+              <tr><td><strong>4. Causaal verband</strong></td><td>De schade is het gevolg van de onrechtmatige daad.</td></tr>
+              <tr><td><strong>5. Relativiteit</strong></td><td>De geschonden norm is bedoeld om juist deze benadeelde tegen juist deze schade te beschermen.</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Aansprakelijk voor anderen en voor zaken</h4>
+          <p>
+            Als ondernemer ben je in een aantal situaties aansprakelijk zonder dat je zelf iets verkeerd hebt gedaan. Dat heet <strong>risicoaansprakelijkheid</strong> (of kwalitatieve aansprakelijkheid). Voorbeelden die in het boek aan bod komen: je bent als werkgever aansprakelijk voor fouten van je werknemers die een ander schade toebrengen; je bent aansprakelijk voor schade door gebrekkige zaken die je bezit, zoals een loszittend uithangbord; en je hebt als werkgever een zorgplicht tegenover je werknemers bij <strong>bedrijfsongevallen</strong>. Het idee erachter: wie profijt heeft van een activiteit, draagt ook het risico ervan. Daarom verzekeren ondernemers zich vaak met een bedrijfsaansprakelijkheidsverzekering. In hoofdstuk 6 van het boek lees je ook wanneer je aansprakelijk bent voor een verkeerde zakelijke beslissing.
+          </p>
+          <div class="callout warning">
+            <p style="margin:0;"><strong>Let op: overeenkomst of onrechtmatige daad?</strong> Bij schade is de eerste vraag altijd: hebben de partijen een overeenkomst? Dan gaat het meestal om een tekortkoming in de nakoming. Is er geen overeenkomst, dan kan de grondslag de onrechtmatige daad zijn. Haal ze niet door elkaar; de vereisten verschillen.</p>
+          </div>
+          <div class="callout tip">
+            <p style="margin:0;"><strong>In je challenge.</strong> Maak een korte risicoanalyse van je businessmodel. Welke schade kan je onderneming bij anderen veroorzaken, door je medewerkers, je spullen, je product of je communicatie? Wat kun je doen om dat te voorkomen, en wat leg je vast in je overeenkomsten of algemene voorwaarden? En welke verzekering past daarbij, en wat kost die in je kostenstructuur?</p>
+          </div>
+
+          <h3>Veelgemaakte fouten in deze fase (samengevat)</h3>
+          <div class="callout warning">
+            <ul>
+              <li><strong>Denken dat alleen een handtekening telt.</strong> Ook een mondelinge afspraak of een "akkoord" per mail kan een overeenkomst zijn.</li>
+              <li><strong>Algemene voorwaarden pas achteraf sturen</strong>, bijvoorbeeld op de factuur. Dan kun je je er vaak niet op beroepen.</li>
+              <li><strong>Nietig en vernietigbaar door elkaar halen.</strong></li>
+              <li><strong>Een klant onder druk zetten of onvolledig informeren</strong> om een deal te sluiten. Dat kan leiden tot vernietiging wegens een wilsgebrek.</li>
+              <li><strong>Een of meer vereisten van de onrechtmatige daad vergeten</strong>, vooral relativiteit en causaal verband.</li>
+              <li><strong>Geen oog hebben voor risicoaansprakelijkheid</strong> en die risico's dus ook niet verzekeren of begroten.</li>
+            </ul>
+          </div>
+
+          <div class="samenvatting">
+            <h3>Samenvatting + checklist</h3>
+            <p>Wat moet je na dit hoofdstuk en <em>Praktisch bedrijfsrecht</em> H4 en H6 kunnen?</p>
+            <ul class="checklist">
+              <li>Uitleggen hoe een overeenkomst tot stand komt door aanbod en aanvaarding, en het verschil met een uitnodiging tot onderhandelen</li>
+              <li>Uitleggen dat een overeenkomst in principe vormvrij is en waarom schriftelijk vastleggen toch verstandig is</li>
+              <li>Het verschil tussen nietig en vernietigbaar uitleggen en voorbeelden geven</li>
+              <li>De vier wilsgebreken herkennen in een casus</li>
+              <li>Uitleggen aan welke eisen algemene voorwaarden moeten voldoen, inclusief de zwarte en de grijze lijst</li>
+              <li>Uitleggen wat een tekortkoming is, wat ingebrekestelling en verzuim zijn, en welke mogelijkheden een benadeelde partij heeft</li>
+              <li>De vijf vereisten van de onrechtmatige daad toepassen op een casus</li>
+              <li>Voorbeelden van risicoaansprakelijkheid voor een ondernemer noemen en uitleggen waarom die bestaat</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Oefenvragen voor de kennistoets</h3>
+            <p>6 vragen in MC-vorm over dit hoofdstuk. Samen met hoofdstuk 4 vormen ze een set van 12, zoals op de toets. Klik op een vraag om het antwoord te zien. Oefen daarnaast met de verwerkingsopdrachten op Brightspace.</p>
+
+            <details>
+              <summary>1. Een klant mailt op een offerte: "Akkoord, ga je gang." Er is niets getekend. Is er een overeenkomst?</summary>
+              <ul class="opties">
+                <li data-letter="A">Nee, een overeenkomst moet altijd schriftelijk en ondertekend zijn.</li>
+                <li data-letter="B">Ja, het aanbod (de offerte) is aanvaard; een overeenkomst is in principe vormvrij.</li>
+                <li data-letter="C">Nee, een mail geldt alleen als uitnodiging tot onderhandelen.</li>
+                <li data-letter="D">Alleen als de klant een consument is.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Aanbod en aanvaarding leveren een overeenkomst op. Een handtekening is in principe niet nodig, wel handig als bewijs.</div>
+            </details>
+
+            <details>
+              <summary>2. Wat is het verschil tussen een nietige en een vernietigbare overeenkomst?</summary>
+              <ul class="opties">
+                <li data-letter="A">Een nietige overeenkomst heeft nooit rechtsgevolg gehad; een vernietigbare is geldig totdat een partij haar vernietigt.</li>
+                <li data-letter="B">Een nietige overeenkomst kan alleen de rechter vernietigen; een vernietigbare vervalt vanzelf.</li>
+                <li data-letter="C">Nietig geldt alleen voor consumenten, vernietigbaar alleen voor bedrijven.</li>
+                <li data-letter="D">Er is geen verschil; beide begrippen betekenen dat de overeenkomst ongeldig is.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: A.</strong> Nietigheid geldt van rechtswege. Bij vernietigbaarheid moet de partij die zich erop beroept zelf actie ondernemen.</div>
+            </details>
+
+            <details>
+              <summary>3. Een verkoper zegt bewust dat een gebruikte machine "nooit kapot is geweest", terwijl hij weet dat de motor twee keer is vervangen. Op welk wilsgebrek kan de koper zich het best beroepen?</summary>
+              <ul class="opties">
+                <li data-letter="A">Bedreiging</li>
+                <li data-letter="B">Misbruik van omstandigheden</li>
+                <li data-letter="C">Bedrog</li>
+                <li data-letter="D">Handelingsonbekwaamheid</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> De verkoper misleidt de koper opzettelijk om hem over te halen. Dat is bedrog. Dwaling kan ook een rol spelen, maar het opzettelijke karakter maakt het bedrog.</div>
+            </details>
+
+            <details>
+              <summary>4. Een webshop stuurt zijn algemene voorwaarden pas mee met de factuur, na de levering. Wat is daarvan het risico?</summary>
+              <ul class="opties">
+                <li data-letter="A">Geen risico; voorwaarden gelden zodra de klant ze ontvangt.</li>
+                <li data-letter="B">De wederpartij kan bedingen vernietigen, omdat ze niet vóór of bij het sluiten de kans kreeg om ervan kennis te nemen.</li>
+                <li data-letter="C">De hele koopovereenkomst is nietig.</li>
+                <li data-letter="D">De webshop pleegt daarmee een onrechtmatige daad.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> De gebruiker moet de wederpartij een redelijke mogelijkheid geven om van de voorwaarden kennis te nemen, in beginsel vóór of bij het sluiten. De overeenkomst zelf blijft bestaan.</div>
+            </details>
+
+            <details>
+              <summary>5. Een leverancier levert te laat. De afnemer wil schadevergoeding. Wat is meestal eerst nodig voordat de leverancier in verzuim is?</summary>
+              <ul class="opties">
+                <li data-letter="A">Een ingebrekestelling met een redelijke termijn om alsnog na te komen</li>
+                <li data-letter="B">Een uitspraak van de rechter</li>
+                <li data-letter="C">Een onrechtmatige daad van de leverancier</li>
+                <li data-letter="D">Vernietiging van de overeenkomst</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: A.</strong> Meestal moet de schuldenaar eerst schriftelijk in gebreke worden gesteld. Het boek bespreekt de uitzonderingen, bijvoorbeeld bij een fatale termijn.</div>
+            </details>
+
+            <details>
+              <summary>6. Een medewerker van een schoonmaakbedrijf laat bij een klant een emmer op de trap staan, waarover een bezoeker valt. Wie kan de bezoeker het best aansprakelijk stellen, en op welke grond?</summary>
+              <ul class="opties">
+                <li data-letter="A">Alleen de klant, op grond van de overeenkomst met het schoonmaakbedrijf</li>
+                <li data-letter="B">Het schoonmaakbedrijf als werkgever, op grond van onrechtmatige daad (aansprakelijkheid voor ondergeschikten)</li>
+                <li data-letter="C">Niemand, want de bezoeker heeft geen overeenkomst met het schoonmaakbedrijf</li>
+                <li data-letter="D">Alleen de medewerker zelf, op grond van wanprestatie</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> De bezoeker heeft geen overeenkomst, dus de grondslag is de onrechtmatige daad. De werkgever is aansprakelijk voor fouten van zijn werknemers (risicoaansprakelijkheid). Wanprestatie veronderstelt een overeenkomst.</div>
+            </details>
+          </div>
+
+          <div class="samenvatting" style="background: var(--yellow-soft);">
+            <h3 style="color: #6c5114;">Toetswijzer voor dit hoofdstuk</h3>
+            <p>Voor de kennistoets bestudeer je <strong><em>Praktisch bedrijfsrecht</em> hoofdstuk 4 (Overeenkomst) en hoofdstuk 6 (Onrechtmatige daad)</strong>, de dia's en de verwerkingsopdrachten van de kennisblokken. Deze reader is een wegwijzer: hij behandelt niet alle details uit het boek. Toetsvragen kunnen dus ook gaan over onderdelen uit deze boekhoofdstukken die hier niet uitgebreid staan.</p>
+          </div>
+
+          <h3>Bronnen</h3>
+          <ul style="font-size:15px;">
+            <li>Fiers, J. W. J., &amp; Van Oosterhout, L. (z.d.). <em>Praktisch bedrijfsrecht</em> (6e ed.). Boom. Hoofdstuk 4 en 6. Gratis in te zien via de Libguide op Brightspace (Xplora).</li>
+            <li>Braak, M. (2026). <em>Vakinformatie Juridisch: wat je moet weten voor je toets en challenge</em>. Avans Hogeschool, ORM jaar 2.</li>
+          </ul>
+        </section>
+
+        <!-- Hoofdstuk 4, Juridisch 2 (input Miriam Braak) -->
+        <section id="h4" class="chapter">
+          <span class="chapter-number">Hoofdstuk 4 · Week 15</span>
+          <h2>Juridisch 2: product, consument en concurrent</h2>
+          <p class="subtitle">Ben je aansprakelijk voor je product, en waar ligt de grens tussen een slimme marketingstunt en misleiding?</p>
+
+          <div class="boekstof">
+            <p class="label">📖 Toetsstof uit je boek en online</p>
+            <p style="margin-top:0;">Voor dit hoofdstuk bestudeer je uit <em>Praktisch bedrijfsrecht</em> (Fiers en Van Oosterhout, 6e editie, Boom):</p>
+            <ul style="margin-bottom:8px;">
+              <li><strong>Hoofdstuk 7, Productaansprakelijkheid</strong>: wanneer een producent moet betalen voor schade door een gebrekkig product.</li>
+              <li><strong>Hoofdstuk 9, Bescherming consument en concurrent</strong>, inclusief privacy en data: de regels voor reclame, verkoop aan consumenten en het omgaan met persoonsgegevens.</li>
+            </ul>
+            <p style="margin-bottom:0;">Daarnaast lees je op Ondernemersplein (KVK en overheid) de pagina <strong><em>Digitaal ondernemen: dit zijn de regels</em></strong>. En ook hier horen de dia's en verwerkingsopdrachten bij de toetsstof.</p>
+          </div>
+
+          <h3>Waarom dit hoofdstuk?</h3>
+          <p>
+            In hoofdstuk 1 heb je geleerd een belofte te formuleren, die te bewijzen en klanten op het beslismoment te overtuigen. Dit hoofdstuk laat de andere kant zien: wat mag je eigenlijk beloven, hoe ver mag je gaan in beïnvloeding, en wat moet je regelen als je verkoopt aan consumenten en hun gegevens gebruikt? En omdat je in Business Challenge II ten minste een prototype of pilot realiseert: wie is aansprakelijk als dat product schade veroorzaakt?
+          </p>
+          <p>
+            In je SBMC raakt dit de <strong>waardepropositie</strong> (wat je claimt), de <strong>kanalen</strong> (reclame, website, influencers) en de <strong>klantrelaties</strong> (verkoop op afstand, privacy). Productaansprakelijkheid is een risico dat doorwerkt in je <strong>kostenstructuur</strong> en je afspraken met <strong>key partners</strong> zoals producenten en importeurs.
+          </p>
+
+          <h3>1 · Productaansprakelijkheid</h3>
+          <p>
+            Stel: een klant koopt een elektrische fiets, de accu vat vlam en de schuur brandt af. Wie betaalt? De klant kan de verkoper aanspreken op grond van de koopovereenkomst. Maar de wet geeft de benadeelde ook een rechtstreekse vordering op de <strong>producent</strong>, zonder dat er een overeenkomst met die producent nodig is. Dat is <strong>productaansprakelijkheid</strong>.
+          </p>
+          <p>De kern, die je in hoofdstuk 7 van het boek uitgebreid leest:</p>
+          <ul>
+            <li><strong>Het is een risicoaansprakelijkheid.</strong> De benadeelde hoeft niet te bewijzen dat de producent een fout maakte. Hij moet wel aantonen dat er schade is, dat het product een gebrek had en dat de schade door dat gebrek is veroorzaakt.</li>
+            <li><strong>Een product is gebrekkig</strong> als het niet de veiligheid biedt die men daarvan mag verwachten, gelet op alle omstandigheden, zoals de presentatie van het product (gebruiksaanwijzing, waarschuwingen) en het redelijkerwijs te verwachten gebruik.</li>
+            <li><strong>Producent is een breed begrip.</strong> Niet alleen de fabrikant, maar ook wie het product in de EU importeert en wie zich als producent presenteert door er zijn naam of merk op te zetten. Is de producent niet te achterhalen, dan kan ook de leverancier aansprakelijk zijn.</li>
+            <li><strong>De producent heeft verweren</strong>, bijvoorbeeld dat het gebrek er nog niet was toen het product in het verkeer kwam. Ook gelden er termijnen waarbinnen de benadeelde moet handelen.</li>
+          </ul>
+          <div class="callout warning">
+            <p style="margin:0;"><strong>Let op: eigen merk en import.</strong> Veel startende ondernemers kopen een product buiten de EU in en verkopen het onder hun eigen merknaam. Juridisch ben je dan zelf <em>producent</em>, met alle aansprakelijkheid van dien. Neem dat mee in je afspraken met de leverancier, je kwaliteitscontrole en je verzekering. Het Europese recht rond productaansprakelijkheid is bovendien in beweging, onder meer voor software; volg de stof en dia's van het kennisblok voor de stand van zaken.</p>
+          </div>
+
+          <h3>2 · Bescherming van de consument</h3>
+          <p>
+            Een consument staat tegenover een bedrijf vaak zwakker: minder kennis, minder informatie, minder onderhandelingsruimte. Daarom beschermt de wet consumenten extra. Drie onderdelen zijn voor jouw challenge het belangrijkst.
+          </p>
+          <h4>Oneerlijke handelspraktijken</h4>
+          <p>
+            Een ondernemer mag geen <strong>oneerlijke handelspraktijken</strong> toepassen tegenover consumenten. De maatstaf is de <strong>gemiddelde consument</strong>: zou die door de praktijk een besluit nemen dat hij anders niet had genomen? Twee soorten oneerlijke praktijken zijn belangrijk:
+          </p>
+          <ul>
+            <li><strong>Misleidende handelspraktijken</strong>: je geeft onjuiste of onduidelijke informatie, of je laat essentiële informatie weg (een misleidende omissie), bijvoorbeeld over de prijs, de eigenschappen of de voordelen van een product.</li>
+            <li><strong>Agressieve handelspraktijken</strong>: je beperkt de keuzevrijheid van de consument door intimidatie, dwang of ongepaste beïnvloeding.</li>
+          </ul>
+          <p>
+            Daarnaast bestaat een <strong>zwarte lijst</strong> van praktijken die altijd oneerlijk zijn, zonder dat je hoeft te kijken naar het effect op de gemiddelde consument. Denk aan valselijk beweren dat een product maar heel kort beschikbaar is om een snelle beslissing af te dwingen, of het gebruik van een keurmerk zonder toestemming. Welke praktijken op de zwarte lijst staan, lees je in hoofdstuk 9. De <strong>Autoriteit Consument &amp; Markt (ACM)</strong> houdt toezicht en kan boetes opleggen.
+          </p>
+          <div class="callout tip">
+            <p style="margin:0;"><strong>De link met hoofdstuk 1.</strong> De dark patterns uit het marketinghoofdstuk (een aftelklok die opnieuw begint, nepvoorraad, verzonnen reviews, voorgevinkte extra's, kosten die pas aan het eind verschijnen) zijn precies de praktijken waar het consumentenrecht over gaat. Marketing zegt: het ondermijnt je belofte. Het recht zegt: het mag niet. Beide redenen zijn genoeg.</p>
+          </div>
+          <h4>Verkoop op afstand en digitaal ondernemen</h4>
+          <p>
+            Verkoop je online of via de telefoon aan consumenten, dan gelden extra regels. De consument heeft in de regel een <strong>herroepingsrecht</strong>: hij kan binnen een bedenktijd van 14 dagen zonder opgave van redenen afzien van de koop, met uitzonderingen die je in het boek en op Ondernemersplein leest. Je moet de consument vooraf duidelijk informeren, onder meer over je identiteit, de totale prijs en het herroepingsrecht. De pagina <em>Digitaal ondernemen</em> op Ondernemersplein zet de regels voor een webwinkel op een rij, van algemene voorwaarden en betaalknop tot cookies en privacy.
+          </p>
+          <h4>Reclame en influencers</h4>
+          <p>
+            Reclame moet als reclame herkenbaar zijn. Dat geldt ook voor <strong>influencers</strong>: wie een product aanprijst omdat hij daarvoor betaald wordt of iets krijgt, moet dat duidelijk vermelden. In Nederland zijn daar regels voor in de Reclamecode, en voor influencers met een groot bereik ook vanuit de Mediawet. Het nieuwsitem van BNNVARA over micro-influencers die reclame maken voor producten waar ze niet achter staan, laat zien waarom dit speelt. Gebruik je in je challenge influencers of klantreviews, dan ben jij als adverteerder ook verantwoordelijk voor wat er gezegd wordt.
+          </p>
+
+          <h3>3 · Bescherming van de concurrent</h3>
+          <p>
+            Het recht beschermt niet alleen consumenten, maar ook concurrenten tegen elkaar. Mag je een concurrent zwartmaken in je reclame? Nee. Mag je jezelf met een concurrent vergelijken? Onder voorwaarden wel. <strong>Vergelijkende reclame</strong>, waarin je een concurrent of diens producten herkenbaar noemt, is toegestaan als die onder meer niet misleidend is, producten vergelijkt die in dezelfde behoefte voorzien, objectief en controleerbaar vergelijkt en de concurrent niet kleineert. Daarnaast is misleidende reclame ook tussen bedrijven verboden. De precieze voorwaarden lees je in hoofdstuk 9.
+          </p>
+
+          <h3>4 · Privacy en data: de AVG</h3>
+          <p>
+            Bijna elke challenge verwerkt <strong>persoonsgegevens</strong>: gegevens over een geïdentificeerde of identificeerbare persoon, zoals een naam, e-mailadres, telefoonnummer of klantprofiel. Denk aan je interviews, je leads uit hoofdstuk 2, een nieuwsbrief of een klantbestand. Daarvoor geldt de <strong>Algemene verordening gegevensbescherming (AVG)</strong>. De hoofdlijnen:
+          </p>
+          <ul>
+            <li><strong>Je hebt een grondslag nodig.</strong> Je mag persoonsgegevens alleen verwerken als daar een wettelijke grondslag voor is. De AVG kent er zes: toestemming, de uitvoering van een overeenkomst, een wettelijke verplichting, vitale belangen, een taak van algemeen belang en het gerechtvaardigd belang.</li>
+            <li><strong>Doelbinding en dataminimalisatie.</strong> Verzamel alleen wat je nodig hebt voor een duidelijk doel, en gebruik het niet zomaar voor iets anders.</li>
+            <li><strong>Transparantie en rechten.</strong> Mensen hebben recht op informatie over wat je met hun gegevens doet, en onder meer op inzage, correctie en verwijdering.</li>
+            <li><strong>Beveiliging.</strong> Je moet gegevens goed beveiligen. Een datalek moet je in bepaalde gevallen melden.</li>
+          </ul>
+          <p>
+            Voor cookies en marketingberichten gelden aanvullende regels, bijvoorbeeld dat je voor het plaatsen van volgcookies toestemming nodig hebt. Toezichthouder is de <strong>Autoriteit Persoonsgegevens (AP)</strong>.
+          </p>
+          <div class="callout warning">
+            <p style="margin:0;"><strong>Let op: ook je onderzoeksdata.</strong> Voor je portfolio bewaar je ruwe data, zoals opnames en namen en telefoonnummers van mensen die je sprak. Dat zijn persoonsgegevens. Vraag toestemming, vertel waarvoor je ze gebruikt, bewaar ze veilig en niet langer dan nodig.</p>
+          </div>
+
+          <div class="callout spark">
+            <p>
+              Ook Spark liep tegen consumentenbelangen aan, al was het geen webwinkel. Eindgebruikers in dorpen betaalden hun kit in maandelijkse termijnen aan de distributiepartner. Dat werkt alleen als het product doet wat het belooft en de afspraken eerlijk zijn: anders stoppen mensen met betalen. Volgens Altech, de distributiepartner in Congo, betaalde bijna 99 procent van de eindgebruikers netjes af. Een eerlijk product en heldere afspraken zijn dus niet alleen een juridische plicht, maar ook de basis van een rendabel model.
+            </p>
+          </div>
+
+          <h3>5 · De juridische check van je challenge</h3>
+          <p>Gebruik deze vragen om de juridische kant van je businessmodel te onderbouwen in je portfolio:</p>
+          <table>
+            <thead><tr><th>Vraag</th><th>Hoofdstuk</th></tr></thead>
+            <tbody>
+              <tr><td>Welke overeenkomsten heeft mijn model nodig, en wanneer zijn ze gesloten?</td><td>3</td></tr>
+              <tr><td>Heb ik algemene voorwaarden, en zijn die op tijd ter hand gesteld? Staan er bedingen in die op de zwarte of grijze lijst staan?</td><td>3</td></tr>
+              <tr><td>Wat gebeurt er als een klant, leverancier of partner niet nakomt?</td><td>3</td></tr>
+              <tr><td>Welke schade kan mijn onderneming bij anderen veroorzaken, en hoe beperk of verzeker ik dat risico?</td><td>3</td></tr>
+              <tr><td>Ben ik juridisch producent of importeur van mijn product?</td><td>4</td></tr>
+              <tr><td>Zijn mijn belofte en bewijs uit hoofdstuk 1 waar, en blijven mijn beïnvloedingstechnieken aan de goede kant van de grens?</td><td>4</td></tr>
+              <tr><td>Verkoop ik op afstand aan consumenten, en voldoe ik aan de informatieplicht en het herroepingsrecht?</td><td>4</td></tr>
+              <tr><td>Welke persoonsgegevens verwerk ik, op welke grondslag, en hoe beveilig ik ze?</td><td>4</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Veelgemaakte fouten in deze fase (samengevat)</h3>
+          <div class="callout warning">
+            <ul>
+              <li><strong>Denken dat alleen de fabrikant aansprakelijk is.</strong> Ook de importeur en wie zijn merk op een product zet, kunnen producent zijn.</li>
+              <li><strong>Marketingclaims die je niet kunt onderbouwen</strong>, zoals vage duurzaamheidsclaims.</li>
+              <li><strong>Nepschaarste of nepreviews</strong> als salestechniek.</li>
+              <li><strong>Betaalde content niet herkenbaar maken.</strong></li>
+              <li><strong>Een concurrent afkraken</strong> in plaats van eerlijk en controleerbaar vergelijken.</li>
+              <li><strong>Persoonsgegevens verzamelen zonder grondslag of doel</strong>, of meer verzamelen dan nodig.</li>
+            </ul>
+          </div>
+
+          <div class="samenvatting">
+            <h3>Samenvatting + checklist</h3>
+            <p>Wat moet je na dit hoofdstuk en <em>Praktisch bedrijfsrecht</em> H7 en H9 kunnen?</p>
+            <ul class="checklist">
+              <li>Uitleggen wat productaansprakelijkheid is en waarom het een risicoaansprakelijkheid is</li>
+              <li>Uitleggen wanneer een product gebrekkig is en wie als producent kan worden aangesproken</li>
+              <li>Misleidende en agressieve handelspraktijken herkennen, en uitleggen wat de zwarte lijst is</li>
+              <li>De maatstaf van de gemiddelde consument toepassen</li>
+              <li>De belangrijkste regels voor verkoop op afstand noemen, waaronder het herroepingsrecht</li>
+              <li>Uitleggen waarom reclame herkenbaar moet zijn, ook bij influencers</li>
+              <li>Uitleggen onder welke voorwaarden vergelijkende reclame is toegestaan</li>
+              <li>Uitleggen wat persoonsgegevens zijn, welke zes grondslagen de AVG kent en welke rechten betrokkenen hebben</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Oefenvragen voor de kennistoets</h3>
+            <p>6 vragen in MC-vorm over dit hoofdstuk. Samen met hoofdstuk 3 vormen ze een set van 12. Klik op een vraag om het antwoord te zien.</p>
+
+            <details>
+              <summary>1. Een student importeert bamboe fietshelmen uit China en verkoopt ze onder het eigen merk "Bamboost". Een helm breekt bij een val. Wie kan de gewonde fietser op grond van productaansprakelijkheid aanspreken?</summary>
+              <ul class="opties">
+                <li data-letter="A">Alleen de Chinese fabrikant</li>
+                <li data-letter="B">Ook de student, als importeur in de EU en omdat het eigen merk op het product staat</li>
+                <li data-letter="C">Niemand, want de fietser heeft geen overeenkomst met de fabrikant</li>
+                <li data-letter="D">Alleen de winkel waar de helm gekocht is</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Het begrip producent omvat ook de importeur in de EU en wie zich als producent presenteert met naam of merk. Een overeenkomst is niet nodig.</div>
+            </details>
+
+            <details>
+              <summary>2. Wat houdt in dat productaansprakelijkheid een risicoaansprakelijkheid is?</summary>
+              <ul class="opties">
+                <li data-letter="A">De benadeelde hoeft niet te bewijzen dat de producent een fout maakte; een gebrek, schade en oorzakelijk verband zijn genoeg.</li>
+                <li data-letter="B">De producent is alleen aansprakelijk als hij een risicoanalyse heeft overgeslagen.</li>
+                <li data-letter="C">De benadeelde draagt zelf het risico van het product.</li>
+                <li data-letter="D">De producent is altijd aansprakelijk, ook als het product geen gebrek had.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: A.</strong> Schuld van de producent is niet nodig. Wel moet er een gebrek zijn dat de schade veroorzaakte.</div>
+            </details>
+
+            <details>
+              <summary>3. Een webshop toont bij elke bestelling "Nog maar 2 op voorraad!", ook als er honderden op voorraad zijn. Hoe noem je dit?</summary>
+              <ul class="opties">
+                <li data-letter="A">Een toegestane vorm van schaarste, zolang de prijs klopt</li>
+                <li data-letter="B">Een oneerlijke, misleidende handelspraktijk</li>
+                <li data-letter="C">Vergelijkende reclame</li>
+                <li data-letter="D">Een agressieve handelspraktijk, maar alleen als de klant klaagt</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Valse schaarste misleidt de consument om sneller te beslissen. Bepaalde vormen hiervan staan zelfs op de zwarte lijst. Echte schaarste benoemen mag wel.</div>
+            </details>
+
+            <details>
+              <summary>4. Een influencer krijgt gratis sneakers en een vergoeding om ze aan te prijzen. Wat moet volgens de reclameregels?</summary>
+              <ul class="opties">
+                <li data-letter="A">Niets, zolang de influencer de sneakers echt goed vindt</li>
+                <li data-letter="B">De samenwerking moet duidelijk herkenbaar zijn als reclame</li>
+                <li data-letter="C">De influencer moet een vergelijking met concurrerende merken maken</li>
+                <li data-letter="D">Alleen influencers met meer dan een miljoen volgers hoeven iets te vermelden</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Reclame moet als reclame herkenbaar zijn, ook bij influencers. Voor grote influencers gelden daarnaast extra regels.</div>
+            </details>
+
+            <details>
+              <summary>5. Een energieleverancier adverteert: "Wij zijn 15% goedkoper dan Leverancier X voor hetzelfde contract", en dat klopt aantoonbaar. Is dit toegestaan?</summary>
+              <ul class="opties">
+                <li data-letter="A">Nee, je mag een concurrent nooit bij naam noemen.</li>
+                <li data-letter="B">Ja, vergelijkende reclame mag als ze onder meer niet misleidend, objectief en controleerbaar is en vergelijkbare producten vergelijkt.</li>
+                <li data-letter="C">Alleen als Leverancier X vooraf toestemming geeft.</li>
+                <li data-letter="D">Alleen in reclame gericht op bedrijven.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Vergelijkende reclame is onder voorwaarden toegestaan. Kleineren of misleiden mag niet.</div>
+            </details>
+
+            <details>
+              <summary>6. Een student wil de e-mailadressen van geïnterviewde ondernemers later gebruiken voor een nieuwsbrief. Wat is volgens de AVG het belangrijkste aandachtspunt?</summary>
+              <ul class="opties">
+                <li data-letter="A">Niets, want e-mailadressen zijn geen persoonsgegevens.</li>
+                <li data-letter="B">Er is een grondslag nodig voor dit nieuwe doel, zoals toestemming; doelbinding verbiedt zomaar ander gebruik.</li>
+                <li data-letter="C">Het mag, als de nieuwsbrief gratis is.</li>
+                <li data-letter="D">Het mag, mits de gegevens binnen een jaar worden gebruikt.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> De gegevens zijn verzameld voor het onderzoek. Voor een ander doel heb je een eigen grondslag nodig, in dit geval meestal toestemming.</div>
+            </details>
+          </div>
+
+          <div class="samenvatting" style="background: var(--yellow-soft);">
+            <h3 style="color: #6c5114;">Toetswijzer voor dit hoofdstuk</h3>
+            <p>Voor de kennistoets bestudeer je <strong><em>Praktisch bedrijfsrecht</em> hoofdstuk 7 (Productaansprakelijkheid) en hoofdstuk 9 (Bescherming consument en concurrent, inclusief privacy en data)</strong>, de pagina <em>Digitaal ondernemen: dit zijn de regels</em> op Ondernemersplein, en de dia's en verwerkingsopdrachten van de kennisblokken. Ook hier geldt: deze reader is een wegwijzer, het boek is de toetsstof.</p>
+          </div>
+
+          <h3>Bronnen</h3>
+          <ul style="font-size:15px;">
+            <li>Fiers, J. W. J., &amp; Van Oosterhout, L. (z.d.). <em>Praktisch bedrijfsrecht</em> (6e ed.). Boom. Hoofdstuk 7 en 9.</li>
+            <li>Ondernemersplein. (z.d.). <em>Digitaal ondernemen: dit zijn de regels</em>. KVK. https://ondernemersplein.kvk.nl</li>
+            <li>BNNVARA. (z.d.). <em>Micro-influencers worden verleid tot reclame waar zij niet achter staan</em>.</li>
+            <li>ACM. (2020). <em>Leidraad bescherming online consument</em>. Autoriteit Consument &amp; Markt.</li>
+          </ul>
+        </section>
+
+        <!-- Hoofdstuk 5, Financieel 1 (input Ramon Haken volgt) -->
+        <section id="h5" class="chapter">
+          <span class="chapter-number">Hoofdstuk 5 · Week 16</span>
+          <h2>Financieel 1: kosten, prijs en break-even</h2>
+          <p class="subtitle">Wat kost je product, wat moet het opbrengen, en vanaf wanneer verdien je er geld aan?</p>
+
+          <div class="volgt">
+            <p style="margin-top:0;"><strong>Dit hoofdstuk volgt.</strong> De inhoud van het eerste financiële kennisblok wordt op dit moment uitgewerkt. Zodra die klaar is, vind je hier de theorie, oefenvragen en een toetswijzer, net als bij de andere hoofdstukken.</p>
+            <p style="margin-bottom:0;">In dit kennisblok gaat het over de bouwstenen <strong>kostenstructuur</strong> en <strong>key partners</strong> van je SBMC: inkoop, kostprijs, pricing en het break-evenpunt. Wil je alvast beginnen? Zet voor je challenge op een rij welke kosten je businessmodel heeft, welke daarvan vast zijn en welke meebewegen met het aantal klanten, en wat je klant nu betaalt voor alternatieven.</p>
+          </div>
+        </section>
+
+        <!-- Hoofdstuk 6, Financieel 2 (input Ramon Haken) -->
+        <section id="h6" class="chapter">
+          <span class="chapter-number">Hoofdstuk 6 · Week 17</span>
+          <h2>Financieel 2: financiering en kengetallen</h2>
+          <p class="subtitle">Hoe betaal je de start en de groei, en hoe zie je of een onderneming financieel gezond is?</p>
+
+          <div class="boekstof">
+            <p class="label">📖 Toetsstof uit het KVK Geldboek</p>
+            <p style="margin-top:0;">Naast dit hoofdstuk en de dia's bestudeer je uit het <em>KVK Geldboek voor ondernemers</em> (KVK, 16e herziene druk, 2024):</p>
+            <ul style="margin-bottom:8px;">
+              <li><strong>Paragraaf 1.2.2, De financieringsbegroting</strong>: hoe je je investeringen bekostigt met eigen en vreemd vermogen, inclusief de gouden balansregel en de brug naar solvabiliteit.</li>
+              <li><strong>Paragraaf 3.1, Eigen inbreng</strong>.</li>
+              <li><strong>Paragraaf 3.2, Regelingen en subsidies</strong>.</li>
+              <li><strong>Paragraaf 3.3, Vreemd vermogen</strong>, met de vormen van microfinanciering tot business angels.</li>
+            </ul>
+            <p style="margin-bottom:0;">Het Geldboek is gratis te downloaden via de website van KVK. De pagina's over financieringsvormen op kvk.nl (zie de bronnen) zijn handig om verder te lezen.</p>
+          </div>
+
+          <h3>Waarom dit hoofdstuk?</h3>
+          <p>
+            Een rendabel businessmodel moet niet alleen op termijn winst maken, het moet ook de tijd tot die winst overleven. Bijna elke onderneming moet eerst investeren voordat er geld binnenkomt: in voorraad, apparatuur, een website, marketing of de eerste medewerkers. Hoe betaal je dat? En als je eenmaal draait: hoe zie je of de onderneming financieel gezond is, ook op de lange termijn? Daar gaat dit hoofdstuk over.
+          </p>
+          <p>
+            In je SBMC raakt dit vooral de onderkant van het canvas: <strong>inkomstenstromen</strong> en <strong>kostenstructuur</strong>, en soms <strong>key partners</strong>, als een klant, leverancier of investeerder meebetaalt aan je groei. In je portfolio onderbouw je met dit hoofdstuk hoe jouw challenge gefinancierd kan worden en wat dat betekent voor de financiële positie van de onderneming.
+          </p>
+
+          <h3>1 · Van investering naar financiering</h3>
+          <p>
+            Je begint met de vraag wat je nodig hebt. In de <strong>investeringsbegroting</strong> zet je alles op een rij waarin je moet investeren: vaste activa (zoals machines, vervoermiddelen en inventaris) en vlottende activa (zoals een kasbuffer, debiteuren en voorraden), plus aanloopkosten en een post onvoorzien. In de <strong>financieringsbegroting</strong> werk je vervolgens uit hoe je die investeringen gaat bekostigen: met eigen vermogen, vreemd vermogen of een combinatie.
+          </p>
+          <ul>
+            <li><strong>Eigen vermogen (equity)</strong> is het deel dat de eigenaren zelf inbrengen of in de onderneming laten zitten: spaargeld, bedrijfsmiddelen die je al hebt, aandelenkapitaal in een bv, ingehouden winst.</li>
+            <li><strong>Vreemd vermogen (debt)</strong> is geld dat anderen je lenen, zoals banken, leveranciers of familie. Je onderscheidt <strong>kort vreemd vermogen</strong> (binnen een jaar terug te betalen, zoals rekening-courantkrediet en leverancierskrediet) en <strong>lang vreemd vermogen</strong> (zoals een langlopende lening).</li>
+          </ul>
+          <div class="formule">De gouden balansregel<span>Financier bezittingen die je lang aanhoudt (vaste activa) bij voorkeur met eigen vermogen of lang vreemd vermogen. Financier bezittingen die je korter dan een jaar aanhoudt (vlottende activa) met kort vreemd vermogen.</span></div>
+          <p>
+            Wie een machine van tien jaar betaalt met een rekening-courantkrediet dat de bank elk moment kan opzeggen, loopt een groot risico. Daarom sluit de looptijd van de financiering bij voorkeur aan op hoe lang je de bezitting gebruikt.
+          </p>
+
+          <h3>2 · Eigen vermogen tegenover vreemd vermogen</h3>
+          <table>
+            <thead><tr><th></th><th>Eigen vermogen</th><th>Vreemd vermogen</th></tr></thead>
+            <tbody>
+              <tr><td>Beloning</td><td>Een aandeel in de winst (dividend, of herinvesteren in het bedrijf). Bij verlies: geen beloning.</td><td>Rente, los van of je winst maakt.</td></tr>
+              <tr><td>Terugbetalen</td><td>Niet; het blijft in de onderneming.</td><td>Ja, volgens een aflossingsschema.</td></tr>
+              <tr><td>Risico voor de verschaffer</td><td>Hoog. Bij faillissement achteraan in de rij.</td><td>Lager, afhankelijk van de positie als schuldeiser.</td></tr>
+              <tr><td>Zeggenschap</td><td>Investeerders krijgen een deel van het eigendom en vaak invloed; voor de oprichters betekent dat <strong>verwatering</strong>.</td><td>Geen eigendom, wel voorwaarden en vaak zekerheden (onderpand).</td></tr>
+              <tr><td>Gevolg bij tegenvallers</td><td>Flexibel: geen vaste lasten.</td><td>Stevige gevolgen als je rente en aflossing niet kunt betalen.</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Voor de verschaffer van vreemd vermogen hangt het risico af van zijn plek in de rij bij een faillissement. Eerst komen schuldeisers met een <strong>zekerheidsrecht</strong> (zoals een pand- of hypotheekrecht), dan <strong>preferente schuldeisers</strong> (zoals de Belastingdienst en werknemers), dan de <strong>concurrente schuldeisers</strong> (gewone leveranciers en leningen) en tot slot de <strong>achtergestelde schuldeisers</strong>. Een <strong>achtergestelde lening</strong> telt bij een financieringsaanvraag daarom vaak mee als eigen vermogen. Hoe hoger het risico, hoe hoger het rendement dat een financier verwacht.
+          </p>
+
+          <h3>3 · Financiering past bij het stadium van je onderneming</h3>
+          <p>
+            Welke financiering je kunt krijgen, hangt sterk af van de fase waarin je onderneming zit. Een bank leent zelden aan een idee zonder omzet; een venture-capitalfonds stapt zelden in bij een eenmanszaak die stabiel wil blijven. Grofweg:
+          </p>
+          <table>
+            <thead><tr><th>Stadium</th><th>Wat gebeurt er?</th><th>Passende financiering</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Seed</strong></td><td>Idee en eerste onderzoek</td><td>Eigen geld, familie en vrienden, business angels, subsidies (grants)</td></tr>
+              <tr><td><strong>Proof of concept</strong></td><td>Aantonen dat het werkt en dat klanten betalen</td><td>Angels, subsidies, eerste financiering door klanten of leveranciers</td></tr>
+              <tr><td><strong>Start-up</strong></td><td>Eerste vaste klanten, omzet groeit</td><td>Klant- en leveranciersfinanciering, eerste leningen (debt)</td></tr>
+              <tr><td><strong>Growth</strong></td><td>Opschalen van een werkend model</td><td>Leningen en risicokapitaal (equity)</td></tr>
+              <tr><td><strong>Scaling</strong></td><td>Grote groei, nieuwe markten</td><td>Grotere equity-rondes en bancaire financiering</td></tr>
+            </tbody>
+          </table>
+          <div class="callout tip">
+            <p style="margin:0;"><strong>Ter naslag: welke vorm past bij je behoefte?</strong> Twee vragen helpen kiezen. <em>Kan ik de investering in een paar jaar terugbetalen?</em> En: <em>kan ik tussendoor periodiek iets betalen, zoals rente of dividend?</em> Twee keer ja wijst naar een gewone lening (debt). Wel terugbetalen maar niet tussendoor betalen wijst naar een lening zonder rente of een converteerbare lening waarbij de rente wordt opgeteld bij de lening. Niet terugbetalen maar wel periodiek betalen wijst naar eigen vermogen met dividend. Twee keer nee wijst naar eigen vermogen zonder dividend of een subsidie. Deze beslisboom hoef je niet te onthouden; het is een hulpmiddel voor je challenge.</p>
+          </div>
+
+          <h3>4 · Financieringsvormen</h3>
+          <p>Hieronder de vormen die je moet kunnen uitleggen en herkennen. In paragraaf 3.1 tot en met 3.3 van het KVK Geldboek lees je ze ook terug.</p>
+          <h4>Eigen inbreng en financiering uit je netwerk</h4>
+          <ul>
+            <li><strong>Eigen inbreng en bootstrapping.</strong> Je financiert de start met eigen spaargeld en bedrijfsmiddelen, en daarna zoveel mogelijk uit de eigen omzet. Je houdt alle zeggenschap, maar groeit vaak langzamer. Een eigen inbreng laat financiers ook zien dat je zelf risico durft te nemen.</li>
+            <li><strong>Geld lenen van familie en vrienden.</strong> Laagdrempelig en vaak met soepele voorwaarden, maar leg afspraken over rente, aflossing en wat er gebeurt bij tegenvallers schriftelijk vast; het gaat ook om je relatie.</li>
+          </ul>
+          <h4>Financiering via klanten en leveranciers</h4>
+          <ul>
+            <li><strong>Financiering door de klant, bijvoorbeeld vooruitbetaling via de offerte.</strong> De klant betaalt (een deel) vooraf, zodat jij de inkoop of het werk kunt voorfinancieren.</li>
+            <li><strong>Leverancierskrediet.</strong> De leverancier geeft je een betalingstermijn, zodat je de goederen al kunt verkopen voordat je ze betaalt. Dit is kort vreemd vermogen.</li>
+            <li><strong>Factoring.</strong> Je verkoopt je openstaande facturen (debiteuren) aan een factoringmaatschappij en krijgt direct het grootste deel van het bedrag. Dat verbetert je liquiditeit, maar kost een vergoeding.</li>
+            <li><strong>Leasing.</strong> Je gebruikt een bedrijfsmiddel, zoals een auto of machine, zonder het te kopen en betaalt daarvoor periodiek. Gebruik in plaats van bezit.</li>
+          </ul>
+          <h4>Bancaire en andere leningen</h4>
+          <ul>
+            <li><strong>Rekening-courantkrediet.</strong> Je mag tot een afgesproken limiet rood staan op je zakelijke rekening. Flexibel voor schommelingen in je kas, maar kort vreemd vermogen dat de bank kan opzeggen.</li>
+            <li><strong>Zakelijke lening.</strong> Een lening met een vaste looptijd, rente en aflossing. Een bank vraagt meestal een ondernemingsplan, een financieringsplan, een eigen inbreng en zekerheden. Een bank leent niet de volle waarde van een onderpand: van voorraden of inventaris wordt bijvoorbeeld maar een deel als <strong>beleenbaar</strong> gezien.</li>
+            <li><strong>Microfinanciering en kredietunies.</strong> Kleinere leningen voor ondernemers die bij een bank moeilijk terechtkunnen.</li>
+            <li><strong>Crowdfunding.</strong> Je haalt geld op bij een groot publiek dat ieder een (klein) bedrag inbrengt, meestal via een platform. Varianten: <em>donatie</em> (geen tegenprestatie), <em>reward-based</em> (een niet-financiële beloning, zoals het product), <em>lening</em>, <em>converteerbare lening</em> en <em>aandelen</em>. Crowdfunding is ook een test van je propositie: als niemand meedoet, zegt dat iets.</li>
+          </ul>
+          <h4>Risicokapitaal en tussenvormen</h4>
+          <ul>
+            <li><strong>Business angels</strong> (informele investeerders). Particulieren die vanuit zakelijk oogpunt eigen geld investeren, vaak tussen de 50.000 en 250.000 euro, als lening of aandelen. Ze brengen meestal ook kennis en contacten mee en werken soms in groepen.</li>
+            <li><strong>Venture capital.</strong> Fondsen die investeren in jonge, snelgroeiende bedrijven, in ruil voor aandelen. Hoort het fonds bij een bedrijf, dan heet het <em>corporate venture capital</em>.</li>
+            <li><strong>Converteerbare lening.</strong> Een lening die later kan worden omgezet in aandelen, bijvoorbeeld bij een volgende investeringsronde. Een tussenvorm tussen vreemd en eigen vermogen, vaak gebruikt in een vroege fase, als de waarde van het bedrijf nog lastig te bepalen is.</li>
+            <li><strong>Subsidies (grants).</strong> Geld dat je niet hoeft terug te betalen, maar dat vaak <em>gelabeld</em> is: je mag het alleen voor een bepaald doel gebruiken. Het aanvragen kost vaak veel tijd en de voorwaarden bieden weinig flexibiliteit.</li>
+            <li><strong>Stapelfinanciering.</strong> Je combineert meerdere vormen. Een eigen inbreng of investering van een angel maakt het vaak makkelijker om daarnaast een lening te krijgen.</li>
+          </ul>
+          <div class="callout spark">
+            <p>
+              Het financieringsverhaal van Spark laat zien hoe de vorm meeverandert met het stadium. In de <strong>seed</strong>-fase won het team de Keep an Eye Award van 25.000 euro: geld dat niet terugbetaald hoefde te worden en waarmee in drie maanden een verbeterde kit, nieuwe klanten en een eerste lokale partner volgden. Na het <strong>proof of concept</strong> stapte in 2013 energiebedrijf Engie (toen GDF SUEZ) in met 150.000 euro, gevolgd door StartersLift, Stichting DOEN en business angels. In 2019 investeerde de BOM 200.000 euro via een <strong>converteerbare lening</strong>, en in 2020 volgde een <strong>Series A</strong> van 2,3 miljoen euro aan eigen vermogen van de BOM, YARD Energy en DOEN Participaties. En voor de klanten van Spark, de distributiepartners, regelde Spark via het Dutch Good Growth Fund en Atradius <strong>vreemd vermogen</strong> tegen Nederlandse in plaats van lokale rente. Zo werd financiering zelf een onderdeel van de propositie.
+            </p>
+          </div>
+
+          <h3>5 · Kengetallen: is de onderneming financieel gezond?</h3>
+          <p>
+            <strong>Kengetallen</strong> (ook ratio's of verhoudingsgetallen) zijn getallen die een belangrijke verhouding tussen twee grootheden laten zien, zoals de winst ten opzichte van het geïnvesteerde vermogen. <strong>Kerncijfers</strong> zijn de cijfers zelf, zoals de omzet in euro's of het aantal medewerkers. Ondernemingen publiceren kengetallen in hun jaarverslag; banken en investeerders berekenen ze ook zelf. Drie groepen zijn het belangrijkst: <strong>liquiditeit</strong> (kun je op korte termijn je verplichtingen nakomen?), <strong>solvabiliteit</strong> (kun je op lange termijn je verplichtingen nakomen?) en <strong>rentabiliteit</strong> (hoe winstgevend is de onderneming?).
+          </p>
+
+          <h4>Liquiditeit</h4>
+          <p>Liquiditeit gaat over de korte termijn: kun je de rekeningen betalen die binnen een jaar komen?</p>
+          <div class="formule">Current ratio = vlottende activa (inclusief liquide middelen) ÷ kortlopende schulden<span>Vuistregel: groter dan 1,5.</span></div>
+          <div class="formule">Quick ratio = (vlottende activa − voorraden) ÷ kortlopende schulden<span>Vuistregel: groter dan 1. Strenger dan de current ratio, omdat voorraad niet altijd snel in geld om te zetten is.</span></div>
+          <p>
+            Kijk naar wat een transactie doet met de teller en de noemer. Een <em>storting van eigen vermogen</em> op de bank verhoogt de vlottende activa zonder dat de schulden stijgen: de current ratio wordt beter. Een <em>contante aankoop van inventaris</em> verlaagt de vlottende activa (er gaat geld weg naar een vast actief): de current ratio wordt slechter. Een <em>betaling door debiteuren</em> verschuift alleen geld van debiteuren naar de bank, beide vlottende activa: de current ratio blijft gelijk.
+          </p>
+
+          <h4>Solvabiliteit</h4>
+          <p>Solvabiliteit gaat over de lange termijn: kan de onderneming al haar schulden betalen, ook als het tegenzit? Een hoge solvabiliteit betekent een buffer.</p>
+          <div class="formule">Solvabiliteit = eigen vermogen ÷ totaal vermogen × 100%<span>Vuistregel: minimaal 25 tot 33 procent. Je komt ook varianten tegen, zoals vreemd vermogen ten opzichte van eigen vermogen. Controleer bij een gepresenteerd kengetal altijd welke variant is gebruikt.</span></div>
+          <p>
+            Hier zie je het verband met de financieringsbegroting: elke financieringskeuze verandert je solvabiliteit. Een extra lening verlaagt haar, een extra investering in aandelen verhoogt haar. Banken kijken daarom naar je solvabiliteit voordat ze lenen.
+          </p>
+
+          <h4>Rentabiliteit</h4>
+          <p>Rentabiliteit gaat over winstgevendheid: hoeveel levert het geïnvesteerde vermogen op?</p>
+          <div class="formule">Rentabiliteit van het totaal vermogen (RTV) = (nettowinst + rentekosten) ÷ gemiddeld totaal vermogen<span>Het rendement op al het geld in de onderneming, ongeacht van wie het is. Je telt de rente op, omdat die de beloning is voor de verschaffers van vreemd vermogen.</span></div>
+          <div class="formule">Rentabiliteit van het eigen vermogen (REV) = nettowinst ÷ gemiddeld eigen vermogen<span>Het rendement voor de eigenaren.</span></div>
+          <p>
+            RTV en REV hangen samen via het <strong>hefboomeffect</strong>. Zolang de onderneming met geleend geld meer verdient (RTV) dan ze aan rente betaalt (de rente op vreemd vermogen, RVV), stijgt het rendement voor de eigenaren naarmate er meer wordt geleend:
+          </p>
+          <div class="formule">REV = RTV + (RTV − RVV) × VV ÷ EV<span>Voorbeeld: RTV = 26,7%, RVV = 5%, VV = 100.000 euro, EV = 50.000 euro. REV = 0,267 + (0,267 − 0,05) × 100.000 ÷ 50.000 = 0,267 + 0,434 = ongeveer 0,70, dus 70%.</span></div>
+          <p>
+            Let op: de hefboom werkt ook de andere kant op. Is de RTV lager dan de rente, dan daalt het rendement voor de eigenaren juist door het lenen. Meer lenen betekent dus meer kans én meer risico, en een lagere solvabiliteit.
+          </p>
+
+          <h4>De beperkingen van kengetallen</h4>
+          <p>Kengetallen geven een beeld op hoofdlijnen, geen exacte waarheid. Houd rekening met deze beperkingen:</p>
+          <ul>
+            <li><strong>Er zijn geen vaste normen.</strong> Branche en manier van waarderen beïnvloeden de uitkomst. Vergelijk daarom met eerdere jaren en met vergelijkbare ondernemingen, en beoordeel kengetallen in samenhang.</li>
+            <li><strong>Veel kengetallen hebben een optimale zone.</strong> Te hoog kan ook een signaal zijn: een heel hoge current ratio kan betekenen dat er geld stilligt.</li>
+            <li><strong>Kleine noemers</strong> geven onwaarschijnlijk hoge uitkomsten.</li>
+            <li><strong>Negatieve cijfers</strong> in teller én noemer geven een positieve uitkomst, terwijl de situatie dubbel slecht is.</li>
+            <li><strong>De keuze van het basisjaar</strong> bepaalt in hoge mate hoe groot een groei lijkt.</li>
+            <li><strong>Er zijn verschillende berekeningsvarianten.</strong> De systematiek is belangrijker dan de exacte formule; reken gepresenteerde kengetallen na.</li>
+            <li><strong>Overdreven nauwkeurigheid wekt schijnzekerheid.</strong> Drie cijfers achter de komma maken een schatting niet betrouwbaarder.</li>
+          </ul>
+          <div class="callout tip">
+            <p style="margin:0;"><strong>In je challenge.</strong> Maak voor je challenge een eenvoudige investerings- en financieringsbegroting. Welke investering is nodig, welke financieringsvorm past bij het stadium van de onderneming, en wat doet die keuze met de liquiditeit en solvabiliteit? Werk je bij een bestaand bedrijf, bereken dan de kengetallen uit de laatste jaarcijfers en leg uit wat ze betekenen voor de ruimte om te investeren.</p>
+          </div>
+
+          <h3>Veelgemaakte fouten in deze fase (samengevat)</h3>
+          <div class="callout warning">
+            <ul>
+              <li><strong>Lange investeringen met kort geld financieren.</strong> Denk aan de gouden balansregel.</li>
+              <li><strong>Eigen en vreemd vermogen alleen op prijs vergelijken.</strong> Kijk ook naar risico, zeggenschap en flexibiliteit.</li>
+              <li><strong>Een financier kiezen die niet past bij het stadium</strong> van je onderneming.</li>
+              <li><strong>Vergeten dat subsidie gelabeld is</strong> en veel tijd kost.</li>
+              <li><strong>Current ratio en quick ratio door elkaar halen</strong>, of vergeten dat voorraad niet altijd snel geld oplevert.</li>
+              <li><strong>Eén kengetal los beoordelen</strong>, zonder vergelijking in de tijd of met de branche.</li>
+            </ul>
+          </div>
+
+          <div class="samenvatting">
+            <h3>Samenvatting + checklist</h3>
+            <p>Wat moet je na dit hoofdstuk en het KVK Geldboek kunnen?</p>
+            <ul class="checklist">
+              <li>Het verschil uitleggen tussen een investeringsbegroting en een financieringsbegroting</li>
+              <li>De gouden balansregel uitleggen en toepassen</li>
+              <li>Eigen en vreemd vermogen vergelijken op beloning, terugbetaling, risico en zeggenschap</li>
+              <li>De volgorde van schuldeisers bij faillissement uitleggen, en waarom een achtergestelde lening als eigen vermogen kan meetellen</li>
+              <li>Passende financieringsvormen koppelen aan het stadium van een onderneming</li>
+              <li>De financieringsvormen uit dit hoofdstuk uitleggen en herkennen in een casus</li>
+              <li>Current ratio, quick ratio en solvabiliteit berekenen en interpreteren</li>
+              <li>Beredeneren wat een transactie doet met de current ratio</li>
+              <li>RTV en REV berekenen en het hefboomeffect uitleggen</li>
+              <li>De beperkingen van kengetallen noemen</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Oefenvragen voor de kennistoets</h3>
+            <p>12 vragen in MC-vorm. Klik op een vraag om het antwoord met uitleg te zien.</p>
+
+            <details>
+              <summary>1. Een ondernemer financiert een machine die tien jaar meegaat met een rekening-courantkrediet. Welke regel overtreedt zij?</summary>
+              <ul class="opties">
+                <li data-letter="A">De gouden balansregel</li>
+                <li data-letter="B">De regel van de kleine noemer</li>
+                <li data-letter="C">Het hefboomeffect</li>
+                <li data-letter="D">De zwarte lijst</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: A.</strong> Vaste activa financier je bij voorkeur met eigen vermogen of lang vreemd vermogen, niet met kort vreemd vermogen.</div>
+            </details>
+
+            <details>
+              <summary>2. Welke uitspraak over eigen vermogen is juist?</summary>
+              <ul class="opties">
+                <li data-letter="A">De verschaffer krijgt altijd rente, ook bij verlies.</li>
+                <li data-letter="B">De verschaffer staat bij faillissement vooraan in de rij.</li>
+                <li data-letter="C">De verschaffer deelt in de winst, maar loopt een hoog risico en staat bij faillissement achteraan.</li>
+                <li data-letter="D">Eigen vermogen moet binnen vijf jaar worden terugbetaald.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Hoog risico, mogelijk hoog rendement. Rente en een vaste terugbetaling horen bij vreemd vermogen.</div>
+            </details>
+
+            <details>
+              <summary>3. Een bedrijf verkoopt zijn openstaande facturen aan een gespecialiseerde partij en krijgt direct het grootste deel van het geld. Hoe heet dit?</summary>
+              <ul class="opties">
+                <li data-letter="A">Leasing</li>
+                <li data-letter="B">Factoring</li>
+                <li data-letter="C">Leverancierskrediet</li>
+                <li data-letter="D">Crowdfunding</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Bij factoring zet je debiteuren direct om in geld, tegen een vergoeding.</div>
+            </details>
+
+            <details>
+              <summary>4. Een start-up haalt geld op bij 400 mensen die elk een bedrag geven en daarvoor als eerste het product ontvangen. Welke vorm is dit?</summary>
+              <ul class="opties">
+                <li data-letter="A">Crowdfunding op basis van donatie</li>
+                <li data-letter="B">Reward-based crowdfunding</li>
+                <li data-letter="C">Crowdfunding met aandelen</li>
+                <li data-letter="D">Een converteerbare lening</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> De inleggers krijgen een niet-financiële beloning, het product. Bij donatie is er geen tegenprestatie.</div>
+            </details>
+
+            <details>
+              <summary>5. Wat is kenmerkend voor een converteerbare lening?</summary>
+              <ul class="opties">
+                <li data-letter="A">Ze hoeft nooit te worden terugbetaald.</li>
+                <li data-letter="B">Ze kan later worden omgezet in aandelen.</li>
+                <li data-letter="C">Ze wordt altijd verstrekt door de overheid.</li>
+                <li data-letter="D">Ze is alleen beschikbaar voor beursgenoteerde bedrijven.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Een tussenvorm tussen vreemd en eigen vermogen, vaak gebruikt als de waarde van een jong bedrijf nog lastig te bepalen is.</div>
+            </details>
+
+            <details>
+              <summary>6. Wat is een belangrijk nadeel van subsidies (grants)?</summary>
+              <ul class="opties">
+                <li data-letter="A">Je moet er hoge rente over betalen.</li>
+                <li data-letter="B">Je verliest een deel van het eigendom van je bedrijf.</li>
+                <li data-letter="C">Het geld is vaak gelabeld en het aanvragen kost veel tijd.</li>
+                <li data-letter="D">Je moet het binnen een jaar terugbetalen.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Subsidie hoef je meestal niet terug te betalen, maar je mag het alleen voor een bepaald doel gebruiken en de voorwaarden zijn weinig flexibel.</div>
+            </details>
+
+            <details>
+              <summary>7. Een bedrijf heeft 90.000 euro vlottende activa, waarvan 30.000 euro voorraad, en 50.000 euro kortlopende schulden. Wat is de quick ratio?</summary>
+              <ul class="opties">
+                <li data-letter="A">0,6</li>
+                <li data-letter="B">1,2</li>
+                <li data-letter="C">1,8</li>
+                <li data-letter="D">2,4</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> (90.000 − 30.000) ÷ 50.000 = 1,2. De current ratio is 90.000 ÷ 50.000 = 1,8 (antwoord C).</div>
+            </details>
+
+            <details>
+              <summary>8. Wat gebeurt er met de current ratio als debiteuren hun openstaande facturen betalen?</summary>
+              <ul class="opties">
+                <li data-letter="A">Die stijgt.</li>
+                <li data-letter="B">Die daalt.</li>
+                <li data-letter="C">Die blijft gelijk.</li>
+                <li data-letter="D">Dat hangt af van de solvabiliteit.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Geld verschuift van debiteuren naar de bank. Beide zijn vlottende activa, en de kortlopende schulden veranderen niet.</div>
+            </details>
+
+            <details>
+              <summary>9. Een onderneming heeft een eigen vermogen van 60.000 euro en een totaal vermogen van 300.000 euro. Wat is de solvabiliteit, en hoe beoordeel je die met de vuistregel?</summary>
+              <ul class="opties">
+                <li data-letter="A">20%; aan de lage kant</li>
+                <li data-letter="B">25%; precies goed</li>
+                <li data-letter="C">80%; te hoog</li>
+                <li data-letter="D">500%; zeer gezond</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: A.</strong> 60.000 ÷ 300.000 × 100% = 20%. Dat is lager dan de vuistregel van minimaal 25 tot 33 procent.</div>
+            </details>
+
+            <details>
+              <summary>10. De RTV van een onderneming is 8% en de rente op vreemd vermogen 5%. De onderneming leent extra. Wat gebeurt er met de REV, als de rest gelijk blijft?</summary>
+              <ul class="opties">
+                <li data-letter="A">De REV stijgt.</li>
+                <li data-letter="B">De REV daalt.</li>
+                <li data-letter="C">De REV blijft gelijk.</li>
+                <li data-letter="D">De REV wordt negatief.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: A.</strong> Zolang RTV hoger is dan RVV, werkt de hefboom positief: meer vreemd vermogen verhoogt het rendement op het eigen vermogen. Wel daalt de solvabiliteit.</div>
+            </details>
+
+            <details>
+              <summary>11. Een onderneming meldt "300% omzetgroei", gemeten vanaf het eerste jaar, waarin de omzet bijna nul was. Op welke beperking van kengetallen wijst dit?</summary>
+              <ul class="opties">
+                <li data-letter="A">Negatieve cijfers in teller en noemer</li>
+                <li data-letter="B">De keuze van het basisjaar (en de kleine noemer)</li>
+                <li data-letter="C">Overdreven nauwkeurigheid</li>
+                <li data-letter="D">Het ontbreken van een optimale zone</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Een heel lage uitgangssituatie maakt elke groei groot. De keuze van het basisjaar bepaalt de berekende groei.</div>
+            </details>
+
+            <details>
+              <summary>12. Een jonge onderneming heeft een werkend prototype en de eerste betalende klanten, maar nog geen winst. Welke financiering past het minst bij dit stadium?</summary>
+              <ul class="opties">
+                <li data-letter="A">Een business angel</li>
+                <li data-letter="B">Vooruitbetaling door klanten</li>
+                <li data-letter="C">Een grote equity-ronde van een groeifonds voor de internationale uitrol</li>
+                <li data-letter="D">Een subsidie voor innovatie</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Grote equity-rondes horen bij de fase van groei en opschaling. Bij proof of concept passen angels, subsidies en financiering door klanten of leveranciers beter.</div>
+            </details>
+          </div>
+
+          <div class="samenvatting" style="background: var(--yellow-soft);">
+            <h3 style="color: #6c5114;">Toetswijzer voor dit hoofdstuk</h3>
+            <p>Voor de kennistoets ken je de inhoud van dit hoofdstuk en de dia's van het kennisblok, en bestudeer je uit het <strong><em>KVK Geldboek voor ondernemers</em> paragraaf 1.2.2 (De financieringsbegroting), 3.1 (Eigen inbreng), 3.2 (Regelingen en subsidies) en 3.3 (Vreemd vermogen)</strong>. Zorg dat je de kengetallen zelf kunt berekenen en kunt uitleggen wat een uitkomst betekent. De beslisboom in paragraaf 3 is ter naslag en geen toetsstof. Hoofdstuk 5 volgt nog; de toetsstof daarvan wordt daar vermeld.</p>
+          </div>
+
+          <h3>Bronnen</h3>
+          <h4>Toetsstof</h4>
+          <ul style="font-size:15px;">
+            <li>KVK. (2024). <em>KVK Geldboek voor ondernemers</em> (16e herziene druk). Kamer van Koophandel. Paragraaf 1.2.2, 3.1, 3.2 en 3.3.</li>
+          </ul>
+          <h4>Verder lezen op kvk.nl</h4>
+          <ul style="font-size:15px;">
+            <li>KVK. (z.d.). <em>Welke financieringsvormen zijn er?</em> https://www.kvk.nl/geldzaken/financieringsvormen/</li>
+            <li>KVK. (z.d.). <em>Slim rekenen met solvabiliteit</em>. https://www.kvk.nl/geldzaken/slim-rekenen-met-solvabiliteit/</li>
+            <li>KVK. (z.d.). <em>Is je bedrijf levensvatbaar?</em> https://www.kvk.nl/geldzaken/bepaal-de-levensvatbaarheid-van-je-bedrijf/</li>
+            <li>KVK. (z.d.). <em>Een zakelijke lening, wat is dat?</em> https://www.kvk.nl/geldzaken/zakelijke-lening/</li>
+            <li>KVK. (z.d.). <em>Wat is een rekening-courantkrediet?</em> https://www.kvk.nl/geldzaken/rekening-courantkrediet/</li>
+            <li>KVK. (z.d.). <em>Wat is factoring?</em> https://www.kvk.nl/geldzaken/factoring/</li>
+            <li>KVK. (z.d.). <em>Wat is leasing?</em> https://www.kvk.nl/geldzaken/wat-is-leasing/</li>
+            <li>KVK. (z.d.). <em>Wat is crowdfunding?</em> https://www.kvk.nl/geldzaken/wat-is-crowdfunding/</li>
+            <li>KVK. (z.d.). <em>Wat is een business angel?</em> https://www.kvk.nl/geldzaken/wat-is-een-business-angel/</li>
+            <li>KVK. (z.d.). <em>Financiering met risicokapitaal</em>. https://www.kvk.nl/geldzaken/risicokapitaal/</li>
+            <li>KVK. (z.d.). <em>Geld lenen van familie of vrienden voor je bedrijf</em>. https://www.kvk.nl/geldzaken/geld-lenen-van-familie-of-vrienden/</li>
+          </ul>
+        </section>
+
+        <!-- Werkbladen -->
+        <section id="werkbladen" class="chapter">
+          <span class="chapter-number">Bijlage</span>
+          <h2>Werkbladen voor je challenge</h2>
+          <p class="subtitle">Kopieer deze tabellen naar je eigen document en vul ze in op basis van je onderzoek</p>
+
+          <h3>Werkblad A · Buyer persona (hoofdstuk 1 en 2)</h3>
+          <p>Onderbouw elke uitspraak met minstens één letterlijk citaat of observatie. Noteer onderaan op hoeveel interviews en welke andere bronnen (medewerkers, reviews, observaties) de persona is gebaseerd.</p>
+          <table class="werkblad">
+            <thead><tr><th>Onderdeel</th><th>Kernvraag</th><th>Jouw bevindingen en citaat</th></tr></thead>
+            <tbody>
+              <tr><td>1. Wie en context</td><td>Wie is het, in welke situatie, welke rol? Alleen wat het gedrag verklaart.</td><td></td></tr>
+              <tr><td>2. Aanleiding</td><td>Wat zet deze klant in beweging? Wanneer gaat de klant zoeken?</td><td></td></tr>
+              <tr><td>3. Huidig gedrag en alternatieven</td><td>Hoe lost de klant het nu op? Welke omwegen?</td><td></td></tr>
+              <tr><td>4. Wensen en doelen</td><td>Wat wil de klant bereiken, functioneel, emotioneel en sociaal?</td><td></td></tr>
+              <tr><td>5. Vrees en drempels</td><td>Waar is de klant bang voor? Wat houdt hem tegen?</td><td></td></tr>
+              <tr><td>6. Overtuigingen</td><td>Wat gelooft de klant over zichzelf, de categorie en aanbieders?</td><td></td></tr>
+              <tr><td>7. Dilemma's</td><td>Tussen welke twee dingen zit de klant in?</td><td></td></tr>
+              <tr><td>8. Beslisgedrag</td><td>Waarop kiest de klant? Wie beslist mee (in B2B: wie is de economic buyer)? Welke bronnen?</td><td></td></tr>
+              <tr><td>9. Letterlijke citaten</td><td>Welke drie tot vijf zinnen vatten de wereld van de klant samen?</td><td></td></tr>
+              <tr><td>10. Conflictkandidaten</td><td>Welke drie tot vijf conflicten volgen hieruit?</td><td></td></tr>
+            </tbody>
+          </table>
+
+          <h3>Werkblad B · Van conflict naar belofte en bewijs (hoofdstuk 1)</h3>
+          <table class="werkblad">
+            <thead><tr><th>Stap</th><th>Wat vul je in?</th><th>Jouw uitwerking</th></tr></thead>
+            <tbody>
+              <tr><td>1. Conflicten</td><td>Minstens één per laag (functioneel, emotioneel, sociaal, zelfbeeld): vrees ("Ik ...") en wens ("Ik ..."), met citaat</td><td></td></tr>
+              <tr><td>2. Scherpste conflict</td><td>Score 1 tot 5 op emotioneel relevant, empowert, groot genoeg, uniek, geloofwaardig op te lossen, met onderbouwing</td><td></td></tr>
+              <tr><td>3. Inzicht</td><td>"Ik wil ..., maar .... Dat raakt me, want ...". Met wie getoetst (herkenningstest), en wat was de reactie?</td><td></td></tr>
+              <tr><td>4. Belofte</td><td>Niveau (merk of propositie), eindwaarde, vijf varianten, gekozen belofte en de toets (lost conflict op, positief, klant is held, eenvoudig, waar te maken)</td><td></td></tr>
+              <tr><td>5. Bewijs</td><td>Kenmerk, concreet voordeel (de USP), soort bewijs, USP-checklist, en hoe je het test</td><td></td></tr>
+            </tbody>
+          </table>
+
+          <h3>Werkblad C · Contactmomentencheck (hoofdstuk 1)</h3>
+          <p>Belofte: ... · Conflict: ... · Belangrijkste bewijs: ...</p>
+          <table class="werkblad">
+            <thead><tr><th>Fase</th><th>Contactmoment en soort</th><th>Wat zou de klant moeten merken?</th><th>Wat merkt de klant nu? (bron)</th><th>Weegt zwaar?</th><th>Oordeel en verbeteractie</th></tr></thead>
+            <tbody>
+              <tr><td>Voor</td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Tijdens</td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>Na</td><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+
+          <h3>Werkblad D · Je salesfunnel in cijfers (hoofdstuk 2)</h3>
+          <table class="werkblad">
+            <thead><tr><th>Onderdeel</th><th>Wat vul je in?</th><th>Jouw uitwerking</th></tr></thead>
+            <tbody>
+              <tr><td>ICP</td><td>Firmographics, technographics, context en timing, pijnpunten</td><td></td></tr>
+              <tr><td>AIDA</td><td>Per fase: kanaal en boodschap; welke brug naar offline, met welk tastbaar voordeel?</td><td></td></tr>
+              <tr><td>BANT</td><td>Hoe toets je budget, authority, need en timeline bij een lead?</td><td></td></tr>
+              <tr><td>Conversieberekening</td><td>Doel (afspraken of deals) ÷ conversie per stap = benodigde leads</td><td></td></tr>
+              <tr><td>Sales velocity</td><td>(Kansen × winrate × dealwaarde) ÷ cycluslengte; welke knop verbeter je eerst?</td><td></td></tr>
+              <tr><td>Meting (ruwe data)</td><td>Bereik, reacties, afspraken en deals die je in de challenge echt hebt gemeten</td><td></td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <footer style="padding: 32px 0; text-align: center; color: var(--muted); font-size: 14px;">
+          <p>Reader Vakkennis P2 · Rendabel maken · ORM jaar 2 · Avans Hogeschool · 2026/27 · Conceptversie</p>
+        </footer>
+      </main>
+    </div>
+    <script>
+      // Open <details id="overzicht"> of #toetsinhoud automatisch wanneer er via een ankerlink naartoe gesprongen wordt.
+      (function () {
+        function openTargetDetails() {
+          var hash = window.location.hash;
+          if (hash !== '#overzicht' && hash !== '#toetsinhoud') return;
+          var el = document.querySelector(hash);
+          if (el && el.tagName === 'DETAILS') {
+            el.open = true;
+            setTimeout(function () {
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 60);
+          }
+        }
+        window.addEventListener('hashchange', openTargetDetails);
+        window.addEventListener('DOMContentLoaded', openTargetDetails);
+      })();
+    </script>
+  </body>
+</html>
