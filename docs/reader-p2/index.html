@@ -11,20 +11,20 @@
     <link rel="stylesheet" href="../reader/assets/reader.css" />
     <style>
       /* Aanvullingen voor reader P2; de basisstijl komt uit reader P1. */
-      .sbmc-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: auto auto auto; gap: 6px; margin: 8px 0; font-size: 13px; }
+      .sbmc-grid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); grid-template-rows: auto auto auto; gap: 6px; margin: 8px 0; font-size: 13px; }
       .sbmc-grid > div { min-width: 0; overflow-wrap: anywhere; hyphens: auto; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 8px; }
       .sbmc-grid strong { display: block; font-size: 14px; margin-bottom: 4px; }
       .sbmc-grid .hfd { display: inline-block; margin: 2px 4px 0 0; padding: 1px 7px; border-radius: 999px; background: var(--blue-soft); color: var(--blue); font-weight: 700; font-size: 12px; }
       .sbmc-grid .leeg { color: var(--muted); font-style: italic; }
-      .sbmc-kp { grid-column: 1; grid-row: 1 / span 2; }
-      .sbmc-ka { grid-column: 2; grid-row: 1; }
-      .sbmc-kr { grid-column: 2; grid-row: 2; }
-      .sbmc-vp { grid-column: 3; grid-row: 1 / span 2; }
-      .sbmc-cr { grid-column: 4; grid-row: 1; }
-      .sbmc-ch { grid-column: 4; grid-row: 2; }
-      .sbmc-cs { grid-column: 5; grid-row: 1 / span 2; }
-      .sbmc-cost { grid-column: 1 / span 3; grid-row: 3; }
-      .sbmc-rev { grid-column: 4 / span 2; grid-row: 3; }
+      .sbmc-kp { grid-column: 1 / span 2; grid-row: 1 / span 2; }
+      .sbmc-ka { grid-column: 3 / span 2; grid-row: 1; }
+      .sbmc-kr { grid-column: 3 / span 2; grid-row: 2; }
+      .sbmc-vp { grid-column: 5 / span 2; grid-row: 1 / span 2; }
+      .sbmc-cr { grid-column: 7 / span 2; grid-row: 1; }
+      .sbmc-ch { grid-column: 7 / span 2; grid-row: 2; }
+      .sbmc-cs { grid-column: 9 / span 2; grid-row: 1 / span 2; }
+      .sbmc-cost { grid-column: 1 / span 5; grid-row: 3; }
+      .sbmc-rev { grid-column: 6 / span 5; grid-row: 3; }
       @media (max-width: 640px) {
         .sbmc-grid { grid-template-columns: 1fr; }
         .sbmc-grid > div { grid-column: auto !important; grid-row: auto !important; }
