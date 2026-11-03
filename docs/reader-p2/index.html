@@ -44,6 +44,8 @@
       .chapter td[colspan] { background: var(--blue-soft) !important; color: var(--blue); font-weight: 700; }
       .chapter table.werkblad td:first-child { width: 22%; }
       .callout .kv { padding-left: 20px; }
+      .callout.beperking { background: var(--orange-soft); border-color: var(--orange); }
+      .callout.beperking::before { content: "Beperkingen"; display: block; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #9a5a12; margin-bottom: 10px; }
       .formule var.frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-style: normal; margin: 0 4px; }
       .formule var.frac > var { font-style: normal; padding: 0 4px; }
       .formule var.frac > var:first-child { border-bottom: 1.5px solid var(--ink); }
@@ -1748,8 +1750,8 @@
             <thead><tr><th>Per maand</th><th>Berekening</th><th>€</th></tr></thead>
             <tbody>
               <tr><td>Omzet</td><td>100 × € 50</td><td>5.000</td></tr>
-              <tr><td>Variabele kosten</td><td>100 × € 10</td><td>− 1.000</td></tr>
-              <tr><td>Constante kosten</td><td></td><td>− 2.000</td></tr>
+              <tr><td>Variabele kosten</td><td>100 × € 10</td><td>1.000</td></tr>
+              <tr><td>Constante kosten</td><td></td><td>2.000</td></tr>
               <tr><td>Netto-opbrengst</td><td></td><td>2.000</td></tr>
             </tbody>
           </table>
@@ -1761,8 +1763,8 @@
           <p>
             Of 15 maanden goed of slecht is, hangt af van de context: de verwachte levensduur van de oplossing, het marktrisico en de normen van de organisatie. En de uitkomst is zo betrouwbaar als je aannames. De verwachting van 100 klanten moet gebaseerd zijn op harde data, zoals voorinschrijvingen, klantinterviews of conversiecijfers (zie hoofdstuk 2). Werk daarom altijd minimaal een <strong>realistisch</strong> en een <strong>negatief scenario</strong> uit. Komen er bijvoorbeeld maar 75 klanten, dan wordt de netto-opbrengst € 3.750 − € 750 − € 2.000 = € 1.000 per maand en verdubbelt de terugverdientijd naar 30 maanden.
           </p>
-          <div class="callout warning">
-            <p style="margin-top:0;"><strong>Let op: de beperkingen van de terugverdientijd.</strong></p>
+          <div class="callout beperking">
+            <p style="margin-top:0;"><strong>De beperkingen van de terugverdientijd.</strong></p>
             <ul class="kv" style="margin-bottom:0;">
               <li>De tijdswaarde van geld (rente en inflatie) wordt genegeerd.</li>
               <li>Opbrengsten ná de terugverdienperiode tellen niet mee.</li>
@@ -1787,7 +1789,7 @@
           <p>
             Verkoopt een bedrijf vooral één soort product of dienst, dan reken je het break-evenpunt uit in aantal stuks. Daarbij is één begrip belangrijk: de <strong>dekkingsbijdrage</strong>, het bedrag dat per eenheid overblijft als je de variabele kosten van de verkoopprijs aftrekt (p − v). Met dat bedrag dek je de constante kosten. Op het break-evenpunt is de winst nul, dus:
           </p>
-          <div class="formule">(p × BEA) − (v × BEA) − TCK = 0 &nbsp;→&nbsp; (p − v) × BEA = TCK &nbsp;→&nbsp; BEA = TCK ÷ (p − v)<span>Oftewel: break-evenafzet = totale constante kosten ÷ dekkingsbijdrage per eenheid. Break-evenomzet (BEO) = BEA × p.</span></div>
+          <div class="formule">(p × BEA) − (v × BEA) − TCK = 0<br>(p − v) × BEA = TCK<br>BEA = TCK ÷ (p − v)<span>Oftewel: break-evenafzet = totale constante kosten ÷ dekkingsbijdrage per eenheid. Break-evenomzet (BEO) = BEA × p.</span></div>
           <p>
             <em>Rekenvoorbeeld.</em> Bij de planningsdienst is p = € 50 en v = € 10, dus de dekkingsbijdrage is € 40. De constante kosten zijn € 2.000 per maand. BEA = € 2.000 ÷ € 40 = <strong>50 klanten</strong>. De break-evenomzet is 50 × € 50 = € 2.500 per maand.
           </p>
@@ -1805,7 +1807,7 @@
           <p>
             Een handelsonderneming met veel producten, elk met een andere prijs en marge, rekent beter met het gemiddelde <strong>dekkingsbijdragepercentage</strong>. Dat baseer je op historische cijfers:
           </p>
-          <div class="formule">Percentage variabele kosten = totale variabele kosten ÷ omzet × 100% &nbsp;·&nbsp; Dekkingsbijdragepercentage = 100% − percentage variabele kosten<span>Break-evenomzet = totale constante kosten ÷ dekkingsbijdragepercentage</span></div>
+          <div class="formule">Percentage variabele kosten = totale variabele kosten ÷ omzet × 100%<br>Dekkingsbijdragepercentage = 100% − percentage variabele kosten<span>Break-evenomzet = totale constante kosten ÷ dekkingsbijdragepercentage</span></div>
           <p>
             <em>Rekenvoorbeeld.</em> Vorig jaar waren de variabele kosten € 600.000 bij een omzet van € 1.000.000: 60%. Het dekkingsbijdragepercentage is dan 40%; van elke euro omzet blijft € 0,40 over om de constante kosten te dekken. Zijn de verwachte constante kosten komend jaar € 120.000, dan is de break-evenomzet € 120.000 ÷ 0,40 = <strong>€ 300.000 per jaar</strong>. Dit werkt alleen als kostenstructuur en productmix vergelijkbaar blijven; veranderen prijzen, inkoopkosten of assortiment, dan is het oude percentage misschien niet meer representatief.
           </p>
@@ -1814,8 +1816,8 @@
               Ook bij Spark draaide het om de dekkingsbijdrage per kit. Rond 2020 (achterhaalde cijfers, ter illustratie) kostte een Cubed-kit Spark gemiddeld zo'n $ 126 aan variabele kosten en verkocht Spark hem voor ongeveer $ 180 aan een distributiepartner. Dat is een dekkingsbijdrage van ongeveer $ 54 per kit. Bij de energiekit lag het veel krapper: de kosten verschilden per partner van ongeveer $ 124 tot $ 238, terwijl de prijs vaak rond de $ 146 lag. Bij de duurste levering was de dekkingsbijdrage dus negatief. Zie je hoe snel het break-evenpunt dan wegloopt? Elke kit met een negatieve dekkingsbijdrage vergroot het verlies in plaats van de constante kosten te helpen dekken.
             </p>
           </div>
-          <div class="callout warning">
-            <p style="margin-top:0;"><strong>Let op: de beperkingen van de break-evenanalyse.</strong></p>
+          <div class="callout beperking">
+            <p style="margin-top:0;"><strong>De beperkingen van de break-evenanalyse.</strong></p>
             <ul class="kv" style="margin-bottom:0;">
               <li>De formule rekent met vaste prijzen en kosten per stuk en houdt geen rekening met bijvoorbeeld inkoopkorting bij grote bestellingen.</li>
               <li>De berekening gaat ervan uit dat je alles direct verkoopt; onverkochte voorraad zie je niet terug.</li>
@@ -1892,14 +1894,10 @@
             De IRR is de onbekende in een ingewikkelde machtsvergelijking en is met de hand niet exact te berekenen. In de praktijk gebruik je software. In Excel of Google Sheets is dat de functie <code>=IR()</code> (Engels: <code>=IRR()</code>): je selecteert de investering als negatief getal en daarna de vrije cashflows als positieve getallen.
           </p>
           <p>
-            Wil je het zonder software benaderen, gebruik dan <strong>interpolatie</strong>. Je zoekt twee percentages waarbij de NCW net boven en net onder nul ligt en schat de IRR daartussen in:
+            <em>Voorbeeld.</em> De kasstromen van de planningsdienst zijn: jaar 0 −€ 30.000, daarna € 20.000, € 25.000, € 30.000, € 35.000 en € 40.000. Excel geeft een IRR van ongeveer <strong>78,5%</strong>. Omdat dat rendement veel hoger is dan de VKV van 10%, is de investering zeer rendabel. Dat bevestigt de positieve NCW. Voor de toets hoef je de IRR niet zelf uit te rekenen; je moet hem wel kunnen uitleggen, interpreteren en vergelijken met de VKV.
           </p>
-          <div class="formule">IRR ≈ r<sub>1</sub> + <var class="frac"><var>NCW<sub>1</sub></var><var>NCW<sub>1</sub> − NCW<sub>2</sub></var></var> × (r<sub>2</sub> − r<sub>1</sub>)<span>r<sub>1</sub> is het percentage met een positieve NCW (NCW<sub>1</sub>), r<sub>2</sub> het percentage met een negatieve NCW (NCW<sub>2</sub>). Hoe dichter de twee percentages bij elkaar liggen, hoe nauwkeuriger de schatting.</span></div>
-          <p>
-            <em>Rekenvoorbeeld.</em> De kasstromen van de planningsdienst zijn: jaar 0 −€ 30.000, daarna € 20.000, € 25.000, € 30.000, € 35.000 en € 40.000. Rekenen we de NCW uit met 70%, dan komt die uit op ongeveer + € 3.529; met 80% op ongeveer − € 578. De IRR ligt dus tussen 70% en 80%. Interpolatie geeft: 70% + 3.529 ÷ (3.529 + 578) × 10% ≈ <strong>78,6%</strong>. Excel geeft 78,5%. Omdat dat rendement veel hoger is dan de VKV van 10%, is de investering zeer rendabel. Dat bevestigt de positieve NCW.
-          </p>
-          <div class="callout warning">
-            <p style="margin-top:0;"><strong>Let op: twee beperkingen van de IRR.</strong></p>
+          <div class="callout beperking">
+            <p style="margin-top:0;"><strong>Twee beperkingen van de IRR.</strong></p>
             <ul class="kv" style="margin-bottom:0;">
               <li>Percentages negeren schaalgrootte. Een IRR van 50% op een investering van € 100 levert in euro's weinig op; een project met 15% op een miljoeninvestering voegt veel meer waarde (NCW) toe. Kijk dus nooit alleen naar het percentage.</li>
               <li>Wisselende kasstromen. Heeft een project ook in latere jaren negatieve kasstromen, bijvoorbeeld door een grote onderhoudsbeurt, dan kunnen er meerdere IRR-uitkomsten ontstaan. De IRR is dan onbetrouwbaar en je stuurt alleen op de NCW.</li>
@@ -1945,7 +1943,7 @@
               <li>De break-evenomzet berekenen met het dekkingsbijdragepercentage</li>
               <li>De vrije cashflow en de mutatie werkkapitaal uitleggen</li>
               <li>De NCW berekenen en interpreteren, en de voor- en nadelen noemen</li>
-              <li>Het verschil tussen VKV en IRR uitleggen, de beslisregel toepassen en de IRR benaderen met interpolatie</li>
+              <li>Het verschil tussen VKV en IRR uitleggen en de beslisregel toepassen</li>
               <li>De beperkingen van de IRR noemen</li>
             </ul>
           </div>
