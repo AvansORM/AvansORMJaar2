@@ -44,6 +44,9 @@
       .chapter td[colspan] { background: var(--blue-soft) !important; color: var(--blue); font-weight: 700; }
       .chapter table.werkblad td:first-child { width: 22%; }
       .callout .kv { padding-left: 20px; }
+      .formule var.frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-style: normal; margin: 0 4px; }
+      .formule var.frac > var { font-style: normal; padding: 0 4px; }
+      .formule var.frac > var:first-child { border-bottom: 1.5px solid var(--ink); }
       .boekref { display: inline-block; margin: 0 0 12px; padding: 6px 12px; border-radius: 8px; background: #eef3ff; border-left: 3px solid var(--blue); font-size: 14px; color: var(--ink); }
       .callout .kv li { margin: 6px 0; }
       @media (max-width: 640px) { .chapter table { display: block; overflow-x: auto; font-size: 14px; } }
@@ -1707,16 +1710,392 @@
           </ul>
         </section>
 
-        <!-- Hoofdstuk 5, Financieel 1 (input Ramon Haken volgt) -->
+        <!-- Hoofdstuk 5, Financieel 1 (input Ramon Haken) -->
         <section id="h5" class="chapter">
           <span class="chapter-number">Hoofdstuk 5 · Week 16</span>
           <h2>Financieel 1: investeringsanalyse</h2>
           <p class="subtitle">Is een investering het waard, en wanneer verdien je haar terug?</p>
 
-          <div class="volgt">
-            <p style="margin-top:0;"><strong>Dit hoofdstuk volgt.</strong> De inhoud van het eerste financiële kennisblok wordt op dit moment uitgewerkt. Zodra die klaar is, vind je hier de theorie, oefenvragen en een toetswijzer, net als bij de andere hoofdstukken.</p>
-            <p style="margin-bottom:0;">In dit kennisblok gaat het over de investeringsanalyse: de basis, de terugverdientijd, de netto contante waarde (NCW), de interne rendementsvoet (IRR) en het break-evenpunt. Wil je alvast beginnen? Zet voor je challenge op een rij welke investering je businessmodel nodig heeft en wat die naar verwachting per jaar oplevert.</p>
+          <h3>Waarom dit hoofdstuk?</h3>
+          <p>
+            Bijna elke challenge vraagt ergens om geld vooraf. Je wilt een nieuwe dienst lanceren, een webshop bouwen, software of een machine aanschaffen, een winkel anders inrichten of medewerkers trainen. Of je verbetert een proces, waardoor het bedrijf tijd of geld bespaart. Een opdrachtgever of eigenaar stelt dan altijd dezelfde vraag: <em>is dit het waard?</em> Met een investeringsanalyse geef je daar een onderbouwd antwoord op.
+          </p>
+          <p>
+            Wanneer gebruik je dit in je challenge? Telkens als je voorstel een <strong>eenmalige investering</strong> vraagt en daarna extra opbrengsten of besparingen oplevert. Een besparing telt daarbij als opbrengst: een nieuwe planningstool die elke maand 20 uur werk scheelt, levert net zo goed geld op als een nieuwe klant. De uitkomsten van dit hoofdstuk horen in de financiële onderbouwing van je portfolio, en in je SBMC bij de bouwstenen <strong>kostenstructuur</strong> en <strong>inkomstenstromen</strong>.
+          </p>
+          <p>Je leert vier methoden, die elkaar aanvullen:</p>
+          <table>
+            <thead><tr><th>Methode</th><th>Vraag</th><th>Waar zegt het iets over?</th></tr></thead>
+            <tbody>
+              <tr><td>Terugverdientijd</td><td>Hoe lang duurt het voordat de investering is terugverdiend?</td><td>Liquiditeit, risico en terugverdiencapaciteit</td></tr>
+              <tr><td>Break-evenpunt</td><td>Bij welke afzet of omzet zijn opbrengsten en kosten precies gelijk?</td><td>Liquiditeit, risico en terugverdiencapaciteit</td></tr>
+              <tr><td>Netto contante waarde (NCW)</td><td>Hoeveel is de investering vandaag waard, rekening houdend met de tijdswaarde van geld?</td><td>Waardecreatie en winstgevendheid op langere termijn</td></tr>
+              <tr><td>Interne rendementsvoet (IRR)</td><td>Welk rendement levert de investering per jaar op?</td><td>Waardecreatie en winstgevendheid op langere termijn</td></tr>
+            </tbody>
+          </table>
+          <p>Door de methoden samen te gebruiken, krijg je een completer beeld van de financiële haalbaarheid. In het hele hoofdstuk rekenen we met hetzelfde voorbeeld: een bedrijf dat een nieuwe online planningsdienst start.</p>
+
+          <h3>1 · De terugverdientijd</h3>
+          <p>
+            De <strong>terugverdientijd</strong> geeft aan hoe lang het duurt voordat een eenmalige investering is terugverdiend met de netto-opbrengsten van de oplossing. Een eenmalige investering is een bedrag dat je vooraf uitgeeft, zoals kosten voor ontwikkeling, apparatuur, inrichting of training. Die staat los van de terugkerende kosten per periode.
+          </p>
+          <div class="formule">Terugverdientijd = eenmalige investering ÷ netto-opbrengst per periode<span>Netto-opbrengst per periode = extra opbrengsten of besparingen − extra terugkerende kosten.</span></div>
+          <p>
+            Je rekent alleen met de <em>extra</em> kasstromen die door de investering ontstaan. Kosten die zonder de nieuwe oplossing ook doorlopen, neem je niet mee. En omdat het puur om inkomende en uitgaande kasstromen gaat, laat je boekhoudkundige afschrijvingen buiten beschouwing.
+          </p>
+          <p><em>Rekenvoorbeeld.</em> Een bedrijf investeert eenmalig € 30.000 in een nieuwe planningsdienst. Het verwacht 100 betalende klanten, die elk € 50 per maand betalen. De variabele kosten zijn € 10 per klant per maand, de constante kosten € 2.000 per maand (alleen directe uitgaven, zonder afschrijvingen).</p>
+          <table>
+            <thead><tr><th>Per maand</th><th>Berekening</th><th>€</th></tr></thead>
+            <tbody>
+              <tr><td>Omzet</td><td>100 × € 50</td><td>5.000</td></tr>
+              <tr><td>Variabele kosten</td><td>100 × € 10</td><td>− 1.000</td></tr>
+              <tr><td>Constante kosten</td><td></td><td>− 2.000</td></tr>
+              <tr><td>Netto-opbrengst</td><td></td><td>2.000</td></tr>
+            </tbody>
+          </table>
+          <p>Terugverdientijd = € 30.000 ÷ € 2.000 = <strong>15 maanden</strong> (1,25 jaar).</p>
+          <h4>Groei, aannames en scenario's</h4>
+          <p>
+            Deze berekening is een theoretisch scenario: ze gaat ervan uit dat je vanaf de eerste dag 100 klanten hebt. In werkelijkheid begin je vaak bij nul en groei je geleidelijk. In die aanloopmaanden verdien je minder dan € 2.000, dus stopt de groei bij 100 klanten, dan wordt de terugverdientijd langer dan 15 maanden. Groeit het aantal klanten daarna ver door, dan kan hij juist veel korter worden.
+          </p>
+          <p>
+            Of 15 maanden goed of slecht is, hangt af van de context: de verwachte levensduur van de oplossing, het marktrisico en de normen van de organisatie. En de uitkomst is zo betrouwbaar als je aannames. De verwachting van 100 klanten moet gebaseerd zijn op harde data, zoals voorinschrijvingen, klantinterviews of conversiecijfers (zie hoofdstuk 2). Werk daarom altijd minimaal een <strong>realistisch</strong> en een <strong>negatief scenario</strong> uit. Komen er bijvoorbeeld maar 75 klanten, dan wordt de netto-opbrengst € 3.750 − € 750 − € 2.000 = € 1.000 per maand, en verdubbelt de terugverdientijd naar 30 maanden.
+          </p>
+          <div class="callout warning">
+            <p style="margin-top:0;"><strong>Let op: de beperkingen van de terugverdientijd.</strong></p>
+            <ul class="kv" style="margin-bottom:0;">
+              <li>De tijdswaarde van geld (rente en inflatie) wordt genegeerd.</li>
+              <li>Opbrengsten ná de terugverdienperiode tellen niet mee.</li>
+              <li>De formule rekent met een vast gemiddelde en laat verschillen per maand niet zien.</li>
+              <li>Een verwachte besparing is niet altijd direct extra geld op de bankrekening.</li>
+            </ul>
           </div>
+          <p>Gebruik de terugverdientijd daarom als krachtige eerste indicator voor liquiditeit en risico, maar niet als enige beslissingscriterium.</p>
+
+          <h3>2 · Het break-evenpunt</h3>
+          <p>
+            Het <strong>break-evenpunt</strong> is het punt waarop de totale opbrengsten precies gelijk zijn aan de totale kosten. Het resultaat is dan nul. Vanaf dat punt lijd je geen verlies meer en levert elke volgende verkoop winst op. Je drukt het uit als <strong>break-evenafzet</strong> (het benodigde aantal verkopen) of <strong>break-evenomzet</strong> (de benodigde omzet in euro's). Gebruik voor opbrengsten, afzet en kosten steeds dezelfde periode: per jaar, maand, week of dag.
+          </p>
+          <h4>Constante en variabele kosten</h4>
+          <ul>
+            <li><strong>Constante kosten</strong> (vaste kosten) veranderen niet direct als de afzet verandert, zoals huur, afschrijvingen of vaste salarissen. Bij flinke groei kunnen ze wel sprongsgewijs stijgen, bijvoorbeeld door extra ruimte of licenties.</li>
+            <li><strong>Variabele kosten</strong> stijgen direct mee met de afzet, zoals inkoop-, transactie- of verzendkosten.</li>
+          </ul>
+          <h4>De resultatenvergelijking</h4>
+          <div class="formule">Winst = omzet − totale variabele kosten − totale constante kosten<span>In lettercodes: Winst = (p × Q) − (v × Q) − TCK. Hierbij is p de verkoopprijs per eenheid, Q de afzet, v de variabele kosten per eenheid en TCK de totale constante kosten. TVK staat voor de totale variabele kosten (v × Q).</span></div>
+          <h4>De break-evenafzet (BEA)</h4>
+          <p>
+            Verkoopt een bedrijf vooral één soort product of dienst, dan reken je het break-evenpunt uit in aantal stuks. Daarbij is één begrip belangrijk: de <strong>dekkingsbijdrage</strong>, het bedrag dat per eenheid overblijft als je de variabele kosten van de verkoopprijs aftrekt (p − v). Met dat bedrag dek je de constante kosten. Op het break-evenpunt is de winst nul, dus:
+          </p>
+          <div class="formule">(p × BEA) − (v × BEA) − TCK = 0 &nbsp;→&nbsp; (p − v) × BEA = TCK &nbsp;→&nbsp; BEA = TCK ÷ (p − v)<span>Oftewel: break-evenafzet = totale constante kosten ÷ dekkingsbijdrage per eenheid. Break-evenomzet (BEO) = BEA × p.</span></div>
+          <p>
+            <em>Rekenvoorbeeld.</em> Bij de planningsdienst is p = € 50 en v = € 10, dus de dekkingsbijdrage is € 40. De constante kosten zijn € 2.000 per maand. BEA = € 2.000 ÷ € 40 = <strong>50 klanten</strong>. De break-evenomzet is 50 × € 50 = € 2.500 per maand.
+          </p>
+          <ul>
+            <li>Bij 40 klanten is de totale dekkingsbijdrage 40 × € 40 = € 1.600. Er blijft een verlies van € 400.</li>
+            <li>Bij 50 klanten zijn de constante kosten precies gedekt: het resultaat is € 0.</li>
+            <li>Vanaf 51 klanten draagt elke extra klant met zijn dekkingsbijdrage direct bij aan de winst. Bij 51 klanten is de winst € 40.</li>
+          </ul>
+          <h4>Veiligheidsmarge en gevoeligheid</h4>
+          <div class="formule">Veiligheidsmarge = (verwachte afzet − break-evenafzet) ÷ verwachte afzet × 100%<span>Hoeveel procent de afzet mag dalen voordat je verlies maakt.</span></div>
+          <p>
+            Bij een verwachting van 100 klanten en een BEA van 50 is de veiligheidsmarge (100 − 50) ÷ 100 × 100% = 50%. Het aantal klanten mag dus met de helft dalen voordat er verlies ontstaat. Kijk ook naar de <strong>gevoeligheid</strong> van je variabelen. Stijgen de variabele kosten naar € 20, dan daalt de dekkingsbijdrage naar € 30 en wordt de BEA € 2.000 ÷ € 30 = 66,67. Een deel van een klant bestaat niet, dus je rondt naar boven af: je hebt minimaal 67 klanten nodig.
+          </p>
+          <h4>Break-evenomzet bij meerdere producten</h4>
+          <p>
+            Een handelsonderneming met veel producten, elk met een andere prijs en marge, rekent beter met het gemiddelde <strong>dekkingsbijdragepercentage</strong>. Dat baseer je op historische cijfers:
+          </p>
+          <div class="formule">Percentage variabele kosten = totale variabele kosten ÷ omzet × 100% &nbsp;·&nbsp; Dekkingsbijdragepercentage = 100% − percentage variabele kosten<span>Break-evenomzet = totale constante kosten ÷ dekkingsbijdragepercentage</span></div>
+          <p>
+            <em>Rekenvoorbeeld.</em> Vorig jaar waren de variabele kosten € 600.000 bij een omzet van € 1.000.000: 60%. Het dekkingsbijdragepercentage is dan 40%; van elke euro omzet blijft € 0,40 over om de constante kosten te dekken. Zijn de verwachte constante kosten komend jaar € 120.000, dan is de break-evenomzet € 120.000 ÷ 0,40 = <strong>€ 300.000 per jaar</strong>. Dit werkt alleen als kostenstructuur en productmix vergelijkbaar blijven; veranderen prijzen, inkoopkosten of assortiment, dan is het oude percentage misschien niet meer representatief.
+          </p>
+          <div class="callout spark">
+            <p>
+              Ook bij Spark draaide het om de dekkingsbijdrage per kit. Rond 2020 (achterhaalde cijfers, ter illustratie) kostte een Cubed-kit Spark gemiddeld zo'n $ 126 aan variabele kosten en verkocht Spark hem voor ongeveer $ 180 aan een distributiepartner. Dat is een dekkingsbijdrage van ongeveer $ 54 per kit. Bij de energiekit lag het veel krapper: de kosten verschilden per partner van ongeveer $ 124 tot $ 238, terwijl de prijs vaak rond de $ 146 lag. Bij de duurste levering was de dekkingsbijdrage dus negatief. Zie je hoe snel het break-evenpunt dan wegloopt? Elke kit met een negatieve dekkingsbijdrage vergroot het verlies in plaats van de constante kosten te helpen dekken.
+            </p>
+          </div>
+          <div class="callout warning">
+            <p style="margin-top:0;"><strong>Let op: de beperkingen van de break-evenanalyse.</strong></p>
+            <ul class="kv" style="margin-bottom:0;">
+              <li>De formule rekent met vaste prijzen en kosten per stuk en houdt geen rekening met bijvoorbeeld inkoopkorting bij grote bestellingen.</li>
+              <li>De berekening gaat ervan uit dat je alles direct verkoopt; onverkochte voorraad zie je niet terug.</li>
+              <li>Vaste kosten zijn niet altijd helemaal vast: bij snelle groei heb je misschien een groter pand of extra machines nodig.</li>
+            </ul>
+          </div>
+
+          <h3>3 · De netto contante waarde (NCW)</h3>
+          <p>
+            Terugverdientijd en break-even geven een goed eerste inzicht, maar houden geen rekening met de <strong>tijdswaarde van geld</strong>: een euro die je vandaag ontvangt, is meer waard dan een euro over vijf jaar. Daarom gebruik je voor een nauwkeuriger oordeel de <strong>netto contante waarde</strong>. De NCW geldt als de beste methode om de werkelijke financiële waarde van een investering te bepalen, omdat ze toekomstgericht is, rekent met echte kasstromen in plaats van boekhoudkundige winst, en de tijdswaarde van geld meeweegt.
+          </p>
+          <h4>Stap 1: de vrije cashflow voorspellen</h4>
+          <p>
+            De basis is de verwachte <strong>vrije cashflow (VCF)</strong>, meestal voor vijf jaar. Je kunt die inschatten door historische cijfers door te trekken naar de toekomst (extrapolatie). Waren er grote schommelingen, baseer je dan op de meest recente, representatieve cashflow. De gegevens haal je uit de (verwachte) balans en resultatenrekening van het project of bedrijf.
+          </p>
+          <div class="formule">Vrije cashflow = EBIT + afschrijvingen − mutatie werkkapitaal − investeringen in vaste activa<span>Voor het gemak laten we belastingen buiten beschouwing.</span></div>
+          <ul>
+            <li><strong>EBIT</strong> (<em>earnings before interest and taxes</em>) is het bedrijfsresultaat.</li>
+            <li><strong>Afschrijvingen</strong> tel je op, omdat het een kostenpost is waar geen geld bij de deur uitgaat.</li>
+            <li><strong>Werkkapitaal</strong> is het verschil tussen de vlottende activa (voorraden, debiteuren, liquide middelen) en de vlottende passiva (crediteuren en andere kortlopende schulden). De <strong>mutatie werkkapitaal</strong> is de verandering ten opzichte van de vorige periode. Die trek je af: neemt het werkkapitaal af, dan tel je het bedrag er per saldo juist bij op (min en min is plus), want een daling van debiteuren of voorraden maakt geld vrij.</li>
+            <li><strong>Investeringen in vaste activa</strong> = eindstand vaste activa − beginstand vaste activa + afschrijvingen.</li>
+          </ul>
+          <h4>Stap 2: van vrije cashflow naar NCW</h4>
+          <p>
+            Je maakt elke toekomstige vrije cashflow <em>contant</em>: je rekent hem terug naar wat hij vandaag waard is. Dat doe je met de <strong>vermogenskostenvoet (VKV)</strong>, het vereiste rendement of de rente. Daarna tel je alle contante waarden op en trek je de eenmalige investering eraf.
+          </p>
+          <div class="formule">
+            NCW = <var class="frac"><var>VCF<sub>1</sub></var><var>(1 + VKV)<sup>1</sup></var></var> + <var class="frac"><var>VCF<sub>2</sub></var><var>(1 + VKV)<sup>2</sup></var></var> + … + <var class="frac"><var>VCF<sub>n</sub></var><var>(1 + VKV)<sup>n</sup></var></var> − I<sub>0</sub>
+            <span>Korter: NCW = Σ VCF<sub>t</sub> ÷ (1 + VKV)<sup>t</sup> − I<sub>0</sub>, opgeteld over de jaren t = 1 tot en met n. Hierbij is VCF<sub>t</sub> de vrije cashflow in jaar t, VKV de vermogenskostenvoet als decimaal getal (10% = 0,10), n het aantal jaren (meestal 5) en I<sub>0</sub> de eenmalige investering aan het begin (jaar 0).</span>
+          </div>
+          <p><em>Rekenvoorbeeld.</em> De planningsdienst verwacht de komende vijf jaar de volgende vrije cashflows. De eenmalige investering is € 30.000 en de VKV is 10%.</p>
+          <table>
+            <thead><tr><th>Jaar</th><th>Vrije cashflow (€)</th><th>Berekening</th><th>Contante waarde (€)</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>20.000</td><td>20.000 ÷ 1,10<sup>1</sup></td><td>18.181,82</td></tr>
+              <tr><td>2</td><td>25.000</td><td>25.000 ÷ 1,10<sup>2</sup></td><td>20.661,16</td></tr>
+              <tr><td>3</td><td>30.000</td><td>30.000 ÷ 1,10<sup>3</sup></td><td>22.539,44</td></tr>
+              <tr><td>4</td><td>35.000</td><td>35.000 ÷ 1,10<sup>4</sup></td><td>23.905,47</td></tr>
+              <tr><td>5</td><td>40.000</td><td>40.000 ÷ 1,10<sup>5</sup></td><td>24.836,85</td></tr>
+              <tr><td>Som</td><td></td><td></td><td>110.124,74</td></tr>
+              <tr><td>Min investering</td><td></td><td></td><td>− 30.000,00</td></tr>
+              <tr><td>NCW</td><td></td><td></td><td>80.124,74</td></tr>
+            </tbody>
+          </table>
+          <p>
+            De NCW is groter dan nul: de investering levert, rekening houdend met de tijdswaarde van geld, per saldo waarde op. Is de NCW negatief, dan levert de investering minder op dan het vereiste rendement.
+          </p>
+          <table>
+            <thead><tr><th>Voordelen van de NCW</th><th>Nadelen van de NCW</th></tr></thead>
+            <tbody>
+              <tr><td>Richt zich op de toekomst</td><td>Bewerkelijk: veel rekenwerk en data nodig</td></tr>
+              <tr><td>Kijkt naar harde kasstromen in plaats van manipuleerbare winstcijfers</td><td>Niet objectief: de uitkomst leunt sterk op aannames over groei en op de gekozen VKV</td></tr>
+              <tr><td>Geeft sterke aanknopingspunten voor een gesprek of onderhandeling</td><td></td></tr>
+              <tr><td>Banken en andere financiers gaan erin mee, omdat het de standaard is</td><td></td></tr>
+            </tbody>
+          </table>
+
+          <h3>4 · De interne rendementsvoet (IRR)</h3>
+          <p>
+            De NCW laat zien hoeveel euro een investering oplevert. Maar is € 80.000 veel of weinig? Managers en investeerders denken vaak liever in percentages, zodat ze projecten kunnen vergelijken. Daarom vul je de NCW vrijwel altijd aan met de <strong>interne rendementsvoet</strong>, in het Engels <em>internal rate of return</em> (IRR): het jaarlijkse rendement dat de investering naar verwachting oplevert.
+          </p>
+          <h4>Het verschil tussen VKV en IRR</h4>
+          <ul>
+            <li><strong>De VKV is de eis vooraf (input).</strong> Het minimale rendement dat jij, het bedrijf of de bank verlangt om risico en inflatie te compenseren. Je kiest het percentage vooraf en rekent ermee de NCW uit.</li>
+            <li><strong>De IRR is het resultaat (output).</strong> Het rendement dat het project zelf genereert op basis van de verwachte kasstromen. Wiskundig is de IRR precies de vermogenskostenvoet waarbij de NCW op € 0 uitkomt.</li>
+          </ul>
+          <p>Kort gezegd: de VKV is de lat waar het project overheen moet springen, de IRR laat zien hoe hoog het project springt. De beslisregel:</p>
+          <ul>
+            <li>IRR groter dan de VKV: het project levert meer op dan de eis, de NCW is positief, de investering is rendabel.</li>
+            <li>IRR kleiner dan de VKV: het rendement is onvoldoende, de NCW is negatief, je wijst de investering af.</li>
+          </ul>
+          <h4>De IRR berekenen</h4>
+          <p>
+            De IRR is de onbekende in een ingewikkelde machtsvergelijking en is met de hand niet exact te berekenen. In de praktijk gebruik je software. In Excel of Google Sheets is dat de functie <code>=IR()</code> (Engels: <code>=IRR()</code>): je selecteert de investering als negatief getal en daarna de vrije cashflows als positieve getallen.
+          </p>
+          <p>
+            Wil je het zonder software benaderen, gebruik dan <strong>interpolatie</strong>. Je zoekt twee percentages waarbij de NCW net boven en net onder nul ligt, en schat de IRR daartussen in:
+          </p>
+          <div class="formule">IRR ≈ r<sub>1</sub> + <var class="frac"><var>NCW<sub>1</sub></var><var>NCW<sub>1</sub> − NCW<sub>2</sub></var></var> × (r<sub>2</sub> − r<sub>1</sub>)<span>r<sub>1</sub> is het percentage met een positieve NCW (NCW<sub>1</sub>), r<sub>2</sub> het percentage met een negatieve NCW (NCW<sub>2</sub>). Hoe dichter de twee percentages bij elkaar liggen, hoe nauwkeuriger de schatting.</span></div>
+          <p>
+            <em>Rekenvoorbeeld.</em> De kasstromen van de planningsdienst zijn: jaar 0 −€ 30.000, daarna € 20.000, € 25.000, € 30.000, € 35.000 en € 40.000. Rekenen we de NCW uit met 70%, dan komt die uit op ongeveer + € 3.529; met 80% op ongeveer − € 578. De IRR ligt dus tussen 70% en 80%. Interpolatie geeft: 70% + 3.529 ÷ (3.529 + 578) × 10% ≈ <strong>78,6%</strong>. Excel geeft 78,5%. Omdat dat rendement veel hoger is dan de VKV van 10%, is de investering zeer rendabel. Dat bevestigt de positieve NCW.
+          </p>
+          <div class="callout warning">
+            <p style="margin-top:0;"><strong>Let op: twee beperkingen van de IRR.</strong></p>
+            <ul class="kv" style="margin-bottom:0;">
+              <li>Percentages negeren schaalgrootte. Een IRR van 50% op een investering van € 100 levert in euro's weinig op; een project met 15% op een miljoeninvestering voegt veel meer waarde (NCW) toe. Kijk dus nooit alleen naar het percentage.</li>
+              <li>Wisselende kasstromen. Heeft een project ook in latere jaren negatieve kasstromen, bijvoorbeeld door een grote onderhoudsbeurt, dan kunnen er meerdere IRR-uitkomsten ontstaan. De IRR is dan onbetrouwbaar en je stuurt alleen op de NCW.</li>
+            </ul>
+          </div>
+          <p>
+            Conclusie: gebruik de NCW om te beoordelen of een project waarde toevoegt in euro's, en de IRR om het rendement in procenten te communiceren en af te zetten tegen de eis. Samen vormen ze de sterkste financiële onderbouwing van je businesscase.
+          </p>
+
+          <h3>5 · In je challenge</h3>
+          <p>Vraagt je voorstel een investering? Werk dan deze stappen uit voor je portfolio:</p>
+          <ol>
+            <li>Bepaal de eenmalige investering en onderbouw de bedragen, bijvoorbeeld met offertes.</li>
+            <li>Bepaal de extra opbrengsten of besparingen en de extra terugkerende kosten per periode, verdeeld in constante en variabele kosten. Onderbouw je aannames met data uit je onderzoek, zoals interviews, voorinschrijvingen of conversiecijfers.</li>
+            <li>Bereken de terugverdientijd en het break-evenpunt, met een realistisch en een negatief scenario en de veiligheidsmarge.</li>
+            <li>Loopt de investering meerdere jaren, bereken dan ook de NCW en de IRR.</li>
+            <li>Trek een conclusie: is de investering het waard, en onder welke voorwaarden? Hoe je het bedrag vervolgens financiert, lees je in hoofdstuk 6.</li>
+          </ol>
+
+          <h3>Veelgemaakte fouten in deze fase (samengevat)</h3>
+          <div class="callout warning">
+            <ul>
+              <li>Bestaande kosten meenemen die ook zonder de investering doorlopen.</li>
+              <li>Afschrijvingen meetellen bij de terugverdientijd, terwijl het om kasstromen gaat.</li>
+              <li>Rekenen met 100 klanten vanaf dag één, zonder rekening te houden met de aanloop.</li>
+              <li>Maar één scenario doorrekenen, met optimistische aannames zonder data.</li>
+              <li>Constante en variabele kosten door elkaar halen, of verschillende periodes mengen.</li>
+              <li>Een break-evenafzet naar beneden afronden.</li>
+              <li>Alleen naar de IRR kijken en de schaalgrootte (de NCW in euro's) vergeten.</li>
+            </ul>
+          </div>
+
+          <div class="samenvatting">
+            <h3>Samenvatting + checklist</h3>
+            <p>Wat moet je na dit hoofdstuk kunnen?</p>
+            <ul class="checklist">
+              <li>Uitleggen wanneer je een investeringsanalyse gebruikt en wat de vier methoden elk zeggen</li>
+              <li>De terugverdientijd berekenen met alleen de extra kasstromen, en de beperkingen noemen</li>
+              <li>Het effect van aanloop en scenario's op de terugverdientijd uitleggen</li>
+              <li>Constante en variabele kosten onderscheiden en de resultatenvergelijking in lettercodes gebruiken</li>
+              <li>De dekkingsbijdrage, de break-evenafzet en de break-evenomzet berekenen</li>
+              <li>De veiligheidsmarge berekenen en de gevoeligheid voor een kostenstijging beredeneren</li>
+              <li>De break-evenomzet berekenen met het dekkingsbijdragepercentage</li>
+              <li>De vrije cashflow en de mutatie werkkapitaal uitleggen</li>
+              <li>De NCW berekenen en interpreteren, en de voor- en nadelen noemen</li>
+              <li>Het verschil tussen VKV en IRR uitleggen, de beslisregel toepassen en de IRR benaderen met interpolatie</li>
+              <li>De beperkingen van de IRR noemen</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Oefenvragen voor de kennistoets</h3>
+            <p>12 vragen in MC-vorm. Klik op een vraag om het antwoord met uitleg te zien.</p>
+
+            <details>
+              <summary>1. Een webwinkel investeert eenmalig € 24.000 in een nieuw magazijnsysteem. Dat bespaart € 3.000 per maand, maar de licentie kost € 1.000 per maand. Wat is de terugverdientijd?</summary>
+              <ul class="opties">
+                <li data-letter="A">6 maanden</li>
+                <li data-letter="B">8 maanden</li>
+                <li data-letter="C">12 maanden</li>
+                <li data-letter="D">24 maanden</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Netto-opbrengst = € 3.000 − € 1.000 = € 2.000 per maand. € 24.000 ÷ € 2.000 = 12 maanden. B vergeet de licentiekosten.</div>
+            </details>
+
+            <details>
+              <summary>2. Welke posten neem je mee bij het berekenen van de terugverdientijd?</summary>
+              <ul class="opties">
+                <li data-letter="A">Alle kosten van het bedrijf, inclusief afschrijvingen</li>
+                <li data-letter="B">Alleen de extra kasstromen die door de investering ontstaan, zonder afschrijvingen</li>
+                <li data-letter="C">Alleen de omzet, zonder kosten</li>
+                <li data-letter="D">De boekhoudkundige winst na afschrijvingen</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Je rekent met de extra opbrengsten of besparingen min de extra terugkerende kosten. Bestaande kosten en afschrijvingen laat je buiten beschouwing.</div>
+            </details>
+
+            <details>
+              <summary>3. Wat is een beperking van de terugverdientijd?</summary>
+              <ul class="opties">
+                <li data-letter="A">De methode is moeilijk uit te rekenen.</li>
+                <li data-letter="B">De methode houdt geen rekening met de tijdswaarde van geld en met opbrengsten na de terugverdienperiode.</li>
+                <li data-letter="C">De methode werkt alleen voor handelsondernemingen.</li>
+                <li data-letter="D">De methode vereist een vermogenskostenvoet.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Daarom gebruik je de terugverdientijd als eerste indicator voor liquiditeit en risico, niet als enig criterium.</div>
+            </details>
+
+            <details>
+              <summary>4. Een sportschool vraagt € 40 per maand per lid. De variabele kosten zijn € 15 per lid per maand, de constante kosten € 5.000 per maand. Wat is de break-evenafzet?</summary>
+              <ul class="opties">
+                <li data-letter="A">125 leden</li>
+                <li data-letter="B">200 leden</li>
+                <li data-letter="C">334 leden</li>
+                <li data-letter="D">5.000 leden</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Dekkingsbijdrage = € 40 − € 15 = € 25. BEA = € 5.000 ÷ € 25 = 200 leden. A deelt door de prijs, C door de variabele kosten.</div>
+            </details>
+
+            <details>
+              <summary>5. Wat is de break-evenomzet in de vorige vraag?</summary>
+              <ul class="opties">
+                <li data-letter="A">€ 3.000</li>
+                <li data-letter="B">€ 5.000</li>
+                <li data-letter="C">€ 8.000</li>
+                <li data-letter="D">€ 13.000</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> BEO = BEA × p = 200 × € 40 = € 8.000 per maand.</div>
+            </details>
+
+            <details>
+              <summary>6. De sportschool verwacht 250 leden; de break-evenafzet is 200. Wat is de veiligheidsmarge?</summary>
+              <ul class="opties">
+                <li data-letter="A">20%</li>
+                <li data-letter="B">25%</li>
+                <li data-letter="C">50 leden</li>
+                <li data-letter="D">80%</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: A.</strong> (250 − 200) ÷ 250 × 100% = 20%. B deelt door de break-evenafzet in plaats van door de verwachte afzet.</div>
+            </details>
+
+            <details>
+              <summary>7. Bij de planningsdienst uit dit hoofdstuk stijgen de variabele kosten van € 10 naar € 25 per klant. Hoeveel klanten zijn er dan minimaal nodig om break-even te draaien?</summary>
+              <ul class="opties">
+                <li data-letter="A">50</li>
+                <li data-letter="B">67</li>
+                <li data-letter="C">80</li>
+                <li data-letter="D">200</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: C.</strong> Dekkingsbijdrage = € 50 − € 25 = € 25. BEA = € 2.000 ÷ € 25 = 80 klanten.</div>
+            </details>
+
+            <details>
+              <summary>8. Een winkel had vorig jaar € 450.000 variabele kosten bij € 750.000 omzet. De constante kosten komend jaar zijn € 90.000. Wat is de break-evenomzet?</summary>
+              <ul class="opties">
+                <li data-letter="A">€ 150.000</li>
+                <li data-letter="B">€ 225.000</li>
+                <li data-letter="C">€ 300.000</li>
+                <li data-letter="D">€ 360.000</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Variabele kosten = 60%, dus het dekkingsbijdragepercentage is 40%. BEO = € 90.000 ÷ 0,40 = € 225.000. A deelt door 0,60.</div>
+            </details>
+
+            <details>
+              <summary>9. Waarom tel je bij de vrije cashflow de afschrijvingen op bij de EBIT?</summary>
+              <ul class="opties">
+                <li data-letter="A">Omdat afschrijvingen extra inkomsten zijn.</li>
+                <li data-letter="B">Omdat afschrijvingen wel als kosten in de EBIT zitten, maar geen uitgaande kasstroom zijn.</li>
+                <li data-letter="C">Omdat de belastingdienst dat voorschrijft.</li>
+                <li data-letter="D">Omdat afschrijvingen bij de investeringen horen.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> De vrije cashflow gaat over geld dat echt binnenkomt en uitgaat. Afschrijvingen verlagen de winst, maar er gaat geen geld bij de deur uit.</div>
+            </details>
+
+            <details>
+              <summary>10. Een investering van € 10.000 levert na één jaar € 12.100 op. De vermogenskostenvoet is 10%. Wat is de NCW?</summary>
+              <ul class="opties">
+                <li data-letter="A">€ 1.000</li>
+                <li data-letter="B">€ 1.210</li>
+                <li data-letter="C">€ 2.100</li>
+                <li data-letter="D">€ 11.000</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: A.</strong> Contante waarde = € 12.100 ÷ 1,10 = € 11.000. NCW = € 11.000 − € 10.000 = € 1.000. C vergeet de tijdswaarde van geld, D vergeet de investering.</div>
+            </details>
+
+            <details>
+              <summary>11. Een project heeft een IRR van 7%. De vermogenskostenvoet is 9%. Wat concludeer je?</summary>
+              <ul class="opties">
+                <li data-letter="A">Het project is rendabel, want de IRR is positief.</li>
+                <li data-letter="B">Het project is niet rendabel; de NCW bij 9% is negatief.</li>
+                <li data-letter="C">Het project is rendabel, want het verschil is maar 2 procentpunt.</li>
+                <li data-letter="D">Je kunt niets concluderen zonder de terugverdientijd.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> De IRR ligt onder de eis (de VKV). Het project springt niet over de lat; de NCW bij de vereiste 9% is negatief.</div>
+            </details>
+
+            <details>
+              <summary>12. Project X heeft een IRR van 60% en een NCW van € 2.000. Project Y heeft een IRR van 18% en een NCW van € 250.000. Beide hebben dezelfde VKV. Wat is de beste conclusie?</summary>
+              <ul class="opties">
+                <li data-letter="A">X is beter, want het rendement is hoger.</li>
+                <li data-letter="B">Y voegt veel meer waarde toe; de IRR negeert schaalgrootte.</li>
+                <li data-letter="C">Ze zijn gelijkwaardig, want beide zijn rendabel.</li>
+                <li data-letter="D">Y is niet rendabel, want de IRR is lager dan die van X.</li>
+              </ul>
+              <div class="antwoord"><strong>Antwoord: B.</strong> Percentages zeggen niets over de omvang. In euro's (NCW) voegt Y veel meer waarde toe. Staar je dus nooit blind op de IRR alleen.</div>
+            </details>
+          </div>
+
+          <div class="samenvatting" style="background: var(--yellow-soft);">
+            <h3 style="color: #6c5114;">Toetswijzer voor dit hoofdstuk</h3>
+            <p>Voor de kennistoets ken je de inhoud van dit hoofdstuk: de vier methoden en wat ze zeggen, de formules en lettercodes, de dekkingsbijdrage, de veiligheidsmarge, het dekkingsbijdragepercentage, de vrije cashflow, de NCW, het verschil tussen VKV en IRR en de beperkingen van elke methode. Zorg dat je de terugverdientijd, de break-evenafzet en -omzet, de veiligheidsmarge en een eenvoudige NCW zelf kunt uitrekenen. De IRR hoef je niet exact uit te rekenen; je moet hem wel kunnen interpreteren en de beslisregel kunnen toepassen. Voor dit hoofdstuk is de reader de enige bron.</p>
+          </div>
+
+          <h3>Bronnen</h3>
+          <ul style="font-size:15px;">
+            <li>Haken, R. (2026). <em>Investeringsanalyse basis</em>. Avans Hogeschool, ORM jaar 2.</li>
+          </ul>
         </section>
 
         <!-- Hoofdstuk 6, Financieel 2 (input Ramon Haken) -->
@@ -2131,7 +2510,7 @@
 
           <div class="samenvatting" style="background: var(--yellow-soft);">
             <h3 style="color: #6c5114;">Toetswijzer voor dit hoofdstuk</h3>
-            <p>Voor de kennistoets ken je de inhoud van dit hoofdstuk, en bestudeer je uit het <em>KVK Geldboek voor ondernemers</em> paragraaf 1.2.1 (De investeringsbegroting), 1.2.2 (De financieringsbegroting), 3.1 (Eigen inbreng), 3.2 (Regelingen en subsidies), 3.3 (Vreemd vermogen) en het overzicht op pagina 31, plus de elf KVK-pagina's hieronder bij de bronnen. Zorg dat je de kengetallen zelf kunt berekenen en kunt uitleggen wat een uitkomst betekent. De beslisboom in paragraaf 3 is ter naslag en geen toetsstof. Hoofdstuk 5 volgt nog; de toetsstof daarvan wordt daar vermeld.</p>
+            <p>Voor de kennistoets ken je de inhoud van dit hoofdstuk, en bestudeer je uit het <em>KVK Geldboek voor ondernemers</em> paragraaf 1.2.1 (De investeringsbegroting), 1.2.2 (De financieringsbegroting), 3.1 (Eigen inbreng), 3.2 (Regelingen en subsidies), 3.3 (Vreemd vermogen) en het overzicht op pagina 31, plus de elf KVK-pagina's hieronder bij de bronnen. Zorg dat je de kengetallen zelf kunt berekenen en kunt uitleggen wat een uitkomst betekent. De beslisboom in paragraaf 3 is ter naslag en geen toetsstof. </p>
           </div>
 
           <h3>Bronnen</h3>
