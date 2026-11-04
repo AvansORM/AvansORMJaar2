@@ -288,6 +288,10 @@
           <p>
             De logica: een aanbod wordt relevant als het een probleem oplost dat de klant echt voelt. De kern van dat probleem is een conflict: aan de ene kant de situatie die de klant vreest (vaak de huidige situatie), aan de andere kant de situatie die de klant wenst. Je belofte lost dat conflict op. Omdat klanten beloftes niet zomaar geloven, heb je bewijs nodig. En omdat de klant je beoordeelt op alles wat hij meemaakt, moet je de belofte waarmaken in elk contactmoment. Wat je daar over je klant leert, levert weer nieuw inzicht op. Zo is het een cirkel.
           </p>
+          <figure>
+            <a class="lightbox-trigger" href="assets/img/h1-kernmodel.png"><img src="assets/img/h1-kernmodel.png" alt="Het kernmodel: inzicht, belofte, bewijs en waarmaken, als cirkel rond merk of propositie" style="width:100%; height:auto;" /></a>
+            <figcaption>Het kernmodel: inzicht, belofte, bewijs en waarmaken. Wat je bij het waarmaken leert, levert weer nieuw inzicht op. (Bron: Nijveldt, 2026)</figcaption>
+          </figure>
           <div class="callout tip">
             <p style="margin-top:0;"><strong>In de praktijk: Nike.</strong></p>
             <ul class="kv" style="margin-bottom:0;">
@@ -315,7 +319,7 @@
 
           <h4>Hoe klanten kiezen: systeem 1 en systeem 2</h4>
           <p>
-            Probeer het zelf: een knuppel en een bal kosten samen 1,10 euro. De knuppel kost 1 euro meer dan de bal. Hoeveel kost de bal? Grote kans dat "10 cent" in je opkwam. Dat voelt goed, maar dan kost de knuppel 1,10 en samen 1,20. Het juiste antwoord is 5 cent (Frederick, 2005). Wat je hier ervaart, is het verschil tussen twee manieren van denken, die Stanovich en West (2000) systeem 1 en systeem 2 noemden en die Kahneman (2011) wereldberoemd maakte.
+            Om te begrijpen waarom het model werkt, heb je een basisidee nodig van hoe mensen beslissingen nemen. Probeer het zelf: een knuppel en een bal kosten samen 1,10 euro. De knuppel kost 1 euro meer dan de bal. Hoeveel kost de bal? Grote kans dat "10 cent" in je opkwam. Dat voelt goed, maar dan kost de knuppel 1,10 en samen 1,20. Het juiste antwoord is 5 cent (Frederick, 2005). Wat je hier ervaart, is het verschil tussen twee manieren van denken, die Stanovich en West (2000) systeem 1 en systeem 2 noemden en die Kahneman (2011) wereldberoemd maakte.
           </p>
           <table>
             <thead><tr><th></th><th>Systeem 1</th><th>Systeem 2</th></tr></thead>
@@ -377,6 +381,10 @@
           <p>
             Je legt een conflict vast in het conflictschema: vrees en wens als twee tegengestelde uitspraken naast elkaar, met daaronder de belofte die het oplost. Regels: schrijf beide kanten als ik-uitspraak vanuit de klant ("Ik ben bang dat ...", "Ik wil ..."); gebruik de taal van de klant uit je citaten; maak de vrees concreet ("Ik sta op zaterdag zonder brood" in plaats van "leveringsproblemen"); maak de wens positief en menselijk, niet een beschrijving van jouw product; en zorg voor echte spanning. Is de wens alleen de ontkenning van de vrees ("ik heb geen tijd" tegenover "ik wil tijd"), zoek dan verder naar de emotie eronder.
           </p>
+          <figure>
+            <a class="lightbox-trigger" href="assets/img/h1-conflictschema.png"><img src="assets/img/h1-conflictschema.png" alt="Het conflictschema: vrees en wens met daartussen de spanning, en daaronder de belofte die het conflict oplost" style="width:100%; height:auto;" /></a>
+            <figcaption>Het conflictschema: vrees en wens als twee ik-uitspraken, met daaronder de belofte die het conflict oplost. (Bron: Nijveldt, 2026)</figcaption>
+          </figure>
           <p>
             Je kunt op twee manieren naar een conflict kijken. Van vrees naar wens: de klant zit in een situatie die hij niet wil en het merk helpt hem naar de andere kant (Google: overvloed aan informatie tegenover snel precies vinden wat je zoekt). Of onverenigbare werelden verenigen: de klant wil twee dingen die niet samen lijken te kunnen (HEMA: een leuk leven en een kleine portemonnee; Nespresso: exclusieve koffie en gemak thuis).
           </p>
@@ -2688,6 +2696,45 @@
         }
         window.addEventListener('hashchange', openTargetDetails);
         window.addEventListener('DOMContentLoaded', openTargetDetails);
+      })();
+      // Lightbox: klik op een .lightbox-trigger opent een overlay i.p.v. een nieuwe tab.
+      (function () {
+        var keyHandler = null;
+        function close(overlay) {
+          if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
+          document.body.style.overflow = '';
+          if (keyHandler) {
+            document.removeEventListener('keydown', keyHandler);
+            keyHandler = null;
+          }
+        }
+        function open(src, alt) {
+          var overlay = document.createElement('div');
+          overlay.className = 'lightbox-overlay';
+          var img = document.createElement('img');
+          img.src = src;
+          img.alt = alt || '';
+          var btn = document.createElement('button');
+          btn.className = 'lightbox-close';
+          btn.setAttribute('aria-label', 'Sluit afbeelding');
+          btn.textContent = '×';
+          overlay.appendChild(img);
+          overlay.appendChild(btn);
+          document.body.appendChild(overlay);
+          document.body.style.overflow = 'hidden';
+          overlay.addEventListener('click', function (e) {
+            if (e.target === overlay || e.target === btn) close(overlay);
+          });
+          keyHandler = function (e) { if (e.key === 'Escape') close(overlay); };
+          document.addEventListener('keydown', keyHandler);
+        }
+        document.addEventListener('click', function (e) {
+          var trigger = e.target.closest && e.target.closest('.lightbox-trigger');
+          if (!trigger) return;
+          e.preventDefault();
+          var img = trigger.querySelector('img');
+          open(trigger.getAttribute('href'), img ? img.alt : '');
+        });
       })();
     </script>
   </body>
