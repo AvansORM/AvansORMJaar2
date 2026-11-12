@@ -44,6 +44,10 @@
       .chapter td[colspan] { background: var(--blue-soft) !important; color: var(--blue); font-weight: 700; }
       .chapter table.werkblad td:first-child { width: 22%; }
       .callout .kv { padding-left: 20px; }
+      .quiz .vraag { margin: 12px 0; padding: 12px 16px; background: var(--panel); border-radius: 10px; border: 1px solid var(--border); }
+      .quiz .vraag-q { margin: 0; font-weight: 600; }
+      .quiz .vraag details.toon { margin: 4px 0 0; padding: 0; background: none; border: none; border-radius: 0; }
+      .quiz .vraag details.toon summary { font-size: 14px; color: var(--orange); }
       .callout.beperking { background: var(--orange-soft); border-color: var(--orange); }
       .callout.beperking::before { content: "Beperkingen"; display: block; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #9a5a12; margin-bottom: 10px; }
       .formule var.frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-style: normal; margin: 0 4px; }
@@ -685,139 +689,163 @@
 
           <div class="quiz">
             <h3>Oefenvragen voor de kennistoets</h3>
-            <p>12 vragen in MC-vorm, vergelijkbaar met wat je op de toets kunt verwachten. Klik op een vraag om het antwoord met uitleg te zien.</p>
+            <p>12 vragen in MC-vorm, vergelijkbaar met wat je op de toets kunt verwachten. Bedenk eerst zelf je antwoord en klik dan op "Toon antwoord" voor het antwoord met uitleg.</p>
 
-            <details>
-              <summary>1. Een fietsenwinkel ontwikkelt een onderhoudsabonnement voor forenzen met een e-bike. Op welk niveau werkt de winkel met het model?</summary>
+            <div class="vraag">
+              <p class="vraag-q">1. Een fietsenwinkel ontwikkelt een onderhoudsabonnement voor forenzen met een e-bike. Op welk niveau werkt de winkel met het model?</p>
               <ul class="opties">
                 <li data-letter="A">Merkniveau, want het gaat om de hele winkel.</li>
                 <li data-letter="B">Propositieniveau, want het gaat om één aanbod voor één doelgroep.</li>
                 <li data-letter="C">Campagneniveau, want een abonnement is tijdelijk.</li>
                 <li data-letter="D">Geen van beide, want een abonnement is een prijsmodel.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Een concreet aanbod voor een specifieke groep is een propositie. De propositiebelofte moet wel passen binnen de merkbelofte van de winkel.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Een concreet aanbod voor een specifieke groep is een propositie. De propositiebelofte moet wel passen binnen de merkbelofte van de winkel.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>2. Welke stap van het model spreekt volgens Kahneman vooral systeem 2 aan?</summary>
+            <div class="vraag">
+              <p class="vraag-q">2. Welke stap van het model spreekt volgens Kahneman vooral systeem 2 aan?</p>
               <ul class="opties">
                 <li data-letter="A">Het conflict</li>
                 <li data-letter="B">De belofte</li>
                 <li data-letter="C">Het bewijs</li>
                 <li data-letter="D">Het waarmaken</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Het bewijs geeft systeem 2 een rationele rechtvaardiging voor de keuze, het alibi. Conflict en belofte raken vooral systeem 1.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Het bewijs geeft systeem 2 een rationele rechtvaardiging voor de keuze, het alibi. Conflict en belofte raken vooral systeem 1.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>3. Een ouder zegt over de kinderopvang: "Ik ben bang dat ik als moeder tekortschiet als ik fulltime werk." Op welke laag ligt dit conflict vooral?</summary>
+            <div class="vraag">
+              <p class="vraag-q">3. Een ouder zegt over de kinderopvang: "Ik ben bang dat ik als moeder tekortschiet als ik fulltime werk." Op welke laag ligt dit conflict vooral?</p>
               <ul class="opties">
                 <li data-letter="A">Functioneel</li>
                 <li data-letter="B">Emotioneel en zelfbeeld</li>
                 <li data-letter="C">Sociaal</li>
                 <li data-letter="D">Instrumenteel</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Het gaat om een gevoel (bang, tekortschieten) en om het beeld van zichzelf als moeder. Functioneel en instrumenteel zijn hetzelfde en gaan over tijd, geld of moeite.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Het gaat om een gevoel (bang, tekortschieten) en om het beeld van zichzelf als moeder. Functioneel en instrumenteel zijn hetzelfde en gaan over tijd, geld of moeite.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>4. Wat is de juiste volgorde van de means-end chain? (a) "Dan voel ik me een goede vader." (b) "De fietsstoel klikt in één beweging vast." (c) "Ik ben 's ochtends sneller de deur uit."</summary>
+            <div class="vraag">
+              <p class="vraag-q">4. Wat is de juiste volgorde van de means-end chain? (a) "Dan voel ik me een goede vader." (b) "De fietsstoel klikt in één beweging vast." (c) "Ik ben 's ochtends sneller de deur uit."</p>
               <ul class="opties">
                 <li data-letter="A">a, c, b</li>
                 <li data-letter="B">b, a, c</li>
                 <li data-letter="C">b, c, a</li>
                 <li data-letter="D">c, b, a</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Eerst het kenmerk (b), dan het functionele voordeel (c), dan het emotionele voordeel of de eindwaarde (a).</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Eerst het kenmerk (b), dan het functionele voordeel (c), dan het emotionele voordeel of de eindwaarde (a).</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>5. Een student formuleert: "Ik heb geen app om mijn boodschappen te plannen" tegenover "Ik wil een app om mijn boodschappen te plannen." Wat is hier mis?</summary>
+            <div class="vraag">
+              <p class="vraag-q">5. Een student formuleert: "Ik heb geen app om mijn boodschappen te plannen" tegenover "Ik wil een app om mijn boodschappen te plannen." Wat is hier mis?</p>
               <ul class="opties">
                 <li data-letter="A">Het conflict staat niet in de ik-vorm.</li>
                 <li data-letter="B">Het is een productconflict zonder echte spanning: de wens beschrijft een product en is alleen de ontkenning van de vrees.</li>
                 <li data-letter="C">Het conflict is te emotioneel voor een propositie.</li>
                 <li data-letter="D">Er is niets mis; vrees en wens staan netjes tegenover elkaar.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> De wens hoort in de wereld van de klant te liggen, niet bij jouw product, en er moet echte spanning in zitten. Vraag door: wat gebeurt er nu en wat betekent dat voor de klant?</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> De wens hoort in de wereld van de klant te liggen, niet bij jouw product, en er moet echte spanning in zitten. Vraag door: wat gebeurt er nu en wat betekent dat voor de klant?</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>6. Welke vraag uit de conflictchecklist is een harde eis?</summary>
+            <div class="vraag">
+              <p class="vraag-q">6. Welke vraag uit de conflictchecklist is een harde eis?</p>
               <ul class="opties">
                 <li data-letter="A">Is het conflict emotioneel relevant?</li>
                 <li data-letter="B">Is het conflict uniek?</li>
                 <li data-letter="C">Is het conflict groot genoeg?</li>
                 <li data-letter="D">Kun je het conflict geloofwaardig oplossen?</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: D.</strong> Een conflict dat je niet geloofwaardig kunt oplossen, leidt tot een belofte die je niet kunt waarmaken. Dat schaadt het vertrouwen meer dan geen belofte.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: D.</strong> Een conflict dat je niet geloofwaardig kunt oplossen, leidt tot een belofte die je niet kunt waarmaken. Dat schaadt het vertrouwen meer dan geen belofte.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>7. Wat is het verschil tussen de waarom-vraag bij de 5-why's en bij laddering?</summary>
+            <div class="vraag">
+              <p class="vraag-q">7. Wat is het verschil tussen de waarom-vraag bij de 5-why's en bij laddering?</p>
               <ul class="opties">
                 <li data-letter="A">De 5-why's zoeken de oorzaak van een probleem; laddering zoekt de betekenis van het probleem voor de klant.</li>
                 <li data-letter="B">De 5-why's gebruik je bij B2B, laddering bij B2C.</li>
                 <li data-letter="C">Laddering stelt precies vijf keer de waarom-vraag, de 5-why's net zo vaak als nodig.</li>
                 <li data-letter="D">Er is geen verschil; het zijn twee namen voor dezelfde techniek.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: A.</strong> De 5-why's gaan omlaag naar de oorzaak (en leveren de oplossing en het bewijs); laddering gaat omhoog naar de betekenis (en levert het conflict en de belofte).</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: A.</strong> De 5-why's gaan omlaag naar de oorzaak (en leveren de oplossing en het bewijs); laddering gaat omhoog naar de betekenis (en levert het conflict en de belofte).</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>8. Een zwemschool kiest het conflict "Ik ben bang dat mijn kind niet veilig is bij water" tegenover "Ik wil dat mijn kind onbezorgd kan spelen". Welke belofte lost dit conflict het best op?</summary>
+            <div class="vraag">
+              <p class="vraag-q">8. Een zwemschool kiest het conflict "Ik ben bang dat mijn kind niet veilig is bij water" tegenover "Ik wil dat mijn kind onbezorgd kan spelen". Welke belofte lost dit conflict het best op?</p>
               <ul class="opties">
                 <li data-letter="A">"De grootste zwemschool van de regio."</li>
                 <li data-letter="B">"10 procent korting voor het tweede kind."</li>
                 <li data-letter="C">"Onbezorgd spelen bij elk water."</li>
                 <li data-letter="D">"Al 40 jaar ervaring."</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Die lost het conflict op en maakt het kind en de ouder de held. A en D gaan over de zwemschool zelf (het merk is de held), B over prijs.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Die lost het conflict op en maakt het kind en de ouder de held. A en D gaan over de zwemschool zelf (het merk is de held), B over prijs.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>9. Dezelfde zwemschool zoekt bewijs. Welk bewijs is het sterkst?</summary>
+            <div class="vraag">
+              <p class="vraag-q">9. Dezelfde zwemschool zoekt bewijs. Welk bewijs is het sterkst?</p>
               <ul class="opties">
                 <li data-letter="A">"Wij zijn de meest betrouwbare zwemschool van de stad."</li>
                 <li data-letter="B">"Elk kind oefent ook in kleding en in open water, onder begeleiding van een gecertificeerde instructeur."</li>
                 <li data-letter="C">"Ons zwembad is 25 meter lang."</li>
                 <li data-letter="D">"Wij hebben de beste service."</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Concreet, controleerbaar, relevant voor het conflict en passend bij de belofte. A en D zijn eigenlijk nieuwe beloftes, C is een kale specificatie zonder verband met de belofte.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Concreet, controleerbaar, relevant voor het conflict en passend bij de belofte. A en D zijn eigenlijk nieuwe beloftes, C is een kale specificatie zonder verband met de belofte.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>10. Een webwinkel toont bij elke jas: "Deze week 214 keer gekocht door wandelaars zoals jij." Welk principe van Cialdini wordt vooral ingezet?</summary>
+            <div class="vraag">
+              <p class="vraag-q">10. Een webwinkel toont bij elke jas: "Deze week 214 keer gekocht door wandelaars zoals jij." Welk principe van Cialdini wordt vooral ingezet?</p>
               <ul class="opties">
                 <li data-letter="A">Autoriteit</li>
                 <li data-letter="B">Schaarste</li>
                 <li data-letter="C">Sociale bewijskracht</li>
                 <li data-letter="D">Wederkerigheid</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Veel anderen die op mij lijken kopen het, dus het zal goed zijn. "Wandelaars zoals jij" voegt een element van eenheid toe.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Veel anderen die op mij lijken kopen het, dus het zal goed zijn. "Wandelaars zoals jij" voegt een element van eenheid toe.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>11. Een energiebedrijf schrijft: "Zonder isolatie verlies je elk jaar 350 euro aan warmte." Welk frame is dit en op welk mechanisme speelt het in?</summary>
+            <div class="vraag">
+              <p class="vraag-q">11. Een energiebedrijf schrijft: "Zonder isolatie verlies je elk jaar 350 euro aan warmte." Welk frame is dit en op welk mechanisme speelt het in?</p>
               <ul class="opties">
                 <li data-letter="A">Winstframe; verwerkingsgemak</li>
                 <li data-letter="B">Verliesframe; verliesaversie</li>
                 <li data-letter="C">Verliesframe; confirmation bias</li>
                 <li data-letter="D">Winstframe; sociale bewijskracht</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Het benadrukt wat je verliest als je niet kiest. Verliezen wegen zwaarder dan even grote winsten (verliesaversie), daarom zet dit frame vaak sterker aan tot actie.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Het benadrukt wat je verliest als je niet kiest. Verliezen wegen zwaarder dan even grote winsten (verliesaversie), daarom zet dit frame vaak sterker aan tot actie.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>12. Een fietsenwinkel belooft "Altijd binnen 24 uur weer op de fiets". De reparatie gaat snel, maar bij het ophalen wacht de klant twintig minuten omdat de rekening niet klaar is. Waarom is dat extra schadelijk?</summary>
+            <div class="vraag">
+              <p class="vraag-q">12. Een fietsenwinkel belooft "Altijd binnen 24 uur weer op de fiets". De reparatie gaat snel, maar bij het ophalen wacht de klant twintig minuten omdat de rekening niet klaar is. Waarom is dat extra schadelijk?</p>
               <ul class="opties">
                 <li data-letter="A">Omdat het ophalen een contactmoment van een partner is.</li>
                 <li data-letter="B">Omdat klanten een ervaring vooral beoordelen op de piek en het einde, en het einde hier haaks staat op de belofte.</li>
                 <li data-letter="C">Omdat het Zero Moment of Truth hierdoor verloren gaat.</li>
                 <li data-letter="D">Omdat twintig minuten langer is dan de gemiddelde wachttijd.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> De piek-eindregel: het einde kleurt de hele ervaring, ook al ging de reparatie zelf snel. Het ophalen is bovendien een eigen contactmoment, geen partnermoment.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> De piek-eindregel: het einde kleurt de hele ervaring, ook al ging de reparatie zelf snel. Het ophalen is bovendien een eigen contactmoment, geen partnermoment.</div>
+              </details>
+            </div>
           </div>
 
           <div class="samenvatting" style="background: var(--yellow-soft);">
@@ -1094,171 +1122,201 @@
 
           <div class="quiz">
             <h3>Oefenvragen voor de kennistoets</h3>
-            <p>15 vragen in MC-vorm, vergelijkbaar met wat je op de toets kunt verwachten. Klik op een vraag om het antwoord met uitleg te zien.</p>
+            <p>15 vragen in MC-vorm, vergelijkbaar met wat je op de toets kunt verwachten. Bedenk eerst zelf je antwoord en klik dan op "Toon antwoord" voor het antwoord met uitleg.</p>
 
-            <details>
-              <summary>1. Wat is de kern van de hybride paradox in sales?</summary>
+            <div class="vraag">
+              <p class="vraag-q">1. Wat is de kern van de hybride paradox in sales?</p>
               <ul class="opties">
                 <li data-letter="A">Online kanalen zijn goedkoper, maar offline kanalen bereiken meer mensen.</li>
                 <li data-letter="B">Online bereik je veel mensen snel maar met lage conversie; offline bouw je dieper vertrouwen met hogere conversie, maar duurder per contact.</li>
                 <li data-letter="C">B2B-klanten kopen alleen online, B2C-klanten alleen offline.</li>
                 <li data-letter="D">Klanten willen tegelijk persoonlijk contact en anoniem blijven.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Schaalbaarheid tegenover diepgang. Een O2O-funnel combineert de sterke kanten van beide.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Schaalbaarheid tegenover diepgang. Een O2O-funnel combineert de sterke kanten van beide.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>2. In welke fase van AIDA vindt in een O2O-funnel de overstap van online naar offline plaats?</summary>
+            <div class="vraag">
+              <p class="vraag-q">2. In welke fase van AIDA vindt in een O2O-funnel de overstap van online naar offline plaats?</p>
               <ul class="opties">
                 <li data-letter="A">Attention</li>
                 <li data-letter="B">Interest</li>
                 <li data-letter="C">Desire</li>
                 <li data-letter="D">Action</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Desire is de brug: je verleidt de lead met een tastbaar voordeel om de stap naar fysiek contact te zetten. Action vindt daarna offline plaats.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Desire is de brug: je verleidt de lead met een tastbaar voordeel om de stap naar fysiek contact te zetten. Action vindt daarna offline plaats.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>3. Een adviesbureau mailt leads: "Zullen we binnenkort eens koffie drinken om kennis te maken?" Er komen nauwelijks afspraken. Wat is volgens de gouden regel van O2O-sales de beste verbetering?</summary>
+            <div class="vraag">
+              <p class="vraag-q">3. Een adviesbureau mailt leads: "Zullen we binnenkort eens koffie drinken om kennis te maken?" Er komen nauwelijks afspraken. Wat is volgens de gouden regel van O2O-sales de beste verbetering?</p>
               <ul class="opties">
                 <li data-letter="A">De mail vaker versturen, zodat meer leads hem zien.</li>
                 <li data-letter="B">Een korte sessie aanbieden waarin de lead met eigen cijfers ziet hoeveel hij kan besparen.</li>
                 <li data-letter="C">De afspraak online laten plaatsvinden in plaats van op kantoor.</li>
                 <li data-letter="D">Een korting aanbieden op het eerste project.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Een lead verlaat het scherm alleen als de ontmoeting direct en tastbaar voordeel oplevert. Een vrijblijvende kop koffie doet dat niet.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Een lead verlaat het scherm alleen als de ontmoeting direct en tastbaar voordeel oplevert. Een vrijblijvende kop koffie doet dat niet.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>4. Een softwarebedrijf richt zich op bedrijven die net een nieuwe vestiging hebben geopend. Welke pijler van het ICP is dit?</summary>
+            <div class="vraag">
+              <p class="vraag-q">4. Een softwarebedrijf richt zich op bedrijven die net een nieuwe vestiging hebben geopend. Welke pijler van het ICP is dit?</p>
               <ul class="opties">
                 <li data-letter="A">Firmographics</li>
                 <li data-letter="B">Technographics</li>
                 <li data-letter="C">Context en timing (triggers)</li>
                 <li data-letter="D">Pijnpunten</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Een gebeurtenis die een bedrijf op dit moment een goede fit maakt, is een trigger. Firmographics zijn vaste kenmerken zoals branche en omvang.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Een gebeurtenis die een bedrijf op dit moment een goede fit maakt, is een trigger. Firmographics zijn vaste kenmerken zoals branche en omvang.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>5. Je verkoopt een koppeling die alleen werkt met één specifiek boekhoudpakket. Welke pijler van het ICP bepaalt vooral wie bij je doelgroep hoort?</summary>
+            <div class="vraag">
+              <p class="vraag-q">5. Je verkoopt een koppeling die alleen werkt met één specifiek boekhoudpakket. Welke pijler van het ICP bepaalt vooral wie bij je doelgroep hoort?</p>
               <ul class="opties">
                 <li data-letter="A">Technographics</li>
                 <li data-letter="B">Firmographics</li>
                 <li data-letter="C">Pijnpunten</li>
                 <li data-letter="D">Context en timing</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: A.</strong> Technographics beschrijven welke technologie een bedrijf al gebruikt. Alleen bedrijven met dat pakket kunnen je product gebruiken.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: A.</strong> Technographics beschrijven welke technologie een bedrijf al gebruikt. Alleen bedrijven met dat pakket kunnen je product gebruiken.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>6. Wat is het belangrijkste verschil tussen een ICP en een buyer persona?</summary>
+            <div class="vraag">
+              <p class="vraag-q">6. Wat is het belangrijkste verschil tussen een ICP en een buyer persona?</p>
               <ul class="opties">
                 <li data-letter="A">Een ICP is voor B2C, een buyer persona voor B2B.</li>
                 <li data-letter="B">Een ICP beschrijft het ideale type bedrijf; een buyer persona de individuele beslisser binnen dat bedrijf.</li>
                 <li data-letter="C">Een ICP is gebaseerd op interviews, een buyer persona op omzetcijfers.</li>
                 <li data-letter="D">Er is geen verschil; het zijn synoniemen.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Bedrijven kopen niet zelf, mensen in bedrijven beslissen. Het ICP kiest de deur, de buyer persona bepaalt wat je zegt als die opengaat.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Bedrijven kopen niet zelf, mensen in bedrijven beslissen. Het ICP kiest de deur, de buyer persona bepaalt wat je zegt als die opengaat.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>7. Een salesmedewerker heeft drie enthousiaste gesprekken gevoerd met een stagiair op de inkoopafdeling. Op welk BANT-criterium loopt deze lead vooral risico?</summary>
+            <div class="vraag">
+              <p class="vraag-q">7. Een salesmedewerker heeft drie enthousiaste gesprekken gevoerd met een stagiair op de inkoopafdeling. Op welk BANT-criterium loopt deze lead vooral risico?</p>
               <ul class="opties">
                 <li data-letter="A">Budget</li>
                 <li data-letter="B">Authority</li>
                 <li data-letter="C">Need</li>
                 <li data-letter="D">Timeline</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> De stagiair heeft geen mandaat om te beslissen. Zoek de economic buyer en zorg dat de afspraak met die persoon plaatsvindt.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> De stagiair heeft geen mandaat om te beslissen. Zoek de economic buyer en zorg dat de afspraak met die persoon plaatsvindt.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>8. Een prospect heeft budget en een duidelijke behoefte, maar zegt: "Misschien volgend jaar." Wat past het best bij BANT?</summary>
+            <div class="vraag">
+              <p class="vraag-q">8. Een prospect heeft budget en een duidelijke behoefte, maar zegt: "Misschien volgend jaar." Wat past het best bij BANT?</p>
               <ul class="opties">
                 <li data-letter="A">De lead afschrijven, want er is geen behoefte.</li>
                 <li data-letter="B">Urgentie creëren door de kosten van uitstel zichtbaar te maken.</li>
                 <li data-letter="C">Een andere contactpersoon zoeken met meer budget.</li>
                 <li data-letter="D">De prijs verlagen, zodat de prospect nu tekent.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Het knelpunt is Timeline. Goede salesprofessionals maken de cost of inaction zichtbaar: wat kost het om niets te doen?</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Het knelpunt is Timeline. Goede salesprofessionals maken de cost of inaction zichtbaar: wat kost het om niets te doen?</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>9. Een installatiebedrijf wil 8 afspraken per week. De conversie van online lead naar afspraak is 2%. Hoeveel leads per week zijn nodig?</summary>
+            <div class="vraag">
+              <p class="vraag-q">9. Een installatiebedrijf wil 8 afspraken per week. De conversie van online lead naar afspraak is 2%. Hoeveel leads per week zijn nodig?</p>
               <ul class="opties">
                 <li data-letter="A">16</li>
                 <li data-letter="B">160</li>
                 <li data-letter="C">400</li>
                 <li data-letter="D">800</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Benodigde leads = 8 ÷ 0,02 = 400.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Benodigde leads = 8 ÷ 0,02 = 400.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>10. Een bedrijf heeft 50 kansen, een winrate van 30%, een gemiddelde dealwaarde van 2.000 euro en een salescyclus van 60 dagen. Wat is de sales velocity?</summary>
+            <div class="vraag">
+              <p class="vraag-q">10. Een bedrijf heeft 50 kansen, een winrate van 30%, een gemiddelde dealwaarde van 2.000 euro en een salescyclus van 60 dagen. Wat is de sales velocity?</p>
               <ul class="opties">
                 <li data-letter="A">250 euro per dag</li>
                 <li data-letter="B">500 euro per dag</li>
                 <li data-letter="C">1.000 euro per dag</li>
                 <li data-letter="D">30.000 euro per dag</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> (50 × 0,30 × 2.000) ÷ 60 = 30.000 ÷ 60 = 500 euro per dag. D is de totale gewonnen waarde, zonder te delen door de cycluslengte.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> (50 × 0,30 × 2.000) ÷ 60 = 30.000 ÷ 60 = 500 euro per dag. D is de totale gewonnen waarde, zonder te delen door de cycluslengte.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>11. Een bedrijf halveert de lengte van zijn salescyclus en houdt alle andere factoren gelijk. Wat gebeurt er met de sales velocity?</summary>
+            <div class="vraag">
+              <p class="vraag-q">11. Een bedrijf halveert de lengte van zijn salescyclus en houdt alle andere factoren gelijk. Wat gebeurt er met de sales velocity?</p>
               <ul class="opties">
                 <li data-letter="A">Die halveert.</li>
                 <li data-letter="B">Die blijft gelijk.</li>
                 <li data-letter="C">Die verdubbelt.</li>
                 <li data-letter="D">Dat hangt af van de winrate.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> De cycluslengte staat in de noemer. Een twee keer zo korte cyclus geeft een twee keer zo hoge verkoopsnelheid.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> De cycluslengte staat in de noemer. Een twee keer zo korte cyclus geeft een twee keer zo hoge verkoopsnelheid.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>12. Een bedrijf richt zijn ICP scherper af, waardoor het minder maar betere leads krijgt. Welke variabele van de sales velocity wil het daarmee vooral verhogen?</summary>
+            <div class="vraag">
+              <p class="vraag-q">12. Een bedrijf richt zijn ICP scherper af, waardoor het minder maar betere leads krijgt. Welke variabele van de sales velocity wil het daarmee vooral verhogen?</p>
               <ul class="opties">
                 <li data-letter="A">Het aantal kansen</li>
                 <li data-letter="B">De winrate (en eventueel de dealwaarde)</li>
                 <li data-letter="C">De lengte van de salescyclus</li>
                 <li data-letter="D">Het conversiepercentage van offline naar online</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Betere targeting met ICP en buyer persona verhoogt de kans dat een kans gewonnen wordt en vaak ook de waarde per deal. Het aantal kansen daalt juist.</div>
-            </details>
-            <details>
-              <summary>13. Een webshop heeft aan het begin van het kwartaal 1.000 klanten. In het kwartaal komen er 300 nieuwe bij en aan het eind zijn er 1.150. Wat is de retention rate?</summary>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Betere targeting met ICP en buyer persona verhoogt de kans dat een kans gewonnen wordt en vaak ook de waarde per deal. Het aantal kansen daalt juist.</div>
+              </details>
+            </div>
+            <div class="vraag">
+              <p class="vraag-q">13. Een webshop heeft aan het begin van het kwartaal 1.000 klanten. In het kwartaal komen er 300 nieuwe bij en aan het eind zijn er 1.150. Wat is de retention rate?</p>
               <ul class="opties">
                 <li data-letter="A">70%</li>
                 <li data-letter="B">85%</li>
                 <li data-letter="C">115%</li>
                 <li data-letter="D">150%</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> (1.150 − 300) ÷ 1.000 × 100% = 85%. De nieuwe klanten tel je niet mee, anders lijkt het alsof je meer klanten behoudt dan je had (C). De churn rate is 15%.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> (1.150 − 300) ÷ 1.000 × 100% = 85%. De nieuwe klanten tel je niet mee, anders lijkt het alsof je meer klanten behoudt dan je had (C). De churn rate is 15%.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>14. Een klant van een koffiebar besteedt gemiddeld 6 euro per bezoek, komt 50 keer per jaar en blijft gemiddeld 4 jaar klant. Wat is de customer lifetime value?</summary>
+            <div class="vraag">
+              <p class="vraag-q">14. Een klant van een koffiebar besteedt gemiddeld 6 euro per bezoek, komt 50 keer per jaar en blijft gemiddeld 4 jaar klant. Wat is de customer lifetime value?</p>
               <ul class="opties">
                 <li data-letter="A">240 euro</li>
                 <li data-letter="B">300 euro</li>
                 <li data-letter="C">1.200 euro</li>
                 <li data-letter="D">1.500 euro</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> 6 × 50 × 4 = 1.200 euro. B is de waarde per jaar, zonder de retentietijd.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> 6 × 50 × 4 = 1.200 euro. B is de waarde per jaar, zonder de retentietijd.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>15. Een softwarebedrijf koppelt zijn pakket diep aan de voorraad- en kassasystemen van zijn klanten, zodat overstappen veel werk is. Welk niveau van retentie is dit?</summary>
+            <div class="vraag">
+              <p class="vraag-q">15. Een softwarebedrijf koppelt zijn pakket diep aan de voorraad- en kassasystemen van zijn klanten, zodat overstappen veel werk is. Welk niveau van retentie is dit?</p>
               <ul class="opties">
                 <li data-letter="A">Financiële retentie</li>
                 <li data-letter="B">Sociale retentie</li>
                 <li data-letter="C">Structurele retentie</li>
                 <li data-letter="D">Proactieve retentie</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Geïntegreerde oplossingen maken overstappen operationeel ingewikkeld. Dat is het sterkste niveau van binding. Proactieve klantenservice is een drijver, geen niveau.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Geïntegreerde oplossingen maken overstappen operationeel ingewikkeld. Dat is het sterkste niveau van binding. Proactieve klantenservice is een drijver, geen niveau.</div>
+              </details>
+            </div>
           </div>
 
           <div class="samenvatting" style="background: var(--yellow-soft);">
@@ -1420,73 +1478,85 @@
 
           <div class="quiz">
             <h3>Oefenvragen voor de kennistoets</h3>
-            <p>6 vragen in MC-vorm over dit hoofdstuk. Samen met hoofdstuk 4 vormen ze een set van 12, zoals op de toets. Klik op een vraag om het antwoord te zien. Oefen daarnaast met de verwerkingsopdrachten op Brightspace.</p>
+            <p>6 vragen in MC-vorm over dit hoofdstuk. Samen met hoofdstuk 4 vormen ze een set van 12, zoals op de toets. Bedenk eerst zelf je antwoord en klik dan op "Toon antwoord". Oefen daarnaast met de verwerkingsopdrachten op Brightspace.</p>
 
-            <details>
-              <summary>1. Een klant mailt op een offerte: "Akkoord, ga je gang." Er is niets getekend. Is er een overeenkomst?</summary>
+            <div class="vraag">
+              <p class="vraag-q">1. Een klant mailt op een offerte: "Akkoord, ga je gang." Er is niets getekend. Is er een overeenkomst?</p>
               <ul class="opties">
                 <li data-letter="A">Nee, een overeenkomst moet altijd schriftelijk en ondertekend zijn.</li>
                 <li data-letter="B">Ja, het aanbod (de offerte) is aanvaard; een overeenkomst is in principe vormvrij.</li>
                 <li data-letter="C">Nee, een mail geldt alleen als uitnodiging tot onderhandelen.</li>
                 <li data-letter="D">Alleen als de klant een consument is.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Aanbod en aanvaarding leveren een overeenkomst op. Een handtekening is in principe niet nodig, wel handig als bewijs.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Aanbod en aanvaarding leveren een overeenkomst op. Een handtekening is in principe niet nodig, wel handig als bewijs.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>2. Wat is het verschil tussen een nietige en een vernietigbare overeenkomst?</summary>
+            <div class="vraag">
+              <p class="vraag-q">2. Wat is het verschil tussen een nietige en een vernietigbare overeenkomst?</p>
               <ul class="opties">
                 <li data-letter="A">Een nietige overeenkomst heeft nooit rechtsgevolg gehad; een vernietigbare is geldig totdat een partij haar vernietigt.</li>
                 <li data-letter="B">Een nietige overeenkomst kan alleen de rechter vernietigen; een vernietigbare vervalt vanzelf.</li>
                 <li data-letter="C">Nietig geldt alleen voor consumenten, vernietigbaar alleen voor bedrijven.</li>
                 <li data-letter="D">Er is geen verschil; beide begrippen betekenen dat de overeenkomst ongeldig is.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: A.</strong> Nietigheid geldt van rechtswege. Bij vernietigbaarheid moet de partij die zich erop beroept zelf actie ondernemen.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: A.</strong> Nietigheid geldt van rechtswege. Bij vernietigbaarheid moet de partij die zich erop beroept zelf actie ondernemen.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>3. Een verkoper zegt bewust dat een gebruikte machine "nooit kapot is geweest", terwijl hij weet dat de motor twee keer is vervangen. Op welk wilsgebrek kan de koper zich het best beroepen?</summary>
+            <div class="vraag">
+              <p class="vraag-q">3. Een verkoper zegt bewust dat een gebruikte machine "nooit kapot is geweest", terwijl hij weet dat de motor twee keer is vervangen. Op welk wilsgebrek kan de koper zich het best beroepen?</p>
               <ul class="opties">
                 <li data-letter="A">Bedreiging</li>
                 <li data-letter="B">Misbruik van omstandigheden</li>
                 <li data-letter="C">Bedrog</li>
                 <li data-letter="D">Handelingsonbekwaamheid</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> De verkoper misleidt de koper opzettelijk om hem over te halen. Dat is bedrog. Dwaling kan ook een rol spelen, maar het opzettelijke karakter maakt het bedrog.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> De verkoper misleidt de koper opzettelijk om hem over te halen. Dat is bedrog. Dwaling kan ook een rol spelen, maar het opzettelijke karakter maakt het bedrog.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>4. Een webshop stuurt zijn algemene voorwaarden pas mee met de factuur, na de levering. Wat is daarvan het risico?</summary>
+            <div class="vraag">
+              <p class="vraag-q">4. Een webshop stuurt zijn algemene voorwaarden pas mee met de factuur, na de levering. Wat is daarvan het risico?</p>
               <ul class="opties">
                 <li data-letter="A">Geen risico; voorwaarden gelden zodra de klant ze ontvangt.</li>
                 <li data-letter="B">De wederpartij kan bedingen vernietigen, omdat ze niet vóór of bij het sluiten de kans kreeg om ervan kennis te nemen.</li>
                 <li data-letter="C">De hele koopovereenkomst is nietig.</li>
                 <li data-letter="D">De webshop pleegt daarmee een onrechtmatige daad.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> De gebruiker moet de wederpartij een redelijke mogelijkheid geven om van de voorwaarden kennis te nemen, in beginsel vóór of bij het sluiten. De overeenkomst zelf blijft bestaan.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> De gebruiker moet de wederpartij een redelijke mogelijkheid geven om van de voorwaarden kennis te nemen, in beginsel vóór of bij het sluiten. De overeenkomst zelf blijft bestaan.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>5. Een leverancier levert te laat. De afnemer wil schadevergoeding. Wat is meestal eerst nodig voordat de leverancier in verzuim is?</summary>
+            <div class="vraag">
+              <p class="vraag-q">5. Een leverancier levert te laat. De afnemer wil schadevergoeding. Wat is meestal eerst nodig voordat de leverancier in verzuim is?</p>
               <ul class="opties">
                 <li data-letter="A">Een ingebrekestelling met een redelijke termijn om alsnog na te komen</li>
                 <li data-letter="B">Een uitspraak van de rechter</li>
                 <li data-letter="C">Een onrechtmatige daad van de leverancier</li>
                 <li data-letter="D">Vernietiging van de overeenkomst</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: A.</strong> Meestal moet de schuldenaar eerst schriftelijk in gebreke worden gesteld. Het boek bespreekt de uitzonderingen, bijvoorbeeld bij een fatale termijn.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: A.</strong> Meestal moet de schuldenaar eerst schriftelijk in gebreke worden gesteld. Het boek bespreekt de uitzonderingen, bijvoorbeeld bij een fatale termijn.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>6. Een medewerker van een schoonmaakbedrijf laat bij een klant een emmer op de trap staan, waarover een bezoeker valt. Wie kan de bezoeker het best aansprakelijk stellen en op welke grond?</summary>
+            <div class="vraag">
+              <p class="vraag-q">6. Een medewerker van een schoonmaakbedrijf laat bij een klant een emmer op de trap staan, waarover een bezoeker valt. Wie kan de bezoeker het best aansprakelijk stellen en op welke grond?</p>
               <ul class="opties">
                 <li data-letter="A">Alleen de klant, op grond van de overeenkomst met het schoonmaakbedrijf</li>
                 <li data-letter="B">Het schoonmaakbedrijf als werkgever, op grond van onrechtmatige daad (aansprakelijkheid voor ondergeschikten)</li>
                 <li data-letter="C">Niemand, want de bezoeker heeft geen overeenkomst met het schoonmaakbedrijf</li>
                 <li data-letter="D">Alleen de medewerker zelf, op grond van wanprestatie</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> De bezoeker heeft geen overeenkomst, dus de grondslag is de onrechtmatige daad. De werkgever is aansprakelijk voor fouten van zijn werknemers (risicoaansprakelijkheid). Wanprestatie veronderstelt een overeenkomst.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> De bezoeker heeft geen overeenkomst, dus de grondslag is de onrechtmatige daad. De werkgever is aansprakelijk voor fouten van zijn werknemers (risicoaansprakelijkheid). Wanprestatie veronderstelt een overeenkomst.</div>
+              </details>
+            </div>
           </div>
 
           <div class="samenvatting" style="background: var(--yellow-soft);">
@@ -1644,73 +1714,85 @@
 
           <div class="quiz">
             <h3>Oefenvragen voor de kennistoets</h3>
-            <p>6 vragen in MC-vorm over dit hoofdstuk. Samen met hoofdstuk 3 vormen ze een set van 12. Klik op een vraag om het antwoord te zien.</p>
+            <p>6 vragen in MC-vorm over dit hoofdstuk. Samen met hoofdstuk 3 vormen ze een set van 12. Bedenk eerst zelf je antwoord en klik dan op "Toon antwoord".</p>
 
-            <details>
-              <summary>1. Een student importeert bamboe fietshelmen uit China en verkoopt ze onder het eigen merk "Bamboost". Een helm breekt bij een val. Wie kan de gewonde fietser op grond van productaansprakelijkheid aanspreken?</summary>
+            <div class="vraag">
+              <p class="vraag-q">1. Een student importeert bamboe fietshelmen uit China en verkoopt ze onder het eigen merk "Bamboost". Een helm breekt bij een val. Wie kan de gewonde fietser op grond van productaansprakelijkheid aanspreken?</p>
               <ul class="opties">
                 <li data-letter="A">Alleen de Chinese fabrikant</li>
                 <li data-letter="B">Ook de student, als importeur in de EU en omdat het eigen merk op het product staat</li>
                 <li data-letter="C">Niemand, want de fietser heeft geen overeenkomst met de fabrikant</li>
                 <li data-letter="D">Alleen de winkel waar de helm gekocht is</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Het begrip producent omvat ook de importeur in de EU en wie zich als producent presenteert met naam of merk. Een overeenkomst is niet nodig.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Het begrip producent omvat ook de importeur in de EU en wie zich als producent presenteert met naam of merk. Een overeenkomst is niet nodig.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>2. Wat houdt in dat productaansprakelijkheid een risicoaansprakelijkheid is?</summary>
+            <div class="vraag">
+              <p class="vraag-q">2. Wat houdt in dat productaansprakelijkheid een risicoaansprakelijkheid is?</p>
               <ul class="opties">
                 <li data-letter="A">De benadeelde hoeft niet te bewijzen dat de producent een fout maakte; een gebrek, schade en oorzakelijk verband zijn genoeg.</li>
                 <li data-letter="B">De producent is alleen aansprakelijk als hij een risicoanalyse heeft overgeslagen.</li>
                 <li data-letter="C">De benadeelde draagt zelf het risico van het product.</li>
                 <li data-letter="D">De producent is altijd aansprakelijk, ook als het product geen gebrek had.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: A.</strong> Schuld van de producent is niet nodig. Wel moet er een gebrek zijn dat de schade veroorzaakte.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: A.</strong> Schuld van de producent is niet nodig. Wel moet er een gebrek zijn dat de schade veroorzaakte.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>3. Een webshop toont bij elke bestelling "Nog maar 2 op voorraad!", ook als er honderden op voorraad zijn. Hoe noem je dit?</summary>
+            <div class="vraag">
+              <p class="vraag-q">3. Een webshop toont bij elke bestelling "Nog maar 2 op voorraad!", ook als er honderden op voorraad zijn. Hoe noem je dit?</p>
               <ul class="opties">
                 <li data-letter="A">Een toegestane vorm van schaarste, zolang de prijs klopt</li>
                 <li data-letter="B">Een oneerlijke, misleidende handelspraktijk</li>
                 <li data-letter="C">Vergelijkende reclame</li>
                 <li data-letter="D">Een agressieve handelspraktijk, maar alleen als de klant klaagt</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Valse schaarste misleidt de consument om sneller te beslissen. Bepaalde vormen hiervan staan zelfs op de zwarte lijst. Echte schaarste benoemen mag wel.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Valse schaarste misleidt de consument om sneller te beslissen. Bepaalde vormen hiervan staan zelfs op de zwarte lijst. Echte schaarste benoemen mag wel.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>4. Een influencer krijgt gratis sneakers en een vergoeding om ze aan te prijzen. Wat moet volgens de reclameregels?</summary>
+            <div class="vraag">
+              <p class="vraag-q">4. Een influencer krijgt gratis sneakers en een vergoeding om ze aan te prijzen. Wat moet volgens de reclameregels?</p>
               <ul class="opties">
                 <li data-letter="A">Niets, zolang de influencer de sneakers echt goed vindt</li>
                 <li data-letter="B">De samenwerking moet duidelijk herkenbaar zijn als reclame</li>
                 <li data-letter="C">De influencer moet een vergelijking met concurrerende merken maken</li>
                 <li data-letter="D">Alleen influencers met meer dan een miljoen volgers hoeven iets te vermelden</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Reclame moet als reclame herkenbaar zijn, ook bij influencers. Voor grote influencers gelden daarnaast extra regels.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Reclame moet als reclame herkenbaar zijn, ook bij influencers. Voor grote influencers gelden daarnaast extra regels.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>5. Een energieleverancier adverteert: "Wij zijn 15% goedkoper dan Leverancier X voor hetzelfde contract" en dat klopt aantoonbaar. Is dit toegestaan?</summary>
+            <div class="vraag">
+              <p class="vraag-q">5. Een energieleverancier adverteert: "Wij zijn 15% goedkoper dan Leverancier X voor hetzelfde contract" en dat klopt aantoonbaar. Is dit toegestaan?</p>
               <ul class="opties">
                 <li data-letter="A">Nee, je mag een concurrent nooit bij naam noemen.</li>
                 <li data-letter="B">Ja, vergelijkende reclame mag als ze onder meer niet misleidend, objectief en controleerbaar is en vergelijkbare producten vergelijkt.</li>
                 <li data-letter="C">Alleen als Leverancier X vooraf toestemming geeft.</li>
                 <li data-letter="D">Alleen in reclame gericht op bedrijven.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Vergelijkende reclame is onder voorwaarden toegestaan. Kleineren of misleiden mag niet.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Vergelijkende reclame is onder voorwaarden toegestaan. Kleineren of misleiden mag niet.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>6. Een student wil de e-mailadressen van geïnterviewde ondernemers later gebruiken voor een nieuwsbrief. Wat is volgens de AVG het belangrijkste aandachtspunt?</summary>
+            <div class="vraag">
+              <p class="vraag-q">6. Een student wil de e-mailadressen van geïnterviewde ondernemers later gebruiken voor een nieuwsbrief. Wat is volgens de AVG het belangrijkste aandachtspunt?</p>
               <ul class="opties">
                 <li data-letter="A">Niets, want e-mailadressen zijn geen persoonsgegevens.</li>
                 <li data-letter="B">Er is een grondslag nodig voor dit nieuwe doel, zoals toestemming; doelbinding verbiedt zomaar ander gebruik.</li>
                 <li data-letter="C">Het mag, als de nieuwsbrief gratis is.</li>
                 <li data-letter="D">Het mag, mits de gegevens binnen een jaar worden gebruikt.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> De gegevens zijn verzameld voor het onderzoek. Voor een ander doel heb je een eigen grondslag nodig, in dit geval meestal toestemming.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> De gegevens zijn verzameld voor het onderzoek. Voor een ander doel heb je een eigen grondslag nodig, in dit geval meestal toestemming.</div>
+              </details>
+            </div>
           </div>
 
           <div class="samenvatting" style="background: var(--yellow-soft);">
@@ -1966,139 +2048,163 @@
 
           <div class="quiz">
             <h3>Oefenvragen voor de kennistoets</h3>
-            <p>12 vragen in MC-vorm. Klik op een vraag om het antwoord met uitleg te zien.</p>
+            <p>12 vragen in MC-vorm. Bedenk eerst zelf je antwoord en klik dan op "Toon antwoord" voor het antwoord met uitleg.</p>
 
-            <details>
-              <summary>1. Een webwinkel investeert eenmalig € 24.000 in een nieuw magazijnsysteem. Dat bespaart € 3.000 per maand, maar de licentie kost € 1.000 per maand. Wat is de terugverdientijd?</summary>
+            <div class="vraag">
+              <p class="vraag-q">1. Een webwinkel investeert eenmalig € 24.000 in een nieuw magazijnsysteem. Dat bespaart € 3.000 per maand, maar de licentie kost € 1.000 per maand. Wat is de terugverdientijd?</p>
               <ul class="opties">
                 <li data-letter="A">6 maanden</li>
                 <li data-letter="B">8 maanden</li>
                 <li data-letter="C">12 maanden</li>
                 <li data-letter="D">24 maanden</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Netto-opbrengst = € 3.000 − € 1.000 = € 2.000 per maand. € 24.000 ÷ € 2.000 = 12 maanden. B vergeet de licentiekosten.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Netto-opbrengst = € 3.000 − € 1.000 = € 2.000 per maand. € 24.000 ÷ € 2.000 = 12 maanden. B vergeet de licentiekosten.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>2. Welke posten neem je mee bij het berekenen van de terugverdientijd?</summary>
+            <div class="vraag">
+              <p class="vraag-q">2. Welke posten neem je mee bij het berekenen van de terugverdientijd?</p>
               <ul class="opties">
                 <li data-letter="A">Alle kosten van het bedrijf, inclusief afschrijvingen</li>
                 <li data-letter="B">Alleen de extra kasstromen die door de investering ontstaan, zonder afschrijvingen</li>
                 <li data-letter="C">Alleen de omzet, zonder kosten</li>
                 <li data-letter="D">De boekhoudkundige winst na afschrijvingen</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Je rekent met de extra opbrengsten of besparingen min de extra terugkerende kosten. Bestaande kosten en afschrijvingen laat je buiten beschouwing.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Je rekent met de extra opbrengsten of besparingen min de extra terugkerende kosten. Bestaande kosten en afschrijvingen laat je buiten beschouwing.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>3. Wat is een beperking van de terugverdientijd?</summary>
+            <div class="vraag">
+              <p class="vraag-q">3. Wat is een beperking van de terugverdientijd?</p>
               <ul class="opties">
                 <li data-letter="A">De methode is moeilijk uit te rekenen.</li>
                 <li data-letter="B">De methode houdt geen rekening met de tijdswaarde van geld en met opbrengsten na de terugverdienperiode.</li>
                 <li data-letter="C">De methode werkt alleen voor handelsondernemingen.</li>
                 <li data-letter="D">De methode vereist een vermogenskostenvoet.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Daarom gebruik je de terugverdientijd als eerste indicator voor liquiditeit en risico, niet als enig criterium.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Daarom gebruik je de terugverdientijd als eerste indicator voor liquiditeit en risico, niet als enig criterium.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>4. Een sportschool vraagt € 40 per maand per lid. De variabele kosten zijn € 15 per lid per maand, de constante kosten € 5.000 per maand. Wat is de break-evenafzet?</summary>
+            <div class="vraag">
+              <p class="vraag-q">4. Een sportschool vraagt € 40 per maand per lid. De variabele kosten zijn € 15 per lid per maand, de constante kosten € 5.000 per maand. Wat is de break-evenafzet?</p>
               <ul class="opties">
                 <li data-letter="A">125 leden</li>
                 <li data-letter="B">200 leden</li>
                 <li data-letter="C">334 leden</li>
                 <li data-letter="D">5.000 leden</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Dekkingsbijdrage = € 40 − € 15 = € 25. BEA = € 5.000 ÷ € 25 = 200 leden. A deelt door de prijs, C door de variabele kosten.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Dekkingsbijdrage = € 40 − € 15 = € 25. BEA = € 5.000 ÷ € 25 = 200 leden. A deelt door de prijs, C door de variabele kosten.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>5. Wat is de break-evenomzet in de vorige vraag?</summary>
+            <div class="vraag">
+              <p class="vraag-q">5. Wat is de break-evenomzet in de vorige vraag?</p>
               <ul class="opties">
                 <li data-letter="A">€ 3.000</li>
                 <li data-letter="B">€ 5.000</li>
                 <li data-letter="C">€ 8.000</li>
                 <li data-letter="D">€ 13.000</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> BEO = BEA × p = 200 × € 40 = € 8.000 per maand.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> BEO = BEA × p = 200 × € 40 = € 8.000 per maand.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>6. De sportschool verwacht 250 leden; de break-evenafzet is 200. Wat is de veiligheidsmarge?</summary>
+            <div class="vraag">
+              <p class="vraag-q">6. De sportschool verwacht 250 leden; de break-evenafzet is 200. Wat is de veiligheidsmarge?</p>
               <ul class="opties">
                 <li data-letter="A">20%</li>
                 <li data-letter="B">25%</li>
                 <li data-letter="C">50 leden</li>
                 <li data-letter="D">80%</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: A.</strong> (250 − 200) ÷ 250 × 100% = 20%. B deelt door de break-evenafzet in plaats van door de verwachte afzet.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: A.</strong> (250 − 200) ÷ 250 × 100% = 20%. B deelt door de break-evenafzet in plaats van door de verwachte afzet.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>7. Bij de planningsdienst uit dit hoofdstuk stijgen de variabele kosten van € 10 naar € 25 per klant. Hoeveel klanten zijn er dan minimaal nodig om break-even te draaien?</summary>
+            <div class="vraag">
+              <p class="vraag-q">7. Bij de planningsdienst uit dit hoofdstuk stijgen de variabele kosten van € 10 naar € 25 per klant. Hoeveel klanten zijn er dan minimaal nodig om break-even te draaien?</p>
               <ul class="opties">
                 <li data-letter="A">50</li>
                 <li data-letter="B">67</li>
                 <li data-letter="C">80</li>
                 <li data-letter="D">200</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Dekkingsbijdrage = € 50 − € 25 = € 25. BEA = € 2.000 ÷ € 25 = 80 klanten.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Dekkingsbijdrage = € 50 − € 25 = € 25. BEA = € 2.000 ÷ € 25 = 80 klanten.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>8. Een winkel had vorig jaar € 450.000 variabele kosten bij € 750.000 omzet. De constante kosten komend jaar zijn € 90.000. Wat is de break-evenomzet?</summary>
+            <div class="vraag">
+              <p class="vraag-q">8. Een winkel had vorig jaar € 450.000 variabele kosten bij € 750.000 omzet. De constante kosten komend jaar zijn € 90.000. Wat is de break-evenomzet?</p>
               <ul class="opties">
                 <li data-letter="A">€ 150.000</li>
                 <li data-letter="B">€ 225.000</li>
                 <li data-letter="C">€ 300.000</li>
                 <li data-letter="D">€ 360.000</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Variabele kosten = 60%, dus het dekkingsbijdragepercentage is 40%. BEO = € 90.000 ÷ 0,40 = € 225.000. A deelt door 0,60.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Variabele kosten = 60%, dus het dekkingsbijdragepercentage is 40%. BEO = € 90.000 ÷ 0,40 = € 225.000. A deelt door 0,60.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>9. Waarom tel je bij de vrije cashflow de afschrijvingen op bij de EBIT?</summary>
+            <div class="vraag">
+              <p class="vraag-q">9. Waarom tel je bij de vrije cashflow de afschrijvingen op bij de EBIT?</p>
               <ul class="opties">
                 <li data-letter="A">Omdat afschrijvingen extra inkomsten zijn.</li>
                 <li data-letter="B">Omdat afschrijvingen wel als kosten in de EBIT zitten, maar geen uitgaande kasstroom zijn.</li>
                 <li data-letter="C">Omdat de belastingdienst dat voorschrijft.</li>
                 <li data-letter="D">Omdat afschrijvingen bij de investeringen horen.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> De vrije cashflow gaat over geld dat echt binnenkomt en uitgaat. Afschrijvingen verlagen de winst, maar er gaat geen geld bij de deur uit.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> De vrije cashflow gaat over geld dat echt binnenkomt en uitgaat. Afschrijvingen verlagen de winst, maar er gaat geen geld bij de deur uit.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>10. Een investering van € 10.000 levert na één jaar € 12.100 op. De vermogenskostenvoet is 10%. Wat is de NCW?</summary>
+            <div class="vraag">
+              <p class="vraag-q">10. Een investering van € 10.000 levert na één jaar € 12.100 op. De vermogenskostenvoet is 10%. Wat is de NCW?</p>
               <ul class="opties">
                 <li data-letter="A">€ 1.000</li>
                 <li data-letter="B">€ 1.210</li>
                 <li data-letter="C">€ 2.100</li>
                 <li data-letter="D">€ 11.000</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: A.</strong> Contante waarde = € 12.100 ÷ 1,10 = € 11.000. NCW = € 11.000 − € 10.000 = € 1.000. C vergeet de tijdswaarde van geld, D vergeet de investering.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: A.</strong> Contante waarde = € 12.100 ÷ 1,10 = € 11.000. NCW = € 11.000 − € 10.000 = € 1.000. C vergeet de tijdswaarde van geld, D vergeet de investering.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>11. Een project heeft een IRR van 7%. De vermogenskostenvoet is 9%. Wat concludeer je?</summary>
+            <div class="vraag">
+              <p class="vraag-q">11. Een project heeft een IRR van 7%. De vermogenskostenvoet is 9%. Wat concludeer je?</p>
               <ul class="opties">
                 <li data-letter="A">Het project is rendabel, want de IRR is positief.</li>
                 <li data-letter="B">Het project is niet rendabel; de NCW bij 9% is negatief.</li>
                 <li data-letter="C">Het project is rendabel, want het verschil is maar 2 procentpunt.</li>
                 <li data-letter="D">Je kunt niets concluderen zonder de terugverdientijd.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> De IRR ligt onder de eis (de VKV). Het project springt niet over de lat; de NCW bij de vereiste 9% is negatief.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> De IRR ligt onder de eis (de VKV). Het project springt niet over de lat; de NCW bij de vereiste 9% is negatief.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>12. Project X heeft een IRR van 60% en een NCW van € 2.000. Project Y heeft een IRR van 18% en een NCW van € 250.000. Beide hebben dezelfde VKV. Wat is de beste conclusie?</summary>
+            <div class="vraag">
+              <p class="vraag-q">12. Project X heeft een IRR van 60% en een NCW van € 2.000. Project Y heeft een IRR van 18% en een NCW van € 250.000. Beide hebben dezelfde VKV. Wat is de beste conclusie?</p>
               <ul class="opties">
                 <li data-letter="A">X is beter, want het rendement is hoger.</li>
                 <li data-letter="B">Y voegt veel meer waarde toe; de IRR negeert schaalgrootte.</li>
                 <li data-letter="C">Ze zijn gelijkwaardig, want beide zijn rendabel.</li>
                 <li data-letter="D">Y is niet rendabel, want de IRR is lager dan die van X.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Percentages zeggen niets over de omvang. In euro's (NCW) voegt Y veel meer waarde toe. Staar je dus nooit blind op de IRR alleen.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Percentages zeggen niets over de omvang. In euro's (NCW) voegt Y veel meer waarde toe. Staar je dus nooit blind op de IRR alleen.</div>
+              </details>
+            </div>
           </div>
 
           <div class="samenvatting" style="background: var(--yellow-soft);">
@@ -2350,171 +2456,201 @@
 
           <div class="quiz">
             <h3>Oefenvragen voor de kennistoets</h3>
-            <p>15 vragen in MC-vorm. Klik op een vraag om het antwoord met uitleg te zien.</p>
+            <p>15 vragen in MC-vorm. Bedenk eerst zelf je antwoord en klik dan op "Toon antwoord" voor het antwoord met uitleg.</p>
 
-            <details>
-              <summary>1. Een ondernemer financiert een machine die tien jaar meegaat met een rekening-courantkrediet. Welke regel overtreedt zij?</summary>
+            <div class="vraag">
+              <p class="vraag-q">1. Een ondernemer financiert een machine die tien jaar meegaat met een rekening-courantkrediet. Welke regel overtreedt zij?</p>
               <ul class="opties">
                 <li data-letter="A">De gouden balansregel</li>
                 <li data-letter="B">De regel van de kleine noemer</li>
                 <li data-letter="C">De quick ratio</li>
                 <li data-letter="D">De zwarte lijst</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: A.</strong> Vaste activa financier je bij voorkeur met eigen vermogen of lang vreemd vermogen, niet met kort vreemd vermogen.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: A.</strong> Vaste activa financier je bij voorkeur met eigen vermogen of lang vreemd vermogen, niet met kort vreemd vermogen.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>2. Welke uitspraak over eigen vermogen is juist?</summary>
+            <div class="vraag">
+              <p class="vraag-q">2. Welke uitspraak over eigen vermogen is juist?</p>
               <ul class="opties">
                 <li data-letter="A">De verschaffer krijgt altijd rente, ook bij verlies.</li>
                 <li data-letter="B">De verschaffer staat bij faillissement vooraan in de rij.</li>
                 <li data-letter="C">De verschaffer deelt in de winst, maar loopt een hoog risico en staat bij faillissement achteraan.</li>
                 <li data-letter="D">Eigen vermogen moet binnen vijf jaar worden terugbetaald.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Hoog risico, mogelijk hoog rendement. Rente en een vaste terugbetaling horen bij vreemd vermogen.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Hoog risico, mogelijk hoog rendement. Rente en een vaste terugbetaling horen bij vreemd vermogen.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>3. Een bedrijf verkoopt zijn openstaande facturen aan een gespecialiseerde partij en krijgt direct het grootste deel van het geld. Hoe heet dit?</summary>
+            <div class="vraag">
+              <p class="vraag-q">3. Een bedrijf verkoopt zijn openstaande facturen aan een gespecialiseerde partij en krijgt direct het grootste deel van het geld. Hoe heet dit?</p>
               <ul class="opties">
                 <li data-letter="A">Leasing</li>
                 <li data-letter="B">Factoring</li>
                 <li data-letter="C">Leverancierskrediet</li>
                 <li data-letter="D">Crowdfunding</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Bij factoring zet je debiteuren direct om in geld, tegen een vergoeding.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Bij factoring zet je debiteuren direct om in geld, tegen een vergoeding.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>4. Een start-up haalt geld op bij 400 mensen die elk een bedrag geven en daarvoor als eerste het product ontvangen. Welke vorm is dit?</summary>
+            <div class="vraag">
+              <p class="vraag-q">4. Een start-up haalt geld op bij 400 mensen die elk een bedrag geven en daarvoor als eerste het product ontvangen. Welke vorm is dit?</p>
               <ul class="opties">
                 <li data-letter="A">Crowdfunding op basis van donatie</li>
                 <li data-letter="B">Reward-based crowdfunding</li>
                 <li data-letter="C">Crowdfunding met aandelen</li>
                 <li data-letter="D">Een converteerbare lening</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> De inleggers krijgen een niet-financiële beloning, het product. Bij donatie is er geen tegenprestatie.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> De inleggers krijgen een niet-financiële beloning, het product. Bij donatie is er geen tegenprestatie.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>5. Wat is kenmerkend voor een converteerbare lening?</summary>
+            <div class="vraag">
+              <p class="vraag-q">5. Wat is kenmerkend voor een converteerbare lening?</p>
               <ul class="opties">
                 <li data-letter="A">Ze hoeft nooit te worden terugbetaald.</li>
                 <li data-letter="B">Ze kan later worden omgezet in aandelen.</li>
                 <li data-letter="C">Ze wordt altijd verstrekt door de overheid.</li>
                 <li data-letter="D">Ze is alleen beschikbaar voor beursgenoteerde bedrijven.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Een tussenvorm tussen vreemd en eigen vermogen, vaak gebruikt als de waarde van een jong bedrijf nog lastig te bepalen is.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Een tussenvorm tussen vreemd en eigen vermogen, vaak gebruikt als de waarde van een jong bedrijf nog lastig te bepalen is.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>6. Wat is een belangrijk nadeel van subsidies (grants)?</summary>
+            <div class="vraag">
+              <p class="vraag-q">6. Wat is een belangrijk nadeel van subsidies (grants)?</p>
               <ul class="opties">
                 <li data-letter="A">Je moet er hoge rente over betalen.</li>
                 <li data-letter="B">Je verliest een deel van het eigendom van je bedrijf.</li>
                 <li data-letter="C">Het geld is vaak gelabeld en het aanvragen kost veel tijd.</li>
                 <li data-letter="D">Je moet het binnen een jaar terugbetalen.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Subsidie hoef je meestal niet terug te betalen, maar je mag het alleen voor een bepaald doel gebruiken en de voorwaarden zijn weinig flexibel.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Subsidie hoef je meestal niet terug te betalen, maar je mag het alleen voor een bepaald doel gebruiken en de voorwaarden zijn weinig flexibel.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>7. Een bedrijf heeft 90.000 euro vlottende activa, waarvan 30.000 euro voorraad, en 50.000 euro kortlopende schulden. Wat is de quick ratio?</summary>
+            <div class="vraag">
+              <p class="vraag-q">7. Een bedrijf heeft 90.000 euro vlottende activa, waarvan 30.000 euro voorraad, en 50.000 euro kortlopende schulden. Wat is de quick ratio?</p>
               <ul class="opties">
                 <li data-letter="A">0,6</li>
                 <li data-letter="B">1,2</li>
                 <li data-letter="C">1,8</li>
                 <li data-letter="D">2,4</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> (90.000 − 30.000) ÷ 50.000 = 1,2. De current ratio is 90.000 ÷ 50.000 = 1,8 (antwoord C).</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> (90.000 − 30.000) ÷ 50.000 = 1,2. De current ratio is 90.000 ÷ 50.000 = 1,8 (antwoord C).</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>8. Wat gebeurt er met de current ratio als debiteuren hun openstaande facturen betalen?</summary>
+            <div class="vraag">
+              <p class="vraag-q">8. Wat gebeurt er met de current ratio als debiteuren hun openstaande facturen betalen?</p>
               <ul class="opties">
                 <li data-letter="A">Die stijgt.</li>
                 <li data-letter="B">Die daalt.</li>
                 <li data-letter="C">Die blijft gelijk.</li>
                 <li data-letter="D">Dat hangt af van de solvabiliteit.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Geld verschuift van debiteuren naar de bank. Beide zijn vlottende activa, en de kortlopende schulden veranderen niet.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Geld verschuift van debiteuren naar de bank. Beide zijn vlottende activa, en de kortlopende schulden veranderen niet.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>9. Een onderneming heeft een eigen vermogen van 60.000 euro en een totaal vermogen van 300.000 euro. Wat is de solvabiliteit en hoe beoordeel je die met de vuistregel?</summary>
+            <div class="vraag">
+              <p class="vraag-q">9. Een onderneming heeft een eigen vermogen van 60.000 euro en een totaal vermogen van 300.000 euro. Wat is de solvabiliteit en hoe beoordeel je die met de vuistregel?</p>
               <ul class="opties">
                 <li data-letter="A">20%; aan de lage kant</li>
                 <li data-letter="B">25%; goed</li>
                 <li data-letter="C">80%; te hoog</li>
                 <li data-letter="D">500%; zeer gezond</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: A.</strong> 60.000 ÷ 300.000 × 100% = 20%. Dat is lager dan de 25 tot 40 procent die financiers volgens KVK meestal goed vinden.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: A.</strong> 60.000 ÷ 300.000 × 100% = 20%. Dat is lager dan de 25 tot 40 procent die financiers volgens KVK meestal goed vinden.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>10. Bekijk de balans van De Trapper in paragraaf 5. Wat is de current ratio?</summary>
+            <div class="vraag">
+              <p class="vraag-q">10. Bekijk de balans van De Trapper in paragraaf 5. Wat is de current ratio?</p>
               <ul class="opties">
                 <li data-letter="A">0,56</li>
                 <li data-letter="B">1,36</li>
                 <li data-letter="C">0,85</li>
                 <li data-letter="D">2,80</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Vlottende activa 50.000 + 20.000 + 15.000 = 85.000, kortlopende schulden 22.500 + 40.000 = 62.500. 85.000 ÷ 62.500 = 1,36. A is de quick ratio. C krijg je als je de banklening (lang vreemd vermogen) meetelt in plaats van het rekening-courantkrediet: 85.000 ÷ 100.000.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Vlottende activa 50.000 + 20.000 + 15.000 = 85.000, kortlopende schulden 22.500 + 40.000 = 62.500. 85.000 ÷ 62.500 = 1,36. A is de quick ratio. C krijg je als je de banklening (lang vreemd vermogen) meetelt in plaats van het rekening-courantkrediet: 85.000 ÷ 100.000.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>11. Een onderneming meldt "300% omzetgroei", gemeten vanaf het eerste jaar, waarin de omzet bijna nul was. Op welke beperking van kengetallen wijst dit?</summary>
+            <div class="vraag">
+              <p class="vraag-q">11. Een onderneming meldt "300% omzetgroei", gemeten vanaf het eerste jaar, waarin de omzet bijna nul was. Op welke beperking van kengetallen wijst dit?</p>
               <ul class="opties">
                 <li data-letter="A">Negatieve cijfers in teller en noemer</li>
                 <li data-letter="B">De keuze van het basisjaar (en de kleine noemer)</li>
                 <li data-letter="C">Overdreven nauwkeurigheid</li>
                 <li data-letter="D">Het ontbreken van een optimale zone</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Een heel lage uitgangssituatie maakt elke groei groot. De keuze van het basisjaar bepaalt de berekende groei.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Een heel lage uitgangssituatie maakt elke groei groot. De keuze van het basisjaar bepaalt de berekende groei.</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>12. Een jonge onderneming heeft een werkend prototype en de eerste betalende klanten, maar nog geen winst. Welke financiering past het minst bij dit stadium?</summary>
+            <div class="vraag">
+              <p class="vraag-q">12. Een jonge onderneming heeft een werkend prototype en de eerste betalende klanten, maar nog geen winst. Welke financiering past het minst bij dit stadium?</p>
               <ul class="opties">
                 <li data-letter="A">Een business angel</li>
                 <li data-letter="B">Vooruitbetaling door klanten</li>
                 <li data-letter="C">Een grote equity-ronde van een groeifonds voor de internationale uitrol</li>
                 <li data-letter="D">Een subsidie voor innovatie</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: C.</strong> Grote equity-rondes horen bij de fase van groei en opschaling. Bij proof of concept passen angels, subsidies en financiering door klanten of leveranciers beter.</div>
-            </details>
-            <details>
-              <summary>13. Wat is de quick ratio van De Trapper en wat betekent die?</summary>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: C.</strong> Grote equity-rondes horen bij de fase van groei en opschaling. Bij proof of concept passen angels, subsidies en financiering door klanten of leveranciers beter.</div>
+              </details>
+            </div>
+            <div class="vraag">
+              <p class="vraag-q">13. Wat is de quick ratio van De Trapper en wat betekent die?</p>
               <ul class="opties">
                 <li data-letter="A">0,56; zonder de voorraad te verkopen kan de winkel zijn kortlopende schulden niet betalen.</li>
                 <li data-letter="B">0,56; de winkel staat er op lange termijn slecht voor.</li>
                 <li data-letter="C">1,36; de winkel kan zijn kortlopende schulden ruim betalen.</li>
                 <li data-letter="D">0,80; de winkel heeft te veel eigen vermogen.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: A.</strong> (85.000 − 50.000) ÷ 62.500 = 0,56. De quick ratio zegt iets over de korte termijn (liquiditeit), niet over de lange termijn; dat is de solvabiliteit (B).</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: A.</strong> (85.000 − 50.000) ÷ 62.500 = 0,56. De quick ratio zegt iets over de korte termijn (liquiditeit), niet over de lange termijn; dat is de solvabiliteit (B).</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>14. De Trapper betaalt 10.000 euro aan leveranciers (crediteuren) uit de liquide middelen. Wat gebeurt er met de current ratio?</summary>
+            <div class="vraag">
+              <p class="vraag-q">14. De Trapper betaalt 10.000 euro aan leveranciers (crediteuren) uit de liquide middelen. Wat gebeurt er met de current ratio?</p>
               <ul class="opties">
                 <li data-letter="A">Die daalt, want er gaat geld van de bank af.</li>
                 <li data-letter="B">Die stijgt, van 1,36 naar ongeveer 1,43.</li>
                 <li data-letter="C">Die blijft gelijk, want teller en noemer dalen evenveel.</li>
                 <li data-letter="D">Die stijgt naar 1,5.</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: B.</strong> Teller en noemer dalen allebei met 10.000: 75.000 ÷ 52.500 = 1,43. Omdat de ratio groter is dan 1, stijgt hij als je teller en noemer met hetzelfde bedrag verlaagt (C is dus onjuist).</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: B.</strong> Teller en noemer dalen allebei met 10.000: 75.000 ÷ 52.500 = 1,43. Omdat de ratio groter is dan 1, stijgt hij als je teller en noemer met hetzelfde bedrag verlaagt (C is dus onjuist).</div>
+              </details>
+            </div>
 
-            <details>
-              <summary>15. Hoe beoordeel je de solvabiliteit van De Trapper volgens KVK?</summary>
+            <div class="vraag">
+              <p class="vraag-q">15. Hoe beoordeel je de solvabiliteit van De Trapper volgens KVK?</p>
               <ul class="opties">
                 <li data-letter="A">30%; voor financiers meestal goed</li>
                 <li data-letter="B">30%; te laag, de norm is minimaal 50%</li>
                 <li data-letter="C">43%; te hoog</li>
                 <li data-letter="D">70%; zeer gezond</li>
               </ul>
-              <div class="antwoord"><strong>Antwoord: A.</strong> 52.500 ÷ 175.000 × 100% = 30%. Financiers vinden volgens KVK 25 tot 40 procent meestal goed, al verschilt de norm per branche. 70% (D) is het aandeel vreemd vermogen.</div>
-            </details>
+              <details class="toon"><summary>Toon antwoord</summary>
+                <div class="antwoord"><strong>Antwoord: A.</strong> 52.500 ÷ 175.000 × 100% = 30%. Financiers vinden volgens KVK 25 tot 40 procent meestal goed, al verschilt de norm per branche. 70% (D) is het aandeel vreemd vermogen.</div>
+              </details>
+            </div>
           </div>
 
           <div class="samenvatting" style="background: var(--yellow-soft);">
