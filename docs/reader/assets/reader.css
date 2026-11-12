@@ -1000,6 +1000,11 @@ cite, .ref {
 
 .quiz .antwoord strong { color: var(--green); }
 
+.quiz .vraag { margin: 12px 0; padding: 12px 16px; background: var(--panel); border-radius: 10px; border: 1px solid var(--border); }
+.quiz .vraag-q { margin: 0; font-weight: 600; }
+.quiz .vraag details.toon { margin: 4px 0 0; padding: 0; background: none; border: none; border-radius: 0; }
+.quiz .vraag details.toon summary { font-size: 14px; color: var(--orange); }
+
 /* ===== Samenvatting / checklist ===== */
 .samenvatting {
   margin: 32px 0 0;
