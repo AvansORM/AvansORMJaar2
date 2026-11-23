@@ -83,6 +83,11 @@ video.talk{width:100%;border-radius:14px;display:block}
 .ex li.ok::before{content:"✓";background:#1f7a4a}
 .ex li.no::before{content:"✗";background:var(--red)}
 @media(max-width:720px){.duo{grid-template-columns:1fr}}
+.exbtn{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 14px;font:600 15px Barlow,sans-serif;cursor:pointer;margin-top:2px}
+.exbtn:hover{border-color:var(--red2)}
+.duo.reveal .ex{display:none}
+.duo.reveal .duo-c.open .ex{display:block;margin-top:10px}
+.duo.reveal .duo-c.open .exbtn{display:none}
 .ladder{list-style:none;margin:14px 0 6px;padding:0;display:flex;flex-direction:column-reverse;gap:6px}
 .ladder li{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:8px 14px;border-radius:10px;background:linear-gradient(90deg,rgba(198,0,42,var(--a)),rgba(198,0,42,.04));border:1px solid var(--line);font-size:16px}
 .ladder li b{font-weight:700}.ladder li span{color:var(--muted);font-size:14px;text-align:right}
@@ -379,13 +384,13 @@ const STATIONS = [
   quote:"“Prima dat je AI gebruikt. Hoe weet jij dat het klopt?”",
   tTitle:"AI mag, verzinnen niet",
   tBody:`<p><b>Bewijs</b> is iets wat je kunt openen en laten zien: een opname, ruwe data, een screenshot met datum, een respondentenlijst met contactgegevens. Een AI-samenvatting is geen bewijs, de bron eronder wel.</p>
-         <div class="duo">
+         <div class="duo reveal">
            <div class="duo-c"><h4>Navolgbaar</h4><p>Iemand anders kan de stap volgen van jouw bewijs naar jouw conclusie, zonder dat jij erbij bent.</p>
-             <ul class="ex"><li class="no">“Uit de interviews blijkt dat klanten het te duur vinden.” Welke interviews, wie zei wat?</li>
+             <button class="exbtn" type="button">Toon voorbeelden ▾</button><ul class="ex"><li class="no">“Uit de interviews blijkt dat klanten het te duur vinden.” Welke interviews, wie zei wat?</li>
              <li class="ok">“7 van de 12 respondenten noemen de prijs, zie quotes in bijlage 3 en de opnames op MyMedia.”</li>
              <li class="ok">Bij een AI-samenvatting: welke bron erin ging en hoe je die hebt nagelopen.</li></ul></div>
            <div class="duo-c"><h4>Verdedigbaar</h4><p>Je kunt die stap zelf uitleggen en volhouden als er doorgevraagd wordt.</p>
-             <ul class="ex"><li class="no">“Dat staat in mijn verslag.” of “Dat zei ChatGPT.”</li>
+             <button class="exbtn" type="button">Toon voorbeelden ▾</button><ul class="ex"><li class="no">“Dat staat in mijn verslag.” of “Dat zei ChatGPT.”</li>
              <li class="ok">Je opent de opname en laat de plek zien waar het gezegd wordt.</li>
              <li class="ok">Je weet wat je conclusie níet laat zien: “Dit geldt voor regio Breda, verder niet.”</li></ul></div>
          </div>
@@ -502,6 +507,7 @@ function nextStep(){ if (si < secs.length-1) show(si+1); else if (cur < STATIONS
 function prevStep(){ if (si > 0) show(si-1); }
 function stop(){vReset(); audio.pause(); try{audio.currentTime=0}catch(e){} $("#speaker").classList.remove("speaking"); $("#play").textContent="▶ Luister"}
 function closeM(){stop(); clearInterval(tInt); tInt=null; modal.classList.remove("open")}
+document.addEventListener("click",e=>{const b=e.target.closest(".exbtn"); if(b){ e.stopPropagation(); b.closest(".duo-c").classList.add("open"); }});
 /* video in een of twee delen, met de goedgekeurde stem */
 const V1=$("#m-video"), V2=$("#m-video2"); let vParts=[], vCut=0, vIdx=0, vOn=false, vEnded=false;
 function vUrl(x){ return /^https?:/.test(x) ? x : CDN + x; }
