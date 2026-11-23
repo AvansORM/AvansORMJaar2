@@ -25,7 +25,8 @@ h1{font-size:clamp(30px,4.4vw,52px);line-height:1.05;margin:6px 0 8px;font-weigh
 .btn:hover{filter:brightness(1.12)}
 
 /* plein */
-.plein{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.plein{position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+body{overflow-x:hidden}
 .plein{background:#2a1d24}
 .plein img.bg{display:block;width:100%;height:auto;aspect-ratio:1344/752;object-fit:cover}
 .spot{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:0;cursor:pointer;color:#fff;font:700 16px Barlow,sans-serif;text-shadow:0 2px 6px rgba(0,0,0,.8)}
@@ -143,7 +144,7 @@ li.qa.open .ans{display:block}
 .sec>*{width:min(1100px,100%)}
 @keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .speaker{gap:18px}
-video.talk{width:min(100%,calc((100vh - 260px)*16/9));max-height:calc(100vh - 260px);margin:0 auto;background:#000;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+video.talk{width:min(100%,calc(100vh - 280px));aspect-ratio:1;object-fit:cover;margin:0 auto;background:transparent;border-radius:50%;clip-path:circle(48.6% at 50% 50%);filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
 .sec .portrait{width:min(340px,40vh)}
 .sec .quote{font-size:22px}
 .sec .theory,.sec .task{padding:30px 36px}
@@ -197,13 +198,13 @@ tr.empty td{background:transparent;color:var(--muted);height:44px}
     <div>
       <div class="eyebrow">Onderzoeksverantwoording · 30 minuten</div>
       <h1>Welkom op het Onderzoeksplein</h1>
-      <p class="lead">Je mag AI gebruiken, wij beoordelen in gesprek. Dan moet je wel kunnen laten zien dat je onderzoek klopt. Op dit plein ontmoet je drie mensen die dat op de harde manier leerden, en eindig je op het podium.</p>
+      <p class="lead">Je mag AI gebruiken. Wij beoordelen je in een gesprek. Dan moet je wel kunnen laten zien dat je onderzoek klopt. Op dit plein ontmoet je drie mensen die dat met schade en schande leerden, en eindig je op het podium.</p>
     </div>
     <a class="btn ghost" href="#" id="reset">Opnieuw beginnen</a>
   </header>
 
   <div class="plein" id="plein">
-    <img class="bg" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/hf_20261123_201511_58631b50-88ba-4e66-ab73-2584fa9d15fb.png" alt="Campusplein in de schemering met een terras, een pop-upkraam, een badkamershowroom en een klein podium">
+    <img class="bg" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/1f167d23-4fe3-4837-8b99-7873f1a3f7b9.jpg" alt="Campusplein in de schemering met een terras, een pop-upkraam, een badkamershowroom en een klein podium">
   </div>
 
   <div class="intro">
@@ -285,7 +286,7 @@ const BOARD_DATA = [
   {pts:[[24,-22],[27,-19],[21,-25],[26,-24],[29,-21]], title:"Betrouwbaar, niet valide", tag:"Steeds hetzelfde, steeds mis",
    ex:"Je vraagt mensen of ze het zouden kopen. Iedereen zegt ja. Steeds hetzelfde, maar je meet beleefdheid, geen koopgedrag."},
   {pts:[[1,2],[-3,-1],[3,-3],[-2,3],[0,-4]], title:"Betrouwbaar én valide", tag:"Steeds raak",
-   ex:"Twintig mensen uit je doelgroep vertellen wat ze echt deden, of honderden bezoekers uit je doelgroep laten hun e-mail achter."},
+   ex:"Twintig mensen uit je doelgroep vertellen wat ze echt deden, of honderden bezoekers uit je doelgroep laten hun e-mailadres achter."},
   {pts:[[-30,10],[18,-28],[30,24],[-10,-32],[-24,-20]], title:"Niet betrouwbaar, niet valide", tag:"Toeval",
    ex:"Een paar losse gesprekken met sturende vragen. Elke uitkomst is anders, en geen enkele gaat over je vraag."},
   {pts:[[-16,9],[13,-12],[17,14],[-11,-16],[3,20]], title:"Niet betrouwbaar, wel valide", tag:"In de buurt, te veel spreiding",
@@ -319,8 +320,8 @@ const STATIONS = [
   id:"sanne", extra:()=>`<div class="tag">De schietschijf</div><h3>Steeds hetzelfde is nog niet steeds raak</h3>${BOARDS}`, x:16, y:42, label:"Sanne",
   img:"hf_20261123_201512_bcd1a194-71aa-4413-a8b9-f87cb4555d27.png",
   audio:"hf_20261123_210638_18b8d80d-6ef2-47aa-bfbf-869c9b70d6bf.mp3",
-  video:["hf_20261123_223305_783110d3-3fcb-4396-b7c7-e13d17bb4ade.mp4","hf_20261123_223306_e6a3b550-341e-4897-8208-bf3b5811fa46.mp4"], cut:13.5,
-  eyebrow:"Op het terras · De student", title:"Sanne: “Tien van de tien zei ja!”",
+  video:"https://d2ol7oe51mr4n9.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/79591079-c8ab-42c3-94de-f0fbbfece40b.mp4",
+  eyebrow:"Op het terras · De student", title:"Sanne: “Tien van de tien zeiden ja!”",
   quote:"“Iedereen zei ja. Dat is toch honderd procent bewijs?”",
   tTitle:"Steeds hetzelfde is nog niet steeds raak",
   tBody:`<div class="duo">
@@ -355,17 +356,17 @@ const STATIONS = [
   id:"mo", extra:()=>MO_VIS, x:49, y:36, label:"Mo",
   img:"hf_20261123_201512_f6837334-7e65-4ce6-955a-ec0c5ae457f9.png",
   audio:"hf_20261123_204603_80bf5bf5-9e74-4c2d-b819-a4197053ecbe.mp3",
-  video:["hf_20261123_223305_7355c2f9-f970-4cb7-b5b5-bbaa69713245.mp4","hf_20261123_223307_e6cd7ecb-8328-4180-a84f-78d341c573de.mp4"], cut:13.97,
+  video:"https://d2ol7oe51mr4n9.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/afb80dac-bc3f-4272-96c5-667d3fd2f44f.mp4",
   eyebrow:"Bij de pop-upkraam · De student", title:"Mo: “Tweehonderd bezoekers!”",
   quote:"“Mijn groepsapps zitten vol studenten. Wie heb ik nou getest?”",
   tTitle:"Representatief: de goede mensen, in de goede verhouding",
   tBody:`<p><b>Representatief</b>: de mensen in je onderzoek hebben de kenmerken die ertoe doen voor je vraag, in ongeveer dezelfde verhouding als in je doelgroep. Dan mag je wat je vindt doortrekken naar die doelgroep.</p>
-         <p>Het gaat dus niet alleen om “niet je eigen netwerk”. Ook twintig onbekenden kunnen scheef zijn, bijvoorbeeld als ze allemaal via hetzelfde kanaal of hetzelfde moment binnenkomen. Een groter aantal repareert een scheve groep niet.</p>
+         <p>Het gaat dus niet alleen om “niet je eigen netwerk”. Ook twintig onbekenden kunnen een scheve groep zijn, bijvoorbeeld als ze allemaal via hetzelfde kanaal of op hetzelfde moment binnenkomen. Een groter aantal repareert een scheve groep niet.</p>
          <p class="src">Bron: richtlijn Onderzoeksverantwoording, deel 1 en de kolom “representativiteit geborgd” in de conclusietabel.</p>`,
   oTag:"Opdracht · 6 minuten", minutes:6, oTitle:"Wie had Mo moeten bereiken?",
   oBody:`<ol>
-    <li data-a="Ouder van een jong kind, leeftijd van het kind, budget, en wie in het gezin de aankoop beslist.">Welke twee of drie kenmerken doen ertoe voor Mo's product? Denk aan leeftijd kind, budget, wie beslist.</li>
-    <li data-a="Per twintig bezoekers is er één ouder. De 20% aanmeldingen komt vooral van studenten en zegt dus bijna niets over zijn doelgroep.">Hoe verhouden zijn bezoekers zich tot die kenmerken? Wat zegt zijn 20% aanmeldingen dan nog?</li>
+    <li data-a="Ouder van een jong kind, leeftijd van het kind, budget, en wie in het gezin over de aankoop beslist.">Welke twee of drie kenmerken doen ertoe voor Mo's product? Denk aan leeftijd kind, budget, wie beslist.</li>
+    <li data-a="Per twintig bezoekers is er één ouder. Die 40 aanmeldingen komen vooral van studenten en zeggen dus bijna niets over zijn doelgroep.">Hoe verhouden zijn bezoekers zich tot die kenmerken? Wat zeggen zijn 40 aanmeldingen (20%) dan nog?</li>
     <li data-a="Bijvoorbeeld een advertentie gericht op ouders van jonge kinderen, of flyers bij een kinderdagverblijf of consultatiebureau. Daarna checken of de mix van zijn bezoekers lijkt op die van de doelgroep.">Bedenk een kanaal waarmee hij wel de juiste mensen in de juiste verhouding bereikt.</li>
     <li>Jouw onderzoek: wie zit er in jouw groep, en wie mist er?</li></ol>`
  },
@@ -373,12 +374,21 @@ const STATIONS = [
   id:"ilse", x:86, y:44, label:"Ilse",
   img:"hf_20261123_201512_ab1cb11b-b6f5-41a1-b301-06ef6c847410.png",
   audio:"hf_20261123_203849_c69ecab5-eb06-48a5-9753-1445a870ad63.mp3",
-  video:["hf_20261123_223305_52e3997c-ec93-4a74-844d-1271db554466.mp4","hf_20261123_223305_f5373caf-8950-4474-9b7c-75d67abf2fa4.mp4"], cut:14.5,
+  video:"https://d2ol7oe51mr4n9.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/eb66406a-8b79-467f-9997-c198d850daf6.mp4",
   eyebrow:"In de showroom · De ondernemer", title:"Ilse: “Laat me de klant zien, niet de chat”",
   quote:"“Prima dat je AI gebruikt. Hoe weet jij dat het klopt?”",
   tTitle:"AI mag, verzinnen niet",
   tBody:`<p><b>Bewijs</b> is iets wat je kunt openen en laten zien: een opname, ruwe data, een screenshot met datum, een respondentenlijst met contactgegevens. Een AI-samenvatting is geen bewijs, de bron eronder wel.</p>
-         <p><b>Navolgbaar</b>: iemand anders kan de stap volgen van dat bewijs naar je conclusie. <b>Verdedigbaar</b>: je kunt die stap zelf uitleggen en volhouden als er doorgevraagd wordt.</p>
+         <div class="duo">
+           <div class="duo-c"><h4>Navolgbaar</h4><p>Iemand anders kan de stap volgen van jouw bewijs naar jouw conclusie, zonder dat jij erbij bent.</p>
+             <ul class="ex"><li class="no">“Uit de interviews blijkt dat klanten het te duur vinden.” Welke interviews, wie zei wat?</li>
+             <li class="ok">“7 van de 12 respondenten noemen de prijs, zie quotes in bijlage 3 en de opnames op MyMedia.”</li>
+             <li class="ok">Bij een AI-samenvatting: welke bron erin ging en hoe je die hebt nagelopen.</li></ul></div>
+           <div class="duo-c"><h4>Verdedigbaar</h4><p>Je kunt die stap zelf uitleggen en volhouden als er doorgevraagd wordt.</p>
+             <ul class="ex"><li class="no">“Dat staat in mijn verslag.” of “Dat zei ChatGPT.”</li>
+             <li class="ok">Je opent de opname en laat de plek zien waar het gezegd wordt.</li>
+             <li class="ok">Je weet wat je conclusie níet laat zien: “Dit geldt voor regio Breda, verder niet.”</li></ul></div>
+         </div>
          <p>Heb je AI gebruikt, laat dan zien hoe je de uitkomst naast de bron hebt gelegd. Antwoorden, respondenten of cijfers laten verzinnen (synthetische data) is fabricage.</p>
          <p class="src">Bron: richtlijn Onderzoeksverantwoording, deel 3 en 4.</p>`,
   oTag:"Opdracht · 6 minuten", minutes:6, oTitle:"Telt dit als bewijs?",
@@ -387,7 +397,7 @@ const STATIONS = [
     <button class="chip ok">Opname van een interview op MyMedia<small>Te openen en te tonen.</small></button>
     <button class="chip no">“ChatGPT zegt dat 70% van de klanten…”<small>Waar komt die 70% vandaan? Toon de bron.</small></button>
     <button class="chip ok">Export van je advertentie met bereik, kliks en datum<small>Ruwe data van het echte gedrag.</small></button>
-    <button class="chip no">AI-samenvatting van je transcripten, zonder transcripten<small>Pas bewijs als je de transcripten erbij levert en hebt gecontroleerd.</small></button>
+    <button class="chip no">AI-samenvatting van je transcripten, zonder transcripten<small>Pas bewijs als je de transcripten meelevert en de samenvatting daarmee hebt gecontroleerd.</small></button>
     <button class="chip ok">Respondentenlijst met naam en telefoonnummer<small>Controleerbaar, wij kunnen bellen.</small></button>
     <button class="chip no">Tien interviews die AI “realistisch” heeft gesimuleerd<small>Synthetische data is fabricage, ook als je het meldt.</small></button>
    </div>`
@@ -398,7 +408,7 @@ const STATIONS = [
   audio:"hf_20261123_203849_8d4ff8fa-ac0c-4277-bd08-f0fcac222417.mp3",
   video:["hf_20261123_222714_a5847cf5-7013-4da0-9073-5c673d38e0a9.mp4","hf_20261123_223910_c2fccc52-aec4-4438-9990-ca1b73862fb5.mp4"], cut:11.6,
   eyebrow:"Op het podium · De beoordelaar", title:"Het gesprek: laat het maar zien",
-  quote:"“Ik ga niet je verslag nalezen, ik ga vragen stellen.”",
+  quote:"“Laat het bewijs eens zien. Hoe kom je van dat bewijs tot je conclusie?”",
   tTitle:"Per conclusie laten zien waar die op rust",
   tBody:`<p>Bij je inlevering zit een <b>conclusietabel</b>. In het gesprek kiest de beoordelaar een paar conclusies en vraagt door. Zo ziet één rij eruit:</p>
    <div class="tblwrap"><table>
@@ -413,7 +423,7 @@ const STATIONS = [
    </div>`,
   oTag:"Opdracht · 10 minuten", minutes:10, oTitle:"Oefen het gesprek in tweetallen",
   oBody:`<ol>
-    <li><b>4 min.</b> Ieder vult één rij van de tabel in voor een conclusie uit je eigen project.</li>
+    <li><b>4 min.</b> Vul ieder één rij van de tabel in, voor een conclusie uit je eigen project.</li>
     <li data-a="Een sterk antwoord: B opent het bewijs meteen en wijst aan waar de conclusie vandaan komt. Zwak: “dat staat in mijn verslag” of “dat zei ChatGPT”."><b>2 min.</b> A is beoordelaar en stelt de drie vragen hierboven aan B. Vraag één keer door.</li>
     <li><b>2 min.</b> Wissel.</li>
     <li><b>2 min.</b> Welke kolom kon je niet invullen? Dat is je huiswerk voor de volgende inlevering.</li></ol>
@@ -494,12 +504,13 @@ function stop(){vReset(); audio.pause(); try{audio.currentTime=0}catch(e){} $("#
 function closeM(){stop(); clearInterval(tInt); tInt=null; modal.classList.remove("open")}
 /* video in een of twee delen, met de goedgekeurde stem */
 const V1=$("#m-video"), V2=$("#m-video2"); let vParts=[], vCut=0, vIdx=0, vOn=false, vEnded=false;
+function vUrl(x){ return /^https?:/.test(x) ? x : CDN + x; }
 function vAct(){ return vIdx===0 ? V1 : V2; }
 function vLabel(){ $("#play").textContent = vEnded ? "↺ Opnieuw" : (vAct().paused ? "▶ Speel af" : "❚❚ Pauze"); $("#speaker").classList.toggle("speaking", !vAct().paused); }
 function vLoad(s){
   vOn = !!s.video; vParts = !s.video ? [] : (Array.isArray(s.video) ? s.video : [s.video]); vCut = s.cut || 0;
   [V1,V2].forEach(v=>{v.pause(); v.removeAttribute("src"); v.hidden=true;});
-  if (vOn) { V1.src = CDN + vParts[0]; V1.poster = CDN + s.img; V1.hidden=false; if (vParts[1]) { V2.src = CDN + vParts[1]; V2.load(); }
+  if (vOn) { V1.src = vUrl(vParts[0]); V1.poster = CDN + s.img; V1.hidden=false; if (vParts[1]) { V2.src = vUrl(vParts[1]); V2.load(); }
     $("#m-portrait").hidden = true; audio.removeAttribute("src"); vIdx=0; vEnded=false; vLabel(); }
   else { $("#m-portrait").hidden = false; audio.src = CDN + s.audio; $("#play").textContent="▶ Luister"; }
 }
