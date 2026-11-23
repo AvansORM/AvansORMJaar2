@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onderzoeksplein</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f0a10; --panel:#1b1319; --panel2:#241820; --ink:#f6eef1; --muted:#c3b3ba;
+  --red:#C6002A; --red2:#ff3d63; --line:rgba(255,255,255,.12);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Barlow,system-ui,sans-serif;font-size:18px;line-height:1.5}
+a{color:var(--red2)}
+.wrap{max-width:1280px;margin:0 auto;padding:24px 16px 48px}
+header{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--red2);font-weight:700}
+h1{font-size:clamp(30px,4.4vw,52px);line-height:1.05;margin:6px 0 8px;font-weight:800}
+.lead{color:var(--muted);max-width:760px;margin:0}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:0;border-radius:999px;padding:10px 18px;font:600 16px Barlow,sans-serif;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.btn:hover{filter:brightness(1.12)}
+
+/* plein */
+.plein{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.plein{background:#2a1d24}
+.plein img.bg{display:block;width:100%;height:auto;aspect-ratio:1344/752;object-fit:cover}
+.spot{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:0;cursor:pointer;color:#fff;font:700 16px Barlow,sans-serif;text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.spot .face{display:block;width:clamp(58px,8vw,104px);aspect-ratio:1;border-radius:50%;background-size:cover;background-position:center;border:4px solid #fff;box-shadow:0 0 0 0 rgba(198,0,42,.7);animation:ping 2.4s infinite}
+.spot .num{position:absolute;top:-6px;left:-6px;width:30px;height:30px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:16px;border:2px solid #fff}
+.spot .lbl{background:rgba(15,10,16,.82);padding:3px 10px;border-radius:999px;white-space:nowrap}
+.spot.done .face{border-color:var(--red2);animation:none;filter:saturate(.6)}
+.spot.done .num::after{content:"✓"}
+.spot.done .num span{display:none}
+.spot:hover .face{transform:scale(1.06)}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(198,0,42,.75)}70%{box-shadow:0 0 0 18px rgba(198,0,42,0)}100%{box-shadow:0 0 0 0 rgba(198,0,42,0)}}
+
+.intro{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.card h2{margin:0 0 8px;font-size:22px}
+.card p{margin:0 0 10px}
+.plan{list-style:none;margin:0;padding:0}
+.plan li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}
+.plan li:last-child{border:0}
+.plan b{color:var(--red2);font-weight:700;white-space:nowrap}
+footer{margin-top:28px;color:var(--muted);font-size:14px;text-align:center}
+
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(5,3,6,.82);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:28px 16px;z-index:10}
+.modal.open{display:flex}
+.sheet{width:min(1200px,100%);background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:26px 26px 22px;position:relative}
+.close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:#fff;font-size:20px;cursor:pointer}
+.sheet h2{font-size:clamp(28px,3.6vw,42px);margin:4px 0 16px;line-height:1.1}
+.grid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:22px}
+.speaker{display:flex;flex-direction:column;align-items:center;gap:14px}
+.portrait{position:relative;width:240px;aspect-ratio:1;border-radius:50%;background-size:cover;background-position:center;border:5px solid #fff}
+.portrait::before,.portrait::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:3px solid var(--red2);opacity:0}
+.speaking .portrait::before{animation:ring 1.3s infinite}
+.speaking .portrait::after{animation:ring 1.3s .65s infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.28);opacity:0}}
+.speaking .portrait{animation:bob .5s ease-in-out infinite alternate}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+video.talk{width:100%;border-radius:14px;display:block}
+.quote{font-style:italic;color:var(--muted);font-size:16px;text-align:center;margin:0}
+.side{min-width:0;display:flex;flex-direction:column;gap:16px}
+.theory{background:linear-gradient(160deg,#3a0d1b,#21121a);border:1px solid rgba(255,61,99,.35);border-radius:16px;padding:18px 20px}
+.task{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.tag{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--red2);margin-bottom:4px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.theory h3,.task h3{margin:0 0 8px;font-size:22px}
+.theory p{margin:0 0 10px}
+.src{font-size:14px;color:var(--muted);margin:6px 0 0}
+.task ol{margin:6px 0 0;padding-left:22px}
+.task li{margin:6px 0}
+.timer{font:700 15px Barlow,sans-serif;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:4px 12px;cursor:pointer;letter-spacing:0;text-transform:none}
+.timer.run{background:var(--red);border-color:var(--red)}
+.timer.end{background:#fff;color:var(--red)}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;flex-wrap:wrap}
+
+/* dartboards */
+.extra{margin-top:20px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.extra h3{margin:0 0 6px;font-size:24px}
+.boards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:14px 0 4px}
+.boards figure{margin:0;text-align:center;cursor:pointer;background:var(--panel2);border-radius:14px;padding:12px 12px 16px;transition:transform .2s}
+.boards figure:hover{transform:translateY(-3px)}
+.boards svg{width:100%;max-width:220px;height:auto;display:block;margin:0 auto 8px}
+.boards b{display:block;color:var(--ink);font-size:18px}
+.btag{display:block;color:var(--red2);font-weight:700;font-size:14px;margin:2px 0 6px}
+.bex{display:block;color:var(--muted);font-size:15px;line-height:1.4}
+.bnote{color:var(--muted);font-size:14px;margin:8px 0 0;text-align:center}
+.dart{opacity:0;animation:throw .45s cubic-bezier(.2,.9,.3,1.2) forwards}
+@keyframes throw{0%{opacity:0;transform:translate(40px,-60px) scale(1.6)}100%{opacity:1;transform:none}}
+
+.pop{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:14px 0 6px}
+.pop figure{margin:0;background:var(--panel2);border-radius:14px;padding:14px 14px 16px;text-align:center}
+.pop b{display:block;font-size:18px}
+.crowd{display:grid;grid-template-columns:repeat(10,1fr);gap:4px 2px;margin:10px auto 10px;max-width:280px}
+.pp{width:100%;height:auto;opacity:0;animation:pop .35s ease-out forwards}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.6)}to{opacity:1;transform:none}}
+.legend{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;color:var(--muted);font-size:14px;margin-top:6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.boards.mini svg{max-width:120px}
+.boards.mini b{font-size:15px}
+.matrix{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:14px;margin:14px auto 4px;max-width:900px}
+.matrix figure{margin:0;display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center;text-align:left;cursor:pointer;background:var(--panel2);border-radius:14px;padding:12px 16px}
+.matrix svg{width:100%;height:auto;display:block}
+.matrix b{display:block;color:var(--ink);font-size:18px}
+.mx-col{text-align:center;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:13px;color:var(--red2)}
+.mx-row{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:13px;color:var(--red2)}
+li.qa{cursor:pointer}
+li.qa::after{content:"antwoord";margin-left:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red2);border:1px solid rgba(255,61,99,.4);border-radius:999px;padding:1px 8px;vertical-align:2px}
+li.qa.open::after{content:"verberg"}
+li.qa .ans{display:none;margin:6px 0 4px;padding:8px 12px;border-left:3px solid #3fb37f;background:#12261d;border-radius:8px;color:var(--ink);font-size:16px}
+li.qa.open .ans{display:block}
+
+/* station als secties */
+.modal{padding:0;align-items:stretch}
+.sheet{width:100%;min-height:100vh;border-radius:0;border:0;padding:22px clamp(16px,4vw,56px) 18px;display:flex;flex-direction:column}
+.top{display:flex;align-items:flex-start;gap:20px;justify-content:space-between}
+.top h2{margin:2px 0 0}
+.close{position:static;flex:none}
+.steps{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto;padding-top:6px}
+.steps button{font:700 13px Barlow,sans-serif;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer}
+.steps button.on{background:var(--red);border-color:var(--red);color:#fff}
+.sec{display:none;flex:1;align-items:center;justify-content:center;padding:18px 0;animation:fadein .35s ease}
+.sec.on{display:flex}
+.sec>*{width:min(1100px,100%)}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.speaker{gap:18px}
+video.talk{width:min(100%,calc((100vh - 260px)*16/9));max-height:calc(100vh - 260px);margin:0 auto;background:#000;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.sec .portrait{width:min(340px,40vh)}
+.sec .quote{font-size:22px}
+.sec .theory,.sec .task{padding:30px 36px}
+.sec .theory h3,.sec .task h3{font-size:clamp(26px,3vw,36px);margin-bottom:14px}
+.sec .theory p,.sec .task li,.sec .task p{font-size:clamp(18px,1.7vw,23px);line-height:1.5}
+.sec .task li{margin:12px 0}
+.nav{margin-top:auto;align-items:center}
+.hint{color:var(--muted);font-size:14px}
+.navr{display:flex;gap:8px}
+@media (max-width:820px){.top{flex-wrap:wrap}.steps{margin-left:0}.hint{display:none}.sec .theory,.sec .task{padding:20px}}
+/* sorteer */
+.sort{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.chip{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;font:500 16px Barlow,sans-serif;color:var(--ink);text-align:left}
+.chip small{display:none;margin-top:4px;color:var(--muted);font-size:14px}
+.chip.shown small{display:block}
+.chip.shown.ok{border-color:#3fb37f;background:#12261d}
+.chip.shown.no{border-color:var(--red2);background:#2b0f18}
+.chip.shown::before{font-weight:800;display:block;font-size:13px;letter-spacing:.12em}
+.chip.shown.ok::before{content:"TELT WEL";color:#3fb37f}
+.chip.shown.no::before{content:"TELT NIET";color:var(--red2)}
+
+/* tabel */
+.tblwrap{overflow-x:auto;margin-top:8px;border-radius:10px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{background:var(--red);color:#fff;font-weight:700}
+td{background:var(--panel2)}
+tr.empty td{background:transparent;color:var(--muted);height:44px}
+.qs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.q{background:var(--panel2);border-left:4px solid var(--red);border-radius:10px;padding:10px 12px;font-weight:600}
+.q span{display:block;font-weight:400;color:var(--muted);font-size:15px}
+
+@media (max-width:820px){
+  .intro,.grid{grid-template-columns:1fr}
+  .portrait{width:180px}
+  .qs,.sort{grid-template-columns:1fr}
+  .boards{grid-template-columns:repeat(2,1fr)}
+  .pop{grid-template-columns:1fr}
+  .matrix figure{grid-template-columns:1fr;text-align:center;padding:10px}
+  .matrix{gap:8px}
+  .matrix .bex{font-size:13px}
+  .matrix b{font-size:15px}
+  .spot .lbl{font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Onderzoeksverantwoording · 30 minuten</div>
+      <h1>Welkom op het Onderzoeksplein</h1>
+      <p class="lead">Je mag AI gebruiken, wij beoordelen in gesprek. Dan moet je wel kunnen laten zien dat je onderzoek klopt. Op dit plein ontmoet je drie mensen die dat op de harde manier leerden, en eindig je op het podium.</p>
+    </div>
+    <a class="btn ghost" href="#" id="reset">Opnieuw beginnen</a>
+  </header>
+
+  <div class="plein" id="plein">
+    <img class="bg" src="https://d8j0ntlcm91z4.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/hf_20261123_201511_58631b50-88ba-4e66-ab73-2584fa9d15fb.png" alt="Campusplein in de schemering met een terras, een pop-upkraam, een badkamershowroom en een klein podium">
+  </div>
+
+  <div class="intro">
+    <div class="card">
+      <p>In je verantwoording laat je per conclusie zien waar die op rust. Dat kan alleen als je weet wat <b>betrouwbaar</b>, <b>valide</b> en <b>representatief</b> betekenen, en wat wij als <b>bewijs</b> zien. Klik op de mensen op het plein, in volgorde.</p>
+      <p class="src">Naslag: <i>Onderzoeksverantwoording en AI-gebruik (studenten)</i>, de richtlijn die je bij elke inlevering gebruikt.</p>
+      <a class="btn" href="Onderzoeksverantwoording-en-AI-gebruik.pdf" download>⬇ Download de richtlijn (PDF)</a>
+    </div>
+    <div class="card">
+      <ul class="plan">
+        <li><span>1. Sanne: betrouwbaar of valide?</span><b>6 min</b></li>
+        <li><span>2. Mo: wie heb je getest?</span><b>6 min</b></li>
+        <li><span>3. Ilse: wat telt als bewijs?</span><b>6 min</b></li>
+        <li><span>4. Het podium: oefen het gesprek</span><b>10 min</b></li>
+        <li><span>Afsluiting</span><b>2 min</b></li>
+      </ul>
+    </div>
+  </div>
+  <footer>Beelden en stemmen gemaakt met AI. Inhoud: team jaar 2, Avans.</footer>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="sheet">
+    <div class="top">
+      <div><div class="eyebrow" id="m-eyebrow"></div><h2 id="m-title"></h2></div>
+      <div class="steps" id="steps"></div>
+      <button class="close" id="close" aria-label="Sluiten">✕</button>
+    </div>
+    <section class="sec" data-k="Video">
+      <div class="speaker" id="speaker">
+        <div class="portrait" id="m-portrait"></div>
+        <video class="talk" id="m-video" controls playsinline preload="auto" hidden></video>
+        <button class="btn" id="play">▶ Luister</button>
+        <p class="quote" id="m-quote"></p>
+      </div>
+    </section>
+    <section class="sec" data-k="Theorie">
+      <div class="theory">
+        <div class="tag">Theorie</div>
+        <h3 id="t-title"></h3>
+        <div id="t-body"></div>
+      </div>
+    </section>
+    <section class="sec" data-k="Beeld">
+      <div class="extra" id="m-extra"></div>
+    </section>
+    <section class="sec" data-k="Opdracht">
+      <div class="task">
+        <div class="tag"><span id="o-tag"></span><button class="timer" id="timer"></button></div>
+        <h3 id="o-title"></h3>
+        <div id="o-body"></div>
+      </div>
+    </section>
+    <div class="nav">
+      <button class="btn ghost" id="back">← Plein</button>
+      <span class="hint">spatie of → voor verder, ← terug</span>
+      <div class="navr"><button class="btn ghost" id="prev">←</button><button class="btn" id="next"></button></div>
+    </div>
+  </div>
+</div>
+
+<audio id="audio" preload="none"></audio>
+
+<script>
+const CDN = "https://d8j0ntlcm91z4.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/";
+const board = (pts) => {
+  const rings=[46,38,30,22,14].map((r,i)=>`<circle cx="50" cy="50" r="${r}" fill="${i%2?'#f3e6d8':'#C6002A'}"/>`).join("");
+  const darts = pts.map(([x,y],i) => `<g class="dart" style="animation-delay:${.25+i*.32}s"><g transform="translate(${50+x} ${50+y})">
+      <line x1="0" y1="0" x2="11" y2="-13" stroke="#111" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M9,-11 L17,-14 L14,-19 L12,-16 Z" fill="#ffd166" stroke="#111" stroke-width=".6"/>
+      <circle r="1.6" fill="#111"/></g></g>`).join("");
+  return `<svg viewBox="-4 -24 112 128" aria-hidden="true">
+    <circle cx="50" cy="50" r="50" fill="#14090e"/>${rings}
+    <line x1="4" y1="50" x2="96" y2="50" stroke="#14090e" stroke-width=".5" opacity=".4"/><line x1="50" y1="4" x2="50" y2="96" stroke="#14090e" stroke-width=".5" opacity=".4"/>
+    <circle cx="50" cy="50" r="6" fill="#14090e"/><circle cx="50" cy="50" r="3" fill="#ffd166"/>${darts}</svg>`;
+};
+const BOARD_DATA = [
+  {pts:[[24,-22],[27,-19],[21,-25],[26,-24],[29,-21]], title:"Betrouwbaar, niet valide", tag:"Steeds hetzelfde, steeds mis",
+   ex:"Je vraagt mensen of ze het zouden kopen. Iedereen zegt ja. Steeds hetzelfde, maar je meet beleefdheid, geen koopgedrag."},
+  {pts:[[1,2],[-3,-1],[3,-3],[-2,3],[0,-4]], title:"Betrouwbaar én valide", tag:"Steeds raak",
+   ex:"Twintig mensen uit je doelgroep vertellen wat ze echt deden, of honderden bezoekers uit je doelgroep laten hun e-mail achter."},
+  {pts:[[-30,10],[18,-28],[30,24],[-10,-32],[-24,-20]], title:"Niet betrouwbaar, niet valide", tag:"Toeval",
+   ex:"Een paar losse gesprekken met sturende vragen. Elke uitkomst is anders, en geen enkele gaat over je vraag."},
+  {pts:[[-16,9],[13,-12],[17,14],[-11,-16],[3,20]], title:"Niet betrouwbaar, wel valide", tag:"In de buurt, te veel spreiding",
+   ex:"De juiste vragen aan de juiste mensen, maar twee gesprekken of dertig bezoekers. In de buurt, maar het kan toeval zijn."}
+];
+const fig = d => `<figure>${board(d.pts)}<figcaption><b>${d.title}</b><span class="btag">${d.tag}</span><span class="bex">${d.ex}</span></figcaption></figure>`;
+const BOARDS = `<div class="matrix">
+   <div></div><div class="mx-col">Niet valide</div><div class="mx-col">Valide</div>
+   <div class="mx-row">Betrouwbaar</div>${fig(BOARD_DATA[0])}${fig(BOARD_DATA[1])}
+   <div class="mx-row">Niet betrouwbaar</div>${fig(BOARD_DATA[2])}${fig(BOARD_DATA[3])}
+  </div>
+  <p class="bnote">Validiteit: meet je wat je wilt weten? Betrouwbaarheid: krijg je steeds dezelfde uitkomst? Klik op een schijf om opnieuw te gooien.</p>`;
+
+const person = (fill, i) => `<svg class="pp" viewBox="0 0 20 32" style="animation-delay:${i*0.04}s"><circle cx="10" cy="6" r="5" fill="${fill}"/><path d="M2,30 C2,18 5,13 10,13 C15,13 18,18 18,30 Z" fill="${fill}"/></svg>`;
+const C = {p1:"#C6002A", p2:"#ff8fa6", st:"#8a8f98", ot:"#4a3f45"};
+const crowd = arr => `<div class="crowd">${arr.map((c,i)=>person(C[c],i)).join("")}</div>`;
+const rep = (n1,n2,nst,not) => [...Array(n1).fill("p1"),...Array(n2).fill("p2"),...Array(nst).fill("st"),...Array(not).fill("ot")];
+const MO_VIS = `<div class="tag">Wie heeft Mo getest?</div><h3>Groter wordt het niet beter, wel scheef</h3>
+ <div class="pop">
+  <figure><figcaption><b>Zijn doelgroep</b><span class="btag">Ouders met jonge kinderen</span></figcaption>${crowd(rep(12,8,0,0))}<span class="bex">Bijvoorbeeld 60% met één kind, 40% met meer kinderen.</span></figure>
+  <figure><figcaption><b>Zijn 200 bezoekers</b><span class="btag">Uit zijn eigen WhatsApp-groepen</span></figcaption>${crowd(["st","st","ot","st","st","st","st","st","st","p1","st","st","ot","st","st","st","st","ot","st","st"])}<span class="bex">Per twintig bezoekers één ouder. De 40 aanmeldingen zeggen vooral iets over studenten.</span></figure>
+  <figure><figcaption><b>Wat representatief is</b><span class="btag">Zelfde kenmerken, zelfde verhouding</span></figcaption>${crowd(rep(12,8,0,0))}<span class="bex">Twintig ouders, in dezelfde verhouding als de doelgroep. Dan mag je doortrekken.</span></figure>
+ </div>
+ <div class="legend"><span><i style="background:${C.p1}"></i>ouder, één kind</span><span><i style="background:${C.p2}"></i>ouder, meer kinderen</span><span><i style="background:${C.st}"></i>student</span><span><i style="background:${C.ot}"></i>anders</span></div>`;
+const MINI = `<div class="tag">Geheugensteun</div><h3>Drie vragen, drie begrippen</h3>
+ <div class="boards mini">${BOARD_DATA.map(d=>`<figure>${board(d.pts)}<figcaption><b>${d.title}</b></figcaption></figure>`).join("")}</div>
+ <p class="bnote">Betrouwbaar en valide: de schietschijf van Sanne. Representatief: de juiste mensen in de juiste verhouding, zoals bij Mo.</p>`;
+
+const STATIONS = [
+ {
+  id:"sanne", extra:()=>`<div class="tag">De schietschijf</div><h3>Steeds hetzelfde is nog niet steeds raak</h3>${BOARDS}`, x:16, y:42, label:"Sanne",
+  img:"hf_20261123_201512_bcd1a194-71aa-4413-a8b9-f87cb4555d27.png",
+  audio:"hf_20261123_210638_18b8d80d-6ef2-47aa-bfbf-869c9b70d6bf.mp3",
+  video:"hf_20261123_211333_e027f6ec-0b9f-400d-854a-b386dcdb3c87.mp4",
+  eyebrow:"Op het terras · De student", title:"Sanne: “Tien van de tien zei ja!”",
+  quote:"“Iedereen zei ja. Dat is toch honderd procent bewijs?”",
+  tTitle:"Steeds hetzelfde is nog niet steeds raak",
+  tBody:`<p><b>Betrouwbaar</b>: als iemand anders jouw onderzoek op dezelfde manier herhaalt, komt er ongeveer hetzelfde uit. Toeval en jijzelf bepalen de uitkomst niet.</p>
+         <p><b>Valide</b>: je meet wat je wilt weten. Wie vraagt “zou je dit kopen?” meet beleefdheid, geen koopgedrag. Vraag naar wat mensen al doen en uitgeven, niet naar wat ze denken te gaan doen.</p>
+         <p class="src">Bron: richtlijn Onderzoeksverantwoording, deel 1. Over vragen naar gedrag: Fitzpatrick, <i>The Mom Test</i> (2013).</p>`,
+  oTag:"Opdracht · 6 minuten", minutes:6, oTitle:"Waar landt Sanne op de schietschijf?",
+  oBody:`<ol>
+    <li data-a="Beleefdheid, vriendschap, of ze haar idee leuk vinden. Niet of iemand er echt voor betaalt.">Wat heeft Sanne eigenlijk gemeten? Noem minstens twee dingen behalve “wil het kopen”.</li>
+    <li data-a="Betrouwbaar, niet valide (linksboven). Ze krijgt steeds hetzelfde antwoord, maar meet het verkeerde. En tien vrienden zijn ook niet representatief.">Kies met je buur de schietschijf die bij haar onderzoek past, en leg uit waarom.</li>
+    <li data-a="Bijvoorbeeld: “Wanneer had je dit probleem voor het laatst? Wat deed je toen, en wat kostte dat?” Of laat mensen vooraf betalen of zich inschrijven.">Herschrijf haar vraag zo dat die naar gedrag vraagt in plaats van naar een mening.</li>
+    <li>Zoek in je eigen onderzoek één vraag waar je hetzelfde risico loopt.</li></ol>`
+ },
+ {
+  id:"mo", extra:()=>MO_VIS, x:49, y:36, label:"Mo",
+  img:"hf_20261123_201512_f6837334-7e65-4ce6-955a-ec0c5ae457f9.png",
+  audio:"hf_20261123_204603_80bf5bf5-9e74-4c2d-b819-a4197053ecbe.mp3",
+  video:"hf_20261123_211334_55c3d77d-aa38-45a6-a45e-da7e19c1e737.mp4",
+  eyebrow:"Bij de pop-upkraam · De student", title:"Mo: “Tweehonderd bezoekers!”",
+  quote:"“Mijn groepsapps zitten vol studenten. Wie heb ik nou getest?”",
+  tTitle:"Representatief: de goede mensen, in de goede verhouding",
+  tBody:`<p><b>Representatief</b>: de mensen in je onderzoek hebben de kenmerken die ertoe doen voor je vraag, in ongeveer dezelfde verhouding als in je doelgroep. Dan mag je wat je vindt doortrekken naar die doelgroep.</p>
+         <p>Het gaat dus niet alleen om “niet je eigen netwerk”. Ook twintig onbekenden kunnen scheef zijn, bijvoorbeeld als ze allemaal via hetzelfde kanaal of hetzelfde moment binnenkomen. Een groter aantal repareert een scheve groep niet.</p>
+         <p class="src">Bron: richtlijn Onderzoeksverantwoording, deel 1 en de kolom “representativiteit geborgd” in de conclusietabel.</p>`,
+  oTag:"Opdracht · 6 minuten", minutes:6, oTitle:"Wie had Mo moeten bereiken?",
+  oBody:`<ol>
+    <li data-a="Ouder van een jong kind, leeftijd van het kind, budget, en wie in het gezin de aankoop beslist.">Welke twee of drie kenmerken doen ertoe voor Mo's product? Denk aan leeftijd kind, budget, wie beslist.</li>
+    <li data-a="Per twintig bezoekers is er één ouder. De 20% aanmeldingen komt vooral van studenten en zegt dus bijna niets over zijn doelgroep.">Hoe verhouden zijn bezoekers zich tot die kenmerken? Wat zegt zijn 20% aanmeldingen dan nog?</li>
+    <li data-a="Bijvoorbeeld een advertentie gericht op ouders van jonge kinderen, of flyers bij een kinderdagverblijf of consultatiebureau. Daarna checken of de mix van zijn bezoekers lijkt op die van de doelgroep.">Bedenk een kanaal waarmee hij wel de juiste mensen in de juiste verhouding bereikt.</li>
+    <li>Jouw onderzoek: wie zit er in jouw groep, en wie mist er?</li></ol>`
+ },
+ {
+  id:"ilse", x:86, y:44, label:"Ilse",
+  img:"hf_20261123_201512_ab1cb11b-b6f5-41a1-b301-06ef6c847410.png",
+  audio:"hf_20261123_203849_c69ecab5-eb06-48a5-9753-1445a870ad63.mp3",
+  eyebrow:"In de showroom · De ondernemer", title:"Ilse: “Laat me de klant zien, niet de chat”",
+  quote:"“Prima dat je AI gebruikt. Hoe weet jij dat het klopt?”",
+  tTitle:"AI mag, verzinnen niet",
+  tBody:`<p><b>Bewijs</b> is iets wat je kunt openen en laten zien: een opname, ruwe data, een screenshot met datum, een respondentenlijst met contactgegevens. Een AI-samenvatting is geen bewijs, de bron eronder wel.</p>
+         <p><b>Navolgbaar</b>: iemand anders kan de stap volgen van dat bewijs naar je conclusie. <b>Verdedigbaar</b>: je kunt die stap zelf uitleggen en volhouden als er doorgevraagd wordt.</p>
+         <p>Heb je AI gebruikt, laat dan zien hoe je de uitkomst naast de bron hebt gelegd. Antwoorden, respondenten of cijfers laten verzinnen (synthetische data) is fabricage.</p>
+         <p class="src">Bron: richtlijn Onderzoeksverantwoording, deel 3 en 4.</p>`,
+  oTag:"Opdracht · 6 minuten", minutes:6, oTitle:"Telt dit als bewijs?",
+  oBody:`<p>Bespreek met je buur, klik daarna om te checken.</p>
+   <div class="sort">
+    <button class="chip ok">Opname van een interview op MyMedia<small>Te openen en te tonen.</small></button>
+    <button class="chip no">“ChatGPT zegt dat 70% van de klanten…”<small>Waar komt die 70% vandaan? Toon de bron.</small></button>
+    <button class="chip ok">Export van je advertentie met bereik, kliks en datum<small>Ruwe data van het echte gedrag.</small></button>
+    <button class="chip no">AI-samenvatting van je transcripten, zonder transcripten<small>Pas bewijs als je de transcripten erbij levert en hebt gecontroleerd.</small></button>
+    <button class="chip ok">Respondentenlijst met naam en telefoonnummer<small>Controleerbaar, wij kunnen bellen.</small></button>
+    <button class="chip no">Tien interviews die AI “realistisch” heeft gesimuleerd<small>Synthetische data is fabricage, ook als je het meldt.</small></button>
+   </div>`
+ },
+ {
+  id:"podium", extra:()=>MINI, x:50, y:80, label:"Het podium",
+  img:"hf_20261123_201511_2b1aaa80-8d23-4539-a854-61948e88a7e9.png",
+  audio:"hf_20261123_203849_8d4ff8fa-ac0c-4277-bd08-f0fcac222417.mp3",
+  video:"hf_20261123_211336_744e212d-67e4-4d26-992f-a0b6094c38e4.mp4",
+  eyebrow:"Op het podium · De beoordelaar", title:"Het gesprek: laat het maar zien",
+  quote:"“Ik ga niet je verslag nalezen, ik ga vragen stellen.”",
+  tTitle:"Per conclusie laten zien waar die op rust",
+  tBody:`<p>Bij je inlevering zit een <b>conclusietabel</b>. In het gesprek kiest de beoordelaar een paar conclusies en vraagt door. Zo ziet één rij eruit:</p>
+   <div class="tblwrap"><table>
+    <tr><th>Conclusie</th><th>Bewijs</th><th>Betrouwbaarheid geborgd</th><th>Validiteit geborgd</th><th>Representativiteit geborgd</th><th>AI: waarvoor en hoe gecontroleerd</th><th>Beperking</th></tr>
+    <tr><td>Klanten willen direct een prijsindicatie zien</td><td>20 interviews, opnames op MyMedia, respondentenlijst in bijlage</td><td>Zelfde vragenlijst, elk gesprek opgenomen</td><td>Gevraagd naar hun laatste aankoop, niet naar wensen</td><td>Mix van leeftijd en koop of huur, zoals in klantbestand</td><td>Samenvatting transcripten, naast de opnames gelegd</td><td>Alleen regio Breda</td></tr>
+    <tr class="empty"><td>Jouw conclusie…</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+   </table></div>
+   <div class="qs">
+    <div class="q">Laat het bewijs zien.<span>Open het. Nu.</span></div>
+    <div class="q">Hoe kom je van dit bewijs tot je conclusie?<span>Navolgbaar en verdedigbaar.</span></div>
+    <div class="q">Geldt dit voor je hele doelgroep?<span>Representatief.</span></div>
+   </div>`,
+  oTag:"Opdracht · 10 minuten", minutes:10, oTitle:"Oefen het gesprek in tweetallen",
+  oBody:`<ol>
+    <li><b>4 min.</b> Ieder vult één rij van de tabel in voor een conclusie uit je eigen project.</li>
+    <li data-a="Een sterk antwoord: B opent het bewijs meteen en wijst aan waar de conclusie vandaan komt. Zwak: “dat staat in mijn verslag” of “dat zei ChatGPT”."><b>2 min.</b> A is beoordelaar en stelt de drie vragen hierboven aan B. Vraag één keer door.</li>
+    <li><b>2 min.</b> Wissel.</li>
+    <li><b>2 min.</b> Welke kolom kon je niet invullen? Dat is je huiswerk voor de volgende inlevering.</li></ol>
+    <p><a class="btn" href="Onderzoeksverantwoording-en-AI-gebruik.pdf" download>⬇ Richtlijn met de conclusietabel (PDF)</a></p>`
+ }
+];
+
+const $ = s => document.querySelector(s);
+const plein = $("#plein"), modal = $("#modal"), audio = $("#audio");
+let cur = 0, tInt = null, tLeft = 0;
+const done = new Set(JSON.parse((()=>{try{return localStorage.getItem("plein-done")}catch(e){return null}})()||"[]"));
+const save = () => {try{localStorage.setItem("plein-done",JSON.stringify([...done]))}catch(e){}};
+
+STATIONS.forEach((s,i)=>{
+  const b = document.createElement("button");
+  b.className = "spot"+(done.has(s.id)?" done":"");
+  b.style.left = s.x+"%"; b.style.top = s.y+"%";
+  b.innerHTML = `<span style="position:relative"><span class="face" style="background-image:url('${CDN+s.img}')"></span><span class="num"><span>${i+1}</span></span></span><span class="lbl">${s.label}</span>`;
+  b.onclick = () => open(i);
+  s.el = b; plein.appendChild(b);
+});
+
+function fmt(n){return Math.floor(n/60)+":"+String(n%60).padStart(2,"0")}
+function resetTimer(){clearInterval(tInt);tInt=null;tLeft=STATIONS[cur].minutes*60;const t=$("#timer");t.className="timer";t.textContent="⏱ Start "+fmt(tLeft)}
+$("#timer").onclick = () => {
+  const t = $("#timer");
+  if(tInt){clearInterval(tInt);tInt=null;t.className="timer";t.textContent="⏱ Verder "+fmt(tLeft);return}
+  if(tLeft<=0) tLeft = STATIONS[cur].minutes*60;
+  t.className="timer run";
+  tInt = setInterval(()=>{tLeft--;t.textContent="⏱ "+fmt(tLeft);if(tLeft<=0){clearInterval(tInt);tInt=null;t.className="timer end";t.textContent="Tijd!"}},1000);
+  t.textContent="⏱ "+fmt(tLeft);
+};
+
+function open(i){
+  cur = i; const s = STATIONS[i];
+  stop();
+  $("#m-eyebrow").textContent = s.eyebrow;
+  $("#m-title").textContent = s.title;
+  $("#m-portrait").style.backgroundImage = `url('${CDN+s.img}')`;
+  $("#m-quote").textContent = s.quote;
+  $("#t-title").textContent = s.tTitle;
+  $("#t-body").innerHTML = s.tBody;
+  $("#o-tag").textContent = s.oTag;
+  $("#o-title").textContent = s.oTitle;
+  $("#o-body").innerHTML = s.oBody;
+  const ex = $("#m-extra"); ex.innerHTML = s.extra ? s.extra() : "";
+  ex.querySelectorAll(".boards figure, .matrix figure").forEach(f=>f.onclick=()=>{const sv=f.querySelector("svg");const c=sv.cloneNode(true);sv.replaceWith(c);});
+  const sortEl = $("#o-body .sort");
+  if (sortEl) { const cs=[...sortEl.children]; for(let k=cs.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[cs[k],cs[j]]=[cs[j],cs[k]];} cs.forEach(c=>sortEl.appendChild(c)); }
+  $("#o-body").querySelectorAll(".chip").forEach(c=>c.onclick=()=>c.classList.toggle("shown"));
+  $("#o-body").querySelectorAll("li[data-a]").forEach(li=>{li.classList.add("qa");const d=document.createElement("div");d.className="ans";d.textContent=li.dataset.a;li.appendChild(d);li.onclick=()=>li.classList.toggle("open");});
+  const v = $("#m-video");
+  if (s.video) { v.src = CDN + s.video; v.poster = CDN + s.img; v.hidden = false; $("#m-portrait").hidden = true; $("#play").hidden = true; audio.removeAttribute("src"); }
+  else { v.pause(); v.removeAttribute("src"); v.hidden = true; $("#m-portrait").hidden = false; $("#play").hidden = false; audio.src = CDN + s.audio; }
+  resetTimer();
+  modal.classList.add("open");
+  secs = [...document.querySelectorAll(".sec")].filter(x => x.dataset.k!=="Beeld" || s.extra);
+  $("#steps").innerHTML = secs.map((x,k)=>`<button data-i="${k}">${k+1}. ${x.dataset.k}</button>`).join("");
+  $("#steps").querySelectorAll("button").forEach(b=>b.onclick=()=>show(+b.dataset.i));
+  show(0, true);
+  done.add(s.id); save(); s.el.classList.add("done");
+}
+let secs = [], si = 0;
+function show(k, auto){
+  si = Math.max(0, Math.min(k, secs.length-1));
+  document.querySelectorAll(".sec").forEach(x=>x.classList.remove("on"));
+  secs[si].classList.add("on");
+  $("#steps").querySelectorAll("button").forEach((b,k2)=>b.classList.toggle("on",k2===si));
+  const v=$("#m-video");
+  if (si!==0) { v.pause(); audio.pause(); }
+  else if (auto) { const s=STATIONS[cur]; const pr = s.video ? v.play() : audio.play(); if (pr && pr.catch) pr.catch(()=>{}); }
+  if (secs[si].dataset.k==="Beeld") secs[si].querySelectorAll("svg").forEach(sv=>sv.replaceWith(sv.cloneNode(true)));
+  const last = si===secs.length-1;
+  $("#next").textContent = !last ? `${secs[si+1].dataset.k} →` : (cur < STATIONS.length-1 ? `Naar ${STATIONS[cur+1].label.toLowerCase()==="het podium"?"het podium":STATIONS[cur+1].label} →` : "Klaar, terug naar het plein ✓");
+  $("#prev").style.visibility = si===0 ? "hidden" : "visible";
+  modal.scrollTop = 0;
+}
+function nextStep(){ if (si < secs.length-1) show(si+1); else if (cur < STATIONS.length-1) open(cur+1); else closeM(); }
+function prevStep(){ if (si > 0) show(si-1); }
+function stop(){const v=$("#m-video"); if(v) v.pause(); audio.pause(); try{audio.currentTime=0}catch(e){} $("#speaker").classList.remove("speaking"); $("#play").textContent="▶ Luister"}
+function closeM(){stop(); clearInterval(tInt); tInt=null; modal.classList.remove("open")}
+$("#play").onclick = () => { if(audio.paused){audio.play();} else {audio.pause();} };
+audio.onplay = () => {$("#speaker").classList.add("speaking"); $("#play").textContent="❚❚ Pauze"};
+audio.onpause = audio.onended = () => {$("#speaker").classList.remove("speaking"); $("#play").textContent="▶ Luister"};
+$("#close").onclick = closeM; $("#back").onclick = closeM;
+$("#next").onclick = nextStep; $("#prev").onclick = prevStep;
+modal.onclick = e => { if(e.target===modal) closeM(); };
+document.onkeydown = e => {
+  if (!modal.classList.contains("open")) return;
+  if (e.key==="Escape") { closeM(); return; }
+  if (e.key===" " || e.key==="ArrowRight" || e.key==="PageDown") { e.preventDefault(); document.activeElement && document.activeElement.blur(); nextStep(); }
+  else if (e.key==="ArrowLeft" || e.key==="PageUp") { e.preventDefault(); prevStep(); }
+};
+$("#reset").onclick = e => { e.preventDefault(); done.clear(); save(); STATIONS.forEach(s=>s.el.classList.remove("done")); };
+</script>
+</body>
+</html>
