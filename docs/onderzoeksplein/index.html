@@ -72,6 +72,20 @@ video.talk{width:100%;border-radius:14px;display:block}
 .theory h3,.task h3{margin:0 0 8px;font-size:22px}
 .theory p{margin:0 0 10px}
 .src{font-size:14px;color:var(--muted);margin:6px 0 0}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:4px 0 18px}
+.duo-c{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.duo-c h4{margin:0 0 6px;font-size:clamp(20px,2vw,26px);color:var(--red2)}
+.sec .theory .duo-c p{font-size:clamp(16px,1.4vw,19px);margin:0 0 10px}
+.ex{list-style:none;margin:0;padding:0}
+.ex li{position:relative;padding:6px 0 6px 30px;font-size:clamp(15px,1.3vw,18px);border-top:1px solid var(--line)}
+.ex li::before{position:absolute;left:0;top:6px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800}
+.ex li.ok::before{content:"✓";background:#1f7a4a}
+.ex li.no::before{content:"✗";background:var(--red)}
+@media(max-width:720px){.duo{grid-template-columns:1fr}}
+.ladder{list-style:none;margin:14px 0 6px;padding:0;display:flex;flex-direction:column-reverse;gap:6px}
+.ladder li{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:8px 14px;border-radius:10px;background:linear-gradient(90deg,rgba(198,0,42,var(--a)),rgba(198,0,42,.04));border:1px solid var(--line);font-size:16px}
+.ladder li b{font-weight:700}.ladder li span{color:var(--muted);font-size:14px;text-align:right}
+.ladder-cap{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
 .task ol{margin:6px 0 0;padding-left:22px}
 .task li{margin:6px 0}
 .timer{font:700 15px Barlow,sans-serif;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:4px 12px;cursor:pointer;letter-spacing:0;text-transform:none}
@@ -135,6 +149,7 @@ video.talk{width:min(100%,calc((100vh - 260px)*16/9));max-height:calc(100vh - 26
 .sec .theory,.sec .task{padding:30px 36px}
 .sec .theory h3,.sec .task h3{font-size:clamp(26px,3vw,36px);margin-bottom:14px}
 .sec .theory p,.sec .task li,.sec .task p{font-size:clamp(18px,1.7vw,23px);line-height:1.5}
+.sec .theory p.src,.sec .task p.src{font-size:14px;line-height:1.4;color:var(--muted);margin-top:18px;opacity:.85}
 .sec .task li{margin:12px 0}
 .nav{margin-top:auto;align-items:center}
 .hint{color:var(--muted);font-size:14px}
@@ -220,7 +235,8 @@ tr.empty td{background:transparent;color:var(--muted);height:44px}
     <section class="sec" data-k="Video">
       <div class="speaker" id="speaker">
         <div class="portrait" id="m-portrait"></div>
-        <video class="talk" id="m-video" controls playsinline preload="auto" hidden></video>
+        <video class="talk" id="m-video" playsinline preload="auto" hidden></video>
+        <video class="talk" id="m-video2" playsinline preload="auto" hidden></video>
         <button class="btn" id="play">▶ Luister</button>
         <p class="quote" id="m-quote"></p>
       </div>
@@ -303,11 +319,30 @@ const STATIONS = [
   id:"sanne", extra:()=>`<div class="tag">De schietschijf</div><h3>Steeds hetzelfde is nog niet steeds raak</h3>${BOARDS}`, x:16, y:42, label:"Sanne",
   img:"hf_20261123_201512_bcd1a194-71aa-4413-a8b9-f87cb4555d27.png",
   audio:"hf_20261123_210638_18b8d80d-6ef2-47aa-bfbf-869c9b70d6bf.mp3",
+  video:["hf_20261123_223305_783110d3-3fcb-4396-b7c7-e13d17bb4ade.mp4","hf_20261123_223306_e6a3b550-341e-4897-8208-bf3b5811fa46.mp4"], cut:13.5,
   eyebrow:"Op het terras · De student", title:"Sanne: “Tien van de tien zei ja!”",
   quote:"“Iedereen zei ja. Dat is toch honderd procent bewijs?”",
   tTitle:"Steeds hetzelfde is nog niet steeds raak",
-  tBody:`<p><b>Betrouwbaar</b>: als iemand anders jouw onderzoek op dezelfde manier herhaalt, komt er ongeveer hetzelfde uit. Toeval en jijzelf bepalen de uitkomst niet.</p>
-         <p><b>Valide</b>: je meet wat je wilt weten. Wie vraagt “zou je dit kopen?” meet beleefdheid, geen koopgedrag. Vraag naar wat mensen al doen en uitgeven, niet naar wat ze denken te gaan doen.</p>
+  tBody:`<div class="duo">
+           <div class="duo-c"><h4>Betrouwbaar</h4><p>Herhaal je het onderzoek op dezelfde manier, dan komt er ongeveer hetzelfde uit. Toeval en jijzelf bepalen de uitkomst niet.</p>
+             <ul class="ex"><li class="no">Je stelt de vraag elke keer anders, en alleen aan vrienden op één avond.</li>
+             <li class="ok">Iedereen krijgt dezelfde vragen in dezelfde volgorde.</li>
+             <li class="ok">Een klasgenoot leest je interviews ook na en haalt er hetzelfde uit.</li></ul></div>
+           <div class="duo-c"><h4>Valide</h4><p>Je meet wat je echt wilt weten. Vraag naar wat mensen al doen en uitgeven, niet naar wat ze denken te gaan doen.</p>
+             <ul class="ex"><li class="no">“Zou je dit kopen?” meet beleefdheid, geen koopgedrag.</li>
+             <li class="no">Veel likes op Instagram zeggen niets over omzet.</li>
+             <li class="ok">“Wat gaf je vorige maand uit aan lunch op de campus?”</li></ul></div>
+         </div>
+         <p><b>Test gedrag, geen beloftes.</b> “Ja, dat zou ik kopen” is een sociaal wenselijk antwoord en kost niemand iets. Hoe meer iemand moet geven, hoe sterker je bewijs.</p>
+         <div class="ladder-cap"><span>↑ Sterk bewijs</span></div>
+         <ol class="ladder">
+           <li style="--a:.10"><b>“Leuk idee!”</b><span>mening</span></li>
+           <li style="--a:.22"><b>“Ja, dat zou ik kopen”</b><span>belofte</span></li>
+           <li style="--a:.38"><b>Mailadres op de wachtlijst</b><span>kleine moeite</span></li>
+           <li style="--a:.58"><b>Pre-order of aanbetaling</b><span>geld vooraf</span></li>
+           <li style="--a:.85"><b>Echt gekocht, en nog eens</b><span>gedrag</span></li>
+         </ol>
+         <div class="ladder-cap"><span>Zwak bewijs</span></div>
          <p class="src">Bron: richtlijn Onderzoeksverantwoording, deel 1. Over vragen naar gedrag: Fitzpatrick, <i>The Mom Test</i> (2013).</p>`,
   oTag:"Opdracht · 6 minuten", minutes:6, oTitle:"Waar landt Sanne op de schietschijf?",
   oBody:`<ol>
@@ -320,6 +355,7 @@ const STATIONS = [
   id:"mo", extra:()=>MO_VIS, x:49, y:36, label:"Mo",
   img:"hf_20261123_201512_f6837334-7e65-4ce6-955a-ec0c5ae457f9.png",
   audio:"hf_20261123_204603_80bf5bf5-9e74-4c2d-b819-a4197053ecbe.mp3",
+  video:["hf_20261123_223305_7355c2f9-f970-4cb7-b5b5-bbaa69713245.mp4","hf_20261123_223307_e6cd7ecb-8328-4180-a84f-78d341c573de.mp4"], cut:13.97,
   eyebrow:"Bij de pop-upkraam · De student", title:"Mo: “Tweehonderd bezoekers!”",
   quote:"“Mijn groepsapps zitten vol studenten. Wie heb ik nou getest?”",
   tTitle:"Representatief: de goede mensen, in de goede verhouding",
@@ -337,6 +373,7 @@ const STATIONS = [
   id:"ilse", x:86, y:44, label:"Ilse",
   img:"hf_20261123_201512_ab1cb11b-b6f5-41a1-b301-06ef6c847410.png",
   audio:"hf_20261123_203849_c69ecab5-eb06-48a5-9753-1445a870ad63.mp3",
+  video:["hf_20261123_223305_52e3997c-ec93-4a74-844d-1271db554466.mp4","hf_20261123_223305_f5373caf-8950-4474-9b7c-75d67abf2fa4.mp4"], cut:14.5,
   eyebrow:"In de showroom · De ondernemer", title:"Ilse: “Laat me de klant zien, niet de chat”",
   quote:"“Prima dat je AI gebruikt. Hoe weet jij dat het klopt?”",
   tTitle:"AI mag, verzinnen niet",
@@ -359,6 +396,7 @@ const STATIONS = [
   id:"podium", extra:()=>MINI, x:50, y:80, label:"Het podium",
   img:"hf_20261123_201511_2b1aaa80-8d23-4539-a854-61948e88a7e9.png",
   audio:"hf_20261123_203849_8d4ff8fa-ac0c-4277-bd08-f0fcac222417.mp3",
+  video:["hf_20261123_222714_a5847cf5-7013-4da0-9073-5c673d38e0a9.mp4","hf_20261123_223910_c2fccc52-aec4-4438-9990-ca1b73862fb5.mp4"], cut:11.6,
   eyebrow:"Op het podium · De beoordelaar", title:"Het gesprek: laat het maar zien",
   quote:"“Ik ga niet je verslag nalezen, ik ga vragen stellen.”",
   tTitle:"Per conclusie laten zien waar die op rust",
@@ -427,9 +465,7 @@ function open(i){
   if (sortEl) { const cs=[...sortEl.children]; for(let k=cs.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[cs[k],cs[j]]=[cs[j],cs[k]];} cs.forEach(c=>sortEl.appendChild(c)); }
   $("#o-body").querySelectorAll(".chip").forEach(c=>c.onclick=()=>c.classList.toggle("shown"));
   $("#o-body").querySelectorAll("li[data-a]").forEach(li=>{li.classList.add("qa");const d=document.createElement("div");d.className="ans";d.textContent=li.dataset.a;li.appendChild(d);li.onclick=()=>li.classList.toggle("open");});
-  const v = $("#m-video");
-  if (s.video) { v.src = CDN + s.video; v.poster = CDN + s.img; v.hidden = false; $("#m-portrait").hidden = true; $("#play").hidden = true; audio.removeAttribute("src"); }
-  else { v.pause(); v.removeAttribute("src"); v.hidden = true; $("#m-portrait").hidden = false; $("#play").hidden = false; audio.src = CDN + s.audio; }
+  vLoad(s);
   resetTimer();
   modal.classList.add("open");
   secs = [...document.querySelectorAll(".sec")].filter(x => x.dataset.k!=="Beeld" || s.extra);
@@ -444,9 +480,8 @@ function show(k, auto){
   document.querySelectorAll(".sec").forEach(x=>x.classList.remove("on"));
   secs[si].classList.add("on");
   $("#steps").querySelectorAll("button").forEach((b,k2)=>b.classList.toggle("on",k2===si));
-  const v=$("#m-video");
-  if (si!==0) { v.pause(); audio.pause(); }
-  else if (auto) { const s=STATIONS[cur]; const pr = s.video ? v.play() : audio.play(); if (pr && pr.catch) pr.catch(()=>{}); }
+  if (si!==0) { vPause(); audio.pause(); }
+  else if (auto) { if (STATIONS[cur].video) vPlay(); else { const pr = audio.play(); if (pr && pr.catch) pr.catch(()=>{}); } }
   if (secs[si].dataset.k==="Beeld") secs[si].querySelectorAll("svg").forEach(sv=>sv.replaceWith(sv.cloneNode(true)));
   const last = si===secs.length-1;
   $("#next").textContent = !last ? `${secs[si+1].dataset.k} →` : (cur < STATIONS.length-1 ? `Naar ${STATIONS[cur+1].label.toLowerCase()==="het podium"?"het podium":STATIONS[cur+1].label} →` : "Klaar, terug naar het plein ✓");
@@ -455,11 +490,30 @@ function show(k, auto){
 }
 function nextStep(){ if (si < secs.length-1) show(si+1); else if (cur < STATIONS.length-1) open(cur+1); else closeM(); }
 function prevStep(){ if (si > 0) show(si-1); }
-function stop(){const v=$("#m-video"); if(v) v.pause(); audio.pause(); try{audio.currentTime=0}catch(e){} $("#speaker").classList.remove("speaking"); $("#play").textContent="▶ Luister"}
+function stop(){vReset(); audio.pause(); try{audio.currentTime=0}catch(e){} $("#speaker").classList.remove("speaking"); $("#play").textContent="▶ Luister"}
 function closeM(){stop(); clearInterval(tInt); tInt=null; modal.classList.remove("open")}
-$("#play").onclick = () => { if(audio.paused){audio.play();} else {audio.pause();} };
-audio.onplay = () => {$("#speaker").classList.add("speaking"); $("#play").textContent="❚❚ Pauze"};
-audio.onpause = audio.onended = () => {$("#speaker").classList.remove("speaking"); $("#play").textContent="▶ Luister"};
+/* video in een of twee delen, met de goedgekeurde stem */
+const V1=$("#m-video"), V2=$("#m-video2"); let vParts=[], vCut=0, vIdx=0, vOn=false, vEnded=false;
+function vAct(){ return vIdx===0 ? V1 : V2; }
+function vLabel(){ $("#play").textContent = vEnded ? "↺ Opnieuw" : (vAct().paused ? "▶ Speel af" : "❚❚ Pauze"); $("#speaker").classList.toggle("speaking", !vAct().paused); }
+function vLoad(s){
+  vOn = !!s.video; vParts = !s.video ? [] : (Array.isArray(s.video) ? s.video : [s.video]); vCut = s.cut || 0;
+  [V1,V2].forEach(v=>{v.pause(); v.removeAttribute("src"); v.hidden=true;});
+  if (vOn) { V1.src = CDN + vParts[0]; V1.poster = CDN + s.img; V1.hidden=false; if (vParts[1]) { V2.src = CDN + vParts[1]; V2.load(); }
+    $("#m-portrait").hidden = true; audio.removeAttribute("src"); vIdx=0; vEnded=false; vLabel(); }
+  else { $("#m-portrait").hidden = false; audio.src = CDN + s.audio; $("#play").textContent="▶ Luister"; }
+}
+function vPlay(){ if (vEnded) vReset(); const pr=vAct().play(); if (pr&&pr.catch) pr.catch(()=>{}); }
+function vPause(){ V1.pause(); V2.pause(); }
+function vReset(){ vPause(); if(!vOn) return; vIdx=0; vEnded=false; try{V1.currentTime=0; V2.currentTime=0;}catch(e){} V1.hidden=false; V2.hidden=true; vLabel(); }
+function vTick(){ if (vOn && vIdx===0 && vParts[1] && !V1.paused && V1.currentTime >= vCut) { V1.pause(); vIdx=1; V2.currentTime=0; V2.hidden=false; V1.hidden=true; const pr=V2.play(); if(pr&&pr.catch) pr.catch(()=>{}); } requestAnimationFrame(vTick); }
+requestAnimationFrame(vTick);
+[V1,V2].forEach(v=>{ v.onplay=v.onpause=vLabel; v.onclick=()=>{ vAct().paused ? vPlay() : vPause(); }; });
+V1.onended=()=>{ if (!vParts[1]) { vEnded=true; vLabel(); } };
+V2.onended=()=>{ vEnded=true; vLabel(); };
+$("#play").onclick = () => { if (vOn) { vAct().paused || vEnded ? vPlay() : vPause(); return; } if(audio.paused){audio.play();} else {audio.pause();} };
+audio.onplay = () => { if (vOn) return; $("#speaker").classList.add("speaking"); $("#play").textContent="❚❚ Pauze"};
+audio.onpause = audio.onended = () => { if (vOn) return; $("#speaker").classList.remove("speaking"); $("#play").textContent="▶ Luister"};
 $("#close").onclick = closeM; $("#back").onclick = closeM;
 $("#next").onclick = nextStep; $("#prev").onclick = prevStep;
 modal.onclick = e => { if(e.target===modal) closeM(); };
