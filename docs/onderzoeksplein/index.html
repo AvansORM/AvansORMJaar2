@@ -195,6 +195,43 @@ tr.empty td{background:transparent;color:var(--muted);height:44px}
   .matrix b{font-size:15px}
   .spot .lbl{font-size:13px}
 }
+/* zaalweergave: groot en full width */
+.sec[data-k="Beeld"]>*{width:100%}
+.sec[data-k="Beeld"]{padding:6px 0}
+.sec[data-k="Beeld"] .extra{margin-top:0}
+.sec[data-k="Beeld"] .extra{padding:clamp(16px,2vw,28px) clamp(16px,2.5vw,36px)}
+.sec[data-k="Beeld"] .extra h3{font-size:clamp(22px,min(3vw,3.6vh),38px)}
+.sec[data-k="Beeld"] .tag{font-size:clamp(13px,1.1vw,16px)}
+.sec[data-k="Beeld"] .matrix{max-width:none;gap:clamp(10px,1.4vw,22px)}
+.sec[data-k="Beeld"] .matrix figure{grid-template-columns:min(17vw,calc((100vh - 450px)/2.5)) 1fr;gap:clamp(12px,1.6vw,26px);padding:clamp(10px,1.2vw,18px) clamp(14px,1.6vw,24px)}
+.sec[data-k="Beeld"] .matrix b{font-size:clamp(18px,min(2vw,2.8vh),30px)}
+.sec[data-k="Beeld"] .btag{font-size:clamp(15px,min(1.5vw,2.1vh),22px)}
+.sec[data-k="Beeld"] .bex{font-size:clamp(15px,min(1.45vw,2.1vh),22px)}
+.sec[data-k="Beeld"] .mx-col,.sec[data-k="Beeld"] .mx-row{font-size:clamp(13px,1.2vw,18px)}
+.sec[data-k="Beeld"] .bnote,.sec[data-k="Beeld"] .legend{font-size:clamp(15px,1.3vw,20px)}
+.sec[data-k="Beeld"] .pop b{font-size:clamp(20px,1.9vw,28px)}
+.sec[data-k="Beeld"] .crowd{max-width:min(100%,380px)}
+.modal[data-s="podium"] .sec[data-k="Theorie"]>*{width:100%}
+.modal[data-s="podium"] table{font-size:clamp(15px,1.3vw,24px);min-width:900px}
+.modal[data-s="podium"] th,.modal[data-s="podium"] td{padding:10px 12px}
+.modal[data-s="podium"] .q{font-size:clamp(18px,1.6vw,24px);padding:14px 18px}
+.modal[data-s="podium"] .q span{font-size:clamp(15px,1.3vw,19px)}
+.sec[data-k="Theorie"]>*{width:min(1500px,100%)}
+.sec .ladder{flex-direction:row;gap:8px;margin:12px 0 6px}
+.sec .ladder li{flex:1 1 0;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:4px;font-size:clamp(16px,1.4vw,21px);padding:10px 14px;background:linear-gradient(180deg,rgba(198,0,42,var(--a)),rgba(198,0,42,.04))}
+.sec .ladder li span{text-align:left}
+@media (max-width:820px){.sec .ladder{flex-direction:column-reverse}}
+.sec .ladder li span{font-size:clamp(14px,1.1vw,17px)}
+.sec .ladder-cap{font-size:clamp(13px,1vw,15px)}
+.sec .theory .tag,.sec .task .tag{font-size:clamp(12px,1vw,15px)}
+.sec .theory .duo-c p{font-size:clamp(17px,1.5vw,23px)}
+.sec .theory .duo-c h4{font-size:clamp(22px,2.1vw,30px)}
+.sec .ex li{font-size:clamp(16px,1.35vw,21px)}
+.sec .exbtn{font-size:clamp(15px,1.2vw,18px);padding:7px 16px}
+.sec .chip{font-size:clamp(16px,1.35vw,21px);padding:12px 16px}
+.sec .chip small{font-size:clamp(14px,1.1vw,17px)}
+.sec .portrait{width:min(440px,46vh)}
+@media (max-width:820px){.sec[data-k="Beeld"] .matrix figure{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -316,8 +353,12 @@ const MO_VIS = `<div class="tag">Wie heeft Mo getest?</div><h3>Groter wordt het 
   <figure><figcaption><b>Wat representatief is</b><span class="btag">Zelfde kenmerken, zelfde verhouding</span></figcaption>${crowd(rep(12,8,0,0))}<span class="bex">Twintig ouders, in dezelfde verhouding als de doelgroep. Dan mag je doortrekken.</span></figure>
  </div>
  <div class="legend"><span><i style="background:${C.p1}"></i>ouder, één kind</span><span><i style="background:${C.p2}"></i>ouder, meer kinderen</span><span><i style="background:${C.st}"></i>student</span><span><i style="background:${C.ot}"></i>anders</span></div>`;
-const MINI = `<div class="tag">Geheugensteun</div><h3>Drie vragen, drie begrippen</h3>
- <div class="boards mini">${BOARD_DATA.map(d=>`<figure>${board(d.pts)}<figcaption><b>${d.title}</b></figcaption></figure>`).join("")}</div>
+const MINI = `<div class="tag">Geheugensteun</div>
+ <div class="matrix">
+   <div></div><div class="mx-col">Niet valide</div><div class="mx-col">Valide</div>
+   <div class="mx-row">Betrouwbaar</div>${fig(BOARD_DATA[0])}${fig(BOARD_DATA[1])}
+   <div class="mx-row">Niet betrouwbaar</div>${fig(BOARD_DATA[2])}${fig(BOARD_DATA[3])}
+  </div>
  <p class="bnote">Betrouwbaar en valide: de schietschijf van Sanne. Representatief: de juiste mensen in de juiste verhouding, zoals bij Mo.</p>`;
 
 const STATIONS = [
@@ -325,7 +366,7 @@ const STATIONS = [
   id:"sanne", extra:()=>`<div class="tag">De schietschijf</div><h3>Steeds hetzelfde is nog niet steeds raak</h3>${BOARDS}`, x:16, y:42, label:"Sanne",
   img:"hf_20261123_201512_bcd1a194-71aa-4413-a8b9-f87cb4555d27.png",
   audio:"hf_20261123_210638_18b8d80d-6ef2-47aa-bfbf-869c9b70d6bf.mp3",
-  video:"https://d2ol7oe51mr4n9.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/79591079-c8ab-42c3-94de-f0fbbfece40b.mp4",
+  videoUit:"https://d2ol7oe51mr4n9.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/79591079-c8ab-42c3-94de-f0fbbfece40b.mp4",
   eyebrow:"Op het terras · De student", title:"Sanne: “Tien van de tien zeiden ja!”",
   quote:"“Iedereen zei ja. Dat is toch honderd procent bewijs?”",
   tTitle:"Steeds hetzelfde is nog niet steeds raak",
@@ -340,15 +381,14 @@ const STATIONS = [
              <li class="ok">“Wat gaf je vorige maand uit aan lunch op de campus?”</li></ul></div>
          </div>
          <p><b>Test gedrag, geen beloftes.</b> “Ja, dat zou ik kopen” is een sociaal wenselijk antwoord en kost niemand iets. Hoe meer iemand moet geven, hoe sterker je bewijs.</p>
-         <div class="ladder-cap"><span>↑ Sterk bewijs</span></div>
          <ol class="ladder">
            <li style="--a:.10"><b>“Leuk idee!”</b><span>mening</span></li>
            <li style="--a:.22"><b>“Ja, dat zou ik kopen”</b><span>belofte</span></li>
-           <li style="--a:.38"><b>Mailadres op de wachtlijst</b><span>kleine moeite</span></li>
+           <li style="--a:.38"><b>E-mailadres op de wachtlijst</b><span>kleine moeite</span></li>
            <li style="--a:.58"><b>Pre-order of aanbetaling</b><span>geld vooraf</span></li>
            <li style="--a:.85"><b>Echt gekocht, en nog eens</b><span>gedrag</span></li>
          </ol>
-         <div class="ladder-cap"><span>Zwak bewijs</span></div>
+         <div class="ladder-cap"><span>← Zwak bewijs</span><span>Sterk bewijs →</span></div>
          <p class="src">Bron: richtlijn Onderzoeksverantwoording, deel 1. Over vragen naar gedrag: Fitzpatrick, <i>The Mom Test</i> (2013).</p>`,
   oTag:"Opdracht · 6 minuten", minutes:6, oTitle:"Waar landt Sanne op de schietschijf?",
   oBody:`<ol>
@@ -361,7 +401,7 @@ const STATIONS = [
   id:"mo", extra:()=>MO_VIS, x:49, y:36, label:"Mo",
   img:"hf_20261123_201512_f6837334-7e65-4ce6-955a-ec0c5ae457f9.png",
   audio:"hf_20261123_204603_80bf5bf5-9e74-4c2d-b819-a4197053ecbe.mp3",
-  video:"https://d2ol7oe51mr4n9.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/afb80dac-bc3f-4272-96c5-667d3fd2f44f.mp4",
+  videoUit:"https://d2ol7oe51mr4n9.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/afb80dac-bc3f-4272-96c5-667d3fd2f44f.mp4",
   eyebrow:"Bij de pop-upkraam · De student", title:"Mo: “Tweehonderd bezoekers!”",
   quote:"“Mijn groepsapps zitten vol studenten. Wie heb ik nou getest?”",
   tTitle:"Representatief: de goede mensen, in de goede verhouding",
@@ -379,7 +419,7 @@ const STATIONS = [
   id:"ilse", x:86, y:44, label:"Ilse",
   img:"hf_20261123_201512_ab1cb11b-b6f5-41a1-b301-06ef6c847410.png",
   audio:"hf_20261123_203849_c69ecab5-eb06-48a5-9753-1445a870ad63.mp3",
-  video:"https://d2ol7oe51mr4n9.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/eb66406a-8b79-467f-9997-c198d850daf6.mp4",
+  videoUit:"https://d2ol7oe51mr4n9.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/eb66406a-8b79-467f-9997-c198d850daf6.mp4",
   eyebrow:"In de showroom · De ondernemer", title:"Ilse: “Laat me de klant zien, niet de chat”",
   quote:"“Prima dat je AI gebruikt. Hoe weet jij dat het klopt?”",
   tTitle:"AI mag, verzinnen niet",
@@ -429,8 +469,8 @@ const STATIONS = [
   oTag:"Opdracht · 10 minuten", minutes:10, oTitle:"Oefen het gesprek in tweetallen",
   oBody:`<ol>
     <li><b>4 min.</b> Vul ieder één rij van de tabel in, voor een conclusie uit je eigen project.</li>
-    <li data-a="Een sterk antwoord: B opent het bewijs meteen en wijst aan waar de conclusie vandaan komt. Zwak: “dat staat in mijn verslag” of “dat zei ChatGPT”."><b>2 min.</b> A is beoordelaar en stelt de drie vragen hierboven aan B. Vraag één keer door.</li>
-    <li><b>2 min.</b> Wissel.</li>
+    <li data-a="Een sterk antwoord: B opent het bewijs meteen en wijst aan waar de conclusie vandaan komt. Zwak: “dat staat in mijn verslag” of “dat zei ChatGPT”."><b>2 min.</b> A is beoordelaar en stelt B de drie vragen uit de theorie. Vraag één keer door.</li>
+    <li><b>2 min.</b> Wissel van rol: B is beoordelaar en stelt A dezelfde vragen.</li>
     <li><b>2 min.</b> Welke kolom kon je niet invullen? Dat is je huiswerk voor de volgende inlevering.</li></ol>
     <p><a class="btn" href="Onderzoeksverantwoording-en-AI-gebruik.pdf" download>⬇ Richtlijn met de conclusietabel (PDF)</a></p>`
  }
@@ -482,7 +522,7 @@ function open(i){
   $("#o-body").querySelectorAll("li[data-a]").forEach(li=>{li.classList.add("qa");const d=document.createElement("div");d.className="ans";d.textContent=li.dataset.a;li.appendChild(d);li.onclick=()=>li.classList.toggle("open");});
   vLoad(s);
   resetTimer();
-  modal.classList.add("open");
+  modal.classList.add("open"); modal.dataset.s = s.id;
   secs = [...document.querySelectorAll(".sec")].filter(x => x.dataset.k!=="Beeld" || s.extra);
   $("#steps").innerHTML = secs.map((x,k)=>`<button data-i="${k}">${k+1}. ${x.dataset.k}</button>`).join("");
   $("#steps").querySelectorAll("button").forEach(b=>b.onclick=()=>show(+b.dataset.i));
