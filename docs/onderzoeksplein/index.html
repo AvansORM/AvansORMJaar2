@@ -134,7 +134,7 @@ video.talk{width:100%;border-radius:14px;display:block}
 .mx-row{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:13px;color:var(--red2)}
 li.qa{cursor:pointer}
 li.qa::after{content:"antwoord";margin-left:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red2);border:1px solid rgba(255,61,99,.4);border-radius:999px;padding:1px 8px;vertical-align:2px}
-li.qa.open::after{content:"verberg"}
+li.qa.open::after{display:none}
 li.qa .ans{display:none;margin:6px 0 4px;padding:8px 12px;border-left:3px solid #3fb37f;background:#12261d;border-radius:8px;color:var(--ink);font-size:16px}
 li.qa.open .ans{display:block}
 
@@ -376,8 +376,7 @@ const BOARDS = `<div class="matrix">
    <div class="mx-row">Betrouwbaar</div>${fig(BOARD_DATA[0])}${fig(BOARD_DATA[1])}
    <div class="mx-row">Niet betrouwbaar</div>${fig(BOARD_DATA[2])}${fig(BOARD_DATA[3])}
   </div>
-  <div class="bdef"><p><b>Validiteit:</b> meet je wat je wilt weten?</p><p><b>Betrouwbaarheid:</b> krijg je steeds dezelfde uitkomst?</p></div>
-  <p class="bnote">Klik op een schijf om opnieuw te gooien.</p>`;
+  <div class="bdef"><p><b>Validiteit:</b> meet je wat je wilt weten?</p><p><b>Betrouwbaarheid:</b> krijg je steeds dezelfde uitkomst?</p></div>`;
 
 const person = (fill, i) => `<svg class="pp" viewBox="0 0 20 32" style="animation-delay:${i*0.04}s"><circle cx="10" cy="6" r="5" fill="${fill}"/><path d="M2,30 C2,18 5,13 10,13 C15,13 18,18 18,30 Z" fill="${fill}"/></svg>`;
 const C = {p1:"#C6002A", p2:"#ff8fa6", st:"#8a8f98", ot:"#4a3f45"};
