@@ -37,6 +37,9 @@ body{overflow-x:hidden}
 .spot.done .num::after{content:"✓"}
 .spot.done .num span{display:none}
 .spot:hover .face{transform:scale(1.06)}
+.spot.up .lbl{background:var(--red)}
+.spot.up .lbl::after{content:" · volgende";font-weight:600}
+.spot.up .face{animation:ping 1.2s infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(198,0,42,.75)}70%{box-shadow:0 0 0 18px rgba(198,0,42,0)}100%{box-shadow:0 0 0 0 rgba(198,0,42,0)}}
 
 .intro{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:20px}
@@ -203,7 +206,7 @@ tr.empty td{background:transparent;color:var(--muted);height:44px}
 .sec[data-k="Beeld"] .extra h3{font-size:clamp(22px,min(3vw,3.6vh),38px)}
 .sec[data-k="Beeld"] .tag{font-size:clamp(13px,1.1vw,16px)}
 .sec[data-k="Beeld"] .matrix{max-width:none;gap:clamp(10px,1.4vw,22px)}
-.sec[data-k="Beeld"] .matrix figure{grid-template-columns:min(17vw,calc((100vh - 450px)/2.5)) 1fr;gap:clamp(12px,1.6vw,26px);padding:clamp(10px,1.2vw,18px) clamp(14px,1.6vw,24px)}
+.sec[data-k="Beeld"] .matrix figure{grid-template-columns:min(17vw,calc((100vh - 570px)/2.35)) 1fr;gap:clamp(12px,1.6vw,26px);padding:clamp(10px,1.2vw,18px) clamp(14px,1.6vw,24px)}
 .sec[data-k="Beeld"] .matrix b{font-size:clamp(18px,min(2vw,2.8vh),30px)}
 .sec[data-k="Beeld"] .btag{font-size:clamp(15px,min(1.5vw,2.1vh),22px)}
 .sec[data-k="Beeld"] .bex{font-size:clamp(15px,min(1.45vw,2.1vh),22px)}
@@ -230,23 +233,56 @@ tr.empty td{background:transparent;color:var(--muted);height:44px}
 .sec .exbtn{font-size:clamp(15px,1.2vw,18px);padding:7px 16px}
 .sec .chip{font-size:clamp(16px,1.35vw,21px);padding:12px 16px}
 .sec .chip small{font-size:clamp(14px,1.1vw,17px)}
-.sec .portrait{width:min(440px,46vh)}
+.sec .portrait{width:min(440px,40vh)}
+.sec[data-k="Opdracht"]>*{width:min(1500px,100%)}
+.sec[data-k="Opdracht"] .task{padding:clamp(24px,3vw,48px) clamp(24px,3.5vw,60px)}
+.sec[data-k="Opdracht"] .task h3{font-size:clamp(28px,3.2vw,44px);margin-bottom:20px}
+.sec[data-k="Opdracht"] .task li,.sec[data-k="Opdracht"] .task p{font-size:clamp(19px,2vw,30px);line-height:1.45}
+.sec[data-k="Opdracht"] .task li{margin:clamp(10px,1.6vh,22px) 0}
+.sec[data-k="Opdracht"] li.qa::after{font-size:clamp(12px,.9vw,15px)}
+.sec[data-k="Opdracht"] li.qa .ans{font-size:clamp(17px,1.6vw,24px);padding:12px 16px}
+.sec[data-k="Opdracht"] .sort{gap:12px}
+.sec[data-k="Opdracht"] .chip{font-size:clamp(17px,1.7vw,26px);padding:14px 18px}
+.sec[data-k="Opdracht"] .chip small{font-size:clamp(15px,1.3vw,20px)}
+.sec[data-k="Opdracht"] .timer{font-size:clamp(15px,1.2vw,19px);padding:6px 14px}
+.sec .theory p{margin:0 0 clamp(14px,2.2vh,24px)}
+.sec .duo{gap:clamp(16px,1.8vw,32px);margin:clamp(14px,2vh,26px) 0 clamp(16px,2.2vh,28px)}
+.sec .duo-c{padding:clamp(18px,2.4vh,30px) clamp(20px,1.8vw,32px)}
+.sec .theory .duo-c h4{margin:0 0 12px}
+.sec .theory .duo-c p{margin:0}
+.sec .ex li{padding:9px 0 9px 36px;line-height:1.4}
+.sec .ex li::before{top:10px}
+.sec .exbtn{margin-top:16px}
+.sec .ladder{margin:10px 0 6px}
+.bdef{display:flex;flex-direction:column;align-items:center;gap:4px;margin:14px 0 0}
+.bdef p{margin:0;color:var(--ink);font-size:clamp(17px,1.6vw,24px)}
+.bdef b{color:var(--red2)}
 @media (max-width:820px){.sec[data-k="Beeld"] .matrix figure{grid-template-columns:1fr}}
+/* titel als glaspaneel op het plein */
+.stage{position:relative}
+.plein header.glass{position:absolute;z-index:3;left:3vw;top:2vw;max-width:58vw;margin:0;display:block;padding:clamp(12px,1.1vw,24px) clamp(16px,1.5vw,30px);background:rgba(15,10,16,.42);border:1px solid rgba(255,255,255,.18);border-radius:20px;backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.plein header.glass h1{font-size:clamp(24px,2.7vw,52px);margin:4px 0 6px}
+.plein header.glass .eyebrow{font-size:clamp(11px,.75vw,14px)}
+.plein header.glass .lead{color:#efe3e8;font-size:clamp(13px,1.05vw,20px);line-height:1.45;max-width:none}
+.plein .reset{position:absolute;z-index:3;right:2vw;top:2vw;background:rgba(15,10,16,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:rgba(255,255,255,.25)}
+@media (max-width:1100px){.plein header.glass{position:static;max-width:none;background:var(--bg);border:0;border-radius:0;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;padding:4px 16px 14px}.plein header.glass h1{font-size:clamp(28px,5vw,44px)}.plein header.glass .lead{font-size:16px}.plein .reset{position:static;margin:0 16px 14px;font-size:14px;padding:6px 14px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
+
+  <div class="plein">
+    <header class="glass">
     <div>
       <div class="eyebrow">Onderzoeksverantwoording · 30 minuten</div>
       <h1>Welkom op het Onderzoeksplein</h1>
       <p class="lead">Je mag AI gebruiken. Wij beoordelen je in een gesprek. Dan moet je wel kunnen laten zien dat je onderzoek klopt. Op dit plein ontmoet je drie mensen die dat met schade en schande leerden, en eindig je op het podium.</p>
     </div>
-    <a class="btn ghost" href="#" id="reset">Opnieuw beginnen</a>
   </header>
-
-  <div class="plein" id="plein">
+    <a class="btn ghost reset" href="#" id="reset">Opnieuw beginnen</a>
+    <div class="stage" id="plein">
     <img class="bg" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3GpGMM4Ww9kN2fvBRb1FgoFUGGs/1f167d23-4fe3-4837-8b99-7873f1a3f7b9.jpg" alt="Campusplein in de schemering met een terras, een pop-upkraam, een badkamershowroom en een klein podium">
+    </div>
   </div>
 
   <div class="intro">
@@ -340,7 +376,8 @@ const BOARDS = `<div class="matrix">
    <div class="mx-row">Betrouwbaar</div>${fig(BOARD_DATA[0])}${fig(BOARD_DATA[1])}
    <div class="mx-row">Niet betrouwbaar</div>${fig(BOARD_DATA[2])}${fig(BOARD_DATA[3])}
   </div>
-  <p class="bnote">Validiteit: meet je wat je wilt weten? Betrouwbaarheid: krijg je steeds dezelfde uitkomst? Klik op een schijf om opnieuw te gooien.</p>`;
+  <div class="bdef"><p><b>Validiteit:</b> meet je wat je wilt weten?</p><p><b>Betrouwbaarheid:</b> krijg je steeds dezelfde uitkomst?</p></div>
+  <p class="bnote">Klik op een schijf om opnieuw te gooien.</p>`;
 
 const person = (fill, i) => `<svg class="pp" viewBox="0 0 20 32" style="animation-delay:${i*0.04}s"><circle cx="10" cy="6" r="5" fill="${fill}"/><path d="M2,30 C2,18 5,13 10,13 C15,13 18,18 18,30 Z" fill="${fill}"/></svg>`;
 const C = {p1:"#C6002A", p2:"#ff8fa6", st:"#8a8f98", ot:"#4a3f45"};
@@ -370,13 +407,13 @@ const STATIONS = [
   eyebrow:"Op het terras · De student", title:"Sanne: “Tien van de tien zeiden ja!”",
   quote:"“Iedereen zei ja. Dat is toch honderd procent bewijs?”",
   tTitle:"Steeds hetzelfde is nog niet steeds raak",
-  tBody:`<div class="duo">
+  tBody:`<div class="duo reveal">
            <div class="duo-c"><h4>Betrouwbaar</h4><p>Herhaal je het onderzoek op dezelfde manier, dan komt er ongeveer hetzelfde uit. Toeval en jijzelf bepalen de uitkomst niet.</p>
-             <ul class="ex"><li class="no">Je stelt de vraag elke keer anders, en alleen aan vrienden op één avond.</li>
+             <button class="exbtn" type="button">Toon voorbeelden ▾</button><ul class="ex"><li class="no">Je stelt de vraag elke keer anders, en alleen aan vrienden op één avond.</li>
              <li class="ok">Iedereen krijgt dezelfde vragen in dezelfde volgorde.</li>
              <li class="ok">Een klasgenoot leest je interviews ook na en haalt er hetzelfde uit.</li></ul></div>
            <div class="duo-c"><h4>Valide</h4><p>Je meet wat je echt wilt weten. Vraag naar wat mensen al doen en uitgeven, niet naar wat ze denken te gaan doen.</p>
-             <ul class="ex"><li class="no">“Zou je dit kopen?” meet beleefdheid, geen koopgedrag.</li>
+             <button class="exbtn" type="button">Toon voorbeelden ▾</button><ul class="ex"><li class="no">“Zou je dit kopen?” meet beleefdheid, geen koopgedrag.</li>
              <li class="no">Veel likes op Instagram zeggen niets over omzet.</li>
              <li class="ok">“Wat gaf je vorige maand uit aan lunch op de campus?”</li></ul></div>
          </div>
@@ -393,7 +430,7 @@ const STATIONS = [
   oTag:"Opdracht · 6 minuten", minutes:6, oTitle:"Waar landt Sanne op de schietschijf?",
   oBody:`<ol>
     <li data-a="Beleefdheid, vriendschap, of ze haar idee leuk vinden. Niet of iemand er echt voor betaalt.">Wat heeft Sanne eigenlijk gemeten? Noem minstens twee dingen behalve “wil het kopen”.</li>
-    <li data-a="Betrouwbaar, niet valide (linksboven). Ze krijgt steeds hetzelfde antwoord, maar meet het verkeerde. En tien vrienden zijn ook niet representatief.">Kies met je buur de schietschijf die bij haar onderzoek past, en leg uit waarom.</li>
+    <li data-a="Betrouwbaar, niet valide (linksboven). Ze krijgt steeds hetzelfde antwoord, maar meet het verkeerde. En tien vrienden zijn ook niet representatief.">Kies met je buurman of buurvrouw de schietschijf die bij haar onderzoek past, en leg uit waarom.</li>
     <li data-a="Bijvoorbeeld: “Wanneer had je dit probleem voor het laatst? Wat deed je toen, en wat kostte dat?” Of laat mensen vooraf betalen of zich inschrijven.">Herschrijf haar vraag zo dat die naar gedrag vraagt in plaats van naar een mening.</li>
     <li>Zoek in je eigen onderzoek één vraag waar je hetzelfde risico loopt.</li></ol>`
  },
@@ -437,7 +474,7 @@ const STATIONS = [
          <p>Heb je AI gebruikt, laat dan zien hoe je de uitkomst naast de bron hebt gelegd. Antwoorden, respondenten of cijfers laten verzinnen (synthetische data) is fabricage.</p>
          <p class="src">Bron: richtlijn Onderzoeksverantwoording, deel 3 en 4.</p>`,
   oTag:"Opdracht · 6 minuten", minutes:6, oTitle:"Telt dit als bewijs?",
-  oBody:`<p>Bespreek met je buur, klik daarna om te checken.</p>
+  oBody:`<p>Bespreek met je buurman of buurvrouw, klik daarna om te checken.</p>
    <div class="sort">
     <button class="chip ok">Opname van een interview op MyMedia<small>Te openen en te tonen.</small></button>
     <button class="chip no">“ChatGPT zegt dat 70% van de klanten…”<small>Waar komt die 70% vandaan? Toon de bron.</small></button>
@@ -469,8 +506,7 @@ const STATIONS = [
   oTag:"Opdracht · 10 minuten", minutes:10, oTitle:"Oefen het gesprek in tweetallen",
   oBody:`<ol>
     <li><b>4 min.</b> Vul ieder één rij van de tabel in, voor een conclusie uit je eigen project.</li>
-    <li data-a="Een sterk antwoord: B opent het bewijs meteen en wijst aan waar de conclusie vandaan komt. Zwak: “dat staat in mijn verslag” of “dat zei ChatGPT”."><b>2 min.</b> A is beoordelaar en stelt B de drie vragen uit de theorie. Vraag één keer door.</li>
-    <li><b>2 min.</b> Wissel van rol: B is beoordelaar en stelt A dezelfde vragen.</li>
+    <li data-a="Een sterk antwoord: B opent het bewijs meteen en wijst aan waar de conclusie vandaan komt. Zwak: “dat staat in mijn verslag” of “dat zei ChatGPT”."><b>4 min.</b> A is beoordelaar en stelt B de drie vragen uit de theorie. Vraag één keer door. Na 2 minuten wissel je van rol.</li>
     <li><b>2 min.</b> Welke kolom kon je niet invullen? Dat is je huiswerk voor de volgende inlevering.</li></ol>
     <p><a class="btn" href="Onderzoeksverantwoording-en-AI-gebruik.pdf" download>⬇ Richtlijn met de conclusietabel (PDF)</a></p>`
  }
@@ -490,6 +526,7 @@ STATIONS.forEach((s,i)=>{
   b.onclick = () => open(i);
   s.el = b; plein.appendChild(b);
 });
+markUp();
 
 function fmt(n){return Math.floor(n/60)+":"+String(n%60).padStart(2,"0")}
 function resetTimer(){clearInterval(tInt);tInt=null;tLeft=STATIONS[cur].minutes*60;const t=$("#timer");t.className="timer";t.textContent="⏱ Start "+fmt(tLeft)}
@@ -538,16 +575,19 @@ function show(k, auto){
   if (si!==0) { vPause(); audio.pause(); }
   else if (auto) { if (STATIONS[cur].video) vPlay(); else { const pr = audio.play(); if (pr && pr.catch) pr.catch(()=>{}); } }
   if (secs[si].dataset.k==="Beeld") secs[si].querySelectorAll("svg").forEach(sv=>sv.replaceWith(sv.cloneNode(true)));
-  const last = si===secs.length-1;
-  $("#next").textContent = !last ? `${secs[si+1].dataset.k} →` : (cur < STATIONS.length-1 ? `Naar ${STATIONS[cur+1].label.toLowerCase()==="het podium"?"het podium":STATIONS[cur+1].label} →` : "Klaar, terug naar het plein ✓");
+  nextLabel();
   $("#prev").style.visibility = si===0 ? "hidden" : "visible";
   modal.scrollTop = 0;
 }
-function nextStep(){ if (si < secs.length-1) show(si+1); else if (cur < STATIONS.length-1) open(cur+1); else closeM(); }
+function pendingReveal(){ return secs[si] && secs[si].querySelector(".duo.reveal .duo-c:not(.open)"); }
+function nextLabel(){ const last = si===secs.length-1;
+  $("#next").textContent = pendingReveal() ? "Voorbeelden ▾" : (!last ? `${secs[si+1].dataset.k} →` : (cur < STATIONS.length-1 ? "Terug naar het plein ✓" : "Klaar, terug naar het plein ✓")); }
+function nextStep(){ const r = pendingReveal(); if (r) { r.classList.add("open"); nextLabel(); return; } if (si < secs.length-1) show(si+1); else closeM(); }
 function prevStep(){ if (si > 0) show(si-1); }
 function stop(){vReset(); audio.pause(); try{audio.currentTime=0}catch(e){} $("#speaker").classList.remove("speaking"); $("#play").textContent="▶ Luister"}
-function closeM(){stop(); clearInterval(tInt); tInt=null; modal.classList.remove("open")}
-document.addEventListener("click",e=>{const b=e.target.closest(".exbtn"); if(b){ e.stopPropagation(); b.closest(".duo-c").classList.add("open"); }});
+function markUp(){ const n=STATIONS.findIndex(x=>!done.has(x.id)); STATIONS.forEach((x,k)=>x.el.classList.toggle("up",k===n)); return n; }
+function closeM(){stop(); clearInterval(tInt); tInt=null; modal.classList.remove("open"); markUp(); document.getElementById("plein").scrollIntoView({behavior:"smooth",block:"center"});}
+document.addEventListener("click",e=>{const b=e.target.closest(".exbtn"); if(b){ e.stopPropagation(); b.closest(".duo-c").classList.add("open"); nextLabel(); }});
 /* video in een of twee delen, met de goedgekeurde stem */
 const V1=$("#m-video"), V2=$("#m-video2"); let vParts=[], vCut=0, vIdx=0, vOn=false, vEnded=false;
 function vUrl(x){ return /^https?:/.test(x) ? x : CDN + x; }
@@ -575,12 +615,12 @@ $("#close").onclick = closeM; $("#back").onclick = closeM;
 $("#next").onclick = nextStep; $("#prev").onclick = prevStep;
 modal.onclick = e => { if(e.target===modal) closeM(); };
 document.onkeydown = e => {
-  if (!modal.classList.contains("open")) return;
+  if (!modal.classList.contains("open")) { if (e.key===" " || e.key==="ArrowRight") { const n=markUp(); if (n>=0) { e.preventDefault(); open(n); } } return; }
   if (e.key==="Escape") { closeM(); return; }
   if (e.key===" " || e.key==="ArrowRight" || e.key==="PageDown") { e.preventDefault(); document.activeElement && document.activeElement.blur(); nextStep(); }
   else if (e.key==="ArrowLeft" || e.key==="PageUp") { e.preventDefault(); prevStep(); }
 };
-$("#reset").onclick = e => { e.preventDefault(); done.clear(); save(); STATIONS.forEach(s=>s.el.classList.remove("done")); };
+$("#reset").onclick = e => { e.preventDefault(); done.clear(); save(); STATIONS.forEach(s=>s.el.classList.remove("done")); markUp(); };
 </script>
 </body>
 </html>
