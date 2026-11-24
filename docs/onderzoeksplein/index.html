@@ -459,11 +459,11 @@ const STATIONS = [
   eyebrow:"In de showroom · De ondernemer", title:"Ilse: “Laat me de klant zien, niet de chat”",
   quote:"“Prima dat je AI gebruikt. Hoe weet jij dat het klopt?”",
   tTitle:"AI mag, verzinnen niet",
-  tBody:`<p><b>Bewijs</b> is iets wat je kunt openen en laten zien: een opname, ruwe data, een screenshot met datum, een respondentenlijst met contactgegevens. Een AI-samenvatting is geen bewijs, de bron eronder wel.</p>
+  tBody:`<p><b>Bewijs</b> is iets wat je kunt openen en laten zien: een opname van het gesprek, ruwe data, een screenshot met datum. Een AI-samenvatting is geen bewijs, de bron eronder wel.</p>
          <div class="duo reveal">
            <div class="duo-c"><h4>Navolgbaar</h4><p>Iemand anders kan de stap volgen van jouw bewijs naar jouw conclusie, zonder dat jij erbij bent.</p>
              <button class="exbtn" type="button">Toon voorbeelden ▾</button><ul class="ex"><li class="no">“Uit de interviews blijkt dat klanten het te duur vinden.” Welke interviews, wie zei wat?</li>
-             <li class="ok">“7 van de 12 respondenten noemen de prijs, zie quotes in bijlage 3 en de opnames op MyMedia.”</li>
+             <li class="ok">“7 van de 12 respondenten noemen de prijs, zie quotes in bijlage 3 en de opnames.”</li>
              <li class="ok">Bij een AI-samenvatting: welke bron erin ging en hoe je die hebt nagelopen.</li></ul></div>
            <div class="duo-c"><h4>Verdedigbaar</h4><p>Je kunt die stap zelf uitleggen en volhouden als er doorgevraagd wordt.</p>
              <button class="exbtn" type="button">Toon voorbeelden ▾</button><ul class="ex"><li class="no">“Dat staat in mijn verslag.” of “Dat zei ChatGPT.”</li>
@@ -475,11 +475,11 @@ const STATIONS = [
   oTag:"Opdracht · 6 minuten", minutes:6, oTitle:"Telt dit als bewijs?",
   oBody:`<p>Bespreek met je buurman of buurvrouw, klik daarna om te checken.</p>
    <div class="sort">
-    <button class="chip ok">Opname van een interview op MyMedia<small>Te openen en te tonen.</small></button>
+    <button class="chip ok">Opname van het interview, waarin de respondent vertelt wie die is en wat die doet<small>Je hoort wat er gezegd is, en dat het iemand uit je doelgroep is.</small></button>
     <button class="chip no">“ChatGPT zegt dat 70% van de klanten…”<small>Waar komt die 70% vandaan? Toon de bron.</small></button>
     <button class="chip ok">Export van je advertentie met bereik, kliks en datum<small>Ruwe data van het echte gedrag.</small></button>
     <button class="chip no">AI-samenvatting van je transcripten, zonder transcripten<small>Pas bewijs als je de transcripten meelevert en de samenvatting daarmee hebt gecontroleerd.</small></button>
-    <button class="chip ok">Respondentenlijst met naam en telefoonnummer<small>Controleerbaar, wij kunnen bellen.</small></button>
+    <button class="chip no">Alleen een lijst met namen en telefoonnummers<small>Zegt niets over wat er gezegd is, of de persoon bij je doelgroep hoort. Samen met de opname wel.</small></button>
     <button class="chip no">Tien interviews die AI “realistisch” heeft gesimuleerd<small>Synthetische data is fabricage, ook als je het meldt.</small></button>
    </div>`
  },
@@ -494,7 +494,7 @@ const STATIONS = [
   tBody:`<p>Bij je inlevering zit een <b>conclusietabel</b>. In het gesprek kiest de beoordelaar een paar conclusies en vraagt door. Zo ziet één rij eruit:</p>
    <div class="tblwrap"><table>
     <tr><th>Conclusie</th><th>Bewijs</th><th>Betrouwbaarheid geborgd</th><th>Validiteit geborgd</th><th>Representativiteit geborgd</th><th>AI: waarvoor en hoe gecontroleerd</th><th>Beperking</th></tr>
-    <tr><td>Klanten willen direct een prijsindicatie zien</td><td>20 interviews, opnames op MyMedia, respondentenlijst in bijlage</td><td>Zelfde vragenlijst, elk gesprek opgenomen</td><td>Gevraagd naar hun laatste aankoop, niet naar wensen</td><td>Mix van leeftijd en koop of huur, zoals in klantbestand</td><td>Samenvatting transcripten, naast de opnames gelegd</td><td>Alleen regio Breda</td></tr>
+    <tr><td>Klanten willen direct een prijsindicatie zien</td><td>20 interviews, allemaal opgenomen, respondent noemt rol aan het begin</td><td>Zelfde vragenlijst, elk gesprek opgenomen</td><td>Gevraagd naar hun laatste aankoop, niet naar wensen</td><td>Mix van leeftijd en koop of huur, zoals in klantbestand</td><td>Samenvatting transcripten, naast de opnames gelegd</td><td>Alleen regio Breda</td></tr>
     <tr class="empty"><td>Jouw conclusie…</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
    </table></div>
    <div class="qs">
